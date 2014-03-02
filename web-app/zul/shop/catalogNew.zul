@@ -93,7 +93,7 @@
         </vbox>
 
         <!-- хиты и популярные, отображаеться если корневая -->
-        <div if="${not vm.showCatalog}">
+        <div if="${not vm.showCatalog}" width="680px">
           <label value="Популярные"/>
           <include src="/zul/components/showcase.zul" allProducts="${vm.allProducts}" isChangeShow="false"
                    showAppendBtn="false"/>

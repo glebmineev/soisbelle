@@ -72,14 +72,14 @@
   </div>
 
   <!-- вертикальный скроллинг -->
-  <div class="scrollUp" onclick="window.scrollTo(0, 0); ">
-    <g:img dir="images" file="moveUp.png"/>
+  <div class="scrollUp" onclick="window.scrollTo(0, 0); " align="center">
+    <g:img dir="images" file="moveUp.png" />
   </div>
 
   <div class="scrollDown" onclick="window.scrollTo(0, Math.max(
       Math.max(document.body.scrollHeight, document.documentElement.scrollHeight),
       Math.max(document.body.offsetHeight, document.documentElement.offsetHeight),
-      Math.max(document.body.clientHeight, document.documentElement.clientHeight))); ">
+      Math.max(document.body.clientHeight, document.documentElement.clientHeight))); " align="center">
     <g:img dir="images" file="moveDown.png"/>
   </div>
 

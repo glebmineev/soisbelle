@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+  <div width="100%" apply="ru.spb.locon.BindComposer"
+       viewModel="@id('vm') @init('ru.spb.locon.zulModels.menu.MenuModel')">
+    <div sclass="menuC123">
+      <style>
+
+        div.menuC123 > ul {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        }
+
+        div.menuC123 > ul > li > div {
+        width: 100px;
+        height: 20px;
+        margin: 0px 15px 15px 0px;
+        text-align: center;
+        background: #ffffff;
+        background: #FFFFFF;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        }
+
+        div.menuC123 > ul > li {
+        float: left;
+        list-style-type: none;
+        position: relative;
+        }
+
+      </style>
+    <!-- меню -->
+    <h:ul children="@bind(vm.menuItems)">
+      <template name="children">
+        <h:li>
+          <div>
+            <a href="/shop/catalog/?category=${each.id}" label="${each.name}"/>
+          </div>
+          <!--<label value="${each.name}"/>-->
+        </h:li>
+      </template>
+    </h:ul>
+    </div>
+  </div>
+
+</zk>
