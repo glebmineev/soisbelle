@@ -125,6 +125,8 @@ div.category{
   border: 1px solid #346F97;
 }
 
+/* Построчная витрина */
+
 div.products-row-template {
   margin: 5px;
   width: 640px;
@@ -152,6 +154,8 @@ div.products-row-template > ul > li > div {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
+
+/*Ячеистая витрина*/
 
 div.products-cell-template {
   /*width: 650px;*/
@@ -188,5 +192,31 @@ div.products-cell-template > ul > li > div:hover {
 
 .z-button .z-button-tl {
   font-size: 0;
+}
+
+/*Самописное меню*/
+
+div.zMenu > ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+div.zMenu > ul > li > div {
+  width: 100px;
+  height: 20px;
+  margin: 0px 15px 15px 0px;
+  text-align: center;
+  background: #ffffff;
+  background: #FFFFFF;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+div.zMenu > ul > li {
+  float: left;
+  list-style-type: none;
+  position: relative;
 }
 

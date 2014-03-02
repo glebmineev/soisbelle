@@ -61,11 +61,12 @@
 </head>
 
 <body>
-<div id="content">
 
-  <div id="header">
-    ${header}
-  </div>
+<div id="header">
+  ${header}
+</div>
+
+<div id="content">
 
   <div id="menu">
     ${menu}

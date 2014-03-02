@@ -3,6 +3,7 @@
   def loginService = grailsApplication.mainContext.getBean("loginService");
   def cartService = grailsApplication.mainContext.getBean("cartService");
 %>
+<div style="width: 900px; text-align: center; margin: 0 auto;">
 <table width="100%" cellpadding="0" cellspacing="0">
   <tr align="left">
     <g:if test="${loginService.isLogged()}">
@@ -176,3 +177,4 @@
     </td>
   </tr>
 </table>
+</div>

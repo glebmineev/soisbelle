@@ -21,7 +21,7 @@
   <div apply="ru.spb.locon.BindComposer"
     viewModel="@id('vm') @init('ru.spb.locon.zulModels.shop.RecommendedViewModel')" width="100%">
   <vlayout>
-    <div sclass="header" width="100%">
+    <div sclass="recommended-header" width="100%">
       <label style="font-size: 20px;" value="Популярные"/>
     </div>
     <hbox width="100%" children="@bind(vm.products)">
