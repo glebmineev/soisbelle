@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+  <div apply="ru.spb.locon.BindComposer"
+          viewModel="@id('vm') @init('ru.spb.locon.zulModels.shop.CartViewModel')" width="100%">
+
+    <!--<style src="/css/ZK.css"/>-->
+
+    <grid model="@bind(vm.cartProduct)" width="100%">
+      <columns>
+        <column width="170px"/>
+        <column label="Наименование"/>
+        <column label="Цена"/>
+        <column label="Количество"/>
+        <column label="Стоимость"/>
+        <column label="Действия"/>
+      </columns>
+      <template name="model" var="productModel">
+        <row>
+          <cell>
+            <div align="center" width="160px" sclass="imageBox">
+              <image>
+                <zscript>
+                <![CDATA[
+
+                 import ru.spb.locon.*
+                 import org.zkoss.image.*
+                 import org.codehaus.groovy.grails.commons.*
+                 import ru.spb.locon.common.*
+
+                 ImageService imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService");
+
+                 ServerFoldersService serverFoldersService = ApplicationHolder.getApplication().getMainContext().
+                                    getBean("serverFoldersService") as ServerFoldersService
+
+                 ProductEntity product = ProductEntity.get(productModel.id)
+
+                 String path = new PathBuilder()
+                            .appendPath(serverFoldersService.productImages)
+                            .appendString(product.engImagePath)
+                            .build()
+                 String std_name = STD_FILE_NAMES.PRODUCT_NAME.getName()
+                 int std_size = STD_IMAGE_SIZES.SMALL.getSize()
+
+                 AImage img = imageService.getImageFile(path, std_name, std_size)
+                 self.setContent(img)
+
+                ]]>
+                </zscript>
+              </image>
+            </div>
+          </cell>
+          <cell>
+            <label value="${productModel.name}"/>
+          </cell>
+          <cell>
+            <label value="${productModel.price}"/>
+          </cell>
+          <cell>
+            <spinner mold="rounded" readonly="true" step="1" value="@bind(productModel.count)"
+                     onChanging="@command('processCount', productModel=productModel, inputEvent=event)"
+                     cols="3" constraint="min 0"/>
+          </cell>
+          <cell>
+            <label value="@bind(productModel.totalPrice)">
+            </label>
+          </cell>
+          <cell>
+            <button label="Удалить" onClick="@command('removeItem', productModel=productModel)"/>
+          </cell>
+        </row>
+      </template>
+    </grid>
+
+    <button label="Оформление заказа" onClick="@command('checkout')"/>
+
+  </div>
+
+</zk>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+  <div apply="ru.spb.locon.BindComposer"
+          viewModel="@id('vm')
+                     @init('ru.spb.locon.zulModels.shop.CatalogViewModel')"
+          width="100%">
+
+    <!-- Навигация -->
+    <hbox align="start">
+      <div children="@bind(vm.links)">
+        <template name="children">
+          <a sclass="navigationLink" href="@load(each.href)"
+             label="@load(each.name)" style="font-size: 16pt;"/>
+          <label if="${forEachStatus.index != vm.links.size()-1}"
+                 value="/" style="font-size: 16pt;"/>
+        </template>
+      </div>
+    </hbox>
+
+    <hbox widths="30%,70%">
+      <vbox width="100%" style="padding-right: 5px;">
+        <tree id="categoryTree" height="100%"
+              model="@load(vm.categoryTreeModel)">
+          <template name="model" var="node">
+            <treeitem open="@bind(node.open)" onClick="@command('refreshModels')">
+              <treerow>
+                <treecell>
+                  <label value="${node.name}"/>
+                </treecell>
+              </treerow>
+            </treeitem>
+          </template>
+        </tree>
+
+        <groupbox closable="false">
+          <caption label="Фильтр"/>
+
+          <listbox id="manufListbox" model="@load(vm.manufsFilterModel)" multiple="true" checkmark="true"
+                   height="122px">
+            <listhead>
+              <listheader label="Производитель"/>
+            </listhead>
+            <template name="model" var="item">
+              <listitem onClick="@command('filtred')">
+                <listcell>
+                  <label value="${item.name}"/>
+                </listcell>
+              </listitem>
+            </template>
+          </listbox>
+          <h:br/>
+          <listbox id="usageListbox" model="@load(vm.usageFilterModel)" multiple="true" checkmark="true" height="300px">
+            <listhead>
+              <listheader label="Применение"/>
+            </listhead>
+            <template name="model" var="item">
+              <listitem onClick="@command('filtred')">
+                <listcell>
+                  <label value="${item.name}"/>
+                </listcell>
+              </listitem>
+            </template>
+          </listbox>
+        </groupbox>
+      </vbox>
+
+      <!-- тавары  -->
+      <listbox id="products" zclass="catalog" mold="paging" model="@load(vm.productsModel)" height="100%" pageSize="4">
+        <template name="model">
+
+          <listitem zclass="catalog-listitem">
+            <listcell zclass="catalog-listcell">
+              <hbox spacing="10px">
+                <!-- первый товар -->
+                <div sclass="productBox" if="${each.size() > 0}">
+                  <include src="/zul/shop/catalogRow.zul" productID="${each.get(0).id}"/>
+                </div>
+                <!-- второй товар -->
+                <div sclass="productBox" if="${each.size() > 1}">
+                  <include src="/zul/shop/catalogRow.zul" productID="${each.get(1).id}"/>
+                </div>
+                <!-- третий товар -->
+                <div sclass="productBox" if="${each.size() > 2}">
+                  <include src="/zul/shop/catalogRow.zul" productID="${each.get(2).id}"/>
+                </div>
+              </hbox>
+            </listcell>
+
+          </listitem>
+        </template>
+
+      </listbox>
+    </hbox>
+
+  </div>
+</zk>

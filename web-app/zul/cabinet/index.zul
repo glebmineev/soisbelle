@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+  <div apply="ru.spb.locon.BindComposer" align="center"
+       viewModel="@id('vm') @init('ru.spb.locon.zulModels.cabinet.CabinetViewModel')" width="100%">
+
+    <style src="/css/ZK.css"/>
+
+    <h:table width="100%">
+      <h:tr>
+        <h:td width="20%">
+          <div sclass="rounded">
+            <div align="center" width="100%">
+              <label value="@load(vm.fio)" style="font-size: 16pt"/>
+            </div>
+            <vbox width="20%" align="left" style="margin: 15px;">
+              <image id="targetImage" width="180px"/>
+              <zscript><![CDATA[
+              import ru.spb.locon.*
+              import org.zkoss.image.*
+              import org.codehaus.groovy.grails.commons.*
+              import ru.spb.locon.common.*
+
+              def imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService");
+              def serverFoldersService = ApplicationHolder.getApplication().getMainContext().getBean("serverFoldersService")
+              def loginService = ApplicationHolder.getApplication().getMainContext().getBean("loginService")
+
+              String path = new PathBuilder()
+                            .appendPath(serverFoldersService.userPics)
+                            .appendString(loginService.getCurrentUser().email)
+                            .build()
+              String std_name = STD_FILE_NAMES.CATEGORY_NAME.getName()
+              int std_size = STD_IMAGE_SIZES.MIDDLE.getSize()
+
+              AImage img = imageService.getImageFile(path, std_name, std_size)
+              targetImage.setContent(img)
+
+          ]]>
+              </zscript>
+              <a href="/cabinet/orders" label="Заказы"/>
+              <a href="/cabinet/profile" label="Редактировать профиль"/>
+              <a href="/cabinet/changePass" label="Сменить пароль"/>
+            </vbox>
+          </div>
+        </h:td>
+        <h:td width="80%" valign="top">
+          <include src="/zul/cabinet/orders.zul" sclass="rounded"/>
+        </h:td>
+      </h:tr>
+    </h:table>
+
+  </div>
+
+</zk>

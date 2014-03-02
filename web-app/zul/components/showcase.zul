@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+  <div apply="ru.spb.locon.BindComposer, ru.spb.locon.ShowcaseBindComposer" binder="@init(queueName='showcasequeue')"
+       viewModel="@id('vm') @init('ru.spb.locon.zulModels.components.ShowcaseViewModel')">
+    <div sclass="products-cell-template">
+      <!-- панель изменения отображения витрины -->
+      <div visible="@load(vm.isChangeShow)">
+        <button image="/images/rows.png" onClick="@command('applyRowTemplate')"/>
+        <button image="/images/cells.png" onClick="@command('applyCellTemplate')"/>
+      </div>
+      <!-- витрина товаров -->
+      <h:ul id="products" children="@bind(vm.products)">
+        <template name="children">
+          <h:li>
+            <include src="/zul/components/showcaseItem.zul" productWrapper="${each}" width="200px" height="350px"/>
+          </h:li>
+        </template>
+      </h:ul>
+      <window mode="highlighted" position="center" closable="false" visible="@load(vm.isBusy)">
+        <vbox>
+          <image src="/images/ajax-loader.gif"/>
+        </vbox>
+      </window>
+    </div>
+    <button label="Еще..." onClick="@command('appendElse')" autodisable="true" visible="@bind(vm.showAppendBtn)"/>
+  </div>
+</zk>

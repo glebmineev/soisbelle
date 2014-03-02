@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+  <window id="productItem" apply="ru.spb.locon.BindComposer"
+          viewModel="@id('vm') @init('ru.spb.locon.zulModels.admin.windows.NewUserWndViewModel')"
+          validationMessages="@id('vmsgs')"
+          form="@id('fx') @load(vm.login) @save(vm.login, before='saveUser')
+                @validator('ru.spb.locon.validators.UserValidator',
+                login=vm.login,
+                password=vm.password,
+                fio=vm.fio,
+                address=vm.address,
+                repassword=vm.repassword,
+                email=vm.email)"
+          width="100%"
+          position="center">
+
+    <style src="/css/ZK.css"/>
+
+    <h:table width="100%" cellpadding="0" cellspacing="5">
+      <h:tr>
+        <h:td width="50%" align="right">
+          <div width="320px" align="center" sclass="imageBoxAdmin">
+            <image id="targetImage" style="margin: 10px"/>
+            <zscript><![CDATA[
+
+               import ru.spb.locon.*
+               import org.zkoss.image.*
+               import org.codehaus.groovy.grails.commons.*
+               import ru.spb.locon.common.*
+
+               ImageService imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService");
+
+               ServerFoldersService serverFoldersService = ApplicationHolder.getApplication().getMainContext().
+                                    getBean("serverFoldersService") as ServerFoldersService
+
+
+               String path = new PathBuilder()
+                            .appendPath(serverFoldersService.images)
+                            .build()
+               String std_name = STD_FILE_NAMES.USER_NAME.getName()
+               int std_size = STD_IMAGE_SIZES.MIDDLE.getSize()
+
+               AImage img = imageService.getImageFile(path, std_name, std_size)
+               targetImage.setContent(img)
+
+             ]]>
+            </zscript>
+          </div>
+        </h:td>
+        <h:td align="left" width="50%">
+          <div align="left">
+            <button label="Загрузить аватар" upload="true" onUpload="@command('uploadImage')"/>
+          </div>
+        </h:td>
+      </h:tr>
+    </h:table>
+
+    <grid id="producItemGrid" height="100%" width="100%" style="margin: 5px">
+      <columns>
+        <column align="right"/>
+        <column align="left"/>
+        <column align="left"/>
+      </columns>
+      <rows>
+        <row>
+          <cell width="20%" align="right">
+            <label sclass="formLabel" value="Логин:(*)"/>
+          </cell>
+          <cell width="50%" align="center">
+            <textbox value="@bind(vm.login)" width="100%"/>
+          </cell>
+          <cell width="30%" align="left">
+            <label sclass="error" value="@load(vmsgs['login'])"/>
+          </cell>
+        </row>
+        <row>
+          <cell width="20%" align="right">
+            <label sclass="formLabel" value="Пароль:(*)"/>
+          </cell>
+          <cell width="50%" align="center">
+            <textbox type="password" value="@bind(vm.password)" width="100%"/>
+          </cell>
+          <cell width="30%" align="left">
+            <label sclass="error" value="@load(vmsgs['password'])"/>
+          </cell>
+        </row>
+        <row>
+          <cell width="20%" align="right">
+            <label sclass="formLabel" value="Повторите пароль:(*)"/>
+          </cell>
+          <cell width="50%" align="center">
+            <textbox type="password" value="@bind(vm.repassword)" width="100%"/>
+          </cell>
+          <cell width="30%" align="left">
+            <label sclass="error" value="@load(vmsgs['repassword'])"/>
+          </cell>
+        </row>
+        <row>
+          <cell width="20%" align="right">
+            <label sclass="formLabel" value="ФИО:(*)"/>
+          </cell>
+          <cell width="50%" align="center">
+            <textbox value="@bind(vm.fio)" width="100%"/>
+          </cell>
+          <cell width="30%" align="left">
+            <label sclass="error" value="@load(vmsgs['fio'])"/>
+          </cell>
+        </row>
+        <row>
+          <cell width="20%" align="right">
+            <label sclass="formLabel" value="Телефон:"/>
+          </cell>
+          <cell colspan="2" width="80%" align="center">
+            <textbox value="@bind(vm.phone)" width="100%"/>
+          </cell>
+        </row>
+        <row>
+          <cell width="20%" align="right">
+            <label sclass="formLabel" value="Эл. почта:(*)"/>
+          </cell>
+          <cell width="50%" align="center">
+            <textbox value="@bind(vm.email)" width="100%"/>
+          </cell>
+          <cell width="30%" align="left">
+            <label sclass="error" value="@load(vmsgs['email'])"/>
+          </cell>
+        </row>
+        <row>
+          <cell width="20%" align="right">
+            <label sclass="formLabel" value="Адрес:(*)"/>
+          </cell>
+          <cell width="50%" align="center">
+            <textbox value="@bind(vm.address)" width="100%"/>
+          </cell>
+          <cell width="30%" align="left">
+            <label sclass="error" value="@load(vmsgs['address'])"/>
+          </cell>
+        </row>
+        <row>
+          <cell width="20%" align="right">
+            <label sclass="formLabel" value="Активировать пользователя:"/>
+          </cell>
+          <cell colspan="2" width="80%" align="center">
+            <checkbox value="@bind(vm.isActive)" width="100%"/>
+          </cell>
+        </row>
+        <row>
+          <cell width="20%" align="right">
+            <label sclass="formLabel" value="Роли:"/>
+          </cell>
+          <cell colspan="2" width="80%" align="center">
+            <listbox checkmark="true" width="99%" model="@bind(vm.roles)">
+              <template name="model">
+                <listitem>
+                  <listcell/>
+                  <listcell label="${each.name}"/>
+                </listitem>
+              </template>
+            </listbox>
+          </cell>
+        </row>
+        <row>
+          <cell colspan="3" align="center">
+            <button label="Сохранить" onClick="@command('saveUser')"/>
+            <button label="Отмена" onClick="@command('closeWnd')"/>
+          </cell>
+        </row>
+      </rows>
+    </grid>
+
+  </window>
+</zk>

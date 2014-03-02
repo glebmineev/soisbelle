@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+  <hbox apply="ru.spb.locon.BindComposer"
+        viewModel="@id('vm') @init('ru.spb.locon.zulModels.admin.FiltersViewModel')" width="100%">
+
+
+    <tree id="categoryTree" height="100%"
+          model="@load(vm.categoryTreeModel)" onSelect="@command('updateSelectedItem')">
+      <template name="model" var="node">
+        <treeitem open="@bind(node.open)" onClick="@command('refreshModels')">
+          <treerow>
+            <treecell>
+              <label value="${node.name}"/>
+            </treecell>
+          </treerow>
+        </treeitem>
+      </template>
+    </tree>
+
+    <listbox id="products" width="100%"
+             model="@bind(vm.filtersModel) @template((each.editingStatus) ? 'editable' : 'noneditable')"
+             mold="paging"
+             pageSize="10">
+      <listhead>
+        <listheader align="center" label="Наименование"/>
+        <listheader align="center" label="Действия"/>
+      </listhead>
+      <template name="noneditable">
+        <listitem>
+          <listcell label="${each.name}"/>
+          <listcell>
+            <image src="/images/pencil.png" onClick="@command('changeEditableStatus', wrapper=each)"/>
+          </listcell>
+        </listitem>
+      </template>
+      <template name="editable">
+        <listitem>
+          <listcell>
+            <textbox value="@bind(each.name)"/>
+          </listcell>
+          <listcell>
+            <image src="/images/success.gif" onClick="@command('updateFilter', wrapper=each)"/>
+            <image src="/images/failed.png"
+                   onClick="@command('deleteFilter', wrapper=each)"/>
+            <image src="/images/cancel.png" onClick="@command('cancelEditing', wrapper=each)"/>
+          </listcell>
+        </listitem>
+      </template>
+      <listfoot visible="@bind(vm.visibleCreateBtn)">
+        <listfooter/>
+        <listfooter>
+          <button label="Добавить" onClick="@command('createNew')"/>
+        </listfooter>
+      </listfoot>
+    </listbox>
+
+  </hbox>
+</zk>

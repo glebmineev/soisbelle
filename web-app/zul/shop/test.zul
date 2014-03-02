@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window id="win" apply="ru.spb.locon.BindComposer"
+            viewModel="@id('vm') @init('ru.spb.locon.TestsComposer')" width="100%">
+
+      <h:textarea id="ckeditor" class="ckeditor" cols="10" rows="20"/>
+      <div id="content" sclass="result"/>
+        <textbox id="result" sclass="result" value="ds"/>
+
+      <button id="btn" label="test" onTest="@command('test')" />
+      <button label="test two" forward="onClick=btn.onTest" />
+      <button label="test three">
+        <attribute name="onClick">
+          import org.zkoss.zk.ui.util.*;
+
+          Clients.evalJavaScript("doTest();");
+        </attribute>
+      </button>
+
+      <button id="target" label="test" onClick="@command('test')"/>
+
+      <script type="text/javascript">
+<!--        $('.target').click(function() {
+          alert('Handler for .change() called.');
+        });-->
+        function doTest(){
+          var value = CKEDITOR.instances.ckeditor.getData();
+          zAu.send(new zk.Event(zk.Widget.$('$btn'), 'onTest', value), 10);
+<!--        payload = screen.width+'x'+screen.height;
+        zAu.send(new zk.Event(zk.Widget.$(this), 'onClick', payload));-->
+        }
+      </script>
+
+    </window>
+
+
+
+</zk>

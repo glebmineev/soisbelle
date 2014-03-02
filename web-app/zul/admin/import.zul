@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+  <window apply="ru.spb.locon.zulModels.importer.ImportComposer">
+
+    <style src="/css/ZK.css"/>
+
+    <div id="upload">
+      <vbox align="center" width="100%">
+        <h:h1>Загрузка католога товаров</h:h1>
+        <hbox>
+          <textbox id="fileField" width="300px"/>
+          <button id="uploadButton" upload="true" label="Обзор"/>
+          <combobox id="category"/>
+          <button id="startButton" disabled="true" label="Начать импорт"/>
+        </hbox>
+      </vbox>
+    </div>
+    <div id="process" visible="false">
+      <vbox align="center" width="100%">
+        <label id="catalogName"/>
+        <label id="info"/>
+        <progressmeter id="progressmeter" width="100%"/>
+        <grid id="importResult">
+          <columns>
+            <column align="center" width="20%" label="Артикул"/>
+            <column align="center" width="60%" label="Товар"/>
+            <column align="center" width="20%" label="Обработка"/>
+          </columns>
+        </grid>
+      </vbox>
+    </div>
+
+  </window>
+
+</zk>

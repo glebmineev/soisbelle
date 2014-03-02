@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+  <div id="catalog" apply="ru.spb.locon.BindComposer" onBookmarkChange="@command('back')"
+       viewModel="@id('vm') @init('ru.spb.locon.zulModels.shop.CatalogNewViewModel')" width="100%">
+
+    <!-- Навигация -->
+    <hbox align="start">
+      <div children="@bind(vm.links)">
+        <template name="children">
+          <a sclass="navigationLink" href="@load(each.href)"
+             label="@load(each.name)" style="font-size: 16pt;"/>
+          <label if="${forEachStatus.index != vm.links.size()-1}"
+                 value="/" style="font-size: 16pt;"/>
+        </template>
+      </div>
+    </hbox>
+
+    <include if="${not vm.isShowcase}" src="/zul/shop/product.zul"/>
+
+    <vbox align="center" width="100%" style="border: 1px solid #000000;" if="${vm.isShowcase}">
+
+      <!-- Категории -->
+      <hbox>
+        <vbox id="showProgress" width="220px">
+          <groupbox closable="false" if="${vm.categories.size() > 0}" >
+            <caption label="Категории"/>
+            <!-- Список категории -->
+            <listbox id="categories" model="@bind(vm.categories)" height="250px">
+              <listhead>
+                <listheader label="${each.name}"/>
+              </listhead>
+              <template name="model" var="item">
+                <listitem onClick="@command('goToCategory', categoryID=item.id)">
+                  <listcell>
+                    <label value="${item.name}"/>
+                  </listcell>
+                </listitem>
+              </template>
+            </listbox>
+          </groupbox>
+          <!-- Фильтр по производителю -->
+          <div width="220px" if="${vm.showCatalog}">
+            <groupbox closable="false">
+              <caption label="Фильтр"/>
+
+              <listbox id="manufListbox" model="@bind(vm.manufsFilterModel)" multiple="true" checkmark="true"
+                       height="122px">
+                <listhead>
+                  <listheader label="Производитель"/>
+                </listhead>
+                <template name="model" var="item">
+                  <listitem onClick="@command('filtred')">
+                    <listcell>
+                      <label value="${item.name}"/>
+                    </listcell>
+                  </listitem>
+                </template>
+              </listbox>
+              <h:br/>
+              <!-- Фильтр по применению -->
+              <listbox id="usageListbox" model="@bind(vm.usageFilterModel)" multiple="true" checkmark="true"
+                       height="250px">
+                <listhead>
+                  <listheader label="Применение"/>
+                </listhead>
+                <template name="model" var="item">
+                  <listitem onClick="@command('filtred')">
+                    <listcell>
+                      <label value="${item.name}"/>
+                    </listcell>
+                  </listitem>
+                </template>
+              </listbox>
+              <!-- Фильтр по цене -->
+              <label value="Цена"/>
+              <div>
+                <label value="От"/>
+                <textbox id="beforeFilterPrice" onChanging="@command('filtred')"/>
+              </div>
+              <div>
+                <label value="До"/>
+                <textbox id="afterFilterPrice" onChanging="@command('filtred')"/>
+              </div>
+            </groupbox>
+          </div>
+        </vbox>
+
+        <!-- хиты и популярные, отображаеться если корневая -->
+        <div if="${not vm.showCatalog}">
+          <label value="Популярные"/>
+          <include src="/zul/components/showcase.zul" allProducts="${vm.allProducts}" isChangeShow="false"
+                   showAppendBtn="false"/>
+        </div>
+
+        <!-- список товаров в текущей категории, отображаеться если не корневая -->
+        <include id="showcase" if="${vm.showCatalog}"
+                 src="/zul/components/showcase.zul" allProducts="${vm.allProducts}" isChangeShow="true" showAppendBtn="true"/>
+
+      </hbox>
+    </vbox>
+
+  </div>
+</zk>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+  <div apply="ru.spb.locon.BindComposer"
+       viewModel="@id('vm') @init('ru.spb.locon.zulModels.shop.ProductViewModel')"
+       onBookmarkChange="@command('refreshFromBookMark', event=event)" width="100%">
+    <!--<style src="/css/ZK.css"/>-->
+    <!-- Навигация -->
+
+    <hlayout width="100%">
+      <div id="imageDiv" width="320px" align="center" sclass="imageBoxAdmin">
+        <image id="productImage" style="margin: 10px" onClick="@command('zoomImage')"/>
+        <zscript><![CDATA[
+          import ru.spb.locon.*
+          import org.codehaus.groovy.grails.commons.ApplicationHolder
+          import org.zkoss.image.*
+          import org.zkoss.zk.ui.*
+          import ru.spb.locon.common.*
+
+          ImageService imageService =
+                                ApplicationHolder.getApplication().getMainContext().getBean("imageService");
+
+          ServerFoldersService serverFoldersService = ApplicationHolder.getApplication().getMainContext().
+                                    getBean("serverFoldersService") as ServerFoldersService
+
+          def productId = Executions.getCurrent().getParameter("product") as Long
+          ProductEntity product = ProductEntity.get(productId)
+          if (product != null) {
+              String path = new PathBuilder()
+                            .appendPath(serverFoldersService.productImages)
+                            .appendString(product.engImagePath)
+                            .build()
+              String std_name = STD_FILE_NAMES.PRODUCT_NAME.getName()
+              int std_size = STD_IMAGE_SIZES.MIDDLE.getSize()
+
+              AImage img = imageService.getImageFile(path, std_name, std_size)
+              productImage.setContent(img)
+          }
+          ]]>
+        </zscript>
+      </div>
+      <vbox>
+        <label value="@load(vm.model.name)" style="font-size: 16pt"/>
+        <tabbox width="562px">
+          <tabs>
+            <tab label="Применение"/>
+            <tab label="Описание"/>
+          </tabs>
+          <tabpanels style="background: #ffffff;">
+            <tabpanel height="192px">
+              <vlayout>
+                <div style="overflow: auto;" height="195px">
+                  <label value="@load(vm.model.usage)"/>
+                </div>
+              </vlayout>
+            </tabpanel>
+            <tabpanel height="192px">
+              <vlayout>
+                <div style="overflow: auto;" height="195px">
+                  <label value="@load(vm.model.description)"/>
+                </div>
+              </vlayout>
+            </tabpanel>
+          </tabpanels>
+        </tabbox>
+        <hbox>
+          <label style="font-size: 16pt;" value="Цена:"/>
+          <label style="font-size: 16pt;" value="@load(vm.model.price)"/>
+          <label style="font-size: 16pt;" value="руб."/>
+        </hbox>
+        <button visible="@load(not vm.model.inCart)"
+                label="В корзину" onClick="@command('addToCart')"/>
+        <label visible="@bind(vm.model.inCart)" value="Уже в корзине"/>
+      </vbox>
+    </hlayout>
+
+    <!-- Отзывы -->
+    <div sclass="info" align="center">
+      <label value="Отзывы" style="font-size: 16pt;"/>
+    </div>
+
+    <div if="${vm.reviews.size() > 0}" children="@bind(vm.reviews)" align="center" sclass="info">
+      <template name="children">
+        <vbox align="center">
+          <div align="center" style="background: #8A98A9;">
+            <label value="@load(each.fio)"/>
+            <label>
+              <zscript><![CDATA[
+                  import java.text.*
+
+                  DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+                  def date = "${each.date.getDay()}.${each.date.getMonth()}.${each.date.getYear()}"
+                  self.setValue(date)
+                ]]>
+              </zscript>
+            </label>
+          </div>
+          <label value="@load(each.content)" height="100px" width="100%"/>
+        </vbox>
+      </template>
+    </div>
+    <button label="Добавить отзыв" autodisable="true" onClick="@command('addReviews')"/>
+
+  </div>
+
+<!--  <script type="text/javascript">
+
+    window.onbeforeunload  = function(e) {
+      alert(window.location.hash)
+    };
+
+  </script>-->
+
+</zk>
