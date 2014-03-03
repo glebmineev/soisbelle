@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
 <?page zscriptLanguage="GroovyGrails"?>
 
 <zk xmlns="http://www.zkoss.org/2005/zul"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
-  <div width="100%" apply="ru.spb.locon.BindComposer"
-       viewModel="@id('vm') @init('ru.spb.locon.zulModels.menu.MenuModel')">
+  <div width="100%" apply="ru.spb.soisbelle.BindComposer"
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.menu.MenuModel')">
     <div sclass="zMenu">
 
     <style src="/css/ZK.css"/>

@@ -1,4 +1,4 @@
-<%@ page import="ru.spb.locon.importer.ConvertUtils" %>
+<%@ page import="ru.spb.soisbelle.importer.ConvertUtils" %>
 <%
   def loginService = grailsApplication.mainContext.getBean("loginService");
   def cartService = grailsApplication.mainContext.getBean("cartService");

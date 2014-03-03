@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
 <?page zscriptLanguage="GroovyGrails"?>
 
 <zk xmlns="http://www.zkoss.org/2005/zul"
@@ -7,11 +7,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-  <div apply="ru.spb.locon.BindComposer" align="center"
-       viewModel="@id('vm') @init('ru.spb.locon.zulModels.cabinet.ChangePassViewModel')"
+  <div apply="ru.spb.soisbelle.BindComposer" align="center"
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.cabinet.ChangePassViewModel')"
        validationMessages="@id('vmsgs')"
        form="@id('fx') @load(vm.oldPass) @save(vm.oldPass, before='changePass')
-                @validator('ru.spb.locon.validators.ChangePassValidator',
+                @validator('ru.spb.soisbelle.validators.ChangePassValidator',
                 oldPass=vm.oldPass,
                 newPass=vm.newPass,
                 retypeNewPass=vm.retypeNewPass)"

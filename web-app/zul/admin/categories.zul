@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
-<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
 <?page zscriptLanguage="GroovyGrails"?>
 
 <zk xmlns="http://www.zkoss.org/2005/zul"
@@ -8,8 +8,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-  <div apply="ru.spb.locon.BindComposer"
-       viewModel="@id('vm') @init('ru.spb.locon.zulModels.admin.CategoriesViewModel')" width="100%">
+  <div apply="ru.spb.soisbelle.BindComposer"
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.admin.CategoriesViewModel')" width="100%">
 
     <hbox widths="30%, 70%">
       <tree id="categoryTree" onSelect="@command('updateSelectedItem')"
@@ -56,10 +56,10 @@
               <image id="targetImage" width="150px">
                 <zscript><![CDATA[
 
-                      import ru.spb.locon.*
+                      import ru.spb.soisbelle.*
                       import org.zkoss.image.*
                       import org.codehaus.groovy.grails.commons.*
-                      import ru.spb.locon.common.*
+                      import ru.spb.soisbelle.common.*
 
                       ImageService imageService =
                                     ApplicationHolder.getApplication().getMainContext().getBean("imageService");
@@ -84,8 +84,7 @@
                         self.setContent(img)
                       }
 
-                ]]>
-                </zscript>
+                ]]></zscript>
               </image>
             </div>
           </h:td>

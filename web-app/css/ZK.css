@@ -208,10 +208,9 @@ div.zMenu > ul > li > div {
   margin: 0px 15px 15px 0px;
   text-align: center;
   background: #ffffff;
-  background: #FFFFFF;
-  -webkit-border-radius: 10px;
+/*  -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
-  border-radius: 10px;
+  border-radius: 10px;*/
 }
 
 div.zMenu > ul > li {

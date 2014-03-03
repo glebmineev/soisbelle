@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
-<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
 <?page zscriptLanguage="GroovyGrails"?>
 
 <zk xmlns="http://www.zkoss.org/2005/zul"
@@ -8,8 +8,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-  <div apply="ru.spb.locon.BindComposer"
-       viewModel="@id('vm') @init('ru.spb.locon.zulModels.admin.ManufacturersViewModel')" width="100%">
+  <div apply="ru.spb.soisbelle.BindComposer"
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.admin.ManufacturersViewModel')" width="100%">
 
     <listbox id="products" width="100%"
              model="@bind(vm.manufacturersModel) @template((each.editingStatus) ? 'editable' : 'noneditable')"
@@ -27,10 +27,11 @@
           <listcell>
             <image width="100px">
               <zscript><![CDATA[
-                      import ru.spb.locon.*
+
+                      import ru.spb.soisbelle.*
                       import org.zkoss.image.*
                       import org.codehaus.groovy.grails.commons.*
-                      import ru.spb.locon.common.*
+                      import ru.spb.soisbelle.common.*
 
                       ImageService imageService =
                                     ApplicationHolder.getApplication().getMainContext().getBean("imageService");
@@ -51,8 +52,7 @@
                         AImage img = imageService.getImageFile(path, std_name, std_size)
                         self.setContent(img)
 
-              ]]>
-            </zscript>
+              ]]></zscript>
             </image>
           </listcell>
           <listcell label="${each.name}"/>
@@ -69,10 +69,11 @@
             <vbox align="center">
             <image id="${each.id}" width="100px">
               <zscript><![CDATA[
-                      import ru.spb.locon.*
+
+                      import ru.spb.soisbelle.*
                       import org.zkoss.image.*
                       import org.codehaus.groovy.grails.commons.*
-                      import ru.spb.locon.common.*
+                      import ru.spb.soisbelle.common.*
 
                       ImageService imageService =
                                     ApplicationHolder.getApplication().getMainContext().getBean("imageService");
@@ -93,8 +94,7 @@
                         AImage img = imageService.getImageFile(path, std_name, std_size)
                         self.setContent(img)
 
-              ]]>
-              </zscript>
+              ]]></zscript>
             </image>
               <button label="Сменить логотип" upload="true"
                       onUpload="@command('uploadImage', inputEvent=event)"/>

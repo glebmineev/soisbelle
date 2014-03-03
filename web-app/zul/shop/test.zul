@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
-<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
 <?page zscriptLanguage="GroovyGrails"?>
 
 
@@ -9,8 +9,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-    <window id="win" apply="ru.spb.locon.BindComposer"
-            viewModel="@id('vm') @init('ru.spb.locon.TestsComposer')" width="100%">
+    <window id="win" apply="ru.spb.soisbelle.BindComposer"
+            viewModel="@id('vm') @init('ru.spb.soisbelle.TestsComposer')" width="100%">
 
       <h:textarea id="ckeditor" class="ckeditor" cols="10" rows="20"/>
       <div id="content" sclass="result"/>

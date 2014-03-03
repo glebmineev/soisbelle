@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
 <?page zscriptLanguage="GroovyGrails"?>
 
 <zk xmlns="http://www.zkoss.org/2005/zul"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-  <div apply="ru.spb.locon.BindComposer"
-       viewModel="@id('vm') @init('ru.spb.locon.zulModels.shop.ProductViewModel')"
+  <div apply="ru.spb.soisbelle.BindComposer"
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.ProductViewModel')"
        onBookmarkChange="@command('refreshFromBookMark', event=event)" width="100%">
     <!--<style src="/css/ZK.css"/>-->
     <!-- Навигация -->
@@ -16,11 +16,12 @@
       <div id="imageDiv" width="320px" align="center" sclass="imageBoxAdmin">
         <image id="productImage" style="margin: 10px" onClick="@command('zoomImage')"/>
         <zscript><![CDATA[
-          import ru.spb.locon.*
+
+          import ru.spb.soisbelle.*
           import org.codehaus.groovy.grails.commons.ApplicationHolder
           import org.zkoss.image.*
           import org.zkoss.zk.ui.*
-          import ru.spb.locon.common.*
+          import ru.spb.soisbelle.common.*
 
           ImageService imageService =
                                 ApplicationHolder.getApplication().getMainContext().getBean("imageService");
@@ -41,8 +42,8 @@
               AImage img = imageService.getImageFile(path, std_name, std_size)
               productImage.setContent(img)
           }
-          ]]>
-        </zscript>
+
+          ]]></zscript>
       </div>
       <vbox>
         <label value="@load(vm.model.name)" style="font-size: 16pt"/>

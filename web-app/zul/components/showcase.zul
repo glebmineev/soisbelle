@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
 <?page zscriptLanguage="GroovyGrails"?>
 
 <zk xmlns="http://www.zkoss.org/2005/zul"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-  <div apply="ru.spb.locon.BindComposer, ru.spb.locon.ShowcaseBindComposer" binder="@init(queueName='showcasequeue')"
-       viewModel="@id('vm') @init('ru.spb.locon.zulModels.components.ShowcaseViewModel')">
+  <div apply="ru.spb.soisbelle.BindComposer, ru.spb.soisbelle.ShowcaseBindComposer" binder="@init(queueName='showcasequeue')"
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.components.ShowcaseViewModel')">
     <div sclass="products-cell-template">
       <!-- панель изменения отображения витрины -->
       <div visible="@load(vm.isChangeShow)">

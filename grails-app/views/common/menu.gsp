@@ -1,4 +1,4 @@
-<%@ page import="ru.spb.locon.domain.DomainUtils" %>
+<%@ page import="ru.spb.soisbelle.domain.DomainUtils" %>
 %{--<ul id="nav">
   <g:set var="count" value="${0}"/>
   <g:each in="${mainCategoties}" var="parent">

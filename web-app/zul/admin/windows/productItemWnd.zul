@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
 <?page zscriptLanguage="GroovyGrails"?>
 
 <zk xmlns="http://www.zkoss.org/2005/zul"
@@ -12,8 +12,8 @@
       Clients.evalJavaScript("var field = \$('.info'); zAu.send(new zk.Event(zk.Widget.\$(field), 'onSaveFile', editor.getCode()));");
     ]]></zscript>-->
 
-  <window id="productItem" apply="ru.spb.locon.BindComposer"
-          viewModel="@id('vm') @init('ru.spb.locon.zulModels.admin.windows.ProductItemWndViewModel')" width="100%">
+  <window id="productItem" apply="ru.spb.soisbelle.BindComposer"
+          viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.admin.windows.ProductItemWndViewModel')" width="100%">
 
     <style src="/css/ZK.css"/>
 
@@ -40,10 +40,10 @@
             <image id="targetImage" style="margin: 10px"/>
             <zscript><![CDATA[
 
-               import ru.spb.locon.*
+               import ru.spb.soisbelle.*
                import org.zkoss.image.*
                import org.codehaus.groovy.grails.commons.*
-               import ru.spb.locon.common.*
+               import ru.spb.soisbelle.common.*
 
                ImageService imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService");
 
@@ -68,7 +68,7 @@
                    }
 
              ]]>
-            </zscript>
+            ]]>]]>]]></zscript>
           </div>
         </h:td>
         <h:td align="left" width="50%">

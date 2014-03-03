@@ -1,4 +1,4 @@
-import ru.spb.locon.*
+import ru.spb.soisbelle.*
 
 class BootStrap {
 

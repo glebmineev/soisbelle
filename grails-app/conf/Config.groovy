@@ -91,7 +91,7 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 
-  debug 'ru.spb.locon'
+  debug 'ru.spb.soisbelle'
 
 }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
-<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
 <?page zscriptLanguage="GroovyGrails"?>
 
 <zk xmlns="http://www.zkoss.org/2005/zul"
@@ -18,8 +18,8 @@
         background: #f6f6f6;border-bottom: 1px solid #346F97;
         }
       </style>-->
-  <div apply="ru.spb.locon.BindComposer"
-    viewModel="@id('vm') @init('ru.spb.locon.zulModels.shop.RecommendedViewModel')" width="100%">
+  <div apply="ru.spb.soisbelle.BindComposer"
+    viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.RecommendedViewModel')" width="100%">
   <vlayout>
     <div sclass="recommended-header" width="100%">
       <label style="font-size: 20px;" value="Популярные"/>
@@ -31,10 +31,10 @@
             <image sclass="productImage" onClick="@command('redirectToProductItem', productModel=each)">
               <zscript><![CDATA[
 
-                 import ru.spb.locon.*
+                 import ru.spb.soisbelle.*
                  import org.zkoss.image.*
                  import org.codehaus.groovy.grails.commons.*
-                 import ru.spb.locon.common.*
+                 import ru.spb.soisbelle.common.*
 
                  ImageService imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService");
 
@@ -53,8 +53,7 @@
                  AImage img = imageService.getImageFile(path, std_name, std_size)
                  self.setContent(img)
 
-                ]]>
-              </zscript>
+                ]]></zscript>
             </image>
           </div>
           <vbox width="220px" align="center">

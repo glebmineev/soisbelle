@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
-<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
 <?page zscriptLanguage="GroovyGrails"?>
 
 <zk xmlns="http://www.zkoss.org/2005/zul"
@@ -8,13 +8,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-  <div id="searchResults" apply="ru.spb.locon.BindComposer"
-          viewModel="@id('vm') @init('ru.spb.locon.zulModels.search.SearchResultViewModel')" width="100%" height="400px">
+  <div id="searchResults" apply="ru.spb.soisbelle.BindComposer"
+          viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.search.SearchResultViewModel')" width="100%" height="400px">
 
     <!--<style src="/css/ZK.css"/>-->
 
     <include id="showcase"
-             src="/zul/shop/showcase.zul" allProducts="${vm.matchedProduct}" isChangeShow="true" showAppendBtn="true"/>
+             src="/zul/components/showcase.zul" allProducts="${vm.matchedProduct}" isChangeShow="true" showAppendBtn="true"/>
 <!--    <grid width="100%" mold="paging" model="@load(vm.model)"
              pageSize="10" emptyMessage="По запросу не найдено">
       <columns>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
 <?page zscriptLanguage="GroovyGrails"?>
 
 <zk xmlns="http://www.zkoss.org/2005/zul"
@@ -7,11 +7,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-  <window apply="ru.spb.locon.BindComposer"
-       viewModel="@id('vm') @init('ru.spb.locon.zulModels.shop.ReviewsViewModel')"
+  <window apply="ru.spb.soisbelle.BindComposer"
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.ReviewsViewModel')"
        validationMessages="@id('vmsgs')"
        form="@id('fx') @load(vm.productID) @save(vm.productID, before='addReview')
-             @validator('ru.spb.locon.validators.ReviewValidator', fio=vm.fio, captcha=vm.captcha, captchaInput=vm.captchaInput, review=vm.review)"
+             @validator('ru.spb.soisbelle.validators.ReviewValidator', fio=vm.fio, captcha=vm.captcha, captchaInput=vm.captchaInput, review=vm.review)"
        width="100%" onOK="@command('addReview')">
 
     <style>

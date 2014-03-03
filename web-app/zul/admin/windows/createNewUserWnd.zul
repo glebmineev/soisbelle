@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?variable-resolver class="ru.spb.locon.window.ProjectVariableResolver"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
 <?page zscriptLanguage="GroovyGrails"?>
 
 <zk xmlns="http://www.zkoss.org/2005/zul"
@@ -7,11 +7,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-  <window id="productItem" apply="ru.spb.locon.BindComposer"
-          viewModel="@id('vm') @init('ru.spb.locon.zulModels.admin.windows.NewUserWndViewModel')"
+  <window id="productItem" apply="ru.spb.soisbelle.BindComposer"
+          viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.admin.windows.NewUserWndViewModel')"
           validationMessages="@id('vmsgs')"
           form="@id('fx') @load(vm.login) @save(vm.login, before='saveUser')
-                @validator('ru.spb.locon.validators.UserValidator',
+                @validator('ru.spb.soisbelle.validators.UserValidator',
                 login=vm.login,
                 password=vm.password,
                 fio=vm.fio,
@@ -30,10 +30,10 @@
             <image id="targetImage" style="margin: 10px"/>
             <zscript><![CDATA[
 
-               import ru.spb.locon.*
+               import ru.spb.soisbelle.*
                import org.zkoss.image.*
                import org.codehaus.groovy.grails.commons.*
-               import ru.spb.locon.common.*
+               import ru.spb.soisbelle.common.*
 
                ImageService imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService");
 
@@ -50,8 +50,7 @@
                AImage img = imageService.getImageFile(path, std_name, std_size)
                targetImage.setContent(img)
 
-             ]]>
-            </zscript>
+             ]]></zscript>
           </div>
         </h:td>
         <h:td align="left" width="50%">
