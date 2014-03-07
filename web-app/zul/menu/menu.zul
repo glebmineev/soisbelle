@@ -15,7 +15,7 @@
       <template name="children">
         <h:li>
           <div>
-            <a href="/shop/catalog/?category=${each.id}" label="${each.name}"/>
+            <a href="/shop/catalog/?category=${each.id}" image="/images/dsn/${each.translitName}.png"/>
           </div>
         </h:li>
       </template>

@@ -219,3 +219,6 @@ div.zMenu > ul > li {
   position: relative;
 }
 
+.search {
+  background: url("../images/dsn/search_.png") no-repeat;
+}

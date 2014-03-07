@@ -45,7 +45,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="grails-2.2.1" level="application" />
     <orderEntry type="module-library" exported="">
       <library name="Grails User Library (soisbelle)">
         <CLASSES>
@@ -70,6 +69,7 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="soisbelle-grailsPlugins" />
+    <orderEntry type="library" name="grails-2.2.1" level="application" />
   </component>
 </module>
 

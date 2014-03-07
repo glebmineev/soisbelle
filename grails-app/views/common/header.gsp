@@ -4,7 +4,36 @@
   def cartService = grailsApplication.mainContext.getBean("cartService");
 %>
 <div style="width: 900px; text-align: center; margin: 0 auto;">
-<table width="100%" cellpadding="0" cellspacing="0">
+  <table width="100%" cellpadding="0" cellspacing="5">
+    <tr align="left">
+      <td width="300px">
+        <tpl:zkBody zul="/zul/search/search.zul"/>
+      </td>
+      <td width="150px">
+        <g:link controller="shop" action="register">
+          <g:img dir="images/dsn" file="reg.png"/>
+        </g:link>
+      </td>
+      <td width="86px">
+        <g:link controller="auth" action="login">
+          <g:img dir="images/dsn" file="enter.png"/>
+        </g:link>
+      </td>
+      <td>
+        <g:link controller="shop" action="cart">
+          <g:img dir="images/dsn" file="cart.png"/>
+        </g:link>
+      </td>
+    </tr>
+    <tr align="left">
+      <td colspan="4">
+        <g:link controller="shop" action="index">
+          <g:img dir="images/dsn" file="sois_bellex50.png"/>
+        </g:link>
+      </td>
+    </tr>
+  </table>
+%{--<table width="100%" cellpadding="0" cellspacing="0">
   <tr align="left">
     <g:if test="${loginService.isLogged()}">
       <td width="32px">
@@ -125,12 +154,12 @@
           </td>
           <td colspan="2">
             <tpl:zkBody zul="/zul/search/search.zul"/>
-            %{--<g:form controller="search" action="index">
+            --}%%{--<g:form controller="search" action="index">
               <g:textField name="query" size="16"/>
               <g:submitButton name="Найти">
                 <g:img dir="images" file="search.png"/>
               </g:submitButton>
-            </g:form>--}%
+            </g:form>--}%%{--
           </td>
         </tr>
         <tr>
@@ -176,5 +205,5 @@
       </table>
     </td>
   </tr>
-</table>
+</table>--}%
 </div>

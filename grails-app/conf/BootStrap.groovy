@@ -1,4 +1,6 @@
+import org.grails.datastore.mapping.transactions.TransactionUtils
 import ru.spb.soisbelle.*
+import ru.spb.soisbelle.importer.ConverterRU_EN
 
 class BootStrap {
 
@@ -17,12 +19,12 @@ class BootStrap {
     }
 
     CategoryEntity.withTransaction {
-      CategoryEntity.findOrSaveWhere(name: "Для волос")
-      CategoryEntity.findOrSaveWhere(name: "Для тела")
-      CategoryEntity.findOrSaveWhere(name: "Для рук")
-      CategoryEntity.findOrSaveWhere(name: "Депиляция")
-      CategoryEntity.findOrSaveWhere(name: "Для мужчин")
-      CategoryEntity.findOrSaveWhere(name: "Аксессуары")
+      CategoryEntity.findOrSaveWhere(name: "Для волос", translitName: ConverterRU_EN.translit("Для волос"))
+      CategoryEntity.findOrSaveWhere(name: "Для тела", translitName: ConverterRU_EN.translit("Для тела"))
+      CategoryEntity.findOrSaveWhere(name: "Для рук", translitName: ConverterRU_EN.translit("Для рук"))
+      CategoryEntity.findOrSaveWhere(name: "Депиляция", translitName: ConverterRU_EN.translit("Депиляция"))
+      CategoryEntity.findOrSaveWhere(name: "Для мужчин", translitName: ConverterRU_EN.translit("Для мужчин"))
+      CategoryEntity.findOrSaveWhere(name: "Аксессуары", translitName: ConverterRU_EN.translit("Аксессуары"))
     }
 
     ManufacturerEntity.withTransaction {

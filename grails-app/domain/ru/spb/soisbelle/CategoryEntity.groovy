@@ -3,6 +3,7 @@ package ru.spb.soisbelle
 class CategoryEntity {
 
   String name
+  String translitName
   String description
 
   CategoryEntity parentCategory
@@ -15,6 +16,7 @@ class CategoryEntity {
     columns {
       id column: 'category_id'
       name column: 'category_name'
+      translitName column: 'category_translitname'
       description column: 'category_description'
       parentCategory column: 'category_parentcategory_id'
       //selectedProducts joinTable: [name: 'category_product', key: 'category_id']
@@ -40,6 +42,7 @@ class CategoryEntity {
 
   static constraints = {
     name nullable: true
+    translitName nullable: true
     description nullable: true
   }
 
