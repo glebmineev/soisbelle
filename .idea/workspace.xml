@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddaf4c20-561e-454b-b01c-09a6929cfd8f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/images/dsn/cart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/images/dsn/enter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/images/dsn/reg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/images/dsn/search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/images/dsn/search_.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/images/dsn/sois_belle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/images/dsn/sois_bellex50.png" />
-      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\lib\zkex.jar_" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/zkex.jar" afterPath="$PROJECT_DIR$/lib/zkex.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/ru/spb/soisbelle/CategoryEntity.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/ru/spb/soisbelle/CategoryEntity.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/css/ZK.css" afterPath="$PROJECT_DIR$/web-app/css/ZK.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/css/content.css" afterPath="$PROJECT_DIR$/web-app/css/content.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/common/header.gsp" afterPath="$PROJECT_DIR$/grails-app/views/common/header.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/menu/menu.zul" afterPath="$PROJECT_DIR$/web-app/zul/menu/menu.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soisbelle.iml" afterPath="$PROJECT_DIR$/soisbelle.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/images/dsn/Depilyatsiya.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/images/dsn/Dlyamuzhchin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/images/dsn/Dlyaruk.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/images/dsn/Dlyatela.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/images/dsn/Dlyavolos.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="soisbelle.iws" />
@@ -131,7 +120,7 @@
       <file leaf-file-name="BootStrap.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/conf/BootStrap.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="6" selection-start="1093" selection-end="1093" vertical-scroll-proportion="0.45293072" vertical-offset="187" max-vertical-offset="1411">
+            <state line="19" column="4" selection-start="513" selection-end="513" vertical-scroll-proportion="0.24156305" vertical-offset="187" max-vertical-offset="1411">
               <folding>
                 <element signature="e#0#65#0" expanded="true" />
               </folding>
@@ -815,7 +804,7 @@
       <workItem from="1393781232125" duration="7860000" />
       <workItem from="1393789623662" duration="76000" />
       <workItem from="1393874577184" duration="2992000" />
-      <workItem from="1394208977853" duration="8397000" />
+      <workItem from="1394208977853" duration="8486000" />
     </task>
     <task id="LOCAL-00001" summary="Новое меню&#10;">
       <created>1393788042855</created>
@@ -829,11 +818,15 @@
       <created>1393877574271</created>
       <updated>1393877574271</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="прикручивание дизайна&#10;">
+      <created>1394225677008</created>
+      <updated>1394225677008</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19677000" />
+    <option name="totallyTimeSpent" value="19766000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -863,6 +856,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4278438" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -870,7 +864,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -889,7 +882,8 @@
     <MESSAGE value="Новое меню&#10;" />
     <MESSAGE value="Прикрутил заголовок - дизайн&#10;" />
     <MESSAGE value="рефакторинг&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="рефакторинг&#10;" />
+    <MESSAGE value="прикручивание дизайна&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="прикручивание дизайна&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1229,7 +1223,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/BootStrap.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="6" selection-start="1093" selection-end="1093" vertical-scroll-proportion="0.45293072" vertical-offset="187" max-vertical-offset="1411">
+        <state line="19" column="4" selection-start="513" selection-end="513" vertical-scroll-proportion="0.24156305" vertical-offset="187" max-vertical-offset="1411">
           <folding>
             <element signature="e#0#65#0" expanded="true" />
           </folding>
