@@ -2,6 +2,7 @@ package ru.spb.soisbelle.common
 
 import ru.spb.soisbelle.CategoryEntity
 import ru.spb.soisbelle.ProductEntity
+import ru.spb.soisbelle.wrappers.CategoryWrapper
 
 class CategoryHandler {
 

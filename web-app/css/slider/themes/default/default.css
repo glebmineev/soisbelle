@@ -18,9 +18,9 @@ Supports Thumbs: true
 
 }
 .theme-default .nivoSlider img {
-  -moz-border-radius: 10px 10px 10px 10px;
+/*  -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;*/
 	position:absolute;
 	top:0px;
 	left:0px;

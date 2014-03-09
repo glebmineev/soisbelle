@@ -9,18 +9,18 @@
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.CarouselViewModel')" width="100%" align="center">
     <hbox align="center">
       <div width="20px">
-        <image src="/images/less.png" onClick="@command('back')" visible="@bind(vm.currentPos > 0)"/>
+        <image content="@bind(vm.backImage)" onClick="@command('back')" visible="@bind(vm.currentPos > 0)"/>
       </div>
 
       <hbox align="center" style="margin-top: 5px" height="90px" children="@bind(vm.manufacturers)">
         <template name="children">
           <vbox align="center">
-            <image content="${each.image}"/>
+            <image content="@load(each.image)"/>
           </vbox>
         </template>
       </hbox>
       <div width="20px">
-        <image src="/images/better.png" onClick="@command('next')" visible="@bind(not vm.endList)"/>
+        <image content="@bind(vm.nextImage)" onClick="@command('next')" visible="@bind(not vm.endList)"/>
       </div>
     </hbox>
   </div>

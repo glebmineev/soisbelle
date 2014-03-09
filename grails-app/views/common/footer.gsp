@@ -1,4 +1,27 @@
-<div class="info">
+<div style="margin-top: 10px">
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr align="left">
+    <td>
+      <g:img dir="images/dsn/footer" file="about_company.png"/>
+    </td>
+    <td>
+      <g:img dir="images/dsn/footer" file="about_shop.png"/>
+    </td>
+    <td>
+      <g:img dir="images/dsn/footer" file="contacts.png"/>
+    </td>
+    <td>
+      <g:img dir="images/dsn/footer" file="dostavka.png"/>
+    </td>
+    <td>
+      <g:img dir="images/dsn/footer" file="how_to_buy.png"/>
+    </td>
+    <td>
+      <g:img dir="images/dsn/footer" file="info.png"/>
+    </td>
+  </tr>
+</table>
+%{--<div class="info">
   <table width="100%">
     <tr>
       <td align="center" width="50%" valign="top">
@@ -43,7 +66,7 @@
       </td>
     </tr>
   </table>
-</div>
+</div> --}%
 <table width="100%">
   <tr>
     <td>
@@ -51,3 +74,4 @@
     </td>
   </tr>
 </table>
+</div>

@@ -13,9 +13,9 @@
 	width:100%;
 	height:auto;
 	overflow: hidden;
-  -moz-border-radius: 10px 10px 10px 10px;
+/*  -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;*/
 }
 .nivoSlider img {
 	position:absolute;

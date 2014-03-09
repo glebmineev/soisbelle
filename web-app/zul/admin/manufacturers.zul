@@ -25,8 +25,8 @@
       <template name="noneditable">
         <listitem>
           <listcell>
-            <image width="100px">
-              <zscript><![CDATA[
+            <image width="100px" content="@bind(each.image)">
+  <!--            <zscript><![CDATA[
 
                       import ru.spb.soisbelle.*
                       import org.zkoss.image.*
@@ -52,7 +52,7 @@
                         AImage img = imageService.getImageFile(path, std_name, std_size)
                         self.setContent(img)
 
-              ]]></zscript>
+              ]]></zscript>-->
             </image>
           </listcell>
           <listcell label="${each.name}"/>
@@ -67,8 +67,8 @@
         <listitem>
           <listcell>
             <vbox align="center">
-            <image id="${each.id}" width="100px">
-              <zscript><![CDATA[
+            <image id="${each.id}" width="100px" content="${each.image}">
+<!--              <zscript><![CDATA[
 
                       import ru.spb.soisbelle.*
                       import org.zkoss.image.*
@@ -94,7 +94,7 @@
                         AImage img = imageService.getImageFile(path, std_name, std_size)
                         self.setContent(img)
 
-              ]]></zscript>
+              ]]></zscript>-->
             </image>
               <button label="Сменить логотип" upload="true"
                       onUpload="@command('uploadImage', inputEvent=event)"/>

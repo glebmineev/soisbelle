@@ -1,21 +1,30 @@
 package ru.spb.soisbelle.zulModels.search
 
+import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.zkoss.bind.annotation.BindingParam
 import org.zkoss.bind.annotation.Command
 import org.zkoss.bind.annotation.Init
+import org.zkoss.image.AImage
 import org.zkoss.zk.ui.Executions
+import ru.spb.soisbelle.ServerFoldersService
+import ru.spb.soisbelle.common.PathBuilder
 
-/**
- * Created with IntelliJ IDEA.
- * User: gleb
- * Date: 4/28/13
- * Time: 12:36 AM
- * To change this template use File | Settings | File Templates.
- */
 class SearchViewModel {
 
+  ServerFoldersService serverFoldersService =
+      ApplicationHolder.getApplication().getMainContext().getBean("serverFoldersService") as ServerFoldersService
+
+  AImage searchButtonImage
+
   @Init
-  public void init(){}
+  public void init(){
+    searchButtonImage = new AImage(new PathBuilder()
+        .appendPath(serverFoldersService.images)
+        .appendPath("dsn")
+        .appendPath("header")
+        .appendString("search_button.png")
+        .build())
+  }
 
   @Command
   public void sendRequest(@BindingParam("request") String request){

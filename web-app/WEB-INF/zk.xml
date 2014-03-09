@@ -23,10 +23,10 @@
       org.springframework.web.context.request.RequestContextHolder=requestAttributesHolder,inheritableRequestAttributesHolder;
     </value>
   </preference>
-  <library-property>
+<!--  <library-property>
     <name>org.zkoss.zk.ui.metainfo.page.Loader.class</name>
     <value>org.zkoss.web.util.resource.CustomContentLoader</value>
-  </library-property>
+  </library-property>-->
 
 <!--  <language-config>
     <addon-uri>/WEB-INF/components/lang-addon.xml</addon-uri>

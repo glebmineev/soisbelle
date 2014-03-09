@@ -1,26 +1,35 @@
 body {
   /*background: url("../images/dsn/fon1.png") repeat;*/
-  /*background: #4EC3F3;*/
+  background: #ffffbe;
+  font-family: Century Gothic,serif;
  /* background: url("../images/blue_bg.jpg") repeat;*/
 }
 
-#header {
-/*  background: url("../images/dsn/header.png") no-repeat;
-  height: 200px;
-  width: 1200px;
+.sized_element {
+  width: 70%;
   text-align: center;
-  margin: 0 auto;*/
+  margin: 0 auto;
+}
+
+.wrapper {
+  background: url("../images/dsn/fon/fon.png") no-repeat;
+  width: 100%;
+}
+
+#menu {
+  height: 51px;
 }
 
 #content {
-  width: 900px;
+  width: 70%;
   height: 100%;
   margin: 0 auto;
-  font-family: Century Gothic
+  font-family: Century Gothic,serif;
 }
 
 #wrap_content {
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
 }
 
 #menu {
@@ -31,14 +40,10 @@ body {
   width: 100%;
   margin-bottom: 10px;
   background: #FFFFFF;
-  -webkit-border-radius: 10px 10px 10px 10px;
+/*  -webkit-border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px; */
   border: 1px solid #346F97;
-}
-
-#footer {
-  width: 100%;
 }
 
 .info {
@@ -161,6 +166,7 @@ body {
   text-align: center;
   margin: 0 auto;
   border-bottom: 1px solid #8A98A9;
+  background-color: #F8BD9F;
 }
 
 .error {

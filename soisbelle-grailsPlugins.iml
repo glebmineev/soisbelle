@@ -4,19 +4,16 @@
     <facet type="web" name="GrailsWeb">
       <configuration>
         <webroots>
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/zk-2.1.0/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-ui-1.8.15/web-app" relative="/" />
           <root url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-1.7.1/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-ui-1.8.15/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/zk-2.1.0/web-app" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
     </facet>
     <facet type="hibernate" name="Hibernate">
       <configuration>
-        <datasource-map>
-          <unit-entry name="Gorm" />
-          <unit-entry name="sessionFactory" />
-        </datasource-map>
+        <datasource-map />
         <naming-strategy-map />
       </configuration>
     </facet>

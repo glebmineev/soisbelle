@@ -6,7 +6,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
   <div width="100%" apply="ru.spb.soisbelle.BindComposer"
-       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.menu.MenuModel')">
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.menu.MenuViewModel')">
     <div sclass="zMenu">
 
     <style src="/css/ZK.css"/>
@@ -14,8 +14,8 @@
     <h:ul children="@bind(vm.menuItems)">
       <template name="children">
         <h:li>
-          <div>
-            <a href="/shop/catalog/?category=${each.id}" image="/images/dsn/${each.translitName}.png"/>
+          <div if="${each.menuImage != null}">
+            <a href="/shop/catalog/?category=${each.id}" imageContent="${each.menuImage}"/>
           </div>
         </h:li>
       </template>

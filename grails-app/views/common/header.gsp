@@ -1,27 +1,27 @@
-<%@ page import="ru.spb.soisbelle.importer.ConvertUtils" %>
+%{--<%@ page import="ru.spb.soisbelle.importer.ConvertUtils" %>
 <%
   def loginService = grailsApplication.mainContext.getBean("loginService");
   def cartService = grailsApplication.mainContext.getBean("cartService");
-%>
-<div style="width: 900px; text-align: center; margin: 0 auto;">
+%>--}%
+<div class="sized_element">
   <table width="100%" cellpadding="0" cellspacing="5">
     <tr align="left">
-      <td width="300px">
+      <td width="50%">
         <tpl:zkBody zul="/zul/search/search.zul"/>
       </td>
-      <td width="150px">
+      <td width="25%">
         <g:link controller="shop" action="register">
-          <g:img dir="images/dsn" file="reg.png"/>
+          <g:img dir="images/dsn/header" file="reg.png"/>
         </g:link>
       </td>
-      <td width="86px">
+      <td width="20%">
         <g:link controller="auth" action="login">
-          <g:img dir="images/dsn" file="enter.png"/>
+          <g:img dir="images/dsn/header" file="enter.png"/>
         </g:link>
       </td>
-      <td>
+      <td width="5%">
         <g:link controller="shop" action="cart">
-          <g:img dir="images/dsn" file="cart.png"/>
+          <g:img dir="images/dsn/header" file="cart.png"/>
         </g:link>
       </td>
     </tr>

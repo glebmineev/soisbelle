@@ -37,7 +37,7 @@ class PathUtils {
    */
   public static String fileExt(String source) {
     int lastPoint = source.lastIndexOf(".")
-    return source.substring(lastPoint)
+    return source.substring(lastPoint + 1, source.length())
   }
 
   /**
@@ -46,15 +46,16 @@ class PathUtils {
    * @return - расширение.
    */
   public static String getImageExtension(String dir, String std_name) {
-    String ext = ".jpg"
+    String ext = "jpg"
     File imageDir = new File(dir)
-    if (imageDir.exists())
+    if (imageDir.exists()) {
       imageDir.eachFile { it ->
 
-        String[] arr = it.name.split("${fileSeparator}.")
+        String[] arr = it.name.split("\\.")
         if (std_name.equals(arr[0]))
           ext = "${arr[1]}"
       }
+    }
     return ext
   }
 

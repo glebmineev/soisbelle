@@ -8,15 +8,22 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-  <window apply="ru.spb.soisbelle.BindComposer"
+  <div apply="ru.spb.soisbelle.BindComposer"
           viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.search.SearchViewModel')"
           onOK="@command('sendRequest', request=requestText.value)"
-          width="100%">
+          width="100%" sclass="search">
 
-    <hbox width="100%">
-      <textbox id="requestText"/>
-      <button label="Найти" onClick="@command('sendRequest', request=requestText.value)"/>
-    </hbox>
-  </window>
+    <h:table width="100%" cellpadding="0" cellspacing="0">
+      <h:tr align="left">
+        <h:td valign="top" width="65%">
+          <textbox id="requestText" height="43px" width="100%"/>
+        </h:td>
+        <h:td valign="top" width="35%">
+          <image content="@bind(vm.searchButtonImage)" onClick="@command('sendRequest', request=requestText.value)"/>
+        </h:td>
+      </h:tr>
+    </h:table>
+
+  </div>
 
 </zk>

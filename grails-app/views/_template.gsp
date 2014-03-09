@@ -62,15 +62,19 @@
 
 <body>
 
-<div id="header">
-  ${header}
-</div>
+<div class="wrapper">
 
-<div id="content">
+  <div id="header">
+    ${header}
+  </div>
 
   <div id="menu">
     ${menu}
   </div>
+
+</div>
+
+
 
   <!-- вертикальный скроллинг -->
   <div class="scrollUp" onclick="window.scrollTo(0, 0); " align="center">
@@ -88,10 +92,12 @@
     ${wrap_content}
   </div>
 
-  <div id="footer">
+
+
+<div class="wrapper">
+  <div id="footer" class="sized_element">
     ${footer}
   </div>
-
 </div>
 
 </body>

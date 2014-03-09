@@ -18,8 +18,10 @@
   </g:each>
 </ul>--}%
 
-<div class="green">
+%{--<div class="green">--}%
+<div class="sized_element">
   <tpl:zkBody zul="/zul/menu/menu.zul"/>
+</div>
 %{--  <ul id="mega-menu" class="mega-menu">
 
     <g:set var="count" value="${0}"/>
@@ -49,6 +51,7 @@
       </g:else>
     </g:each>--}%
 
-</div>
+%{--</div>--}%
 
-<div class="clear"></div>
+%{--
+<div class="clear"></div>--}%

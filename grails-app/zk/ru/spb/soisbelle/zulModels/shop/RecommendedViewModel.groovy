@@ -5,9 +5,12 @@ import org.zkoss.bind.BindUtils
 import org.zkoss.bind.annotation.BindingParam
 import org.zkoss.bind.annotation.Command
 import org.zkoss.bind.annotation.Init
+import org.zkoss.image.AImage
 import org.zkoss.zk.ui.Executions
 import org.zkoss.zul.ListModelList
 import ru.spb.soisbelle.*
+import ru.spb.soisbelle.common.PathBuilder
+import ru.spb.soisbelle.common.STD_IMAGE_SIZES
 import ru.spb.soisbelle.wrappers.ProductWrapper
 
 /**
@@ -23,9 +26,19 @@ class RecommendedViewModel {
 
   InitService initService = ApplicationHolder.getApplication().getMainContext().getBean("initService") as InitService
   CartService cartService = ApplicationHolder.getApplication().getMainContext().getBean("cartService") as CartService
+  ServerFoldersService serverFoldersService =
+      ApplicationHolder.getApplication().getMainContext().getBean("serverFoldersService") as ServerFoldersService
+
+  AImage cartImage
 
   @Init
   public void init(){
+    cartImage = new AImage(new PathBuilder()
+        .appendPath(serverFoldersService.images)
+        .appendPath("dsn")
+        .appendPath("recommended")
+        .appendString("toCart.png")
+        .build())
     products = new ListModelList<ProductWrapper>()
     initService.recommended.each {it ->
       ProductWrapper model = new ProductWrapper(it)

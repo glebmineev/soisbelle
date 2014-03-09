@@ -74,6 +74,33 @@ class ProductWrapper extends IdentWrapper implements Wrapper {
 
   }
 
+  public ProductWrapper(ProductEntity productEntity, int imageSize) {
+
+    this.id = productEntity.id
+    this.name = productEntity.name
+    this.article = productEntity.article
+    this.price = productEntity.price
+    this.volume = productEntity.volume
+    this.usage = productEntity.usage
+    this.description = productEntity.description
+    this.countToStock = productEntity.countToStock
+    this.manufacturer = productEntity.manufacturer
+    this.filter = productEntity.filter
+
+    String path = new PathBuilder()
+        .appendPath(serverFoldersService.productImages)
+        .appendString(productEntity.engImagePath)
+        .build()
+
+    String std_name = STD_FILE_NAMES.PRODUCT_NAME.getName()
+
+    this.image = imageService.getImageFile(path, std_name, imageSize)
+
+    manufacturers = new ListModelList<ManufacturerEntity>(ManufacturerEntity.list(sort: "name"))
+    manufacturers.addToSelection(manufacturer)
+
+  }
+
   public void restore(){
     this.id = memento.id
     this.name = memento.name

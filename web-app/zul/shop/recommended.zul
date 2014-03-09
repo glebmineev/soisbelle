@@ -8,53 +8,17 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-  <!--    <style src="/css/ZK.css"/>
-
-      <style>
-        .header {
-        -webkit-border-radius: 10px 10px 0px 0px;
-        -moz-border-radius: 10px 10px 0px 0px;
-        border-radius: 10px 10px 0px 0px;
-        background: #f6f6f6;border-bottom: 1px solid #346F97;
-        }
-      </style>-->
   <div apply="ru.spb.soisbelle.BindComposer"
     viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.RecommendedViewModel')" width="100%">
   <vlayout>
     <div sclass="recommended-header" width="100%">
-      <label style="font-size: 20px;" value="Популярные"/>
+      <label style="font-size: 30px; background: #F8BD9F;" value="Популярные"/>
     </div>
     <hbox width="100%" children="@bind(vm.products)">
       <template name="children">
         <vbox>
           <div align="center" sclass="productImageCatalog">
-            <image sclass="productImage" onClick="@command('redirectToProductItem', productModel=each)">
-              <zscript><![CDATA[
-
-                 import ru.spb.soisbelle.*
-                 import org.zkoss.image.*
-                 import org.codehaus.groovy.grails.commons.*
-                 import ru.spb.soisbelle.common.*
-
-                 ImageService imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService");
-
-                 ServerFoldersService serverFoldersService = ApplicationHolder.getApplication().getMainContext().
-                                    getBean("serverFoldersService") as ServerFoldersService
-
-                 ProductEntity product = ProductEntity.get(each.id)
-
-                 String path = new PathBuilder()
-                            .appendPath(serverFoldersService.productImages)
-                            .appendString(product.engImagePath)
-                            .build()
-                 String std_name = STD_FILE_NAMES.PRODUCT_NAME.getName()
-                 int std_size = STD_IMAGE_SIZES.SMALL.getSize()
-
-                 AImage img = imageService.getImageFile(path, std_name, std_size)
-                 self.setContent(img)
-
-                ]]></zscript>
-            </image>
+            <image sclass="productImage" content="@load(each.image)" onClick="@command('redirectToProductItem', productModel=each)"/>
           </div>
           <vbox width="220px" align="center">
             <label height="20px" value="@load(each.manufacturer.name)"/>
@@ -65,9 +29,8 @@
               <label value="@load(each.price)"/>
               руб.
             </div>
-            <button visible="@bind(not each.inCart)"
+            <image content="@bind(vm.cartImage)" visible="@bind(not each.inCart)"
                 style="margin: 5px;"
-                label="В корзину"
                 onClick="@command('addToCart', productModel=each)"/>
             <label visible="@bind(each.inCart)" value="Уже в корзине"/>
           </vbox>

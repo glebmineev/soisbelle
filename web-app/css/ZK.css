@@ -203,14 +203,17 @@ div.zMenu > ul {
 }
 
 div.zMenu > ul > li > div {
-  width: 100px;
-  height: 20px;
-  margin: 0px 15px 15px 0px;
+  width: 136px;
+  height: 51px;
+  margin: 0 15px 0 0;
   text-align: center;
-  background: #ffffff;
-/*  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;*/
+  /*background: #F8BD9F;*/
+  /*border: 1px solid #346F97;*/
+}
+
+div.zMenu > ul > li > div > a {
+  text-decoration: none;
+  color: #000000;
 }
 
 div.zMenu > ul > li {
@@ -220,5 +223,8 @@ div.zMenu > ul > li {
 }
 
 .search {
-  background: url("../images/dsn/search_.png") no-repeat;
+  /*background: url("../images/dsn/header/search_.png") no-repeat;*/
+  height: 50px;
+  /*width: 399px;*/
 }
+
