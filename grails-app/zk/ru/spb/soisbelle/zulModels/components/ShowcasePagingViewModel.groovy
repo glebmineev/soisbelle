@@ -5,48 +5,40 @@ import com.google.common.collect.Collections2
 import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.zkoss.bind.annotation.BindingParam
-import org.zkoss.bind.annotation.Command
-import org.zkoss.bind.annotation.ContextParam
-import org.zkoss.bind.annotation.ContextType
-import org.zkoss.bind.annotation.ExecutionArgParam
-import org.zkoss.bind.annotation.GlobalCommand
-import org.zkoss.bind.annotation.Init
-import org.zkoss.bind.annotation.NotifyChange
-import org.zkoss.zhtml.Li
-import org.zkoss.zhtml.Ul
+import org.zkoss.bind.annotation.*
 import org.zkoss.zk.ui.event.Event
 import org.zkoss.zul.Div
 import org.zkoss.zul.Include
-import org.zkoss.zul.ListModelList
-import ru.spb.soisbelle.CartService
-import ru.spb.soisbelle.FilterEntity
-import ru.spb.soisbelle.ImageService
-import ru.spb.soisbelle.InitService
-import ru.spb.soisbelle.ManufacturerEntity
-import ru.spb.soisbelle.ProductEntity
-import ru.spb.soisbelle.ServerFoldersService
-import ru.spb.soisbelle.wrappers.CategoryWrapper
-import ru.spb.soisbelle.wrappers.HrefWrapper
+import ru.spb.soisbelle.*
 import ru.spb.soisbelle.wrappers.ProductWrapper
 
 /**
  * Модель компонента витрины.
  */
-class ShowcaseViewModel {
+class ShowcasePagingViewModel {
 
-  static Logger log = LoggerFactory.getLogger(ShowcaseViewModel.class)
-
+  static Logger log = LoggerFactory.getLogger(ShowcasePagingViewModel.class)
   //Все товары
   List<ProductEntity> allProducts = new ArrayList<ProductEntity>()
   //Показываемые пользователю товары
   List<ProductWrapper> products = new ArrayList<ProductWrapper>()
 
-  long showToPage = 9
+  /**
+   * Сколько отображать на странице
+   */
+  int showToPage
+
+  /**
+   * Шаг
+   */
+  int step
 
   //Индекс в списке всех товаров(allProducts)
-  int currentIndex
+  int currentPos
 
+  /**
+   * Показывать ли окно загрузки.
+   */
   boolean isBusy
 
   /**
@@ -67,19 +59,20 @@ class ShowcaseViewModel {
   //Показывать или нет панель изменения вида отображения витрины.
   boolean isChangeShow = false
   //Показать или нет кнопку добавить.
-  boolean showAppendBtn = false
+  boolean endList = false
   //Уникальный идентифткатор вложения.
   String uuidInclude
 
   @Init
   public void init(@ExecutionArgParam("allProducts") List<ProductEntity> data,
                    @ExecutionArgParam("isChangeShow") String isChangeShow,
-                   @ExecutionArgParam("showAppendBtn") String showAppendBtn) {
+                   @ExecutionArgParam("countPageItems") Long countPageItems) {
     uuidInclude = UUID.randomUUID()
+    this.showToPage = countPageItems
+    this.step = countPageItems
     this.isChangeShow = Boolean.parseBoolean(isChangeShow)
-    this.showAppendBtn = Boolean.parseBoolean(showAppendBtn)
     isBusy = true
-    currentIndex = 0;
+    currentPos = 0;
     products.clear()
     allProducts.clear()
     allProducts.addAll(data)
@@ -90,14 +83,14 @@ class ShowcaseViewModel {
    * @param data
    */
   @GlobalCommand
-  @NotifyChange(["products", "isBusy", "showAppendBtn"])
+  @NotifyChange(["products", "isBusy", "currentPos"])
   public void refreshShowcase(@BindingParam("data") List<ProductWrapper> data){
-    currentIndex = 0;
+    this.currentPos = 0;
     products.clear()
     int dateSize = data.size()
     if (dateSize > 0) {
-      currentIndex += dateSize > showToPage - 1 ? showToPage : dateSize
-      products.addAll(data.subList(0, currentIndex))
+      currentPos += dateSize > showToPage - 1 ? showToPage : dateSize
+      products.addAll(data.subList(0, currentPos))
     }
     this.isBusy = false
   }
@@ -127,46 +120,35 @@ class ShowcaseViewModel {
     productsDiv.setSclass("products-cell-template")
   }
 
-  /**
-   * Добавление
-   * @param event
-   */
   @Command
-  @NotifyChange(["showAppendBtn"])
-  public void appendElse(@ContextParam(ContextType.TRIGGER_EVENT) Event event) {
-    Include showcaseDiv = event.getTarget().getSpaceOwner() as Include
-    Ul root = showcaseDiv.getFellow("products") as Ul
-    addRows(root)
+  @NotifyChange(["products", "currentPos", "endList"])
+  public void next(){
+    int oldPos = currentPos
+    currentPos = currentPos + step
+    int diff = allProducts.size() - oldPos
+    if (diff <= step) {
+      endList = false
+      moveCarousel(oldPos, oldPos + diff)
+    }
+    else
+    {
+      moveCarousel(oldPos, currentPos)
+    }
   }
 
-  public void addRows(Ul parent) {
-    int nextIndex = currentIndex + showToPage
-    int allProductsSize = allProducts.size()
-    List<ProductWrapper> subList = new ArrayList<ProductWrapper>()
-    if (nextIndex < allProductsSize) {
-      subList = transform(allProducts.subList(currentIndex, nextIndex))
-      currentIndex = currentIndex + showToPage
-    } else if (nextIndex > allProductsSize) {
-      subList = transform(allProducts.subList(currentIndex, allProductsSize))
-      currentIndex = allProductsSize
-      showAppendBtn = false
-    }
-
-    subList.each { it ->
-      Li li = new Li()
-      Map<Object, Object> params = new HashMap<Object, Object>()
-      params.put("productWrapper", it)
-      Include productCell = new Include()
-      productCell.setWidth("200px")
-      productCell.setHeight("350px")
-      productCell.setSrc("/zul/components/showcaseItem.zul")
-      productCell.setDynamicProperty("productWrapper", it)
-      li.appendChild(productCell)
-      parent.appendChild(li)
-    }
-
+  @Command
+  @NotifyChange(["products", "endList", "currentPos"])
+  public void back(){
+    currentPos = currentPos - step
+    endList = false
+    moveCarousel(currentPos - 8, currentPos)
   }
 
-
+  void moveCarousel(int start, int end){
+    products.clear()
+    allProducts.subList(start, end).each {it ->
+      products.add(new ProductWrapper(it))
+    }
+  }
 
 }

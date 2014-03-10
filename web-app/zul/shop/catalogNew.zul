@@ -100,7 +100,7 @@
         </div>
 
         <!-- список товаров в текущей категории, отображаеться если не корневая -->
-        <include id="showcase" if="${vm.showCatalog}"
+        <include id="showcase" width="680px" if="${vm.showCatalog}"
                  src="/zul/components/showcase.zul" allProducts="${vm.allProducts}" isChangeShow="true" showAppendBtn="true"/>
 
       </hbox>

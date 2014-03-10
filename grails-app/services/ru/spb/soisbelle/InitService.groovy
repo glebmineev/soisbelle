@@ -20,6 +20,7 @@ class InitService implements InitializingBean {
   Map<String, List<ProductEntity>> hits = new HashMap<String, List<ProductEntity>>()
 
   void afterPropertiesSet() {
+    categoriesThru.clear()
     categoriesThru.addAll(CategoryEntity.findAllWhere(parentCategory: null))
     categoriesThru.each {it ->
       CategoryWrapper wrapper = new CategoryWrapper(it)

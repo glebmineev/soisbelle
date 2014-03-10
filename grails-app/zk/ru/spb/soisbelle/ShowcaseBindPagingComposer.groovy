@@ -10,15 +10,15 @@ import org.zkoss.zk.ui.Desktop
 import org.zkoss.zk.ui.Executions
 import org.zkoss.zk.ui.event.EventQueues
 import ru.spb.soisbelle.wrappers.ProductWrapper
-import ru.spb.soisbelle.zulModels.components.ShowcaseViewModel
+import ru.spb.soisbelle.zulModels.components.ShowcasePagingViewModel
 
-class ShowcaseBindComposer extends GrailsBindComposer implements IShowcaseComposer {
+class ShowcaseBindPagingComposer extends GrailsBindComposer implements IShowcaseComposer {
 
   ShowcaseService showcaseService = ApplicationHolder.getApplication().getMainContext().getBean("showcaseService") as ShowcaseService
 
-  ShowcaseBindComposer() {
+  ShowcaseBindPagingComposer() {
     //динамически добавляем метод runAsync при конструировании класса компоузера.
-    ShowcaseBindComposer.class.metaClass.runAsync = { Runnable runme ->
+    ShowcaseBindPagingComposer.class.metaClass.runAsync = { Runnable runme ->
       ApplicationHolder.getApplication().getMainContext().executorService.withPersistence(runme)
     }
   }
@@ -28,7 +28,7 @@ class ShowcaseBindComposer extends GrailsBindComposer implements IShowcaseCompos
     if (Strings.isNullOrEmpty(component.getId()) && !"catalog".equals(component.getId())) {
     Desktop desktop = Executions.getCurrent().getDesktop()
     desktop.enableServerPush(true)
-    ShowcaseViewModel showcaseViewModel = getViewModel() as ShowcaseViewModel
+    ShowcasePagingViewModel showcaseViewModel = getViewModel() as ShowcasePagingViewModel
     runAsync {
       showcaseService.setComposer(this)
       showcaseService.setDesktop(desktop)
@@ -41,6 +41,6 @@ class ShowcaseBindComposer extends GrailsBindComposer implements IShowcaseCompos
   void complete(List<ProductWrapper> data) {
     Map<String, Object> args = new HashMap<String, Object>()
     args.put("data", data)
-    BindUtils.postGlobalCommand("showcasequeue", EventQueues.DESKTOP, "refreshShowcase", args);
+    BindUtils.postGlobalCommand("showcasepagingqueue", EventQueues.DESKTOP, "refreshShowcase", args);
   }
 }
