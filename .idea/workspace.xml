@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddaf4c20-561e-454b-b01c-09a6929cfd8f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/ShowcaseBindPagingComposer.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcasePagingViewModel.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/zul/components/showcasePaging.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/InitService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/InitService.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/ShowcaseBindComposer.groovy" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/ShowcaseBindComposer.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcaseViewModel.groovy" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcaseViewModel.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/shop/catalogNew.zul" afterPath="$PROJECT_DIR$/web-app/zul/shop/catalogNew.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/search/results.zul" afterPath="$PROJECT_DIR$/web-app/zul/search/results.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soisbelle-grailsPlugins.iml" afterPath="$PROJECT_DIR$/soisbelle-grailsPlugins.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/stacktrace.log" afterPath="$PROJECT_DIR$/target/stacktrace.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcasePagingViewModel.groovy" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcasePagingViewModel.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="soisbelle.iws" />
@@ -80,7 +71,7 @@
       <file leaf-file-name="ShowcasePagingViewModel.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcasePagingViewModel.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="143" column="31" selection-start="4391" selection-end="4391" vertical-scroll-proportion="0.8490231" vertical-offset="1783" max-vertical-offset="2550">
+            <state line="143" column="34" selection-start="4394" selection-end="4394" vertical-scroll-proportion="0.4866785" vertical-offset="1987" max-vertical-offset="2550">
               <folding />
             </state>
           </provider>
@@ -727,7 +718,7 @@
       <workItem from="1394303946128" duration="3311000" />
       <workItem from="1394384446550" duration="11497000" />
       <workItem from="1394398155462" duration="899000" />
-      <workItem from="1394438713379" duration="14300000" />
+      <workItem from="1394438713379" duration="14385000" />
     </task>
     <task id="LOCAL-00001" summary="Новое меню&#10;">
       <created>1393788042855</created>
@@ -753,15 +744,19 @@
       <created>1394398967619</created>
       <updated>1394398967619</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="кастомный пейджинг&#10;">
+      <created>1394472684026</created>
+      <updated>1394472684026</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70070000" />
+    <option name="totallyTimeSpent" value="70155000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -777,7 +772,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18126889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18126889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6243655" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -786,6 +781,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5178268" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -794,7 +790,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -850,7 +845,8 @@
     <MESSAGE value="рефакторинг&#10;" />
     <MESSAGE value="прикручивание дизайна&#10;" />
     <MESSAGE value="стабильная подгрузка картинок &#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="стабильная подгрузка картинок &#10;" />
+    <MESSAGE value="кастомный пейджинг&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="кастомный пейджинг&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -883,7 +879,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/common/footer.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="34" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1394" />
+        <state line="1" column="34" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1394">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/admin/common/DownloadImageViewModel.groovy">
@@ -1190,7 +1188,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcasePagingViewModel.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="31" selection-start="4391" selection-end="4391" vertical-scroll-proportion="0.8490231" vertical-offset="1783" max-vertical-offset="2550">
+        <state line="143" column="34" selection-start="4394" selection-end="4394" vertical-scroll-proportion="0.4866785" vertical-offset="1987" max-vertical-offset="2550">
           <folding />
         </state>
       </provider>

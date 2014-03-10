@@ -141,7 +141,7 @@ class ShowcasePagingViewModel {
   public void back(){
     currentPos = currentPos - step
     endList = false
-    moveCarousel(currentPos - 8, currentPos)
+    moveCarousel(currentPos - step, currentPos)
   }
 
   void moveCarousel(int start, int end){
