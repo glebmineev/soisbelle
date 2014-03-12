@@ -4,9 +4,9 @@
     <facet type="web" name="GrailsWeb">
       <configuration>
         <webroots>
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-1.7.1/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-ui-1.8.15/web-app" relative="/" />
           <root url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/zk-2.1.0/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-ui-1.8.15/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-1.7.1/web-app" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>

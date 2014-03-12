@@ -8,9 +8,9 @@
 
   <div apply="ru.spb.soisbelle.BindComposer, ru.spb.soisbelle.ShowcaseBindPagingComposer"
        binder="@init(queueName='showcasepagingqueue')"
-       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.components.ShowcasePagingViewModel')">
-    <vbox>
-      <div sclass="products-cell-template">
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.components.ShowcasePagingViewModel')" width="100%">
+    <vbox width="100%">
+      <div sclass="products-cell-template" width="100%">
         <!-- панель изменения отображения витрины -->
         <div visible="@load(vm.isChangeShow)">
           <button image="/images/rows.png" onClick="@command('applyRowTemplate')"/>
@@ -30,10 +30,10 @@
           </vbox>
         </window>
       </div>
-      <hbox>
-        <button label="Сюда" onClick="@command('back')" autodisable="true" visible="@bind(not vm.endList)"/>
-        <button label="Туда" onClick="@command('next')" autodisable="true"/>
-      </hbox>
+      <div align="center" width="100%">
+        <image content="@bind(vm.backImage)" onClick="@command('back')" visible="@bind(not vm.startList)"/>
+        <image content="@bind(vm.nextImage)" onClick="@command('next')" visible="@bind(not vm.endList)"/>
+      </div>
     </vbox>
   </div>
 </zk>

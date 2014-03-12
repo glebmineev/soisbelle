@@ -5,6 +5,7 @@ import org.zkoss.bind.annotation.Command
 import org.zkoss.bind.annotation.Init
 import org.zkoss.bind.annotation.NotifyChange
 import org.zkoss.image.AImage
+import ru.spb.soisbelle.ImageStorageService
 import ru.spb.soisbelle.ManufacturerEntity
 import ru.spb.soisbelle.ServerFoldersService
 import ru.spb.soisbelle.common.PathBuilder
@@ -12,8 +13,8 @@ import ru.spb.soisbelle.wrappers.ManufacturerWrapper
 
 class CarouselViewModel {
 
-  ServerFoldersService serverFoldersService =
-      ApplicationHolder.getApplication().getMainContext().getBean("serverFoldersService") as ServerFoldersService
+  ImageStorageService imageStorageService =
+      ApplicationHolder.getApplication().getMainContext().getBean("imageStorageService") as ImageStorageService
 
   AImage nextImage
   AImage backImage
@@ -27,15 +28,8 @@ class CarouselViewModel {
   @Init
   public void init(){
 
-    nextImage = new AImage(new PathBuilder()
-        .appendPath(serverFoldersService.images)
-        .appendString("better.png")
-        .build())
-
-    backImage = new AImage(new PathBuilder()
-        .appendPath(serverFoldersService.images)
-        .appendString("less.png")
-        .build())
+    nextImage = imageStorageService.getNextImage()
+    backImage = imageStorageService.getBackImage()
 
     entities = ManufacturerEntity.list(sort: "name")
     if (entities.size() <= visibleElements)

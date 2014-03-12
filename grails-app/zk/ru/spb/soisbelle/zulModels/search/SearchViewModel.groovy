@@ -6,6 +6,7 @@ import org.zkoss.bind.annotation.Command
 import org.zkoss.bind.annotation.Init
 import org.zkoss.image.AImage
 import org.zkoss.zk.ui.Executions
+import org.zkoss.zk.ui.Sessions
 import ru.spb.soisbelle.ServerFoldersService
 import ru.spb.soisbelle.common.PathBuilder
 
@@ -28,7 +29,8 @@ class SearchViewModel {
 
   @Command
   public void sendRequest(@BindingParam("request") String request){
-    Executions.sendRedirect("/search/index?keyword=${request}")
+    Sessions.getCurrent().setAttribute("keyword", request);
+    Executions.sendRedirect("/search/index")
   }
 
 }

@@ -6,6 +6,7 @@ import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.zkoss.bind.annotation.*
+import org.zkoss.image.AImage
 import org.zkoss.zk.ui.event.Event
 import org.zkoss.zul.Div
 import org.zkoss.zul.Include
@@ -22,24 +23,24 @@ class ShowcasePagingViewModel {
   List<ProductEntity> allProducts = new ArrayList<ProductEntity>()
   //Показываемые пользователю товары
   List<ProductWrapper> products = new ArrayList<ProductWrapper>()
-
-  /**
-   * Сколько отображать на странице
-   */
+   //Сколько отображать на странице
   int showToPage
-
-  /**
-   * Шаг
-   */
+  // Шаг
   int step
-
   //Индекс в списке всех товаров(allProducts)
   int currentPos
-
-  /**
-   * Показывать ли окно загрузки.
-   */
+  // Показывать ли окно загрузки.
   boolean isBusy
+  //Id выбранной пользователем категории.
+  Long categoryID
+  //Показывать или нет панель изменения вида отображения витрины.
+  boolean isChangeShow = false
+  //Показать или нет кнопку добавить.
+  boolean endList = false
+  //Показать или нет кнопку добавить.
+  boolean startList = false
+  //Уникальный идентифткатор вложения.
+  String uuidInclude
 
   /**
    * Необходимые сервисы.
@@ -47,35 +48,29 @@ class ShowcasePagingViewModel {
   ImageService imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService") as ImageService
   CartService cartService = ApplicationHolder.getApplication().getMainContext().getBean("cartService") as CartService
   InitService initService = ApplicationHolder.getApplication().getMainContext().getBean("initService") as InitService
-  ServerFoldersService serverFoldersService =
-    ApplicationHolder.getApplication().getMainContext().getBean("serverFoldersService") as ServerFoldersService
+  ImageStorageService imageStorageService =
+      ApplicationHolder.getApplication().getMainContext().getBean("imageStorageService") as ImageStorageService
 
-  //Id выбранной пользователем категории.
-  Long categoryID
-
-  /**
-   * Параметры для настройки вложения.
-   */
-  //Показывать или нет панель изменения вида отображения витрины.
-  boolean isChangeShow = false
-  //Показать или нет кнопку добавить.
-  boolean endList = false
-  //Уникальный идентифткатор вложения.
-  String uuidInclude
+  AImage nextImage
+  AImage backImage
 
   @Init
   public void init(@ExecutionArgParam("allProducts") List<ProductEntity> data,
                    @ExecutionArgParam("isChangeShow") String isChangeShow,
                    @ExecutionArgParam("countPageItems") Long countPageItems) {
-    uuidInclude = UUID.randomUUID()
+
+    this.nextImage = imageStorageService.getNextImage()
+    this.backImage = imageStorageService.getBackImage()
+
+    this.uuidInclude = UUID.randomUUID()
     this.showToPage = countPageItems
     this.step = countPageItems
     this.isChangeShow = Boolean.parseBoolean(isChangeShow)
-    isBusy = true
-    currentPos = 0;
-    products.clear()
-    allProducts.clear()
-    allProducts.addAll(data)
+    this.isBusy = true
+    this.currentPos = 0;
+    this.products.clear()
+    this.allProducts.clear()
+    this.allProducts.addAll(data)
   }
 
   /**
@@ -83,7 +78,7 @@ class ShowcasePagingViewModel {
    * @param data
    */
   @GlobalCommand
-  @NotifyChange(["products", "isBusy", "currentPos"])
+  @NotifyChange(["products", "isBusy", "currentPos", "startList", "endList"])
   public void refreshShowcase(@BindingParam("data") List<ProductWrapper> data){
     this.currentPos = 0;
     products.clear()
@@ -91,6 +86,10 @@ class ShowcasePagingViewModel {
     if (dateSize > 0) {
       currentPos += dateSize > showToPage - 1 ? showToPage : dateSize
       products.addAll(data.subList(0, currentPos))
+
+      if(dateSize > step)
+        this.startList = true
+
     }
     this.isBusy = false
   }
@@ -121,25 +120,30 @@ class ShowcasePagingViewModel {
   }
 
   @Command
-  @NotifyChange(["products", "currentPos", "endList"])
+  @NotifyChange(["products", "currentPos", "endList", "startList"])
   public void next(){
     int oldPos = currentPos
     currentPos = currentPos + step
     int diff = allProducts.size() - oldPos
     if (diff <= step) {
-      endList = false
+      endList = true
+      startList = false
       moveCarousel(oldPos, oldPos + diff)
     }
     else
     {
+      this.startList = false
       moveCarousel(oldPos, currentPos)
     }
   }
 
   @Command
-  @NotifyChange(["products", "endList", "currentPos"])
+  @NotifyChange(["products", "endList", "currentPos", "startList"])
   public void back(){
     currentPos = currentPos - step
+    if (currentPos == step) {
+      startList = true
+    }
     endList = false
     moveCarousel(currentPos - step, currentPos)
   }

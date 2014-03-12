@@ -7,6 +7,7 @@ import org.zkoss.bind.annotation.GlobalCommand
 import org.zkoss.bind.annotation.Init
 import org.zkoss.bind.annotation.NotifyChange
 import org.zkoss.zk.ui.Executions
+import org.zkoss.zk.ui.Sessions
 import org.zkoss.zul.ListModelList
 import ru.spb.soisbelle.ProductEntity
 import ru.spb.soisbelle.wrappers.ProductWrapper
@@ -26,31 +27,17 @@ class SearchResultViewModel {
 
   @Init
   public void init(){
-    String keyword = Executions.getCurrent().getParameter("keyword")
+    //String keyword = Executions.getCurrent().getParameter("keyword")
+    String keyword = (String) Sessions.getCurrent().getAttribute("keyword")
     if (Strings.isNullOrEmpty(keyword))
       return
     List<ProductEntity> list = ProductEntity.createCriteria().list {
       ilike("name", "%${keyword}%")
       ilike("description", "%${keyword}%")
-      //sqlRestriction("product_name like '%${keyword}%' or product_description like '%${keyword}%' or product_usage like '%${keyword}%'")
     }
     matchedProduct.addAll(list)
-/*    Collection<ProductWrapper> transformed = Collections2.transform(list, new Function<ProductEntity, ProductWrapper>() {
-      @Override
-      ProductWrapper apply(ProductEntity f) {
-        ProductWrapper wrapper = new ProductWrapper(f)
-        return wrapper;
-      }
-    }) as List<ProductWrapper>*/
-
     model = new ListModelList<ProductWrapper>();
-
-  }
-
-  @GlobalCommand
-  @NotifyChange(["products", "isBusy"])
-  public void refreshSearchResults(@BindingParam("data") List<ProductWrapper> data){
-
+    Sessions.getCurrent().removeAttribute("keyword")
   }
 
   @Command

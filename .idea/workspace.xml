@@ -2,7 +2,333 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddaf4c20-561e-454b-b01c-09a6929cfd8f" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/soisbelle-grailsPlugins.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\AdminController$_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\AdminController.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\AuthController.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\BindComposer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\CabinetController$_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\CabinetController.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\CartService$_getCartProducts_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\CartService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\CategoryEntity$__clinit__closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\CategoryEntity$__clinit__closure1_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\CategoryEntity$__clinit__closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\CategoryEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\EmailService$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\EmailService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\FilterEntity$__clinit__closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\FilterEntity$__clinit__closure1_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\FilterEntity$__clinit__closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\FilterEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\FilterGroupEntity$__clinit__closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\FilterGroupEntity$__clinit__closure1_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\FilterGroupEntity$__clinit__closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\FilterGroupEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\IImporterComposer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\IShowcaseComposer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImageService$_cleanStore_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImageService$_cleanStore_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImageService$_cleanStore_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImageService$_cleanStore_closure4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImageService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImportService$_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImportService$_doImport_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImportService$_doImport_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImportService$_doImport_closure4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImportService$_processCategories_closure5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImportService$_processCategories_closure5_closure8.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImportService$_processCategories_closure5_closure9.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImportService$_processFilters_closure6.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImportService$_processFilters_closure6_closure10.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImportService$_processProducts_closure7.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImportService$_processProducts_closure7_closure11.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImportService$_processProducts_closure7_closure11_closure12.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ImportService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\InfoEntity$__clinit__closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\InfoEntity$__clinit__closure1_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\InfoEntity$__clinit__closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\InfoEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\InitService$_updateHits_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\InitService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\LoginService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ManufacturerEntity$__clinit__closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ManufacturerEntity$__clinit__closure1_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ManufacturerEntity$__clinit__closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ManufacturerEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\MessageEntity$__clinit__closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\MessageEntity$__clinit__closure1_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\MessageEntity$__clinit__closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\MessageEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\OrderEntity$__clinit__closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\OrderEntity$__clinit__closure1_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\OrderEntity$__clinit__closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\OrderEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\OrderIdentEntity$__clinit__closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\OrderIdentEntity$__clinit__closure1_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\OrderIdentEntity$__clinit__closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\OrderIdentEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\OrderProductEntity$__clinit__closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\OrderProductEntity$__clinit__closure1_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\OrderProductEntity$__clinit__closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\OrderProductEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ProductEntity$__clinit__closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ProductEntity$__clinit__closure1_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ProductEntity$__clinit__closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ProductEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ProductPropertyEntity$__clinit__closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ProductPropertyEntity$__clinit__closure1_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ProductPropertyEntity$__clinit__closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ProductPropertyEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ReviewsEntity$__clinit__closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ReviewsEntity$__clinit__closure1_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ReviewsEntity$__clinit__closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ReviewsEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\RoleEntity$__clinit__closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\RoleEntity$__clinit__closure1_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\RoleEntity$__clinit__closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\RoleEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\SearchController.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ServerFoldersService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ShopController.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ShowcaseBindComposer$_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ShowcaseBindComposer$_doAfterCompose_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ShowcaseBindComposer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ShowcaseService$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ShowcaseService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\TestsComposer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\UserEntity$__clinit__closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\UserEntity$__clinit__closure1_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\UserEntity$__clinit__closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\UserEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ZulService$_showErrors_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\ZulService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\annotation\FieldInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\captcha\RandomStringGenerator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\common\CategoryHandler$_collectAllProducts_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\common\CategoryHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\common\CategoryPathHandler$_generatePathAsString_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\common\CategoryPathHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\common\OrderStatuses.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\common\PasswordGenerator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\common\PathBuilder.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\common\PathUtils$_buildPath_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\common\PathUtils$_getImageExtension_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\common\PathUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\common\STD_FILE_NAMES.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\common\STD_IMAGE_SIZES.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\domain\DomainUtils$_fieldInfo_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\domain\DomainUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\excel\CellHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\excel\ExcelObject$_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\excel\ExcelObject.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\excel\ImportException.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\excel\InvalidRowException.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\excel\UploadExcelHandler$_fillExcel_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\excel\UploadExcelHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\image\ImageUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\importer\ConvertUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\importer\ConverterRU_EN.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\importer\IImporterService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\importer\SaveUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\login\LoginUtils$_authenticate_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\login\LoginUtils$_authenticate_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\login\LoginUtils$_getUser_closure4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\login\LoginUtils$_userGroups_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\login\LoginUtils$_userGroups_closure3_closure5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\login\LoginUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\login\URLUtils$_buildURL_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\login\URLUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\money\CURRENCY.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\money\Money.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\money\Roubles.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\validators\ChangePassValidator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\validators\CheckoutValidator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\validators\ProfileValidator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\validators\RegisterValidator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\validators\ReviewValidator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\validators\StdWndValidator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\validators\UserValidator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\window\ProjectVariableResolver.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\windows\ErrorWindow$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\windows\ErrorWindow.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\windows\ImageWindow$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\windows\ImageWindow.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\wrappers\CategoryTreeNode.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\wrappers\CategoryWrapper.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\wrappers\FilterWrapper.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\wrappers\HrefWrapper.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\wrappers\IdentWrapper.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\wrappers\ImagesWrapper.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\wrappers\ManufacturerWrapper.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\wrappers\ProductWrapper.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\wrappers\RoleWrapper.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\wrappers\UserWrapper$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\wrappers\UserWrapper$_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\wrappers\UserWrapper$_closure1_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\wrappers\UserWrapper.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\wrappers\Wrapper.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zip\ZipUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\CategoriesViewModel$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\CategoriesViewModel$_1_onEvent_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\CategoriesViewModel$_createTreeModel_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\CategoriesViewModel$_save_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\CategoriesViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\EditorViewModel$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\EditorViewModel$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\EditorViewModel$_2_onEvent_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\EditorViewModel$_collectAllProducts_closure5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\EditorViewModel$_createTreeModel_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\EditorViewModel$_deleteProduct_closure7.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\EditorViewModel$_saveCategory_closure6.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\EditorViewModel$_search_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\EditorViewModel$_search_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\EditorViewModel$_search_closure4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\EditorViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\FiltersViewModel$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\FiltersViewModel$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\FiltersViewModel$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\FiltersViewModel$_collectAllFilters_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\FiltersViewModel$_createTreeModel_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\FiltersViewModel$_deleteFilter_closure4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\FiltersViewModel$_updateFilter_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\FiltersViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\InfoViewModel$_saveAbout_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\InfoViewModel$_saveContacts_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\InfoViewModel$_saveDelivery_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\InfoViewModel$_saveDetails_closure4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\InfoViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\ManufacturersViewModel$_deleteManufacturer_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\ManufacturersViewModel$_deleteManufacturer_closure4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\ManufacturersViewModel$_initialize_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\ManufacturersViewModel$_updateManufacturer_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\ManufacturersViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\OrderItemViewModel$_cancelOrder_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\OrderItemViewModel$_completeOrder_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\OrderItemViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\OrdersViewModel$_unloadInExcel_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\OrdersViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\ProductsViewModel$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\ProductsViewModel$_deleteProduct_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\ProductsViewModel$_fillWrappers_closure4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\ProductsViewModel$_getModelByFilters_closure5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\ProductsViewModel$_getModelByFilters_closure5_closure6.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\ProductsViewModel$_init_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\ProductsViewModel$_saveProduct_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\ProductsViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\UsersViewModel$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\UsersViewModel$_deleteUser_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\UsersViewModel$_deleteUser_closure3_closure7.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\UsersViewModel$_deleteUser_closure4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\UsersViewModel$_initialize_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\UsersViewModel$_updateUser_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\UsersViewModel$_updateUser_closure2_closure5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\UsersViewModel$_updateUser_closure2_closure6.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\UsersViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\common\DownloadImageViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\filters\IFilterCallback.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\filters\components\ComboBoxFilter$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\filters\components\ComboBoxFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\filters\components\MeasureFilter$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\filters\components\MeasureFilter$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\filters\components\MeasureFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\filters\components\NumberBoxFilter$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\filters\components\NumberBoxFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\filters\components\TextBoxFilter$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\filters\components\TextBoxFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\filters\data\FilterBean.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\filters\data\FilterTypes.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\filters\data\ObjectFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\models\AdvancedTreeModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\windows\CategoryWndViewModel$_addCategory_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\windows\CategoryWndViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\windows\EditCallback.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\windows\FilterWndViewModel$_saveFilter_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\windows\FilterWndViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\windows\IncrementProductsWnd$_increment_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\windows\IncrementProductsWnd.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\windows\ManufacturerWndViewModel$_saveManufacturer_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\windows\ManufacturerWndViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\windows\NewUserWndViewModel$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\windows\NewUserWndViewModel$_saveUser_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\windows\NewUserWndViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\windows\ProductItemWndViewModel$_collectAllFilters_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\windows\ProductItemWndViewModel$_saveProduct_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\windows\ProductItemWndViewModel$_updateProduct_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\admin\windows\ProductItemWndViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\auth\DropPassViewModel$_dropPass_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\auth\DropPassViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\auth\LoginViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\cabinet\CabinetViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\cabinet\ChangePassViewModel$_changePass_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\cabinet\ChangePassViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\cabinet\OrderItemViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\cabinet\OrdersViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\cabinet\ProfileViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\components\ShowcaseItemModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\components\ShowcaseViewModel$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\components\ShowcaseViewModel$_addRows_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\components\ShowcaseViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\importer\ImportComposer$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\importer\ImportComposer$_addRow_closure4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\importer\ImportComposer$_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\importer\ImportComposer$_closure1_closure5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\importer\ImportComposer$_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\importer\ImportComposer$_onClick_startButton_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\importer\ImportComposer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\importer\ImportEvent$STATES.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\importer\ImportEvent.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\importer\ImportResultRenderer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\importer\ResultCell$_changeState_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\importer\ResultCell.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\importer\ResultItem.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\importer\exceptions\ImportException.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\search\SearchResultViewModel$_init_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\search\SearchResultViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\search\SearchViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\ActivateViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CarouselViewModel$_moveCarousel_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CarouselViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CartViewModel$_init_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CartViewModel$_removeItem_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CartViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogNewViewModel$_applyManufacturers_closure4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogNewViewModel$_applyManufacturers_closure5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogNewViewModel$_applyPriceFilter_closure8.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogNewViewModel$_applyUsageFilter_closure6.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogNewViewModel$_applyUsageFilter_closure7.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogNewViewModel$_collectAllProducts_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogNewViewModel$_fillChildren_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogNewViewModel$_initModels_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogNewViewModel$_rebuildCategoryNavPath_closure9.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogNewViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogRowViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogViewModel$_collectAllProducts_closure7.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogViewModel$_createTreeModel_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogViewModel$_filtred_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogViewModel$_filtred_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogViewModel$_filtred_closure4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogViewModel$_filtred_closure5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogViewModel$_rebuildPath_closure6.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CatalogViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CheckoutViewModel$_checkout_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CheckoutViewModel$_saveCartData_closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CheckoutViewModel$_saveCartData_closure2_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\CheckoutViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\ProductViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\RecommendedViewModel$_init_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\RecommendedViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\RegisterViewModel$_createNewUser_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\RegisterViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\ReviewsViewModel$_addReview_closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\ReviewsViewModel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\soisbelle.war" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/CarouselViewModel.groovy" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/CarouselViewModel.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/search/SearchResultViewModel.groovy" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/search/SearchResultViewModel.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/search/SearchViewModel.groovy" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/search/SearchViewModel.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcasePagingViewModel.groovy" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcasePagingViewModel.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/components/showcasePaging.zul" afterPath="$PROJECT_DIR$/web-app/zul/components/showcasePaging.zul" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/stacktrace.log" afterPath="$PROJECT_DIR$/target/stacktrace.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="soisbelle.iws" />
@@ -68,10 +394,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ShowcasePagingViewModel.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="search.zul" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web-app/zul/search/search.zul">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="87" selection-start="580" selection-end="595" vertical-scroll-proportion="0.0" vertical-offset="219" max-vertical-offset="578">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShowcasePagingViewModel.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcasePagingViewModel.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="143" column="34" selection-start="4394" selection-end="4394" vertical-scroll-proportion="0.4866785" vertical-offset="1987" max-vertical-offset="2550">
+            <state line="62" column="55" selection-start="2289" selection-end="2289" vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="2601">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zk.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web-app/WEB-INF/zk.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="23" selection-start="1409" selection-end="1409" vertical-scroll-proportion="0.57015985" vertical-offset="223" max-vertical-offset="799">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="carousel.zul" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web-app/zul/shop/carousel.zul">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="71" selection-start="612" selection-end="675" vertical-scroll-proportion="0.0" vertical-offset="159" max-vertical-offset="561">
               <folding />
             </state>
           </provider>
@@ -80,16 +433,7 @@
       <file leaf-file-name="showcasePaging.zul" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web-app/zul/components/showcasePaging.zul">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="74" selection-start="1714" selection-end="1714" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="765">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="catalogNew.zul" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web-app/zul/shop/catalogNew.zul">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="8" selection-start="4142" selection-end="4142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1955">
+            <state line="33" column="71" selection-start="1668" selection-end="1668" vertical-scroll-proportion="0.0" vertical-offset="393" max-vertical-offset="765">
               <folding />
             </state>
           </provider>
@@ -98,16 +442,16 @@
       <file leaf-file-name="results.zul" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web-app/zul/search/results.zul">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="121" selection-start="648" selection-end="648" vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="1955">
+            <state line="16" column="130" selection-start="863" selection-end="863" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1955">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CarouselViewModel.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/CarouselViewModel.groovy">
+      <file leaf-file-name="InitService.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/InitService.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="32" selection-start="1594" selection-end="1594" vertical-scroll-proportion="0.0" vertical-offset="574" max-vertical-offset="1190">
+            <state line="21" column="0" selection-start="683" selection-end="1237" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1088">
               <folding />
             </state>
           </provider>
@@ -126,10 +470,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web-app/zul/contacts/gmap.zul" />
-        <option value="$PROJECT_DIR$/web-app/zul/components/showcase.zul" />
-        <option value="$PROJECT_DIR$/web-app/zul/components/showcaseItem.zul" />
-        <option value="$PROJECT_DIR$/web-app/zul/cabinet/changePass.zul" />
         <option value="$PROJECT_DIR$/web-app/zul/cabinet/index.zul" />
         <option value="$PROJECT_DIR$/web-app/zul/cabinet/map.zul" />
         <option value="$PROJECT_DIR$/web-app/zul/cabinet/orderItem.zul" />
@@ -156,17 +496,13 @@
         <option value="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/wrappers/ProductWrapper.groovy" />
         <option value="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/wrappers/ManufacturerWrapper.groovy" />
         <option value="$PROJECT_DIR$/grails-app/utils/ru/spb/soisbelle/common/PathUtils.groovy" />
-        <option value="$PROJECT_DIR$/web-app/WEB-INF/zk.xml" />
         <option value="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/CustomContentLoader.groovy" />
         <option value="$PROJECT_DIR$/web-app/zul/shop/recommended.zul" />
         <option value="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/RecommendedViewModel.groovy" />
         <option value="$PROJECT_DIR$/web-app/zul/shop/carousel.zul" />
-        <option value="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/search/SearchViewModel.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/CarouselViewModel.groovy" />
         <option value="$PROJECT_DIR$/web-app/zul/search/search.zul" />
         <option value="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/wrappers/CategoryWrapper.groovy" />
         <option value="$PROJECT_DIR$/web-app/zul/menu/menu.zul" />
-        <option value="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
         <option value="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/menu/MenuViewModel.groovy" />
         <option value="$PROJECT_DIR$/grails-app/utils/ru/spb/soisbelle/common/CategoryHandler.groovy" />
         <option value="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/ShowcaseBindComposer.groovy" />
@@ -174,9 +510,17 @@
         <option value="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/ShowcaseBindPagingComposer.groovy" />
         <option value="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcaseViewModel.groovy" />
         <option value="$PROJECT_DIR$/web-app/zul/shop/catalogNew.zul" />
+        <option value="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/search/SearchViewModel.groovy" />
+        <option value="$PROJECT_DIR$/web-app/WEB-INF/ckez-bind-addon.xml" />
+        <option value="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/search/SearchResultViewModel.groovy" />
         <option value="$PROJECT_DIR$/web-app/zul/search/results.zul" />
+        <option value="$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/ImageStorageService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/utils/ru/spb/soisbelle/common/ImageStorage.groovy" />
         <option value="$PROJECT_DIR$/web-app/zul/components/showcasePaging.zul" />
         <option value="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcasePagingViewModel.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/CarouselViewModel.groovy" />
+        <option value="$PROJECT_DIR$/web-app/WEB-INF/zk.xml" />
       </list>
     </option>
   </component>
@@ -215,6 +559,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -370,6 +715,10 @@
               <option name="myItemId" value="zulModels" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -396,15 +745,32 @@
               <option name="myItemId" value="zulModels" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
+              <option name="myItemId" value="soisbelle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="soisbelle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="soisbelle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -718,7 +1084,10 @@
       <workItem from="1394303946128" duration="3311000" />
       <workItem from="1394384446550" duration="11497000" />
       <workItem from="1394398155462" duration="899000" />
-      <workItem from="1394438713379" duration="14385000" />
+      <workItem from="1394438713379" duration="18577000" />
+      <workItem from="1394481654667" duration="378000" />
+      <workItem from="1394557919671" duration="3025000" />
+      <workItem from="1394647498185" duration="3272000" />
     </task>
     <task id="LOCAL-00001" summary="Новое меню&#10;">
       <created>1393788042855</created>
@@ -748,15 +1117,19 @@
       <created>1394472684026</created>
       <updated>1394472684026</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="кастомный пейджинг&#10;">
+      <created>1394472744049</created>
+      <updated>1394472744049</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70155000" />
+    <option name="totallyTimeSpent" value="81022000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -767,21 +1140,21 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36548224" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31918505" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18126889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24773414" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6243655" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5178268" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21222411" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -789,21 +1162,21 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36548224" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -823,8 +1196,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -852,45 +1225,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/views/search/index.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="542" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/common/header.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="22" selection-start="437" selection-end="437" vertical-scroll-proportion="-3.8163266" vertical-offset="0" max-vertical-offset="3638" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/images/dsn/header/search_.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/css/ZK.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="229" column="0" selection-start="4454" selection-end="4454" vertical-scroll-proportion="0.0" vertical-offset="3415" max-vertical-offset="4012" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/_template.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="39" selection-start="3853" selection-end="3853" vertical-scroll-proportion="0.0" vertical-offset="1316" max-vertical-offset="1853" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/common/footer.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="34" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1394">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/admin/common/DownloadImageViewModel.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="22" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1003">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web-app/css/content.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="48" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3553" />
@@ -924,13 +1258,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/ru/spb/soisbelle/CategoryEntity.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="6" selection-start="32" selection-end="32" vertical-scroll-proportion="0.06882591" vertical-offset="0" max-vertical-offset="986">
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/utils/ru/spb/soisbelle/importer/IImporterService.groovy">
@@ -949,21 +1283,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/wrappers/ManufacturerWrapper.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="46" selection-start="1174" selection-end="1174" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="884">
-          <folding />
-        </state>
+        <state line="35" column="46" selection-start="1174" selection-end="1174" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="884" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/utils/ru/spb/soisbelle/common/PathUtils.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="53" column="35" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.0" vertical-offset="614" max-vertical-offset="1156" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/WEB-INF/zk.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="34" selection-start="1241" selection-end="1241" vertical-scroll-proportion="0.0" vertical-offset="257" max-vertical-offset="799">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/wrappers/ProductWrapper.groovy">
@@ -989,21 +1314,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/zul/admin/windows/categoryWnd.zul">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.09409594" vertical-offset="51" max-vertical-offset="1479">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.09409594" vertical-offset="51" max-vertical-offset="1479" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/zul/admin/windows/manufacturerWnd.zul">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1598">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/search/SearchViewModel.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="406" selection-end="565" vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="680" />
+        <state line="17" column="0" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1598" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/RecommendedViewModel.groovy">
@@ -1015,91 +1331,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/utils/ru/spb/soisbelle/common/PathBuilder.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="545" selection-end="545" vertical-scroll-proportion="0.33333334" vertical-offset="357" max-vertical-offset="1122">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/zul/search/search.zul">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="52" selection-start="1006" selection-end="1006" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="578">
-          <folding />
-        </state>
+        <state line="27" column="0" selection-start="545" selection-end="545" vertical-scroll-proportion="0.33333334" vertical-offset="357" max-vertical-offset="1122" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/zul/menu/menu.zul">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="45" selection-start="727" selection-end="727" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/ImageService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="21" selection-start="1741" selection-end="1753" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2686">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="14" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="850">
-          <folding />
-        </state>
+        <state line="16" column="45" selection-start="727" selection-end="727" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/wrappers/CategoryWrapper.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="2" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.0" vertical-offset="523" max-vertical-offset="1139">
-          <folding />
-        </state>
+        <state line="50" column="2" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.0" vertical-offset="523" max-vertical-offset="1139" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/utils/ru/spb/soisbelle/common/CategoryHandler.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="956" selection-end="956" vertical-scroll-proportion="0.5584416" vertical-offset="287" max-vertical-offset="595">
-          <folding />
-        </state>
+        <state line="29" column="0" selection-start="956" selection-end="956" vertical-scroll-proportion="0.5584416" vertical-offset="287" max-vertical-offset="595" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/menu/MenuViewModel.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="2" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <folding />
-        </state>
+        <state line="16" column="2" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/ru/spb/soisbelle/ProductEntity.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="6" selection-start="278" selection-end="278" vertical-scroll-proportion="5.6666665" vertical-offset="357" max-vertical-offset="1904">
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/CatalogNewViewModel.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="38" selection-start="3318" selection-end="3318" vertical-scroll-proportion="0.0" vertical-offset="1132" max-vertical-offset="3876">
-          <folding />
-        </state>
+        <state line="100" column="38" selection-start="3318" selection-end="3318" vertical-scroll-proportion="0.0" vertical-offset="1132" max-vertical-offset="3876" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/BootStrap.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="106" selection-start="607" selection-end="657" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1411">
-          <folding>
-            <element signature="e#0#65#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="21" column="106" selection-start="607" selection-end="657" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1411" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/utils/ru/spb/soisbelle/importer/SaveUtils.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="17" selection-start="1301" selection-end="1301" vertical-scroll-proportion="0.33272058" vertical-offset="516" max-vertical-offset="1751">
-          <folding />
-        </state>
+        <state line="46" column="17" selection-start="1301" selection-end="1301" vertical-scroll-proportion="0.33272058" vertical-offset="516" max-vertical-offset="1751" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/importer/ImportComposer.groovy">
@@ -1118,49 +1395,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/zul/components/showcase.zul">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="82" selection-start="454" selection-end="474" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/ImportService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="23" selection-start="5052" selection-end="5052" vertical-scroll-proportion="0.0" vertical-offset="1859" max-vertical-offset="6137">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/InitService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="2" selection-start="682" selection-end="682" vertical-scroll-proportion="0.48897058" vertical-offset="23" max-vertical-offset="1088">
-          <folding />
-        </state>
+        <state line="8" column="82" selection-start="454" selection-end="474" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcaseViewModel.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="2" selection-start="1543" selection-end="1543" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="2550">
-          <folding />
-        </state>
+        <state line="45" column="2" selection-start="1543" selection-end="1543" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="2550" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/ShowcaseBindPagingComposer.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="3" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.6847826" vertical-offset="81" max-vertical-offset="714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/zul/shop/carousel.zul">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="72" selection-start="1093" selection-end="1124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/zul/search/results.zul">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="121" selection-start="648" selection-end="648" vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="1955">
           <folding />
         </state>
       </provider>
@@ -1172,23 +1417,126 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/CarouselViewModel.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="32" selection-start="1594" selection-end="1594" vertical-scroll-proportion="0.0" vertical-offset="574" max-vertical-offset="1190">
+        <state line="12" column="14" selection-start="452" selection-end="452" vertical-scroll-proportion="-1.0507936" vertical-offset="535" max-vertical-offset="850" />
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/zk-2.1.0/lib/zk.jar!/org/zkoss/zk/ui/Sessions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="158" selection-end="158" vertical-scroll-proportion="0.16441005" vertical-offset="0" max-vertical-offset="517" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/search/SearchViewModel.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="42" selection-start="1063" selection-end="1063" vertical-scroll-proportion="0.7527675" vertical-offset="0" max-vertical-offset="578">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/admin/ProductsViewModel.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="146" column="48" selection-start="4403" selection-end="4403" vertical-scroll-proportion="0.18472469" vertical-offset="2089" max-vertical-offset="2805">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/search/SearchResultViewModel.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="3" selection-start="1302" selection-end="1302" vertical-scroll-proportion="0.76198936" vertical-offset="81" max-vertical-offset="748">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/zul/search/search.zul">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="87" selection-start="580" selection-end="595" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="578">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/ImageService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="405" selection-end="669" vertical-scroll-proportion="0.1811723" vertical-offset="0" max-vertical-offset="2686">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/ImportService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="23" selection-start="5052" selection-end="5052" vertical-scroll-proportion="0.53497165" vertical-offset="1859" max-vertical-offset="6137">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/InitService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="683" selection-end="1237" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1088">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/grails-2.2.1/src/grails-core-2.2.1-sources.jar!/org/codehaus/groovy/grails/commons/ApplicationHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="75" selection-start="896" selection-end="918" vertical-scroll-proportion="0.2362949" vertical-offset="45" max-vertical-offset="680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/grails-2.2.1/src/grails-core-2.2.1-sources.jar!/org/codehaus/groovy/grails/plugins/support/aware/GrailsApplicationAware.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="17" selection-start="987" selection-end="987" vertical-scroll-proportion="0.4391144" vertical-offset="0" max-vertical-offset="542">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/ImageStorageService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="438" selection-end="597" vertical-scroll-proportion="0.15313654" vertical-offset="172" max-vertical-offset="714">
+          <folding>
+            <element signature="e#26#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/zul/shop/carousel.zul">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="71" selection-start="612" selection-end="675" vertical-scroll-proportion="0.0" vertical-offset="159" max-vertical-offset="561">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/zul/components/showcasePaging.zul">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="74" selection-start="1714" selection-end="1714" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="765">
+        <state line="33" column="71" selection-start="1668" selection-end="1668" vertical-scroll-proportion="0.0" vertical-offset="393" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/CarouselViewModel.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="50" selection-start="1032" selection-end="1032" vertical-scroll-proportion="-0.08153477" vertical-offset="408" max-vertical-offset="1071">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/zul/search/results.zul">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="130" selection-start="863" selection-end="863" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1955">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcasePagingViewModel.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="34" selection-start="4394" selection-end="4394" vertical-scroll-proportion="0.4866785" vertical-offset="1987" max-vertical-offset="2550">
+        <state line="62" column="55" selection-start="2289" selection-end="2289" vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="2601">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/WEB-INF/zk.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="23" selection-start="1409" selection-end="1409" vertical-scroll-proportion="0.57015985" vertical-offset="223" max-vertical-offset="799">
           <folding />
         </state>
       </provider>
