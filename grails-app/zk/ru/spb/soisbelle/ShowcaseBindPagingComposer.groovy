@@ -32,7 +32,7 @@ class ShowcaseBindPagingComposer extends GrailsBindComposer implements IShowcase
     runAsync {
       showcaseService.setComposer(this)
       showcaseService.setDesktop(desktop)
-      showcaseService.processEntities(showcaseViewModel.getAllProducts())
+      showcaseService.processEntities(showcaseViewModel.getAllProducts(), showcaseViewModel.getStep())
     }
     }
   }

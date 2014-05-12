@@ -28,6 +28,16 @@
     <value>org.zkoss.web.util.resource.CustomContentLoader</value>
   </library-property>-->
 
+<!--  <library-property>
+    <name>org.zkoss.zul.theme.fontFamilyT</name>
+    <value>Century Gothic,serif</value>
+  </library-property>
+
+  <library-property>
+    <name>org.zkoss.zul.theme.fontFamilyC</name>
+    <value>Century Gothic,serif</value>
+  </library-property>-->
+
 <!--  <language-config>
     <addon-uri>/WEB-INF/components/lang-addon.xml</addon-uri>
   </language-config>-->

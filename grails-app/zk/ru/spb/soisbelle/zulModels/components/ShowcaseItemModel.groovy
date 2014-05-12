@@ -39,7 +39,7 @@ public class ShowcaseItemModel {
 
   @Command
   public void goToProduct(){
-    Executions.getCurrent().getDesktop().setBookmark("catalog")
+    //Executions.getCurrent().getDesktop().setBookmark("catalog")
     Executions.sendRedirect("/shop/catalog?product=${productWrapper.id}")
   }
 

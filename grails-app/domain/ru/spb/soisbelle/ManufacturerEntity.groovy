@@ -1,6 +1,8 @@
 package ru.spb.soisbelle
 
-class ManufacturerEntity {
+import ru.spb.soisbelle.core.Domain
+
+class ManufacturerEntity implements Domain {
 
   String name
   String shortName

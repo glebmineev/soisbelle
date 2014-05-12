@@ -7,7 +7,6 @@ import org.zkoss.bind.annotation.Command
 import org.zkoss.bind.annotation.Init
 import org.zkoss.zk.ui.Executions
 import org.zkoss.zk.ui.sys.ExecutionsCtrl
-import org.zkoss.zkplus.databind.BindingListModelList
 import org.zkoss.zul.*
 import ru.spb.soisbelle.ProductEntity
 import ru.spb.soisbelle.zulModels.admin.filters.data.FilterBean
@@ -123,7 +122,7 @@ class ProductsViewModel {
       products.clear()
       products.addAll(fillWrappers(getModelByFilters()))
     } else {
-      products = new BindingListModelList<ProductWrapper>(fillWrappers(ProductEntity.list(sort: "name")), true)
+      products = fillWrappers(ProductEntity.list(sort: "name"));
     }
   }
 

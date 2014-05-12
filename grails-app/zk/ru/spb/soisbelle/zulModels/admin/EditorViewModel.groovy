@@ -129,6 +129,7 @@ class EditorViewModel {
    * @param event
    */
   @Command
+  @NotifyChange(["categoryTreeModel", "productsModel"])
   public void refreshModels(@ContextParam(ContextType.TRIGGER_EVENT) Event event) {
     Treeitem treeitem = event.getTarget() as Treeitem
     treeitem.setOpen(!treeitem.isOpen())

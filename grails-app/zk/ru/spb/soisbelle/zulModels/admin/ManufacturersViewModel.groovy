@@ -15,7 +15,7 @@ import ru.spb.soisbelle.common.PathBuilder
 import ru.spb.soisbelle.common.STD_FILE_NAMES
 import ru.spb.soisbelle.common.STD_IMAGE_SIZES
 import ru.spb.soisbelle.wrappers.ManufacturerWrapper
-import ru.spb.soisbelle.zulModels.admin.common.DownloadImageViewModel
+import ru.spb.soisbelle.zulModels.core.DownloadImageViewModel
 
 @Init(superclass=true)
 class ManufacturersViewModel extends DownloadImageViewModel {
@@ -42,19 +42,18 @@ class ManufacturersViewModel extends DownloadImageViewModel {
   }
 
   @Command
-  public void changeEditableStatus(@BindingParam("model") ManufacturerWrapper wrapper) {
+  public void changeEditableStatus(@BindingParam("changeStatusWrapper") ManufacturerWrapper wrapper) {
     targetImage = wrapper.id
     wrapper.setEditingStatus(!wrapper.getEditingStatus())
     refreshRowTemplate(wrapper)
   }
 
-  @Command
   public void refreshRowTemplate(ManufacturerWrapper wrapper) {
     BindUtils.postNotifyChange(null, null, wrapper, "editingStatus");
   }
 
   @Command
-  public void updateManufacturer(@BindingParam("model") ManufacturerWrapper wrapper) {
+  public void updateManufacturer(@BindingParam("changeStatusWrapper") ManufacturerWrapper wrapper) {
 
     ManufacturerEntity.withTransaction {
       ManufacturerEntity toSave = ManufacturerEntity.get(wrapper.id)
@@ -88,7 +87,7 @@ class ManufacturersViewModel extends DownloadImageViewModel {
 
   @Command
   @NotifyChange(["usersModel"])
-  public void deleteManufacturer(@BindingParam("model") ManufacturerWrapper wrapper) {
+  public void deleteManufacturer(@BindingParam("changeStatusWrapper") ManufacturerWrapper wrapper) {
 
     ManufacturerEntity.withTransaction {
       ManufacturerEntity toDelete = ManufacturerEntity.get(wrapper.id)
@@ -113,7 +112,7 @@ class ManufacturersViewModel extends DownloadImageViewModel {
   }
 
   @Command
-  public void cancelEditing(@BindingParam("model") ManufacturerWrapper wrapper) {
+  public void cancelEditing(@BindingParam("changeStatusWrapper") ManufacturerWrapper wrapper) {
     wrapper.restore()
     changeEditableStatus(wrapper)
   }

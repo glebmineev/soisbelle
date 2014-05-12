@@ -22,7 +22,7 @@ import ru.spb.soisbelle.common.STD_FILE_NAMES
 import ru.spb.soisbelle.common.STD_IMAGE_SIZES
 import ru.spb.soisbelle.wrappers.RoleWrapper
 import ru.spb.soisbelle.wrappers.UserWrapper
-import ru.spb.soisbelle.zulModels.admin.common.DownloadImageViewModel
+import ru.spb.soisbelle.zulModels.core.DownloadImageViewModel
 
 @Init(superclass=true)
 class UsersViewModel extends DownloadImageViewModel {

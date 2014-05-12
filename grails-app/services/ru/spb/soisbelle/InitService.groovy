@@ -21,6 +21,7 @@ class InitService implements InitializingBean {
 
   void afterPropertiesSet() {
     categoriesThru.clear()
+    categories.clear()
     categoriesThru.addAll(CategoryEntity.findAllWhere(parentCategory: null))
     categoriesThru.each {it ->
       CategoryWrapper wrapper = new CategoryWrapper(it)
@@ -29,7 +30,7 @@ class InitService implements InitializingBean {
     info = InfoEntity.first()
     manufacturers = ManufacturerEntity.list()
     //TODO:: сделать в админке.
-    recommended = ProductEntity.list(max: 4)
+    recommended = ProductEntity.list(max: 6)
     //TODO:: Хиты апдейтить каждый день.
     updateHits()
     //popular = ProductEntity.list(max: 6)

@@ -3,6 +3,7 @@ package ru.spb.soisbelle.wrappers
 import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.zkoss.image.AImage
 import org.zkoss.zul.ListModelList
+import ru.spb.soisbelle.CartService
 import ru.spb.soisbelle.FilterEntity
 import ru.spb.soisbelle.ImageService
 import ru.spb.soisbelle.ManufacturerEntity

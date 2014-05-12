@@ -25,7 +25,7 @@ import ru.spb.soisbelle.common.STD_FILE_NAMES
 import ru.spb.soisbelle.common.STD_IMAGE_SIZES
 import ru.spb.soisbelle.wrappers.CategoryTreeNode
 import ru.spb.soisbelle.zulModels.admin.models.AdvancedTreeModel
-import ru.spb.soisbelle.zulModels.admin.common.DownloadImageViewModel
+import ru.spb.soisbelle.zulModels.core.DownloadImageViewModel
 
 @Init(superclass=true)
 class CategoriesViewModel extends DownloadImageViewModel {

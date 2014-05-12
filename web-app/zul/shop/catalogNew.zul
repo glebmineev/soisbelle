@@ -30,7 +30,7 @@
       <hbox>
         <vbox id="showProgress" width="220px">
           <groupbox closable="false" if="${vm.categories.size() > 0}" >
-            <caption label="Категории"/>
+            <!--<caption label="Категории"/>-->
             <!-- Список категории -->
             <listbox id="categories" model="@bind(vm.categories)" height="250px">
               <listhead>
@@ -48,7 +48,7 @@
           <!-- Фильтр по производителю -->
           <div width="220px" if="${vm.showCatalog}">
             <groupbox closable="false">
-              <caption label="Фильтр"/>
+              <!--<caption label="Фильтр"/>-->
 
               <listbox id="manufListbox" model="@bind(vm.manufsFilterModel)" multiple="true" checkmark="true"
                        height="122px">
@@ -93,15 +93,17 @@
         </vbox>
 
         <!-- хиты и популярные, отображаеться если корневая -->
-        <div if="${not vm.showCatalog}" width="680px">
+        <div if="${not vm.showCatalog}" width="800px">
           <label value="Популярные"/>
           <include src="/zul/components/showcase.zul" allProducts="${vm.allProducts}" isChangeShow="false"
                    showAppendBtn="false"/>
         </div>
 
         <!-- список товаров в текущей категории, отображаеться если не корневая -->
-        <include id="showcase" width="680px" if="${vm.showCatalog}"
-                 src="/zul/components/showcase.zul" allProducts="${vm.allProducts}" isChangeShow="true" showAppendBtn="true"/>
+        <include id="showcase" width="800px" if="${vm.showCatalog}"
+                 src="/zul/components/showcasePaging.zul" allProducts="${vm.allProducts}" isChangeShow="false" countPageItems="9"/>
+<!--        <include id="showcase" width="680px" if="${vm.showCatalog}"
+                 src="/zul/components/showcase.zul" allProducts="${vm.allProducts}" isChangeShow="true" showAppendBtn="true"/>-->
 
       </hbox>
     </vbox>

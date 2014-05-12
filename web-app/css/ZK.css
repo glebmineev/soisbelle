@@ -228,3 +228,11 @@ div.zMenu > ul > li {
   /*width: 399px;*/
 }
 
+.recommended-showcase {
+  background: url("../images/dsn/fon/rec_bg.jpg") repeat;
+}
+
+.z-label {
+  font-family: Century Gothic,serif;
+}
+

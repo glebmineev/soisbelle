@@ -8,7 +8,7 @@
 
   <div apply="ru.spb.soisbelle.BindComposer"
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.ProductViewModel')"
-       onBookmarkChange="@command('refreshFromBookMark', event=event)" width="100%">
+        width="100%">
     <!--<style src="/css/ZK.css"/>-->
     <!-- Навигация -->
 

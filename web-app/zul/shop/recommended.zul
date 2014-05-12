@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
 <?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
 <?page zscriptLanguage="GroovyGrails"?>
 
@@ -8,19 +7,55 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-  <div apply="ru.spb.soisbelle.BindComposer"
-    viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.RecommendedViewModel')" width="100%">
+  <div apply="ru.spb.soisbelle.BindComposer" sclass="recommended-showcase"
+    viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.sliders.FamousProductsSliderViewModel')"
+    align="center"
+    width="100%">
+
   <vlayout>
     <div sclass="recommended-header" width="100%">
       <label style="font-size: 30px; background: #F8BD9F;" value="Популярные"/>
     </div>
-    <hbox width="100%" children="@bind(vm.products)">
+    <hbox align="center">
+      <div width="20px">
+        <image content="@bind(vm.backImage)" onClick="@command('back')" visible="@bind(vm.currentPos > 0)"/>
+      </div>
+
+      <hbox align="center" style="margin: 5px 0px 10px 0" height="90px" children="@bind(vm.glass)">
+        <template name="children">
+          <vbox width="220px" align="center" style="background: #ffffff;margin: 0 10px 0 10px">
+            <div align="center" sclass="productImageCatalog">
+              <image sclass="productImage" content="@load(each.image)"
+                     onClick="@command('redirectToProductItem', productModel=each)"/>
+            </div>
+            <label height="20px" value="@load(each.manufacturer.name)"/>
+            <div height="60px">
+              <label value="@load(each.name)"/>
+            </div>
+            <div>Цена:
+              <label value="@load(each.price)"/>
+              руб.
+            </div>
+            <image content="@bind(vm.cartImage)" visible="@bind(not each.inCart)"
+                   style="margin: 5px;"
+                   onClick="@command('addToCart', productModel=each)"/>
+            <label visible="@bind(each.inCart)" value="Уже в корзине"/>
+          </vbox>
+        </template>
+      </hbox>
+      <div width="20px">
+        <image content="@bind(vm.nextImage)" onClick="@command('next')" visible="@bind(not vm.endList)"/>
+      </div>
+    </hbox>
+
+    <!--<hbox width="100%" children="@bind(vm.products)" style="margin: 15px 0 20px 20px">
       <template name="children">
         <vbox>
-          <div align="center" sclass="productImageCatalog">
-            <image sclass="productImage" content="@load(each.image)" onClick="@command('redirectToProductItem', productModel=each)"/>
-          </div>
-          <vbox width="220px" align="center">
+          <vbox width="220px" align="center" style="background: #ffffff">
+            <div align="center" sclass="productImageCatalog">
+              <image sclass="productImage" content="@load(each.image)"
+                     onClick="@command('redirectToProductItem', productModel=each)"/>
+            </div>
             <label height="20px" value="@load(each.manufacturer.name)"/>
             <div height="60px">
               <label value="@load(each.name)"/>
@@ -36,7 +71,8 @@
           </vbox>
         </vbox>
       </template>
-    </hbox>
+    </hbox>-->
+
   </vlayout>
   </div>
 </zk>

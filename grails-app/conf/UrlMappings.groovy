@@ -14,5 +14,10 @@ class UrlMappings {
       action = "index"
     }
 
+    "/shop1" {
+      controller = "shop"
+      action = "index"
+    }
+
 	}
 }

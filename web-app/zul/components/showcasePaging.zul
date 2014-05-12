@@ -31,8 +31,21 @@
         </window>
       </div>
       <div align="center" width="100%">
-        <image content="@bind(vm.backImage)" onClick="@command('back')" visible="@bind(not vm.startList)"/>
-        <image content="@bind(vm.nextImage)" onClick="@command('next')" visible="@bind(not vm.endList)"/>
+        <hbox>
+          <image content="@bind(vm.backImage)" onClick="@command('prevOnePage')" visible="@bind(not vm.startList)"/>
+          <a href="" style="font-size: 14pt;" label=" ... " onClick="@command('prevMore')" visible="@bind(not vm.startPage)"/>
+          <div children="@bind(vm.numberPages)">
+            <template name="children">
+              <a href="" focus="true" if="${each.selected}" label="${each.number}" style="font-size: 16pt;"
+                 onClick="@command('moveToPage', pageNumber=each)"/>
+              <a style="font-size: 14pt;" href="" if="${not each.selected}" label="${each.number}"
+                 onClick="@command('moveToPage', pageNumber=each)"/>
+            </template>
+          </div>
+          <a href="" style="font-size: 14pt;" label=" ... " onClick="@command('nextMore')" visible="@bind(not vm.endPage)"/>
+          <label style="font-size: 18pt;" value="@bind(vm.totalCount)"/>
+          <image content="@bind(vm.nextImage)" onClick="@command('nextOnePage')" visible="@bind(not vm.endList)"/>
+        </hbox>
       </div>
     </vbox>
   </div>

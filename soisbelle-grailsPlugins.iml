@@ -4,9 +4,8 @@
     <facet type="web" name="GrailsWeb">
       <configuration>
         <webroots>
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/zk-2.1.0/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-ui-1.8.15/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-1.7.1/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/resources-1.2.7/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.1.0/web-app" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -23,43 +22,34 @@
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/executor-0.3">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/executor-0.3/src/groovy" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/executor-0.3">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/executor-0.3/src/groovy" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/hibernate-2.2.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/hibernate-2.2.1/grails-app/i18n" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/hibernate-3.6.10.13">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/hibernate-3.6.10.13/src/java" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/hibernate-3.6.10.13/grails-app/i18n" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/i18n-templates-1.1.0.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/i18n-templates-1.1.0.1/grails-app/i18n" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/i18n-templates-1.1.0.1">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/i18n-templates-1.1.0.1/grails-app/i18n" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-1.7.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-1.7.1/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-1.7.1/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-1.7.1/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-1.7.1/grails-app/taglib" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/resources-1.2.7">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/resources-1.2.7/src/java" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/resources-1.2.7/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/resources-1.2.7/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/resources-1.2.7/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-ui-1.8.15">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-ui-1.8.15/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/jquery-ui-1.8.15/grails-app/taglib" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/tomcat-7.0.52.1">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/tomcat-7.0.52.1/src/java" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/tomcat-7.0.52.1/src/groovy" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/resources-1.1.6">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/resources-1.1.6/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/resources-1.1.6/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/resources-1.1.6/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/resources-1.1.6/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/tomcat-2.2.1" />
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/webxml-1.4.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/webxml-1.4.1/src/groovy" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/zk-2.1.0">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/zk-2.1.0/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/zk-2.1.0/grails-app/controllers" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/zk-2.1.0/grails-app/taglib" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.1.0">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.1.0/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.1.0/grails-app/controllers" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.1.0/grails-app/taglib" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="grails-2.2.1" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="grails-2.3.8" level="application" />
     <orderEntry type="module-library" exported="">
       <library name="Grails User Library (soisbelle-grailsPlugins)">
         <CLASSES>
@@ -75,12 +65,33 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.poi/poi-ooxml/jars/poi-ooxml-3.9.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/postgresql/postgresql/jars/postgresql-9.1-901.jdbc3.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/com.google.guava/guava/jars/guava-r05.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/net.java.dev.inflector/inflector/jars/inflector-0.7.0.jar!/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/zk-2.1.0/lib" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/dom4j/dom4j/jars/dom4j-1.6.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.eclipse.jdt.core.compiler/ecj/jars/ecj-3.7.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-websocket/jars/tomcat-embed-websocket-7.0.52.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-logging-log4j/jars/tomcat-embed-logging-log4j-7.0.52.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-el/jars/tomcat-embed-el-7.0.52.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-jasper/jars/tomcat-embed-jasper-7.0.52.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-catalina-ant/jars/tomcat-catalina-ant-7.0.52.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-core/jars/tomcat-embed-core-7.0.52.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-2.4.8.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.hibernate/hibernate-ehcache/jars/hibernate-ehcache-3.6.10.Final.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.hibernate/hibernate-entitymanager/jars/hibernate-entitymanager-3.6.10.Final.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.hibernate/hibernate-validator/jars/hibernate-validator-4.1.0.Final.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/javax.validation/validation-api/jars/validation-api-1.0.0.GA.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/antlr/antlr/jars/antlr-2.7.7.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-orm/jars/spring-orm-3.2.8.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.hibernate.javax.persistence/hibernate-jpa-2.0-api/jars/hibernate-jpa-2.0-api-1.0.1.Final.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.hibernate/hibernate-commons-annotations/jars/hibernate-commons-annotations-3.2.0.Final.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.hibernate/hibernate-core/jars/hibernate-core-3.6.10.Final.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm-plugin-support/jars/grails-datastore-gorm-plugin-support-3.0.6.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.javassist/javassist/jars/javassist-3.17.1-GA.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm-hibernate-core/jars/grails-datastore-gorm-hibernate-core-3.0.6.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm-hibernate/jars/grails-datastore-gorm-hibernate-3.0.6.RELEASE.jar!/" />
+          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.1.0/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$USER_HOME$/.grails/2.2.1/projects/soisbelle/plugins/zk-2.1.0/lib" recursive="false" />
+        <jarDirectory url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.1.0/lib" recursive="false" />
       </library>
     </orderEntry>
   </component>

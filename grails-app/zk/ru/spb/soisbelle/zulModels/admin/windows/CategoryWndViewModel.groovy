@@ -15,7 +15,7 @@ import ru.spb.soisbelle.common.CategoryPathHandler
 import ru.spb.soisbelle.common.PathBuilder
 import ru.spb.soisbelle.common.STD_FILE_NAMES
 import ru.spb.soisbelle.common.STD_IMAGE_SIZES
-import ru.spb.soisbelle.zulModels.admin.common.DownloadImageViewModel
+import ru.spb.soisbelle.zulModels.core.DownloadImageViewModel
 
 @Init(superclass=true)
 class CategoryWndViewModel extends DownloadImageViewModel {

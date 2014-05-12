@@ -1,13 +1,14 @@
 package ru.spb.soisbelle
 
 import ru.spb.soisbelle.annotation.FieldInfo
+import ru.spb.soisbelle.core.Domain
 import ru.spb.soisbelle.zulModels.admin.filters.data.FilterTypes
 
 import javax.xml.bind.annotation.XmlAccessType
 import javax.xml.bind.annotation.XmlAccessorType
 
 @XmlAccessorType(XmlAccessType.FIELD)
-class ProductEntity implements Comparable {
+class ProductEntity implements Comparable, Domain {
 
   //static searchable = [except: '']
   String engImagePath

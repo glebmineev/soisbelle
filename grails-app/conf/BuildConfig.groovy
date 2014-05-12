@@ -44,16 +44,21 @@ grails.project.dependency.resolution = {
   }
 
   plugins {
-    runtime ":hibernate:$grailsVersion"
-    runtime ":jquery:1.7.1"
-    runtime ":resources:1.1.6"
+    runtime ":hibernate:3.6.10.13"
+    //runtime ":jquery:1.11.0.1"
+    //compile ":jquery-ui:1.10.3"
+    runtime ":resources:1.2.7"
+    compile ":executor:0.3"
+    compile ":i18n-templates:1.1.0.1"
     // Uncomment these (or add new ones) to enable additional resources capabilities
     //runtime ":zipped-resources:1.0"
     //runtime ":cached-resources:1.0"
     //runtime ":yui-minify-resources:0.1.4"
     compile ":zk:2.1.0"
+    //compile ":zk-bootstrap:1.0.0.M2" // ZK Bootstrap support
+    //compile ":zk-atlantic:1.0.0"     // ZK Atlantic flat theme
     //compile ":zkui:0.5.4"
     //compile ":zk-ee:1.0.6"
-    build ":tomcat:$grailsVersion"
+    build ":tomcat:7.0.52.1"
   }
 }

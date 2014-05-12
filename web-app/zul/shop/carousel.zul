@@ -6,16 +6,16 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
   <div apply="ru.spb.soisbelle.BindComposer"
-       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.CarouselViewModel')" width="100%" align="center">
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.sliders.ManufacturersSliderViewModel')" width="100%" align="center">
     <hbox align="center">
       <div width="20px">
         <image content="@bind(vm.backImage)" onClick="@command('back')" visible="@bind(vm.currentPos > 0)"/>
       </div>
 
-      <hbox align="center" style="margin-top: 5px" height="90px" children="@bind(vm.manufacturers)">
+      <hbox align="center" style="margin-top: 5px" height="90px" children="@bind(vm.glass)">
         <template name="children">
           <vbox align="center">
-            <image content="@load(each.image)"/>
+            <image content="@load(each.image)" onClick="@command('redirectToCatalog')"/>
           </vbox>
         </template>
       </hbox>

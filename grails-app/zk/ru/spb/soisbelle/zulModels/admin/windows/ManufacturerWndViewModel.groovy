@@ -14,7 +14,7 @@ import ru.spb.soisbelle.ManufacturerEntity
 import ru.spb.soisbelle.common.PathBuilder
 import ru.spb.soisbelle.common.STD_FILE_NAMES
 import ru.spb.soisbelle.common.STD_IMAGE_SIZES
-import ru.spb.soisbelle.zulModels.admin.common.DownloadImageViewModel
+import ru.spb.soisbelle.zulModels.core.DownloadImageViewModel
 
 class ManufacturerWndViewModel extends DownloadImageViewModel {
 

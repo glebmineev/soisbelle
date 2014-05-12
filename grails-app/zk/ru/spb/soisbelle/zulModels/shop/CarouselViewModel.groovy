@@ -5,11 +5,14 @@ import org.zkoss.bind.annotation.Command
 import org.zkoss.bind.annotation.Init
 import org.zkoss.bind.annotation.NotifyChange
 import org.zkoss.image.AImage
+import org.zkoss.zk.ui.Executions
+import org.zkoss.zk.ui.sys.ExecutionsCtrl
+import org.zkoss.zul.Window
+import ru.spb.soisbelle.core.Domain
 import ru.spb.soisbelle.ImageStorageService
 import ru.spb.soisbelle.ManufacturerEntity
-import ru.spb.soisbelle.ServerFoldersService
-import ru.spb.soisbelle.common.PathBuilder
 import ru.spb.soisbelle.wrappers.ManufacturerWrapper
+import ru.spb.soisbelle.wrappers.Wrapper
 
 class CarouselViewModel {
 
@@ -19,8 +22,8 @@ class CarouselViewModel {
   AImage nextImage
   AImage backImage
 
-  List<ManufacturerWrapper> manufacturers = new ArrayList<ManufacturerWrapper>()
-  List<ManufacturerEntity> entities;
+  List<? extends Wrapper> manufacturers = new ArrayList<? extends Wrapper>()
+  List<? extends Domain> entities;
   boolean endList = false
   int currentPos = 0
   int visibleElements = 6
@@ -61,6 +64,14 @@ class CarouselViewModel {
     entities.subList(currentPos, visibleElements + currentPos).each {it ->
       manufacturers.add(new  ManufacturerWrapper(it))
     }
+  }
+
+  @Command
+  public void redirectToCatalog() {
+    Window wnd = Executions.createComponents("/zul/shop/windows/mainCategoriesWnd.zul", null, null) as Window
+    wnd.setPage(ExecutionsCtrl.getCurrentCtrl().getCurrentPage())
+    wnd.doModal()
+    wnd.setVisible(true)
   }
 
 }

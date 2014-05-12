@@ -141,6 +141,7 @@ class CatalogNewViewModel {
   @Command
   @NotifyChange(["categories"])
   public void goToCategory(@BindingParam("categoryID") Long categoryID){
+    Executions.getCurrent().getDesktop().setBookmark("${categoryID}")
     Executions.sendRedirect("/shop/catalog?category=${categoryID}")
   }
 

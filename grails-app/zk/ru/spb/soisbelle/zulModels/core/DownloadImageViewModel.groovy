@@ -1,4 +1,4 @@
-package ru.spb.soisbelle.zulModels.admin.common
+package ru.spb.soisbelle.zulModels.core
 
 import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.zkoss.bind.annotation.Command
