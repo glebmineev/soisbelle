@@ -43,6 +43,8 @@
         color:#000;
         border-color:#00b9ff;
         background: linear-gradient(to top, #fefefe 0%, #eeeeee 100%);
+        -mox-box-shadow: 0 0 2px #0CBCFF;
+        -webkit-box-shadow: 0 0 2px #0CBCFF;
         box-shadow: 0 0 2px #0CBCFF;
 <!--      ${t:gradient('ver','#fefefe 0%; #eeeeee 100%') };
         ${t:boxShadow('inset 0 0 2px #0CBCFF') }-->
@@ -50,7 +52,10 @@
 
       .z-button-c:active{
         border-color:#499eb3;
-        background: linear-gradient(to top, #c3f5fe 0%, #86e2f9 100%);
+        -mox-box-shadow: linear-gradient(to top, #c3f5fe 0%, #86e2f9 100%);
+        -webkit-box-shadow: linear-gradient(to top, #c3f5fe 0%, #86e2f9 100%);
+        box-shadow: linear-gradient(to top, #c3f5fe 0%, #86e2f9 100%);
+        <!--background: linear-gradient(to top, #c3f5fe 0%, #86e2f9 100%); -->
         <!--${t:gradient('ver','#c3f5fe 0%; #86e2f9 100%') }-->
       }
 
@@ -60,6 +65,8 @@
         <!--${t:gradient('ver','#fefefe 0%; #eeeeee 100%') };-->
         opacity:.6;
         filter:alpha(opacity=60);
+        -mox-box-shadow: none;
+        -webkit-box-shadow: none;
         box-shadow: none;
         <!--${t:boxShadow('none') };-->
         cursor:default
@@ -73,16 +80,47 @@
       .z-button{min-height:16px}-->
 
       span.z-label {
-      font-size: 14pt;
+        font-size: 14pt;
       }
 
-      .z-textbox {
+      <!--.z-textbox {
       font-size: 14pt;
       background-color: #fff3f3;
       }
 
       .z-textbox:hover {
-      background-color: #ffffff;
+        background-color: #ffffff;
+      }-->
+
+      .z-textbox{
+        <!--font-family:Arial,Sans-serif;-->
+        font-size:12px;font-weight:normal;
+        font-style:normal;
+        color:#000;
+        min-height:24px;
+        border:1px solid #cfcfcf;
+        border-radius:3px;
+        margin:0;
+        padding:4px 5px 3px;
+        line-height:14px;
+        background:#fff
+      }
+
+      .z-textbox:focus{
+        -mox-box-shadow: 1px 1px 1px rgba(210,210,210,0.75);
+        -webkit-box-shadow: 1px 1px 1px rgba(210,210,210,0.75);
+        box-shadow: 1px 1px 1px rgba(210,210,210,0.75);
+      }
+
+      .z-textbox[readonly]{
+        border-color:#e6e6e6;
+        background:#fafafa
+      }
+
+      .z-textbox[readonly]:focus{
+        -mox-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
       }
 
     </style>
@@ -104,7 +142,7 @@
       <div>
         <a href="/auth/dropPass" label="Забыли пароль?"/>
         <button type="submit" label="Войти" style="margin: 5px;" onClick="@command('logging')"/>
-        <button label="test" zclass="z-button-c" visible="true"/>
+        <button label="test" zclass="z-button-c" autodisable="true" visible="true"/>
       </div>
     </vbox>
 

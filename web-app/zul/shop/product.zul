@@ -74,6 +74,7 @@
           <label style="font-size: 16pt;" value="@load(vm.model.price)"/>
           <label style="font-size: 16pt;" value="руб."/>
         </hbox>
+        <include src="/zul/components/rate.zul" product="${vm.model}"/>
         <button visible="@load(not vm.model.inCart)"
                 label="В корзину" onClick="@command('addToCart')"/>
         <label visible="@bind(vm.model.inCart)" value="Уже в корзине"/>

@@ -34,10 +34,11 @@ class ProductEntity implements Comparable, Domain {
 
   CategoryEntity category
 
-  /*
-   * Рейтинг товара (сколько продано).
-   */
+  //Оценки товара
   Long rate
+
+  //Количество проголосовавших людей
+  Long countRatePeople
 
   static mapping = {
 
@@ -59,6 +60,7 @@ class ProductEntity implements Comparable, Domain {
       category column: 'product_categor_id'
       filter fetch: "join", column: 'product_filter'
       rate column: 'product_rate'
+      countRatePeople column: 'count_rate_people'
     }
 
     version false
@@ -90,6 +92,7 @@ class ProductEntity implements Comparable, Domain {
     category nullable: true
     filter nullable: true
     rate nullable: true
+    countRatePeople nullable: true
   }
 
   public String toString() {

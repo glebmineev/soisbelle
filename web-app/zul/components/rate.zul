@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+  <style>
+    .z-image {
+      cursor:pointer;
+    }
+  </style>
+
+  <div apply="ru.spb.soisbelle.BindComposer"
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.components.RateViewModel')" width="100%">
+    <div children="@bind(vm.rates)">
+      <template name="children">
+        <image content="${each.star}" onClick="@command('changeRate', rate=each)"/>
+      </template>
+
+    </div>
+    <button label="Рейтинг!" onClick="@command('addRateToProduct')" visible="@bind(vm.showUpdateRateButton)"/>
+  </div>
+
+</zk>

@@ -18,6 +18,9 @@ class ImageStorageService implements InitializingBean {
 
   AImage nextImage
   AImage backImage
+  AImage fullStar
+  AImage halfStar
+  AImage emptyStar
 
   void afterPropertiesSet() {
 
@@ -29,6 +32,21 @@ class ImageStorageService implements InitializingBean {
     backImage = new AImage(new PathBuilder()
         .appendPath(serverFoldersService.images)
         .appendString("less.png")
+        .build())
+
+    fullStar = new AImage(new PathBuilder()
+        .appendPath(serverFoldersService.images)
+        .appendString("star_full.png")
+        .build())
+
+    halfStar = new AImage(new PathBuilder()
+        .appendPath(serverFoldersService.images)
+        .appendString("star_half.png")
+        .build())
+
+    emptyStar = new AImage(new PathBuilder()
+        .appendPath(serverFoldersService.images)
+        .appendString("star_empty.png")
         .build())
 
   }

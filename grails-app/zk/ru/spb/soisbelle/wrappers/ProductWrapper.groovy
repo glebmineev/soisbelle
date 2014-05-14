@@ -27,7 +27,10 @@ class ProductWrapper extends IdentWrapper implements Wrapper {
   String usage
   String description
   String volume
-  Long countToStock
+  Long countToStock = 0
+  Long rate = 0
+  Long countRatePeople
+
   ManufacturerEntity manufacturer
   FilterEntity filter
 
@@ -56,6 +59,10 @@ class ProductWrapper extends IdentWrapper implements Wrapper {
     this.price = productEntity.price
     this.volume = productEntity.volume
     this.usage = productEntity.usage
+
+    this.countRatePeople = productEntity.countRatePeople != null ? productEntity.getCountRatePeople() : 0
+    this.rate = productEntity.rate != null ? productEntity.getRate() : 0
+
     this.description = productEntity.description
     this.countToStock = productEntity.countToStock
     this.manufacturer = productEntity.manufacturer
