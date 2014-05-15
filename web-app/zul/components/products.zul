@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+  <div apply="ru.spb.soisbelle.BindComposer"
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.sliders.ProductsSliderViewModel')">
+    <vlayout>
+      <hbox align="center">
+        <div width="20px">
+          <image content="@bind(vm.backImage)" onClick="@command('back')" visible="@bind(vm.currentPos > 0)"/>
+        </div>
+
+        <hbox align="center" style="margin: 5px 0px 10px 0" height="90px" children="@bind(vm.glass)">
+          <template name="children">
+            <vbox width="200px" align="center" style="background: #ffffff;margin: 0 10px 0 10px">
+              <div align="center" sclass="productImageCatalog">
+                <image sclass="productImage" content="@load(each.image)"
+                       onClick="@command('redirectToProductItem', productModel=each)"/>
+              </div>
+              <label height="20px" value="@load(each.manufacturer.name)"/>
+              <div height="60px">
+                <label value="@load(each.name)"/>
+              </div>
+              <div>Цена:
+                <label value="@load(each.price)"/>
+                руб.
+              </div>
+            </vbox>
+          </template>
+        </hbox>
+        <div width="20px">
+          <image content="@bind(vm.nextImage)" onClick="@command('next')" visible="@bind(not vm.endList)"/>
+        </div>
+      </hbox>
+
+    </vlayout>
+  </div>
+
+</zk>
