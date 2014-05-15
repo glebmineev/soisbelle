@@ -23,7 +23,7 @@
 
       <hbox align="center" style="margin: 5px 0px 10px 0" height="90px" children="@bind(vm.glass)">
         <template name="children">
-          <vbox width="220px" align="center" style="background: #ffffff;margin: 0 10px 0 10px">
+          <vbox width="200px" align="center" style="background: #ffffff;margin: 0 10px 0 10px">
             <div align="center" sclass="productImageCatalog">
               <image sclass="productImage" content="@load(each.image)"
                      onClick="@command('redirectToProductItem', productModel=each)"/>

@@ -196,6 +196,10 @@ div.products-cell-template > ul > li > div:hover {
 
 /*Самописное меню*/
 
+div.zMenu {
+  width: 100%;
+}
+
 div.zMenu > ul {
   text-align: center;
   margin: 0;

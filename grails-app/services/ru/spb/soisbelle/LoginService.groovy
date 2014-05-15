@@ -2,7 +2,7 @@ package ru.spb.soisbelle
 
 import ru.spb.soisbelle.login.LoginUtils
 
-class LoginService {
+class LoginService implements Serializable{
 
   static transactional = true
   static scope = "session";

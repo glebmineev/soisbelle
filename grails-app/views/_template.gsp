@@ -62,7 +62,7 @@
 
 <body>
 
-<div class="wrapper">
+<div class="center">
 
   <div id="header">
     ${header}
@@ -72,9 +72,15 @@
     ${menu}
   </div>
 
+  <div id="wrap_content">
+    ${wrap_content}
+  </div>
+
+  <div id="footer">
+    ${footer}
+  </div>
+
 </div>
-
-
 
   <!-- вертикальный скроллинг -->
   <div class="scrollUp" onclick="window.scrollTo(0, 0); " align="center">
@@ -87,18 +93,6 @@
       Math.max(document.body.clientHeight, document.documentElement.clientHeight))); " align="center">
     <g:img dir="images" file="moveDown.png"/>
   </div>
-
-  <div id="wrap_content">
-    ${wrap_content}
-  </div>
-
-
-
-<div class="wrapper">
-  <div id="footer" class="sized_element">
-    ${footer}
-  </div>
-</div>
 
 </body>
 </html>

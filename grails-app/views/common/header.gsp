@@ -3,7 +3,6 @@
   def loginService = grailsApplication.mainContext.getBean("loginService");
   def cartService = grailsApplication.mainContext.getBean("cartService");
 %>--}%
-<div class="sized_element">
   <table width="100%" cellpadding="0" cellspacing="5">
     <tr align="left">
       <td width="50%">
@@ -206,4 +205,3 @@
     </td>
   </tr>
 </table>--}%
-</div>

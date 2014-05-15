@@ -19,9 +19,7 @@
 </ul>--}%
 
 %{--<div class="green">--}%
-<div class="sized_element">
-  <tpl:zkBody zul="/zul/menu/menu.zul"/>
-</div>
+<tpl:zkBody zul="/zul/menu/menu.zul"/>
 %{--  <ul id="mega-menu" class="mega-menu">
 
     <g:set var="count" value="${0}"/>

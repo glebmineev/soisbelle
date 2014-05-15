@@ -77,4 +77,9 @@ class ShopController {
     return [mainCategoties: initService.categories]
   }
 
+  def manufacturers() {
+    loginService.setParams(params)
+    return [mainCategoties: initService.categories]
+  }
+
 }

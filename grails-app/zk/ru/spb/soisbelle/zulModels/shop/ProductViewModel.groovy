@@ -55,6 +55,7 @@ class ProductViewModel {
 
   @Command
   public void zoomImage() {
+
     ProductEntity productEntity = ProductEntity.get(productId)
     String path = new PathBuilder()
         .appendPath(serverFoldersService.productImages)
@@ -64,9 +65,16 @@ class ProductViewModel {
     int std_size = STD_IMAGE_SIZES.LARGE.getSize()
 
     AImage aImage = imageService.getImageFile(path, std_name, std_size)
-    ImageWindow imageWindow = new ImageWindow(aImage, productEntity.name)
-    imageWindow.setPage(ExecutionsCtrl.getCurrentCtrl().getCurrentPage())
-    imageWindow.doModal()
+
+    Map<Object, Object> params = new HashMap<Object, Object>()
+    params.put("image", aImage)
+
+    Window wnd = Executions.createComponents("/zul/shop/windows/zoomImageWnd.zul", null, params) as Window
+    wnd.setWidth("520px")
+    wnd.setHeight("560px")
+    wnd.setPage(ExecutionsCtrl.getCurrentCtrl().getCurrentPage())
+    wnd.doModal()
+    wnd.setVisible(true)
   }
 
   @Command
@@ -99,11 +107,6 @@ class ProductViewModel {
     wnd.doModal()
     wnd.setVisible(true)*/
 
-  }
-
-  @Command
-  public void refreshFromBookMark(@BindingParam("event") Event event){
-    int r = 0
   }
 
 }

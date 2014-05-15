@@ -5,35 +5,29 @@ body {
  /* background: url("../images/blue_bg.jpg") repeat;*/
 }
 
-.sized_element {
-  width: 70%;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.wrapper {
+.center {
   /*background: url("../images/dsn/fon/fon.png") no-repeat;*/
-  width: 100%;
+  margin: 0 auto;
+  width: 941px;
 }
 
 #menu {
+  margin-bottom: 15px;
+  position: relative;
+  text-align: center;
+  width: 939px;
   height: 51px;
 }
 
-#content {
-  width: 70%;
-  height: 100%;
-  margin: 0 auto;
-  font-family: Century Gothic,serif;
+#header {
+  position: relative;
+  text-align: center;
+  width: 939px;
 }
 
 #wrap_content {
-  width: 70%;
+  width: 941px;
   margin: 0 auto;
-}
-
-#menu {
-  margin-bottom: 10px;
 }
 
 .recommended {
