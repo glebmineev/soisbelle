@@ -68,6 +68,22 @@ class BootStrap {
       OrderIdentEntity.findOrSaveWhere(ident: 100000000L)
     }
 
+    AdminMenuItemEntity.withTransaction {
+
+      AdminMenuItemEntity editors = AdminMenuItemEntity.findOrSaveWhere(name: "Редакторы", href: null, parentMenuItem: null)
+      AdminMenuItemEntity.findOrSaveWhere(name: "Заказы", href: "admin/orders", parentMenuItem: null)
+      AdminMenuItemEntity.findOrSaveWhere(name: "Перейти в магазин", href: "shop/index", parentMenuItem: null)
+      AdminMenuItemEntity.findOrSaveWhere(name: "Импорт", href: "admin/importCatalog", parentMenuItem: null)
+
+      AdminMenuItemEntity.findOrSaveWhere(name: "Категории", href: "admin/categories", parentMenuItem: editors)
+      AdminMenuItemEntity.findOrSaveWhere(name: "Информация", href: "admin/info", parentMenuItem: editors)
+      AdminMenuItemEntity.findOrSaveWhere(name: "Производители", href: "admin/manufacturers", parentMenuItem: editors)
+      AdminMenuItemEntity.findOrSaveWhere(name: "Фильтры", href: "admin/filters", parentMenuItem: editors)
+      AdminMenuItemEntity.findOrSaveWhere(name: "Редактор", href: "admin/editor", parentMenuItem: editors)
+      AdminMenuItemEntity.findOrSaveWhere(name: "Пользователи", href: "admin/users", parentMenuItem: editors)
+
+    }
+
     //imageService.syncAllImagesWithServer()
 
   }

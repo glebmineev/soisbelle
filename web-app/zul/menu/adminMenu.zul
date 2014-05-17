@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+  <div width="100%" apply="ru.spb.soisbelle.BindComposer"
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.menu.AdminMenuViewModel')">
+
+
+    <menubar children="@bind(vm.wrappers)">
+      <template name="children" var="item">
+        <menu label="${item.name}" if="${item.children.size() != 0}">
+          <menupopup>
+              <menuitem forEach="${item.children}" label="${each.name}" href="/${each.href}"/>
+          </menupopup>
+        </menu>
+        <menuitem label="${item.name}" href="/${item.href}" if="${item.children.size() == 0}"/>
+      </template>
+<!--      <menu label="123">
+        <menupopup>
+          <menuitem label="1" href=""/>
+          <menuitem label="2"/>
+        </menupopup>
+      </menu>-->
+    </menubar>
+  </div>
+
+</zk>

@@ -33,33 +33,33 @@ class InfoViewModel {
   }
 
   @Command
-  public void saveContacts(@ContextParam(ContextType.TRIGGER_EVENT) Event event){
+  public void saveContacts(){
     InfoEntity.withTransaction {
-      infoEntity.setContacts(getFormattedString(event.getData() as String))
+      infoEntity.setContacts(contacts)
       infoEntity.save(flush: true)
     }
   }
 
   @Command
-  public void saveAbout(@ContextParam(ContextType.TRIGGER_EVENT) Event event){
+  public void saveAbout(){
     InfoEntity.withTransaction {
-      infoEntity.setAbout(getFormattedString(event.getData() as String))
+      infoEntity.setAbout(about)
       infoEntity.save(flush: true)
     }
   }
 
   @Command
-  public void saveDelivery(@ContextParam(ContextType.TRIGGER_EVENT) Event event){
+  public void saveDelivery(){
     InfoEntity.withTransaction {
-      infoEntity.setDelivery(getFormattedString(event.getData() as String))
+      infoEntity.setDelivery(delivery)
       infoEntity.save(flush: true)
     }
   }
 
   @Command
-  public void saveDetails(@ContextParam(ContextType.TRIGGER_EVENT) Event event){
+  public void saveDetails(){
     InfoEntity.withTransaction {
-      infoEntity.setDetails(getFormattedString(event.getData() as String))
+      infoEntity.setDetails(details)
       infoEntity.save(flush: true)
     }
   }

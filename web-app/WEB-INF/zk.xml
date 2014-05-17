@@ -39,7 +39,11 @@
   </library-property>-->
 
 <!--  <language-config>
-    <addon-uri>/WEB-INF/components/lang-addon.xml</addon-uri>
+    <addon-uri>/WEB-INF/components/ckeditor-addon.xml</addon-uri>
+  </language-config>-->
+
+<!--  <language-config>
+    <addon-uri>/WEB-INF/components/zkex-addon.xml</addon-uri>
   </language-config>-->
 
   <system-config>

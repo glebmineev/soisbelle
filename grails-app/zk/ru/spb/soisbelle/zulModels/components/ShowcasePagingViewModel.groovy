@@ -104,12 +104,14 @@ class ShowcasePagingViewModel {
         Float value = allProducts.size() / step
         totalCount = new BigDecimal(value).setScale(0, RoundingMode.UP).intValue()
 
-        if (allProducts.size() <= step){
+      //TODO:: а если товаров 18?
+        if (totalCount > step/*allProducts.size() <= step*/){
+          fillNumberPages(1)
+        } else {
           fillNumberPages(1, totalCount)
           this.endPage = true
           this.endList = true
-        } else {
-          fillNumberPages(1)
+
         }
 
       }

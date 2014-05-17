@@ -3,19 +3,16 @@ package ru.spb.soisbelle.zulModels.shop
 import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.slf4j.*
 import org.zkoss.bind.BindUtils
-import org.zkoss.bind.annotation.BindingParam
 import org.zkoss.bind.annotation.Command
 import org.zkoss.bind.annotation.Init
 import org.zkoss.image.AImage
 import org.zkoss.zk.ui.Executions
-import org.zkoss.zk.ui.event.Event
 import org.zkoss.zk.ui.sys.ExecutionsCtrl
 import org.zkoss.zul.Window
 import ru.spb.soisbelle.*
 import ru.spb.soisbelle.common.PathBuilder
 import ru.spb.soisbelle.common.STD_FILE_NAMES
 import ru.spb.soisbelle.common.STD_IMAGE_SIZES
-import ru.spb.soisbelle.windows.ImageWindow
 import ru.spb.soisbelle.wrappers.ProductWrapper
 
 class ProductViewModel {

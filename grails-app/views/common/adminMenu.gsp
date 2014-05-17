@@ -37,7 +37,8 @@
 
 <div class="clear"></div>--}%
 
-
+<tpl:zkBody zul="/zul/menu/adminMenu.zul"/>
+%{--
 <div class="green">
   <ul id="mega-menu" class="mega-menu">
     <li>
@@ -64,9 +65,9 @@
         <li>
           <g:link controller="admin" action="editor">Редактор</g:link>
         </li>
-      <li>
-        <g:link controller="admin" action="users">Пользователи</g:link>
-      </li>
+        <li>
+          <g:link controller="admin" action="users">Пользователи</g:link>
+        </li>
       </ul>
     </li>
     <li>
@@ -75,4 +76,5 @@
     <li>
       <g:link controller="shop" action="index">В Магазин</g:link>
     </li>
-</div>
+  </ul>
+</div>--}%

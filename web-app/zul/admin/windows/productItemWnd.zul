@@ -106,7 +106,8 @@
           </cell>
           <cell>
             <!--<textbox rows="5" value="@bind(vm.description)" width="100%"/>-->
-            <h:textarea id="ckeditor" class="ckeditor" cols="10" rows="20"/>
+            <!--<h:textarea id="ckeditor" class="ckeditor" cols="10" rows="20"/>-->
+            <ckeditor value="@bind(vm.description)" width="100%"/>
           </cell>
         </row>
         <row>

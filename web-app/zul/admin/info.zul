@@ -25,7 +25,9 @@
             </tabs>
             <tabpanels>
               <tabpanel>
-                <h:textarea id="contacts" class="ckeditor" cols="10" rows="20"/>
+                <ckeditor value="@bind(vm.contacts)"/>
+                <button label="Сохранить" onClick="@command('saveContacts')"/>
+<!--                <h:textarea id="contacts" class="ckeditor" cols="10" rows="20"/>
                 <button id="saveContacts" label="Сохранить" onSaveContacts="@command('saveContacts')">
                   <attribute name="onClick">
                     import org.zkoss.zk.ui.util.*;
@@ -39,10 +41,12 @@
                   var value = CKEDITOR.instances.contacts.getData();
                   zAu.send(new zk.Event(zk.Widget.$('$saveContacts'), 'onSaveContacts', value));
                   }
-                </script>
+                </script>-->
               </tabpanel>
               <tabpanel>
-                <h:textarea id="about" class="ckeditor" cols="10" rows="20"/>
+                <ckeditor value="@bind(vm.about)" onSave="@command('saveAbout')"/>
+                <button label="Сохранить" onClick="@command('saveAbout')"/>
+<!--                <h:textarea id="about" class="ckeditor" cols="10" rows="20"/>
                 <button id="saveAbout" label="Сохранить" onSaveAbout="@command('saveAbout')">
                   <attribute name="onClick">
                     import org.zkoss.zk.ui.util.*;
@@ -56,10 +60,12 @@
                   var value = CKEDITOR.instances.about.getData();
                   zAu.send(new zk.Event(zk.Widget.$('$saveAbout'), 'onSaveAbout', value));
                   }
-                </script>
+                </script>-->
               </tabpanel>
               <tabpanel>
-                <h:textarea id="delivery" class="ckeditor" cols="10" rows="20"/>
+                <ckeditor value="@bind(vm.delivery)" onSave="@command('saveDelivery')"/>
+                <button label="Сохранить" onClick="@command('saveDelivery')"/>
+<!--                <h:textarea id="delivery" class="ckeditor" cols="10" rows="20"/>
                 <button id="saveDelivery" label="Сохранить" onSaveDelivery="@command('saveDelivery')">
                   <attribute name="onClick">
                     import org.zkoss.zk.ui.util.*;
@@ -73,7 +79,7 @@
                   var value = CKEDITOR.instances.delivery.getData();
                   zAu.send(new zk.Event(zk.Widget.$('$saveDelivery'), 'onSaveDelivery', value));
                   }
-                </script>
+                </script>-->
 <!--                <h:textarea id="delivery" class="ckeditor" cols="10" rows="20"/>
                 <button id="saveDelivery" label="Сохранить" onSaveDelivery="@command('saveDetails')">
                   <attribute name="onClick">
@@ -91,7 +97,9 @@
                 </script>-->
               </tabpanel>
               <tabpanel>
-                <h:textarea id="details" class="ckeditor" cols="10" rows="20"/>
+                <ckeditor value="@bind(vm.details)" onSave="@command('saveDetails')"/>
+                <button label="Сохранить" onClick="@command('saveDetails')"/>
+<!--                <h:textarea id="details" class="ckeditor" cols="10" rows="20"/>
                 <button id="saveDetails" label="Сохранить" onSaveDetails="@command('saveDetails')">
                   <attribute name="onClick">
                     import org.zkoss.zk.ui.util.*;
@@ -105,7 +113,7 @@
                     var value = CKEDITOR.instances.details.getData();
                     zAu.send(new zk.Event(zk.Widget.$('$saveDetails'), 'onSaveDetails', value));
                   }
-                </script>
+                </script>-->
               </tabpanel>
             </tabpanels>
           </tabbox>
@@ -113,7 +121,7 @@
       </h:tr>
     </h:table>
 
-    <script>
+<!--    <script>
       function updateCKEDITORS(details, delivery, about, contacts){
         alert('Загрузка содержания произведена!..')
         CKEDITOR.instances.details.setData( details );
@@ -133,8 +141,7 @@
 
       //Clients.evalJavaScript("var val = CKEDITOR.instances.about; alert(val)");
       Clients.evalJavaScript("updateCKEDITORS('${about}', '${contacts}', '${delivery}', '${details}')");
-    ]]></zscript>
-
+    ]]></zscript>-->
   </window>
 
 
