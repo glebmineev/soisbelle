@@ -1,8 +1,12 @@
 package ru.spb.soisbelle.zulModels.shop
 
 import org.codehaus.groovy.grails.commons.ApplicationHolder
+import org.codehaus.groovy.grails.commons.GrailsApplication
+import org.codehaus.groovy.grails.commons.spring.GrailsApplicationContext
+import org.codehaus.groovy.grails.plugins.support.aware.GrailsApplicationAware
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import org.springframework.context.ApplicationContext
 import org.zkoss.bind.BindUtils
 import org.zkoss.bind.annotation.BindingParam
 import org.zkoss.bind.annotation.Command
@@ -23,17 +27,20 @@ import ru.spb.soisbelle.wrappers.ProductWrapper
  * Time: 3:30 PM
  * To change this template use File | Settings | File Templates.
  */
-class CartViewModel {
+class CartViewModel implements GrailsApplicationAware {
+
+  GrailsApplication grailsApplication
 
   //Логгер
   static Logger log = LoggerFactory.getLogger(CartViewModel.class)
 
   ListModelList<ProductWrapper> cartProduct
 
-  CartService cartService = ApplicationHolder.getApplication().getMainContext().getBean("cartService") as CartService
+  CartService cartService //= ApplicationHolder.getApplication().getMainContext().getBean("cartService") as CartService
 
   @Init
   public void init(){
+    cartService = grailsApplication.getMainContext().getBean("cartService")
     List<ProductWrapper> models = new ArrayList<ProductWrapper>()
     cartService.getCartProducts().each {it ->
       ProductWrapper model = new ProductWrapper(it)
@@ -91,4 +98,8 @@ class CartViewModel {
     Executions.sendRedirect("/shop/checkout");
   }
 
+  @Override
+  void setGrailsApplication(GrailsApplication grailsApplication) {
+    this.grailsApplication = grailsApplication
+  }
 }

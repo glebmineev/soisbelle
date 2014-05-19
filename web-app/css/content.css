@@ -5,6 +5,16 @@ body {
  /* background: url("../images/blue_bg.jpg") repeat;*/
 }
 
+.fon2 {
+  background: url("../images/slider/FON2_b.jpg") no-repeat;
+  margin-bottom: 10px;
+}
+
+.fon3 {
+  background: url("../images/slider/FON3_b.jpg") no-repeat;
+
+}
+
 .center {
   /*background: url("../images/dsn/fon/fon.png") no-repeat;*/
   margin: 0 auto;

@@ -4,9 +4,9 @@
 
   <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
 
-  <g:javascript library="application"/>
+  %{--<g:javascript library="application"/>--}%
   %{--<g:javascript library="jquery" src="jquery-1.7.1.min.js"/>--}%
-  <g:javascript library="nivo" src="slider/jquery.nivo.slider.js"/>
+  %{--<g:javascript library="nivo" src="slider/jquery.nivo.slider.js"/>--}%
   %{--<g:javascript library="carousel" src="carousel/jquery.jcarousel.min.js"/>
   <g:javascript library="ckeditor" src="ckeditor.js"/>
   <g:javascript library="megamenu" src="megamenu/jquery.dcmegamenu.1.3.3.js"/>
@@ -23,7 +23,7 @@
         media="screen"/>
   <link rel="stylesheet" href="${resource(dir: 'css/slider/themes/bar', file: 'bar.css')}" type="text/css"
         media="screen"/>--}%
-  <link rel="stylesheet" href="${resource(dir: 'css/slider', file: 'nivo-slider.css')}"/>
+  %{--<link rel="stylesheet" href="${resource(dir: 'css/slider', file: 'nivo-slider.css')}"/>--}%
 
   <!-- drop menu -->
   %{--<link rel="stylesheet" href="${resource(dir: 'css/dropmenu', file: 'dropmenu.css')}"/>--}%
@@ -57,7 +57,7 @@
       document.getElementsByClassName('scrollDown')[0].style.top = (window.innerHeight - 90) + 'px';
     }
   </script>
-  <r:layoutResources/>
+  %{--<r:layoutResources/>--}%
 </head>
 
 <body>

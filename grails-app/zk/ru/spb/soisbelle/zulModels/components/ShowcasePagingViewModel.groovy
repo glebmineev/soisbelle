@@ -57,6 +57,7 @@ class ShowcasePagingViewModel {
 
   AImage nextImage
   AImage backImage
+  AImage progressRoll
 
   List<PageWrapper> numberPages = new ArrayList<PageWrapper>()
 
@@ -67,6 +68,7 @@ class ShowcasePagingViewModel {
 
     this.nextImage = imageStorageService.getNextImage()
     this.backImage = imageStorageService.getBackImage()
+    this.progressRoll = imageStorageService.getProgressRoll()
     this.step = countPageItems
     this.isChangeShow = Boolean.parseBoolean(isChangeShow)
     this.isBusy = true

@@ -17,6 +17,9 @@ class MenuViewModel {
 
   @Init
   public void init() {
+    initService.categories.each {it ->
+      println(it.menuImage)
+    }
     menuItems.addAll(initService.categories)
   }
 

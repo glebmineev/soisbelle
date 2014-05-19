@@ -54,7 +54,7 @@ grails.project.dependency.resolution = {
     //runtime ":zipped-resources:1.0"
     //runtime ":cached-resources:1.0"
     //runtime ":yui-minify-resources:0.1.4"
-    compile ":zk:2.1.0"
+    compile ":zk:2.4.0"
     //compile ":zk-bootstrap:1.0.0.M2" // ZK Bootstrap support
     //compile ":zk-atlantic:1.0.0"     // ZK Atlantic flat theme
     //compile ":zkui:0.5.4"

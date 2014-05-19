@@ -12,118 +12,6 @@
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.auth.LoginViewModel')"
        width="100%" onOK="@command('logging')">
 
-    <style>
-
-      .z-button-c{
-        font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size:12px;
-        font-weight:normal;
-        font-style:normal;
-        color:#000;
-        min-height:24px;
-        border:1px solid #a9a9a9;
-        border-radius:4px;
-        <!--${t:borderRadius('4px') };-->
-        padding:3px 12px;
-        line-height:14px;
-        <!--background: linear-gradient(to top, #fefefe 0%, #eeeeee 100%);-->
-        <!--${t:gradient('ver','#fefefe 0%; #eeeeee 100%') };-->
-        text-shadow:0 1px #fff;
-        cursor:pointer;
-        white-space:nowrap
-      }
-
-      .z-button-c:hover{
-        border-color:#8fb9d0;
-        background: linear-gradient(to top, #f2f9fe 0%, #eeeeee 100%);
-        <!--${t:gradient('ver','#f2f9fe 0%; #d6f0fd 100%') }-->
-      }
-
-      .z-button-c:focus{
-        color:#000;
-        border-color:#00b9ff;
-        background: linear-gradient(to top, #fefefe 0%, #eeeeee 100%);
-        -mox-box-shadow: 0 0 2px #0CBCFF;
-        -webkit-box-shadow: 0 0 2px #0CBCFF;
-        box-shadow: 0 0 2px #0CBCFF;
-<!--      ${t:gradient('ver','#fefefe 0%; #eeeeee 100%') };
-        ${t:boxShadow('inset 0 0 2px #0CBCFF') }-->
-      }
-
-      .z-button-c:active{
-        border-color:#499eb3;
-        -mox-box-shadow: linear-gradient(to top, #c3f5fe 0%, #86e2f9 100%);
-        -webkit-box-shadow: linear-gradient(to top, #c3f5fe 0%, #86e2f9 100%);
-        box-shadow: linear-gradient(to top, #c3f5fe 0%, #86e2f9 100%);
-        <!--background: linear-gradient(to top, #c3f5fe 0%, #86e2f9 100%); -->
-        <!--${t:gradient('ver','#c3f5fe 0%; #86e2f9 100%') }-->
-      }
-
-      .z-button-c[disabled]{
-        border-color:#a9a9a9;
-        <!--background: linear-gradient(to top, #fefefe 0%, #eeeeee 100%);-->
-        <!--${t:gradient('ver','#fefefe 0%; #eeeeee 100%') };-->
-        opacity:.6;
-        filter:alpha(opacity=60);
-        -mox-box-shadow: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        <!--${t:boxShadow('none') };-->
-        cursor:default
-      }
-
-      .z-button img{
-        vertical-align:middle
-      }
-
-      <!--.ie8
-      .z-button{min-height:16px}-->
-
-      span.z-label {
-        font-size: 14pt;
-      }
-
-      <!--.z-textbox {
-      font-size: 14pt;
-      background-color: #fff3f3;
-      }
-
-      .z-textbox:hover {
-        background-color: #ffffff;
-      }-->
-
-      .z-textbox{
-        <!--font-family:Arial,Sans-serif;-->
-        font-size:12px;font-weight:normal;
-        font-style:normal;
-        color:#000;
-        min-height:24px;
-        border:1px solid #cfcfcf;
-        border-radius:3px;
-        margin:0;
-        padding:4px 5px 3px;
-        line-height:14px;
-        background:#fff
-      }
-
-      .z-textbox:focus{
-        -mox-box-shadow: 1px 1px 1px rgba(210,210,210,0.75);
-        -webkit-box-shadow: 1px 1px 1px rgba(210,210,210,0.75);
-        box-shadow: 1px 1px 1px rgba(210,210,210,0.75);
-      }
-
-      .z-textbox[readonly]{
-        border-color:#e6e6e6;
-        background:#fafafa
-      }
-
-      .z-textbox[readonly]:focus{
-        -mox-box-shadow: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-      }
-
-    </style>
     <vbox width="100%" align="center">
 
       <h:h2>Введите email и пароль</h:h2>
@@ -142,7 +30,6 @@
       <div>
         <a href="/auth/dropPass" label="Забыли пароль?"/>
         <button type="submit" label="Войти" style="margin: 5px;" onClick="@command('logging')"/>
-        <button label="test" zclass="z-button-c" autodisable="true" visible="true"/>
       </div>
     </vbox>
 

@@ -6,15 +6,15 @@ import ru.spb.soisbelle.wrappers.ProductWrapper
 /**
  * Сервис для работы с корзиной покупателя.
  */
-class CartService {
+class CartService implements Serializable {
 
   static transactional = true
   static scope = "session";
   static proxy = true
 
   private Map<Long, Long> cart = new HashMap<Long, Long>()
-  private Long totalPrice = 0
-  private Long totalCount = 0
+  private long totalPrice = 0
+  private long totalCount = 0
 
   public void addToCart(ProductEntity product) {
     if (cart != null)

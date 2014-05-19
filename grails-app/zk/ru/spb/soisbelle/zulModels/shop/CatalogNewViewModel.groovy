@@ -102,16 +102,17 @@ class CatalogNewViewModel {
    */
   List<ProductEntity> collectAllProducts(CategoryEntity category, List<ProductEntity> products) {
     List<CategoryEntity> categories = category.listCategory as List<CategoryEntity>
-    if (categories != null && categories.size() > 0)
+    if (categories != null && categories.size() > 0) {
       categories.each { CategoryEntity it ->
         if (it.listCategory != null && it.listCategory.size() > 0)
           collectAllProducts(it, products)
         else
           products.addAll(it.products as List<ProductEntity>)
       }
-    else {
-      products.addAll(category.products as List<ProductEntity>)
     }
+
+    products.addAll(category.products as List<ProductEntity>)
+
 
     return products
   }

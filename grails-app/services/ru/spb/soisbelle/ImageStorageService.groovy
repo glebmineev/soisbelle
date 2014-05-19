@@ -22,6 +22,7 @@ class ImageStorageService implements InitializingBean {
   AImage halfStar
   AImage emptyStar
   AImage closeWnd
+  AImage progressRoll
 
   void afterPropertiesSet() {
 
@@ -53,6 +54,11 @@ class ImageStorageService implements InitializingBean {
     closeWnd = new AImage(new PathBuilder()
         .appendPath(serverFoldersService.images)
         .appendString("failed.png")
+        .build())
+
+    progressRoll = new AImage(new PathBuilder()
+        .appendPath(serverFoldersService.images)
+        .appendString("ajax-loader.gif")
         .build())
 
   }

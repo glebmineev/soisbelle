@@ -30,7 +30,7 @@ class ImportService extends IImporterService implements ApplicationContextAware 
 
   SaveUtils saveUtils = new SaveUtils()
   Map<String, Set<Long>> filtersCache = new HashMap<String, Set<Long>>()
-  Map<String, Set<Long>> categoryCache = new HashMap<String, Set<Long>>()
+  Map<String, HashMap<String, Long>> categoryCache = new HashMap<String, HashMap<String, Long>>()
 
   List<String> imageErrors = new ArrayList<String>()
 
@@ -161,16 +161,18 @@ class ImportService extends IImporterService implements ApplicationContextAware 
         CategoryEntity submenuCategory = saveUtils.saveCategory(sheet, menuCategory)
         log.debug("сохранена категория: ${sheet}")
 
-        Set<CategoryEntity> categories = new HashSet<CategoryEntity>()
+        HashMap<String, Long> categories = new HashMap<String, Long>()
         handlers.each { it ->
           rowNumber = it.rowNumber
+          //TODO:: Написать валидацию что бы все было заполнено
           String categoryName = it.data.get("I") as String
           String filterName = it.data.get("C") as String
           if (!Strings.isNullOrEmpty(categoryName) && !categoryName.equals(sheetName)) {
             try {
               //if (!categories.name.contains(categoryName)) {
               CategoryEntity category = saveUtils.saveCategory(categoryName, submenuCategory, FilterEntity.findByName(filterName))
-              categories.add(CategoryEntity.get(category.id))
+              CategoryEntity retrieved = CategoryEntity.get(category.id)
+              categories.put(retrieved.getName(), retrieved.getId())
               log.debug("сохранена категория: ${categoryName}")
               //}
             } catch (Throwable tr) {
@@ -189,7 +191,7 @@ class ImportService extends IImporterService implements ApplicationContextAware 
             submenuCategory.save(flush: true)
           }
 
-        categoryCache.put(sheetName, categories.id as Set<Long>)
+        categoryCache.put(sheetName, categories)
 
       }
     } catch (ImportException ex) {
@@ -276,15 +278,14 @@ class ImportService extends IImporterService implements ApplicationContextAware 
           String translited = ConverterRU_EN.translit(to)
           product.setEngImagePath(translited)
 
-          /*categoryCache.get(sheetName).each { CategoryEntity category ->
-            if (category.name.equals(categoryName))
-              product.addToCategories(CategoryEntity.get(category.id))
-          }*/
-          if (!Strings.isNullOrEmpty(categoryName) && !categoryName.equals(sheetName))
-            product.setCategory(CategoryEntity.findByName(categoryName))
-          else
+          if (!Strings.isNullOrEmpty(categoryName) && !categoryName.equals(sheetName)) {
+            HashMap<String, Long> cats = categoryCache.get(sheetName)
+            long categoryId = cats.get(categoryName)
+            product.setCategory(CategoryEntity.get(categoryId))
+            //product.setCategory(CategoryEntity.findByName(categoryName))
+          } else {
             product.setCategory(CategoryEntity.findByName(sheet))
-
+          }
 
           String filterName = it.data.get("C") as String
           filtersCache.get(sheetName).each { Long filterID ->

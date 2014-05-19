@@ -73,7 +73,7 @@ span.z-upload input {
   float: left;
 }
 
-div.z-grid {
+/*div.z-grid {
   border: none;
   background-image: none;
 }
@@ -104,7 +104,7 @@ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
   background-image: none;
   border: 1px solid transparent;
   border-right: 1px solid #efefef;
-}
+}*/
 
 div.catalog-listcell-cnt {
   background: none;

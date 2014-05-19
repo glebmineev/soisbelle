@@ -1,3 +1,5 @@
+<tpl:zkBody zul="/zul/shop/promo.zul"/>
+%{--
 <div class="slider-wrapper theme-default">
   <div id="slider" class="nivoSlider">
     <g:img dir="images/slider" file="FON2.jpg"/>
@@ -13,4 +15,4 @@
   $(document).ready(function () {
     $('#slider').nivoSlider();
   });
-</script>
+</script>--}%

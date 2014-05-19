@@ -80,8 +80,8 @@
 
     <grid id="producItemGrid" height="100%">
       <columns>
-        <column align="right"/>
-        <column align="left"/>
+        <column align="right" hflex="1"/>
+        <column align="left" hflex="2"/>
       </columns>
       <rows>
         <row>

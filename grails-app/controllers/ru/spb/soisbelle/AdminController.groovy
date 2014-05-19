@@ -4,7 +4,7 @@ import ru.spb.soisbelle.login.URLUtils
 
 class AdminController {
 
-  def loginService
+  LoginService loginService
 
   def index() { }
 
@@ -33,6 +33,7 @@ class AdminController {
   def saveInfo(){ }
 
   def beforeInterceptor = {
+    //loginService.login("admin@admin.ru", "admin")
     List<String> groups = loginService.getUserGroups()
     if (!groups.contains("MANAGER")) {
       loginService.setParams(params)

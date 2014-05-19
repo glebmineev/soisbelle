@@ -47,7 +47,8 @@ class BootStrap {
           password: "admin".encodeAsSHA1(),
           email: "admin@admin.ru",
           fio: "fio",
-          address: "SPb"
+          address: "SPb",
+          isActive: true
       )
 
       user.addToGroups(RoleEntity.findWhere(name: "MANAGER"))
@@ -81,6 +82,7 @@ class BootStrap {
       AdminMenuItemEntity.findOrSaveWhere(name: "Фильтры", href: "admin/filters", parentMenuItem: editors)
       AdminMenuItemEntity.findOrSaveWhere(name: "Редактор", href: "admin/editor", parentMenuItem: editors)
       AdminMenuItemEntity.findOrSaveWhere(name: "Пользователи", href: "admin/users", parentMenuItem: editors)
+      AdminMenuItemEntity.findOrSaveWhere(name: "Товары", href: "admin/products" , parentMenuItem: editors)
 
     }
 
