@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+  <div apply="ru.spb.soisbelle.BindComposer"
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.sliders.PromoSliderViewModel')" width="100%" align="center">
+
+<!--    <style>
+
+      .z-image {
+        cursor:pointer;
+      }
+
+    </style>-->
+    <div align="center" width="941px" height="320px" xmlns:w='client' style="position:relative;margin-bottom: 20px">
+
+      <div sclass="banner-arrow" style="background-position: 0 0px;left: 0px;" onClick="@command('back')"
+           w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
+      <image id="current_banner" content="@bind(vm.currentBanner)"/>
+      <div sclass="banner-selector">
+        <div sclass="btn-sel"/>
+        <div sclass="btn"/>
+        <div sclass="btn"/>
+        <div sclass="btn"/>
+      </div>
+      <div sclass="banner-arrow" style="background-position: -30px 0;right: 0px;" onClick="@command('next')"
+           w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
+    </div>
+  </div>
+</zk>
