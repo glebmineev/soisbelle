@@ -16,12 +16,12 @@
     <div sclass="recommended-header" width="100%">
       <label style="font-size: 30px; background: #F8BD9F;" value="Популярные"/>
     </div>
-    <hbox align="center">
+    <hbox align="center" xmlns:w='client'>
       <div width="20px">
-        <image content="@bind(vm.backImage)" onClick="@command('back')" visible="@bind(vm.currentPos > 0)"/>
+        <image content="@bind(vm.backImage)" onClick="@command('back')" visible="@bind(vm.currentPos > 0)" w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
       </div>
 
-      <hbox align="center" style="margin: 5px 0px 10px 0" height="90px" children="@bind(vm.glass)">
+      <hbox id="current_banner" align="center" style="margin: 5px 0px 10px 0" height="90px" children="@bind(vm.glass)">
         <template name="children">
           <vbox width="200px" align="center" style="background: #ffffff;margin: 0 10px 0 10px">
             <div align="center" sclass="productImageCatalog">
@@ -44,7 +44,7 @@
         </template>
       </hbox>
       <div width="20px">
-        <image content="@bind(vm.nextImage)" onClick="@command('next')" visible="@bind(not vm.endList)"/>
+        <image content="@bind(vm.nextImage)" onClick="@command('next')" visible="@bind(not vm.endList)" w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
       </div>
     </hbox>
 

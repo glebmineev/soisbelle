@@ -23,6 +23,11 @@ class ImageStorageService implements InitializingBean {
   AImage emptyStar
   AImage closeWnd
   AImage progressRoll
+  AImage banner_img1
+  AImage banner_img2
+  AImage banner_img3
+  AImage banner_img4
+
 
   void afterPropertiesSet() {
 
@@ -59,6 +64,30 @@ class ImageStorageService implements InitializingBean {
     progressRoll = new AImage(new PathBuilder()
         .appendPath(serverFoldersService.images)
         .appendString("ajax-loader.gif")
+        .build())
+
+    banner_img1 = new AImage(new PathBuilder()
+        .appendPath(serverFoldersService.images)
+        .appendPath("slider")
+        .appendString("FON2_b.jpg")
+        .build())
+
+    banner_img2 = new AImage(new PathBuilder()
+        .appendPath(serverFoldersService.images)
+        .appendPath("slider")
+        .appendString("FON3_b.jpg")
+        .build())
+
+    banner_img3 = new AImage(new PathBuilder()
+        .appendPath(serverFoldersService.images)
+        .appendPath("slider")
+        .appendString("FON2_b.jpg")
+        .build())
+
+    banner_img4 = new AImage(new PathBuilder()
+        .appendPath(serverFoldersService.images)
+        .appendPath("slider")
+        .appendString("FON3_b.jpg")
         .build())
 
   }

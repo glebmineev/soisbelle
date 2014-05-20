@@ -5,14 +5,48 @@ body {
  /* background: url("../images/blue_bg.jpg") repeat;*/
 }
 
-.fon2 {
-  background: url("../images/slider/FON2_b.jpg") no-repeat;
-  margin-bottom: 10px;
+.banner-arrow{
+  display:block;
+  background: url("../images/arrows.png") no-repeat;
+  cursor: pointer;
+  height: 30px;
+  text-indent:-9999px;
+  border:0;
+  opacity: 1;
+  position: absolute;
+  top: 174px;
+  width: 30px;
 }
 
-.fon3 {
-  background: url("../images/slider/FON3_b.jpg") no-repeat;
+.banner-selector {
+  text-align: center;
+}
 
+.banner-selector .btn {
+/*  background: url("../images/bullets.png") no-repeat;
+  cursor: pointer;
+  float: left;
+  height: 11px;
+  margin-left: 5px;
+  width: 10px;*/
+  display:inline-block;
+  width:22px;
+  height:22px;
+  background:url("../images/bullets.png") no-repeat;
+  text-indent:-9999px;
+  border:0;
+  margin: 0 2px;
+}
+
+.banner-selector .btn-sel {
+  display:inline-block;
+  width:22px;
+  height:22px;
+  background:url("../images/bullets.png") no-repeat;
+  text-indent:-9999px;
+  border:0;
+  margin: 0 2px;
+  background-position:0 -22px;
 }
 
 .center {
