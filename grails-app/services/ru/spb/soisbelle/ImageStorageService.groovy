@@ -69,25 +69,25 @@ class ImageStorageService implements InitializingBean {
     banner_img1 = new AImage(new PathBuilder()
         .appendPath(serverFoldersService.images)
         .appendPath("slider")
-        .appendString("FON2_b.jpg")
+        .appendString("FON1_b.jpg")
         .build())
 
     banner_img2 = new AImage(new PathBuilder()
         .appendPath(serverFoldersService.images)
         .appendPath("slider")
-        .appendString("FON3_b.jpg")
+        .appendString("FON2_b.jpg")
         .build())
 
     banner_img3 = new AImage(new PathBuilder()
         .appendPath(serverFoldersService.images)
         .appendPath("slider")
-        .appendString("FON2_b.jpg")
+        .appendString("FON3_b.jpg")
         .build())
 
     banner_img4 = new AImage(new PathBuilder()
         .appendPath(serverFoldersService.images)
         .appendPath("slider")
-        .appendString("FON3_b.jpg")
+        .appendString("FON4_b.jpg")
         .build())
 
   }

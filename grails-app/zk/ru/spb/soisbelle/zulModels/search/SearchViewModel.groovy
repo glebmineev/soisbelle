@@ -12,19 +12,8 @@ import ru.spb.soisbelle.common.PathBuilder
 
 class SearchViewModel {
 
-  ServerFoldersService serverFoldersService =
-      ApplicationHolder.getApplication().getMainContext().getBean("serverFoldersService") as ServerFoldersService
-
-  AImage searchButtonImage
-
   @Init
   public void init(){
-    searchButtonImage = new AImage(new PathBuilder()
-        .appendPath(serverFoldersService.images)
-        .appendPath("dsn")
-        .appendPath("header")
-        .appendString("search_button.png")
-        .build())
   }
 
   @Command

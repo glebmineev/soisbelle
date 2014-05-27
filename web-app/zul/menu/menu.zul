@@ -9,13 +9,14 @@
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.menu.MenuViewModel')">
     <div sclass="zMenu">
 
-    <!--<style src="/css/ZK.css"/>-->
+    <style src="/css/ZK.css"/>
 
     <h:ul children="@bind(vm.menuItems)">
       <template name="children">
         <h:li>
-          <div if="${each.menuImage != null}">
-            <a href="/shop/catalog/?category=${each.id}" imageContent="${each.menuImage}"/>
+          <div width="125px" if="${each.menuImage != null}">
+              <a href="/shop/catalog/?category=${each.id}" label="${each.upperName}"
+                 style="font-family: Century Gothic,serif;font-size: 13pt"/>
           </div>
         </h:li>
       </template>

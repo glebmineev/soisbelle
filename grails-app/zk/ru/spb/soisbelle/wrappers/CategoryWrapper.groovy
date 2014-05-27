@@ -11,6 +11,7 @@ class CategoryWrapper implements Wrapper {
 
   Long id
   String name
+  String upperName
   String parentName
   String description
   AImage menuImage
@@ -20,6 +21,7 @@ class CategoryWrapper implements Wrapper {
   CategoryWrapper(CategoryEntity entity) {
     this.id = entity.id
     this.name = entity.name
+    this.upperName = entity.name.toUpperCase()
     this.parentName = entity.parentCategory != null ? entity.parentCategory.name : ""
 
     String translitName = entity.translitName

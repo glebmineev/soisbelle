@@ -8,7 +8,7 @@
 
   <div apply="ru.spb.soisbelle.BindComposer, ru.spb.soisbelle.ShowcaseBindComposer" binder="@init(queueName='showcasequeue')"
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.components.ShowcaseViewModel')">
-    <div sclass="products-cell-template">
+    <div sclass="products-cell-template" width="100%">
       <!-- панель изменения отображения витрины -->
 <!--      <div visible="@load(vm.isChangeShow)">
         <button image="/images/rows.png" onClick="@command('applyRowTemplate')"/>
@@ -18,7 +18,7 @@
       <h:ul id="products" children="@bind(vm.products)">
         <template name="children">
           <h:li>
-            <include src="/zul/components/showcaseItem.zul" productWrapper="${each}" width="200px" height="350px"/>
+            <include src="/zul/components/showcaseItem.zul" productWrapper="${each}" width="215px" height="350px"/>
           </h:li>
         </template>
       </h:ul>

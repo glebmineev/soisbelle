@@ -7,6 +7,8 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.zkoss.bind.annotation.BindingParam
 import org.zkoss.bind.annotation.Command
+import org.zkoss.bind.annotation.ContextParam
+import org.zkoss.bind.annotation.ContextType
 import org.zkoss.bind.annotation.Init
 import org.zkoss.bind.annotation.NotifyChange
 import org.zkoss.zk.ui.Component
@@ -45,6 +47,8 @@ class CatalogNewViewModel {
 
   InitService initService = ApplicationHolder.getApplication().getMainContext().getBean("initService") as InitService
 
+  ListModelList<String> countPageItemModel
+
   Long categoryID
   //Показать товары и фильтры.
   boolean showCatalog;
@@ -59,6 +63,15 @@ class CatalogNewViewModel {
       initModels()
     if (productId != null)
       buildProductNavPath(productId)
+
+    List<String> model = new ArrayList<String>();
+    model.add("9");
+    model.add("15");
+    model.add("20");
+
+    countPageItemModel = new ListModelList<String>(model)
+    countPageItemModel.addSelection(model.get(0));
+
   }
 
   @NotifyChange(["showCatalog"])
@@ -161,6 +174,21 @@ class CatalogNewViewModel {
     Page page = ExecutionsCtrl.getCurrentCtrl().getCurrentPage()
     Include showcase = page.getFellow("showcase") as Include
     showcase.setDynamicProperty("allProducts", filtredProducts)
+    showcase.invalidate()
+  }
+
+  /**
+   * Изменение количества видимых компонентов.
+   */
+  @Command
+  public void changeShowItems(){
+
+
+    Set<String> selection = countPageItemModel.getSelection()
+
+    Page page = ExecutionsCtrl.getCurrentCtrl().getCurrentPage()
+    Include showcase = page.getFellow("showcase") as Include
+    showcase.setDynamicProperty("countPageItems", selection.first() as Long)
     showcase.invalidate()
   }
 

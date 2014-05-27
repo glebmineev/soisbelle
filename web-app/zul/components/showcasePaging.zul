@@ -20,7 +20,7 @@
         <h:ul id="products" children="@bind(vm.products)">
           <template name="children">
             <h:li>
-              <include src="/zul/components/showcaseItem.zul" productWrapper="${each}" width="200px" height="350px"/>
+              <include src="/zul/components/showcaseItem.zul" productWrapper="${each}" width="215px" height="350px"/>
             </h:li>
           </template>
         </h:ul>

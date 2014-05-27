@@ -11,18 +11,29 @@
   <div apply="ru.spb.soisbelle.BindComposer"
           viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.search.SearchViewModel')"
           onOK="@command('sendRequest', request=requestText.value)"
-          width="100%" sclass="search">
+          width="100%">
 
-    <h:table width="100%" cellpadding="0" cellspacing="0">
+    <hbox>
+      <textbox id="requestText"/>
+      <div sclass="menu-element" width="100%">
+        <a label="Поиск" onClick="@command('sendRequest', request=requestText.value)" style="font-family: Century Gothic,serif;font-size: 13pt"/>
+      </div>
+    </hbox>
+
+
+
+<!--    <h:table width="100%" cellpadding="0" cellspacing="0">
       <h:tr align="left">
         <h:td valign="top" width="65%">
-          <textbox id="requestText" height="43px" width="100%"/>
+          <textbox sclass="search" id="requestText"/>
         </h:td>
-        <h:td valign="top" width="35%">
-          <image content="@bind(vm.searchButtonImage)" onClick="@command('sendRequest', request=requestText.value)"/>
+        <h:td valign="top" align="left" width="35%">
+          <div sclass="menu-element" width="80%">
+            <a label="Поиск" onClick="@command('sendRequest', request=requestText.value)" style="font-family: Century Gothic,serif;font-size: 13pt"/>
+          </div>
         </h:td>
       </h:tr>
-    </h:table>
+    </h:table>-->
 
   </div>
 

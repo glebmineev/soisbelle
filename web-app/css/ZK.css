@@ -169,7 +169,7 @@ div.products-cell-template > ul {
 }
 
 div.products-cell-template > ul > li > div {
-  width: 200px;
+  width: 230px;
   height: 350px;
   margin: 0px 15px 15px 0px;
   text-align: center;
@@ -207,17 +207,50 @@ div.zMenu > ul {
 }
 
 div.zMenu > ul > li > div {
-  width: 136px;
-  height: 51px;
+  /*width: 118px;*/
+  height:30px;
   margin: 0 15px 0 0;
   text-align: center;
-  /*background: #F8BD9F;*/
-  /*border: 1px solid #346F97;*/
+  background: #F8BD9F;
+  border: 1px solid #000000;
+  display:inline-block;
+}
+
+div.zMenu > ul > li > div:before {
+  content:" ";
+  display:inline-block;
+  height:100%;
+  vertical-align:middle;
 }
 
 div.zMenu > ul > li > div > a {
+  display:inline-block;
   text-decoration: none;
   color: #000000;
+}
+
+div.menu-element {
+  /*width: 125px;*/
+  min-height: 32px;
+  margin: 0 15px 0 0;
+  text-align: center;
+  background: #F8BD9F;
+  border: 1px solid #000000;
+  display:inline-block;
+}
+
+div.menu-element:before {
+  content:" ";
+  display:inline-block;
+  height:100%;
+  vertical-align:middle;
+}
+
+div.menu-element > a {
+  display:inline-block;
+  text-decoration: none;
+  color: #000000;
+  font-family: Century Gothic,serif;font-size: 13pt
 }
 
 div.zMenu > ul > li {
@@ -238,5 +271,13 @@ div.zMenu > ul > li {
 
 .z-label {
   font-family: Century Gothic,serif;
+}
+
+.search {
+  border: medium none !important;
+  color: #9B9B9B;
+  font-size: 12px;
+  height: 25px;
+  width: 100%;
 }
 

@@ -4,6 +4,8 @@ import ru.spb.soisbelle.login.LoginUtils
 
 class LoginService implements Serializable {
 
+  private static final long serialVersionUID = 7526472295622776147L;
+
   static transactional = true
   static scope = "session";
   static proxy = true

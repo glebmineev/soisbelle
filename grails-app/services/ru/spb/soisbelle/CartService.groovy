@@ -8,6 +8,8 @@ import ru.spb.soisbelle.wrappers.ProductWrapper
  */
 class CartService implements Serializable {
 
+  private static final long serialVersionUID = 7526472295622776148L;
+
   static transactional = true
   static scope = "session";
   static proxy = true

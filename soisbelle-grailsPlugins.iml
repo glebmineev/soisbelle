@@ -6,6 +6,8 @@
         <webroots>
           <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.4.0/web-app" relative="/" />
           <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/resources-1.2.7/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-bootstrap-1.0.0.M2/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-atlantic-1.0.0/web-app" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -46,6 +48,10 @@
       <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.4.0/src/groovy" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.4.0/grails-app/controllers" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.4.0/grails-app/taglib" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-atlantic-1.0.0" />
+    <content url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-bootstrap-1.0.0.M2">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-bootstrap-1.0.0.M2/grails-app/taglib" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -88,10 +94,14 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm-hibernate-core/jars/grails-datastore-gorm-hibernate-core-3.0.6.RELEASE.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm-hibernate/jars/grails-datastore-gorm-hibernate-3.0.6.RELEASE.jar!/" />
           <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.4.0/lib" />
+          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-bootstrap-1.0.0.M2/lib" />
+          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-atlantic-1.0.0/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
         <jarDirectory url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.4.0/lib" recursive="false" />
+        <jarDirectory url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-atlantic-1.0.0/lib" recursive="false" />
+        <jarDirectory url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-bootstrap-1.0.0.M2/lib" recursive="false" />
       </library>
     </orderEntry>
   </component>

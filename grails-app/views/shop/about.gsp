@@ -14,12 +14,8 @@
     </tpl:block>
 
     <tpl:block name="wrap_content">
-      %{--<tpl:zkBody zul="/zul/shop/test.zul"/>--}%
       <div class="info">
-        <div id="test"/>
-        <g:javascript>
-          $('#test').html('${initService.info.details}');
-        </g:javascript>
+        ${initService.about}
       </div>
     </tpl:block>
 

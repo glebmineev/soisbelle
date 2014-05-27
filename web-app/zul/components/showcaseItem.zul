@@ -12,16 +12,16 @@
       <image sclass="productImage" content="@bind(vm.productWrapper.image)" onClick="@command('goToProduct')"/>
     </div>
     <vbox>
-      <div height="20px">
+      <div align="center" height="20px">
         <label style="color: green;" value="@bind(vm.productWrapper.manufacturer)"/>
       </div>
-      <div align="left" height="80px">
+      <div align="center" height="90px">
         <label style="font-weight: bold" value="@bind(vm.productWrapper.name)"/>
       </div>
-      <div align="left" height="20px">
-        <label style="font-weight: bold; font-size: 16pt" value="Цена: "/>
-        <label style="font-weight: bold; font-size: 16pt" value="@bind(vm.productWrapper.price)"/>
-        <label style="font-weight: bold; font-size: 16pt" value=" руб."/>
+      <div align="center" height="20px">
+        <label style="font-weight: bold; font-size: 11pt" value="Цена: "/>
+        <label style="font-weight: bold; font-size: 11pt" value="@bind(vm.productWrapper.price)"/>
+        <label style="font-weight: bold; font-size: 11pt" value=" руб."/>
       </div>
       <div align="center" width="100%" style="margin-bottom: 5px;">
         <button visible="@bind(not vm.inCart)" label="В корзину"

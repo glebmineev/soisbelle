@@ -23,7 +23,7 @@ class BootStrap {
       CategoryEntity.findOrSaveWhere(name: "Для тела", translitName: ConverterRU_EN.translit("Для тела"))
       CategoryEntity.findOrSaveWhere(name: "Для рук", translitName: ConverterRU_EN.translit("Для рук"))
       CategoryEntity.findOrSaveWhere(name: "Депиляция", translitName: ConverterRU_EN.translit("Депиляция"))
-      CategoryEntity.findOrSaveWhere(name: "Для мужчин", translitName: ConverterRU_EN.translit("Для мужчин"))
+      CategoryEntity.findOrSaveWhere(name: "Для Ногтей", translitName: ConverterRU_EN.translit("Для Ногтей"))
       CategoryEntity.findOrSaveWhere(name: "Аксессуары", translitName: ConverterRU_EN.translit("Аксессуары"))
     }
 
@@ -57,12 +57,12 @@ class BootStrap {
     }
 
     InfoEntity.withTransaction {status ->
-      List<InfoEntity> list = InfoEntity.list()
-      if (list == null || list.size() == 0){
-        InfoEntity infoEntity = new InfoEntity()
-        infoEntity.save(flush: true)
-      }
-
+      InfoEntity.findOrSaveWhere(name: "О компании", href: "about")
+      InfoEntity.findOrSaveWhere(name: "О магазине", href: "aboutShop")
+      InfoEntity.findOrSaveWhere(name: "Контакты", href: "contacts")
+      InfoEntity.findOrSaveWhere(name: "Доставка", href: "delivery")
+      InfoEntity.findOrSaveWhere(name: "Как покупать", href: "howToBuy")
+      InfoEntity.findOrSaveWhere(name: "Информация", href: "details")
     }
 
     OrderIdentEntity.withTransaction {

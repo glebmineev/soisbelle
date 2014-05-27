@@ -1,6 +1,8 @@
 package ru.spb.soisbelle.zulModels.components
 
 import org.codehaus.groovy.grails.commons.ApplicationHolder
+import org.codehaus.groovy.grails.commons.GrailsApplication
+import org.codehaus.groovy.grails.plugins.support.aware.GrailsApplicationAware
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.zkoss.bind.BindUtils
@@ -18,7 +20,9 @@ import java.math.RoundingMode
 /**
  * Модель компонента витрины.
  */
-class ShowcasePagingViewModel {
+class ShowcasePagingViewModel implements GrailsApplicationAware {
+
+  GrailsApplication grailsApplication
 
   static Logger log = LoggerFactory.getLogger(ShowcasePagingViewModel.class)
   //Все товары
@@ -50,10 +54,9 @@ class ShowcasePagingViewModel {
   /**
    * Необходимые сервисы.
    */
-  CartService cartService = ApplicationHolder.getApplication().getMainContext().getBean("cartService") as CartService
-  InitService initService = ApplicationHolder.getApplication().getMainContext().getBean("initService") as InitService
-  ImageStorageService imageStorageService =
-      ApplicationHolder.getApplication().getMainContext().getBean("imageStorageService") as ImageStorageService
+  CartService cartService
+  InitService initService
+  ImageStorageService imageStorageService
 
   AImage nextImage
   AImage backImage
@@ -77,6 +80,13 @@ class ShowcasePagingViewModel {
     this.products.clear()
     this.allProducts.clear()
     this.allProducts.addAll(data)
+    initServices()
+  }
+
+  public void initServices(){
+    cartService = grailsApplication.getMainContext().getBean("cartService")
+    initService = grailsApplication.getMainContext().getBean("initService")
+    imageStorageService = grailsApplication.getMainContext().getBean("imageStorageService")
   }
 
   /**
@@ -295,7 +305,9 @@ class ShowcasePagingViewModel {
         append++
         prev()
       }
-    }
+    } /*else {
+      currentPos = currentPos + step
+    }*/
     return append
 
   }
@@ -361,8 +373,16 @@ class ShowcasePagingViewModel {
       this.startList = true
       this.startPage = true
     }
+
     numberPages.clear()
-    fillNumberPages(prevPage)
+    if (totalCount < 3){
+      endList = true
+      endPage = true
+      fillNumberPages(1, totalCount)
+    } else {
+      fillNumberPages(prevPage)
+    }
+
   }
 
   @Command
@@ -398,6 +418,11 @@ class ShowcasePagingViewModel {
       countMoved--
     }
     setFirstPos()
+  }
+
+  @Override
+  void setGrailsApplication(GrailsApplication grailsApplication) {
+    this.grailsApplication = grailsApplication
   }
 
 }

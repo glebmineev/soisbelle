@@ -1,8 +1,8 @@
-<div style="margin-top: 10px">
+%{--<div style="margin-top: 10px">
 <table width="100%" cellpadding="0" cellspacing="0">
   <tr align="left">
     <td>
-      %{--<g:link  media="images/dsn/footer/about_company.png" controller="shop" action="about"/>--}%
+      --}%%{--<g:link  media="images/dsn/footer/about_company.png" controller="shop" action="about"/>--}%%{--
       <g:img dir="images/dsn/footer" file="about_company.png"/>
     </td>
     <td>
@@ -21,7 +21,7 @@
       <g:img dir="images/dsn/footer" file="info.png"/>
     </td>
   </tr>
-</table>
+</table>--}%
 %{--<div class="info">
   <table width="100%">
     <tr>
@@ -68,6 +68,8 @@
     </tr>
   </table>
 </div> --}%
+<tpl:zkBody zul="/zul/shop/footer.zul"/>
+<br/>
 <table width="100%">
   <tr>
     <td>

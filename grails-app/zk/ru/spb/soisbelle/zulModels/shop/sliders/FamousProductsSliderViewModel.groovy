@@ -28,24 +28,17 @@ class FamousProductsSliderViewModel extends SliderViewModel implements GrailsApp
 
   GrailsApplication grailsApplication
 
-  InitService initService = ApplicationHolder.getApplication().getMainContext().getBean("initService") as InitService
-  CartService cartService //= ApplicationHolder.getApplication().getMainContext().getBean("cartService") as CartService
-  ServerFoldersService serverFoldersService =
-      ApplicationHolder.getApplication().getMainContext().getBean("serverFoldersService") as ServerFoldersService
+  InitService initService
+  CartService cartService
 
   AImage cartImage
 
   @Override
   void prepare() {
-    cartImage = new AImage(new PathBuilder()
-        .appendPath(serverFoldersService.images)
-        .appendPath("dsn")
-        .appendPath("recommended")
-        .appendString("toCart.png")
-        .build())
 
     entities = new ArrayList<ProductEntity>(initService.recommended)
     cartService = grailsApplication.getMainContext().getBean("cartService")
+    initService = grailsApplication.getMainContext().getBean("initService")
   }
 
   @Override

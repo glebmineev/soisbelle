@@ -14,7 +14,7 @@
 
   <vlayout>
     <div sclass="recommended-header" width="100%">
-      <label style="font-size: 30px; background: #F8BD9F;" value="Популярные"/>
+      <label style="font-size: 20px; background: #F8BD9F;" value="ХИТ ПРОДАЖ"/>
     </div>
     <hbox align="center" xmlns:w='client'>
       <div width="20px">
@@ -36,10 +36,14 @@
               <label value="@load(each.price)"/>
               руб.
             </div>
-            <image content="@bind(vm.cartImage)" visible="@bind(not each.inCart)"
-                   style="margin: 5px;"
-                   onClick="@command('addToCart', productModel=each)"/>
-            <label visible="@bind(each.inCart)" value="Уже в корзине"/>
+            <div sclass="menu-element" style="margin:5px;s">
+              <label value="В корзину" visible="@bind(not each.inCart)"
+                     onClick="@command('addToCart', productModel=each)"
+                     style="font-family: Century Gothic,serif;font-size: 13pt;cursor:pointer;"/>
+              <label visible="@bind(each.inCart)" value="Уже в корзине"
+                     style="font-family: Century Gothic,serif;font-size: 13pt;"/>
+            </div>
+
           </vbox>
         </template>
       </hbox>

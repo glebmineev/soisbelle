@@ -24,11 +24,11 @@
 
     <include if="${not vm.isShowcase}" src="/zul/shop/product.zul"/>
 
-    <vbox align="center" width="100%" style="border: 1px solid #000000;" if="${vm.isShowcase}">
+    <vbox align="center" width="941px" style="border: 1px solid #000000;" if="${vm.isShowcase}">
 
       <!-- Категории -->
       <hbox>
-        <vbox id="showProgress" width="220px">
+        <vbox id="showProgress" width="250px">
           <groupbox closable="false" if="${vm.categories.size() > 0}" >
             <!--<caption label="Категории"/>-->
             <!-- Список категории -->
@@ -46,7 +46,7 @@
             </listbox>
           </groupbox>
           <!-- Фильтр по производителю -->
-          <div width="220px" if="${vm.showCatalog}">
+          <div width="100%" if="${vm.showCatalog}">
             <groupbox closable="false">
               <!--<caption label="Фильтр"/>-->
 
@@ -93,17 +93,22 @@
         </vbox>
 
         <!-- хиты и популярные, отображаеться если корневая -->
-        <div if="${not vm.showCatalog}" width="800px">
-          <label value="Популярные"/>
+        <div if="${not vm.showCatalog}" align="center" width="701px">
+          <label style="font-size: 30px; background: #F8BD9F;" width="100%" value="ХИТ ПРОДАЖ"/>
           <include src="/zul/components/showcase.zul" allProducts="${vm.allProducts}" isChangeShow="false"
                    showAppendBtn="false"/>
         </div>
 
+        <vbox>
+        <combobox if="${vm.showCatalog}" width="25%"
+                  model="@bind(vm.countPageItemModel)" onChange="@command('changeShowItems')"/>
+
         <!-- список товаров в текущей категории, отображаеться если не корневая -->
-        <include id="showcase" width="800px" if="${vm.showCatalog}"
+        <include id="showcase" width="701px" if="${vm.showCatalog}"
                  src="/zul/components/showcasePaging.zul" allProducts="${vm.allProducts}" isChangeShow="false" countPageItems="9"/>
 <!--        <include id="showcase" width="680px" if="${vm.showCatalog}"
                  src="/zul/components/showcase.zul" allProducts="${vm.allProducts}" isChangeShow="true" showAppendBtn="true"/>-->
+        </vbox>
 
       </hbox>
     </vbox>

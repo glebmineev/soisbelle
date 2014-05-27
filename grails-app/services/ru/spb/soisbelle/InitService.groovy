@@ -15,7 +15,13 @@ class InitService implements InitializingBean {
   List<CategoryEntity> categoriesThru = new ArrayList<CategoryEntity>()
   List<CategoryWrapper> categories = new ArrayList<CategoryWrapper>()
   List<ManufacturerEntity> manufacturers
-  InfoEntity info
+
+  String about
+  String contacts
+  String delivery
+  String details
+  String aboutMagazine
+  String howToBuy
 
   Map<String, List<ProductEntity>> hits = new HashMap<String, List<ProductEntity>>()
 
@@ -27,7 +33,9 @@ class InitService implements InitializingBean {
       CategoryWrapper wrapper = new CategoryWrapper(it)
       categories.add(wrapper)
     }
-    info = InfoEntity.first()
+
+    initInfo()
+
     manufacturers = ManufacturerEntity.list()
     //TODO:: сделать в админке.
     recommended = ProductEntity.list(max: 6)
@@ -35,6 +43,15 @@ class InitService implements InitializingBean {
     updateHits()
     //popular = ProductEntity.list(max: 6)
     //hits = ProductEntity.list(max: 5)
+  }
+
+  void initInfo() {
+    about = InfoEntity.findByName("О компании")?.getDescription()
+    contacts = InfoEntity.findByName("Контакты")?.getDescription()
+    delivery = InfoEntity.findByName("Доставка")?.getDescription()
+    details = InfoEntity.findByName("Информация")?.getDescription()
+    aboutMagazine = InfoEntity.findByName("О магазине")?.getDescription()
+    howToBuy = InfoEntity.findByName("Как покупать")?.getDescription()
   }
 
   void updateHits(){

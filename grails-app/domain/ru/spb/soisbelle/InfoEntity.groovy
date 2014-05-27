@@ -2,29 +2,26 @@ package ru.spb.soisbelle
 
 class InfoEntity {
 
-  String contacts
-  String about
-  String delivery
-  String details
+  String name
+  String href
+  String description
 
   static mapping = {
     table: 'info'
     columns {
       id column: 'info_id'
-      contacts column: 'info_contacts'
-      about column: 'info_about'
-      delivery column: 'info_delivery'
-      details column: 'info_details'
+      description column: 'info_description'
+      href column: 'info_href'
+      name column: 'info_name'
     }
 
     version false
   }
 
   static constraints = {
-    contacts nullable: true, maxSize: 65535
-    about nullable: true, maxSize: 65535
-    delivery nullable: true, maxSize: 65535
-    details nullable: true, maxSize: 65535
+    description nullable: true, maxSize: 65535
+    name nullable: true, maxSize: 65535
+    href nullable: true, maxSize: 65535
   }
 
 }

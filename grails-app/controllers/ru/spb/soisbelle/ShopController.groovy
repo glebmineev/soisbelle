@@ -62,6 +62,16 @@ class ShopController {
     return [mainCategoties: initService.categories]
   }
 
+  def aboutShop() {
+    loginService.setParams(params)
+    return [mainCategoties: initService.categories]
+  }
+
+  def howToBuy() {
+    loginService.setParams(params)
+    return [mainCategoties: initService.categories]
+  }
+
   def seeYouEmail() {
     loginService.setParams(params)
     return [mainCategoties: initService.categories]

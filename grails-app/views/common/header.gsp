@@ -3,35 +3,35 @@
   def loginService = grailsApplication.mainContext.getBean("loginService");
   def cartService = grailsApplication.mainContext.getBean("cartService");
 %>--}%
-  <table width="100%" cellpadding="0" cellspacing="5">
-    <tr align="left">
-      <td width="50%">
-        <tpl:zkBody zul="/zul/search/search.zul"/>
-      </td>
-      <td width="25%">
-        <g:link controller="shop" action="register">
-          <g:img dir="images/dsn/header" file="reg.png"/>
-        </g:link>
-      </td>
-      <td width="20%">
-        <g:link controller="auth" action="login">
-          <g:img dir="images/dsn/header" file="enter.png"/>
-        </g:link>
-      </td>
-      <td width="5%">
-        <g:link controller="shop" action="cart">
-          <g:img dir="images/dsn/header" file="cart.png"/>
-        </g:link>
-      </td>
-    </tr>
-    <tr align="left">
-      <td colspan="4">
-        <g:link controller="shop" action="index">
-          <g:img dir="images/dsn" file="sois_bellex50.png"/>
-        </g:link>
-      </td>
-    </tr>
-  </table>
+<table width="100%" cellpadding="0" cellspacing="5" style="margin-top: 10px;">
+  <tr align="left">
+    <td width="50%" valign="top">
+      <tpl:zkBody zul="/zul/search/search.zul"/>
+    </td>
+    <td width="25%" valign="top" align="right">
+      <div class="menu-element" style="width: 80%">
+        <g:link controller="shop" action="register">Регистрация</g:link>
+      </div>
+    </td>
+    <td width="20%" valign="top" align="right">
+      <div class="menu-element" style="width: 80%">
+        <g:link controller="auth" action="login">Войти</g:link>
+      </div>
+    </td>
+    <td width="5%" valign="top">
+      <g:link controller="shop" action="cart">
+        <g:img dir="images/dsn/header" file="cart.png"/>
+      </g:link>
+    </td>
+  </tr>
+  <tr align="left" valign="top">
+    <td colspan="4">
+      <g:link controller="shop" action="index">
+        <g:img dir="images/dsn" file="sois_bellex50.png"/>
+      </g:link>
+    </td>
+  </tr>
+</table>
 %{--<table width="100%" cellpadding="0" cellspacing="0">
   <tr align="left">
     <g:if test="${loginService.isLogged()}">

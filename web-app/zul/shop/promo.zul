@@ -16,16 +16,15 @@
       }
 
     </style>-->
-    <div align="center" width="941px" height="320px" xmlns:w='client' style="position:relative;margin-bottom: 20px">
+    <div align="center" width="941px" height="320px" xmlns:w='client' style="position:relative;margin-bottom: 35px">
 
       <div sclass="banner-arrow" style="background-position: 0 0px;left: 0px;" onClick="@command('back')"
            w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
       <image id="current_banner" content="@bind(vm.currentBanner)"/>
-      <div sclass="banner-selector">
-        <div sclass="btn-sel"/>
-        <div sclass="btn"/>
-        <div sclass="btn"/>
-        <div sclass="btn"/>
+      <div sclass="banner-selector" children="@bind(vm.pageWrappers)">
+        <template name="children">
+          <div sclass="${each.cstyle}" onClick="@command('selectSlide', bullet=each)" w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
+        </template>
       </div>
       <div sclass="banner-arrow" style="background-position: -30px 0;right: 0px;" onClick="@command('next')"
            w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>

@@ -17,6 +17,7 @@ grails.project.dependency.resolution = {
 
   repositories {
     inherits true // Whether to inherit repository definitions from plugins
+    mavenRepo "http://dl.bintray.com/zkgrails/release"
     grailsPlugins()
     grailsHome()
     grailsCentral()
@@ -55,8 +56,8 @@ grails.project.dependency.resolution = {
     //runtime ":cached-resources:1.0"
     //runtime ":yui-minify-resources:0.1.4"
     compile ":zk:2.4.0"
-    //compile ":zk-bootstrap:1.0.0.M2" // ZK Bootstrap support
-    //compile ":zk-atlantic:1.0.0"     // ZK Atlantic flat theme
+    compile ":zk-bootstrap:1.0.0.M2" // ZK Bootstrap support
+    compile ":zk-atlantic:1.0.0"     // ZK Atlantic flat theme
     //compile ":zkui:0.5.4"
     //compile ":zk-ee:1.0.6"
     build ":tomcat:7.0.52.1"
@@ -65,10 +66,10 @@ grails.project.dependency.resolution = {
 
 forkConfig = [maxMemory: 1024, minMemory: 64, debug: false, maxPerm: 256]
 grails.project.fork = [
-    test: forkConfig, // configure settings for the test-app JVM
-    run: forkConfig, // configure settings for the run-app JVM
-    war: forkConfig, // configure settings for the run-war JVM
-    console: forkConfig // configure settings for the Swing console JVM
+    test: false, // configure settings for the test-app JVM
+    run: false, // configure settings for the run-app JVM
+    war: false, // configure settings for the run-war JVM
+    console: false // configure settings for the Swing console JVM
 ]
 
 grails.reload.enabled = true
