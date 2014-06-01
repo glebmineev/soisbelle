@@ -2,20 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddaf4c20-561e-454b-b01c-09a6929cfd8f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/images/slider/20870_wp_1024-tree-on-head.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/images/slider/20944_yonsn-en.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/images/slider/2163_cake-desse.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/images/slider/6439_eyo-cn.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/soisbelle.war" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/admin/windows/NewPromoWndViewModel.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/domain/ru/spb/soisbelle/PromoEntity.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/ru/spb/soisbelle/PromoEntitySpec.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/admin/PromoViewModel.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/wrappers/PromoWrapper.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/zul/admin/windows/createNewPromoWnd.zul" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/views/admin/promo.gsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/zul/admin/promo.zul" />
-      <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\lib\zkcharts.jar" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\UrlMappings$__clinit__closure1_closure2_closure4.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\AdminController$_closure1.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\AdminController.class" afterPath="" />
@@ -336,37 +322,7 @@
       <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\RegisterViewModel.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\ReviewsViewModel$_addReview_closure1.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\ReviewsViewModel.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/images/slider/FON1.jpg" afterPath="$PROJECT_DIR$/web-app/images/slider/FON1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/images/dsn/header/cart.png" afterPath="$PROJECT_DIR$/web-app/images/dsn/header/cart.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/images/slider/walle.jpg" afterPath="$PROJECT_DIR$/web-app/images/slider/walle.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/ru/spb/soisbelle/AdminController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/ru/spb/soisbelle/AdminController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/CatalogNewViewModel.groovy" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/CatalogNewViewModel.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/ImportService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/ImportService.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/InitService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/InitService.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/sliders/PromoSliderViewModel.groovy" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/sliders/PromoSliderViewModel.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/utils/ru/spb/soisbelle/common/STD_FILE_NAMES.groovy" afterPath="$PROJECT_DIR$/grails-app/utils/ru/spb/soisbelle/common/STD_FILE_NAMES.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/utils/ru/spb/soisbelle/common/STD_IMAGE_SIZES.groovy" afterPath="$PROJECT_DIR$/grails-app/utils/ru/spb/soisbelle/common/STD_IMAGE_SIZES.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/ServerFoldersService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/ServerFoldersService.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/ru/spb/soisbelle/ShopController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/ru/spb/soisbelle/ShopController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcasePagingViewModel.groovy" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcasePagingViewModel.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/wrappers/UserWrapper.groovy" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/wrappers/UserWrapper.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/css/ZK.css" afterPath="$PROJECT_DIR$/web-app/css/ZK.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/shop/catalogNew.zul" afterPath="$PROJECT_DIR$/web-app/zul/shop/catalogNew.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/css/content.css" afterPath="$PROJECT_DIR$/web-app/css/content.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/shop/footer.zul" afterPath="$PROJECT_DIR$/web-app/zul/shop/footer.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/common/header.gsp" afterPath="$PROJECT_DIR$/grails-app/views/common/header.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/admin/index.zul" afterPath="$PROJECT_DIR$/web-app/zul/admin/index.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/admin/manufacturers.zul" afterPath="$PROJECT_DIR$/web-app/zul/admin/manufacturers.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/menu/menu.zul" afterPath="$PROJECT_DIR$/web-app/zul/menu/menu.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/shop/promo.zul" afterPath="$PROJECT_DIR$/web-app/zul/shop/promo.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/shop/recommended.zul" afterPath="$PROJECT_DIR$/web-app/zul/shop/recommended.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/search/search.zul" afterPath="$PROJECT_DIR$/web-app/zul/search/search.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/components/showcasePaging.zul" afterPath="$PROJECT_DIR$/web-app/zul/components/showcasePaging.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/stacktrace.log" afterPath="$PROJECT_DIR$/target/stacktrace.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/admin/users.zul" afterPath="$PROJECT_DIR$/web-app/zul/admin/users.zul" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="soisbelle.iws" />
@@ -451,19 +407,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PromoSliderViewModel.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PromoSliderViewModel.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/sliders/PromoSliderViewModel.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="5" selection-start="1557" selection-end="1557" vertical-scroll-proportion="0.8542435" vertical-offset="81" max-vertical-offset="1785">
+            <state line="44" column="5" selection-start="1557" selection-end="1557" vertical-scroll-proportion="0.0" vertical-offset="81" max-vertical-offset="1785">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataSource.groovy" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DataSource.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="12" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="850">
+            <state line="36" column="12" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.65867156" vertical-offset="255" max-vertical-offset="850">
               <folding />
             </state>
           </provider>
@@ -585,8 +541,8 @@
         <option value="$PROJECT_DIR$/web-app/css/content.css" />
         <option value="$PROJECT_DIR$/web-app/zul/shop/promo.zul" />
         <option value="$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/ImportService.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
         <option value="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/sliders/PromoSliderViewModel.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
       </list>
     </option>
   </component>
@@ -1602,7 +1558,7 @@
       <workItem from="1400947608853" duration="41000" />
       <workItem from="1401030933536" duration="10244000" />
       <workItem from="1401128349249" duration="4804000" />
-      <workItem from="1401211011078" duration="36762000" />
+      <workItem from="1401211011078" duration="36804000" />
     </task>
     <task id="LOCAL-00001" summary="Новое меню&#10;">
       <created>1393788042855</created>
@@ -1692,11 +1648,15 @@
       <created>1401214884371</created>
       <updated>1401214884371</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="загрузка баннеров&#10;">
+      <created>1401637132345</created>
+      <updated>1401637132345</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="394413000" />
+    <option name="totallyTimeSpent" value="394455000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -2158,16 +2118,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/sliders/PromoSliderViewModel.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="12" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="850">
+        <state line="44" column="5" selection-start="1557" selection-end="1557" vertical-scroll-proportion="0.0" vertical-offset="81" max-vertical-offset="1785">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/sliders/PromoSliderViewModel.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="5" selection-start="1557" selection-end="1557" vertical-scroll-proportion="0.8542435" vertical-offset="81" max-vertical-offset="1785">
+        <state line="36" column="12" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.65867156" vertical-offset="255" max-vertical-offset="850">
           <folding />
         </state>
       </provider>
