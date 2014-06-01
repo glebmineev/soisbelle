@@ -128,7 +128,6 @@ div.category{
 /* Построчная витрина */
 
 div.products-row-template {
-  margin: 5px;
   width: 640px;
 }
 
@@ -159,7 +158,7 @@ div.products-row-template > ul > li > div {
 
 div.products-cell-template {
   /*width: 650px;*/
-  margin-left: 25px;
+  margin-left: 0px;
 }
 
 div.products-cell-template > ul {
@@ -198,65 +197,80 @@ div.products-cell-template > ul > li > div:hover {
 
 div.zMenu {
   width: 100%;
+  list-style: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
 }
 
 div.zMenu > ul {
   text-align: center;
+  display: block;
   margin: 0;
   padding: 0;
 }
 
-div.zMenu > ul > li > div {
-  /*width: 118px;*/
-  height:30px;
-  margin: 0 15px 0 0;
-  text-align: center;
-  background: #F8BD9F;
-  border: 1px solid #000000;
-  display:inline-block;
-}
-
-div.zMenu > ul > li > div:before {
-  content:" ";
-  display:inline-block;
-  height:100%;
-  vertical-align:middle;
-}
-
-div.zMenu > ul > li > div > a {
-  display:inline-block;
-  text-decoration: none;
-  color: #000000;
-}
-
-div.menu-element {
-  /*width: 125px;*/
-  min-height: 32px;
-  margin: 0 15px 0 0;
-  text-align: center;
-  background: #F8BD9F;
-  border: 1px solid #000000;
-  display:inline-block;
-}
-
-div.menu-element:before {
-  content:" ";
-  display:inline-block;
-  height:100%;
-  vertical-align:middle;
-}
-
-div.menu-element > a {
-  display:inline-block;
-  text-decoration: none;
-  color: #000000;
-  font-family: Century Gothic,serif;font-size: 13pt
+div.zMenu > li {
+  float: left;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
 }
 
 div.zMenu > ul > li {
   float: left;
   list-style-type: none;
   position: relative;
+}
+
+div.zMenu > ul > li > div {
+  margin: 0 10px 0 0;
+  background: #F8BD9F;
+  border: 1px solid #000000;
+  line-height: 30px;
+  text-align: center;
+}
+
+div.zMenu > ul > li > div > a {
+  vertical-align: middle;
+  text-decoration: none;
+  color: #000000;
+  font-family: Century Gothic,serif;font-size: 12pt;
+}
+
+/* элемент  */
+
+div.menu-element {
+  /*width: 125px;*/
+  height: 34px;
+  display: table;
+  text-align: center;
+  background: #F8BD9F;
+  border: 1px solid #000000;
+}
+
+/*div.menu-element:before {
+  content:" ";
+  display:inline-block;
+  height:100%;
+  vertical-align:middle;
+}*/
+
+div.menu-element div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+div.menu-element div a {
+  vertical-align:middle;
+  text-decoration: none;
+  color: #000000;
+  font-family: Century Gothic,serif;font-size: 12pt;
+/*  display:inline-block;
+  vertical-align:middle;
+  text-decoration: none;
+  color: #000000;
+  font-family: Century Gothic,serif;font-size: 13pt*/
 }
 
 .search {

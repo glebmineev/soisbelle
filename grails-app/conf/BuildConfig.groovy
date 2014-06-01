@@ -72,4 +72,4 @@ grails.project.fork = [
     console: false // configure settings for the Swing console JVM
 ]
 
-grails.reload.enabled = true
+grails.reload.enabled = false

@@ -7,7 +7,7 @@
 <zk xmlns="http://www.zkoss.org/2005/zul"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
-  <fisheyebar id="fisheyebar" sclass="fisheyeDemo"
+<!--  <fisheyebar id="fisheyebar" sclass="fisheyeDemo"
               itemWidth="80" itemHeight="80" itemMaxHeight="160" itemMaxWidth="160">
     <fisheye label="Folder" image="/images/about.png" />
     <fisheye label="Reading Glasses" image="/images/about.png" />
@@ -15,7 +15,7 @@
     <fisheye label="Email" image="/images/about.png" />
     <fisheye label="Globe" image="/images/about.png" />
     <fisheye label="Spyglass" image="/images/about.png" />
-  </fisheyebar>
+  </fisheyebar>-->
 <!--  <style>
     .title {
     font-weight: bold;

@@ -44,6 +44,10 @@ class ServerFoldersService implements InitializingBean {
    */
   String userPics
   /**
+   * Путь до каталога с промо баннерами.
+   */
+  String promoPics
+  /**
    * Путь до каталога с временными файлами.
    */
   String temp
@@ -94,6 +98,13 @@ class ServerFoldersService implements InitializingBean {
         .appendPath(twoLevelUp)
         .appendPath(pictures)
         .appendString("categoriesPics")
+        .checkDir()
+        .build()
+
+    promoPics  = new PathBuilder()
+        .appendPath(twoLevelUp)
+        .appendPath(pictures)
+        .appendString("promoPics")
         .checkDir()
         .build()
 

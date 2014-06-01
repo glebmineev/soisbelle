@@ -83,7 +83,7 @@ class BootStrap {
       AdminMenuItemEntity.findOrSaveWhere(name: "Редактор", href: "admin/editor", parentMenuItem: editors)
       AdminMenuItemEntity.findOrSaveWhere(name: "Пользователи", href: "admin/users", parentMenuItem: editors)
       AdminMenuItemEntity.findOrSaveWhere(name: "Товары", href: "admin/products" , parentMenuItem: editors)
-
+      AdminMenuItemEntity.findOrSaveWhere(name: "Промо", href: "admin/promo" , parentMenuItem: editors)
     }
 
     //imageService.syncAllImagesWithServer()

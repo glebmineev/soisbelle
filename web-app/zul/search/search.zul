@@ -14,9 +14,11 @@
           width="100%">
 
     <hbox>
-      <textbox id="requestText"/>
-      <div sclass="menu-element" width="100%">
-        <a label="Поиск" onClick="@command('sendRequest', request=requestText.value)" style="font-family: Century Gothic,serif;font-size: 13pt"/>
+      <textbox id="requestText" width="250px;" height="100%"/>
+      <div sclass="menu-element" width="160px;">
+        <div>
+        <a label="Поиск" onClick="@command('sendRequest', request=requestText.value)"/>
+        </div>
       </div>
     </hbox>
 

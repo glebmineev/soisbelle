@@ -8,75 +8,79 @@
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
   <div apply="ru.spb.soisbelle.BindComposer" sclass="recommended-showcase"
-    viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.sliders.FamousProductsSliderViewModel')"
-    align="center"
-    width="100%">
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.sliders.FamousProductsSliderViewModel')"
+       align="center"
+       width="100%">
 
-  <vlayout>
-    <div sclass="recommended-header" width="100%">
-      <label style="font-size: 20px; background: #F8BD9F;" value="ХИТ ПРОДАЖ"/>
-    </div>
-    <hbox align="center" xmlns:w='client'>
-      <div width="20px">
-        <image content="@bind(vm.backImage)" onClick="@command('back')" visible="@bind(vm.currentPos > 0)" w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
+    <vlayout>
+      <div sclass="recommended-header" width="100%">
+        <label style="font-size: 20px; background: #F8BD9F;" value="ХИТ ПРОДАЖ"/>
       </div>
+      <hbox align="center" xmlns:w='client'>
+        <div width="20px">
+          <image content="@bind(vm.backImage)" onClick="@command('back')" visible="@bind(vm.currentPos > 0)"
+                 w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
+        </div>
 
-      <hbox id="current_banner" align="center" style="margin: 5px 0px 10px 0" height="90px" children="@bind(vm.glass)">
+        <hbox id="current_banner" align="center" style="margin: 5px 0px 10px 0" height="90px"
+              children="@bind(vm.glass)">
+          <template name="children">
+            <vbox width="200px" align="center" style="background: #ffffff;margin: 0 10px 0 10px">
+              <div align="center" sclass="productImageCatalog">
+                <image sclass="productImage" content="@load(each.image)"
+                       onClick="@command('redirectToProductItem', productModel=each)"/>
+              </div>
+              <label height="20px" value="@load(each.manufacturer.name)"/>
+              <div height="60px">
+                <label value="@load(each.name)"/>
+              </div>
+              <div>Цена:
+                <label value="@load(each.price)"/>
+                руб.
+              </div>
+              <div sclass="menu-element" style="margin:5px;">
+                <div width="150px">
+                  <label value="В корзину" visible="@bind(not each.inCart)"
+                         onClick="@command('addToCart', productModel=each)"
+                         style="cursor:pointer;"/>
+                  <label visible="@bind(each.inCart)" value="Уже в корзине"/>
+                </div>
+              </div>
+
+            </vbox>
+          </template>
+        </hbox>
+        <div width="20px">
+          <image content="@bind(vm.nextImage)" onClick="@command('next')" visible="@bind(not vm.endList)"
+                 w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
+        </div>
+      </hbox>
+
+      <!--<hbox width="100%" children="@bind(vm.products)" style="margin: 15px 0 20px 20px">
         <template name="children">
-          <vbox width="200px" align="center" style="background: #ffffff;margin: 0 10px 0 10px">
-            <div align="center" sclass="productImageCatalog">
-              <image sclass="productImage" content="@load(each.image)"
-                     onClick="@command('redirectToProductItem', productModel=each)"/>
-            </div>
-            <label height="20px" value="@load(each.manufacturer.name)"/>
-            <div height="60px">
-              <label value="@load(each.name)"/>
-            </div>
-            <div>Цена:
-              <label value="@load(each.price)"/>
-              руб.
-            </div>
-            <div sclass="menu-element" style="margin:5px;s">
-              <label value="В корзину" visible="@bind(not each.inCart)"
-                     onClick="@command('addToCart', productModel=each)"
-                     style="font-family: Century Gothic,serif;font-size: 13pt;cursor:pointer;"/>
-              <label visible="@bind(each.inCart)" value="Уже в корзине"
-                     style="font-family: Century Gothic,serif;font-size: 13pt;"/>
-            </div>
-
+          <vbox>
+            <vbox width="220px" align="center" style="background: #ffffff">
+              <div align="center" sclass="productImageCatalog">
+                <image sclass="productImage" content="@load(each.image)"
+                       onClick="@command('redirectToProductItem', productModel=each)"/>
+              </div>
+              <label height="20px" value="@load(each.manufacturer.name)"/>
+              <div height="60px">
+                <label value="@load(each.name)"/>
+              </div>
+              <div>Цена:
+                <label value="@load(each.price)"/>
+                руб.
+              </div>
+              <image content="@bind(vm.cartImage)" visible="@bind(not each.inCart)"
+                  style="margin: 5px;"
+                  onClick="@command('addToCart', productModel=each)"/>
+              <label visible="@bind(each.inCart)" value="Уже в корзине"/>
+            </vbox>
           </vbox>
         </template>
-      </hbox>
-      <div width="20px">
-        <image content="@bind(vm.nextImage)" onClick="@command('next')" visible="@bind(not vm.endList)" w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
-      </div>
-    </hbox>
+      </hbox>-->
 
-    <!--<hbox width="100%" children="@bind(vm.products)" style="margin: 15px 0 20px 20px">
-      <template name="children">
-        <vbox>
-          <vbox width="220px" align="center" style="background: #ffffff">
-            <div align="center" sclass="productImageCatalog">
-              <image sclass="productImage" content="@load(each.image)"
-                     onClick="@command('redirectToProductItem', productModel=each)"/>
-            </div>
-            <label height="20px" value="@load(each.manufacturer.name)"/>
-            <div height="60px">
-              <label value="@load(each.name)"/>
-            </div>
-            <div>Цена:
-              <label value="@load(each.price)"/>
-              руб.
-            </div>
-            <image content="@bind(vm.cartImage)" visible="@bind(not each.inCart)"
-                style="margin: 5px;"
-                onClick="@command('addToCart', productModel=each)"/>
-            <label visible="@bind(each.inCart)" value="Уже в корзине"/>
-          </vbox>
-        </vbox>
-      </template>
-    </hbox>-->
-
-  </vlayout>
+    </vlayout>
   </div>
 </zk>

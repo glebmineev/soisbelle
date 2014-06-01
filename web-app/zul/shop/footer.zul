@@ -19,9 +19,8 @@
       <h:ul children="@bind(vm.menuItems)">
         <template name="children">
           <h:li>
-            <div width="130px">
-              <a href="/shop/${each.href}" label="${each.name}"
-                 style="font-family: Century Gothic,serif;font-size: 13pt"/>
+            <div width="150px;">
+              <a href="/shop/${each.href}" label="${each.name}"/>
             </div>
           </h:li>
         </template>

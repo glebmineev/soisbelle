@@ -24,7 +24,7 @@
 
     <include if="${not vm.isShowcase}" src="/zul/shop/product.zul"/>
 
-    <vbox align="center" width="941px" style="border: 1px solid #000000;" if="${vm.isShowcase}">
+    <vbox align="center" width="961px" style="border: 1px solid #000000;" if="${vm.isShowcase}">
 
       <!-- Категории -->
       <hbox>
@@ -100,12 +100,23 @@
         </div>
 
         <vbox>
-        <combobox if="${vm.showCatalog}" width="25%"
-                  model="@bind(vm.countPageItemModel)" onChange="@command('changeShowItems')"/>
+
+        <hbox if="${vm.showCatalog}">
+          <!-- панель изменения отображения витрины -->
+          <div>
+            <image src="/images/rows.png" onClick="@command('applyRowTemplate')"/>
+            <image src="/images/cells.png" onClick="@command('applyCellTemplate')"/>
+          </div>
+          <hbox>
+            <label value="Отоброжать по:"/>
+            <combobox width="50%"
+                      model="@bind(vm.countPageItemModel)" onChange="@command('changeShowItems')"/>
+          </hbox>
+        </hbox>
 
         <!-- список товаров в текущей категории, отображаеться если не корневая -->
         <include id="showcase" width="701px" if="${vm.showCatalog}"
-                 src="/zul/components/showcasePaging.zul" allProducts="${vm.allProducts}" isChangeShow="false" countPageItems="9"/>
+                 src="/zul/components/showcasePaging.zul" allProducts="${vm.allProducts}" isChangeShow="true" countPageItems="9"/>
 <!--        <include id="showcase" width="680px" if="${vm.showCatalog}"
                  src="/zul/components/showcase.zul" allProducts="${vm.allProducts}" isChangeShow="true" showAppendBtn="true"/>-->
         </vbox>

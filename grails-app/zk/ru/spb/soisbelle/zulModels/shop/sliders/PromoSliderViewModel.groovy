@@ -8,7 +8,9 @@ import org.zkoss.bind.annotation.Init
 import org.zkoss.bind.annotation.NotifyChange
 import org.zkoss.image.AImage
 import ru.spb.soisbelle.ImageStorageService
+import ru.spb.soisbelle.InitService
 import ru.spb.soisbelle.wrappers.BulletWrapper
+import ru.spb.soisbelle.wrappers.PromoWrapper
 
 import java.util.concurrent.LinkedBlockingDeque
 
@@ -18,70 +20,72 @@ import java.util.concurrent.LinkedBlockingDeque
 class PromoSliderViewModel implements GrailsApplicationAware {
 
   GrailsApplication grailsApplication
-  ImageStorageService imageStorageService
+  InitService initService
 
-  Deque<AImage> images = new LinkedBlockingDeque<AImage>(4);
-  AImage currentBanner
+  Deque<PromoWrapper> images = new LinkedBlockingDeque<PromoWrapper>(4);
+  PromoWrapper currentPromo
   BulletWrapper[] pageWrappers = new BulletWrapper[4]
   BulletWrapper currentBullet
 
   @Init
   public void init(){
-    imageStorageService = this.grailsApplication.getMainContext().getBean("imageStorageService")
-    currentBanner = imageStorageService.getBanner_img1()
-    images.add(imageStorageService.getBanner_img2())
-    images.add(imageStorageService.getBanner_img3())
-    images.add(imageStorageService.getBanner_img4())
+    initService = grailsApplication.getMainContext().getBean("initService")
 
-    currentBullet = new BulletWrapper(0, "btn-sel")
-    pageWrappers[0] = currentBullet
-    pageWrappers[1] = new BulletWrapper(1, "btn")
-    pageWrappers[2] = new BulletWrapper(2, "btn")
-    pageWrappers[3] = new BulletWrapper(3, "btn")
 
+    ArrayList<PromoWrapper> promos = initService.promos
+    if (promos.size() != 0) {
+      currentPromo = initService.promos.get(0)
+      images.addAll(initService.promos.subList(1, initService.promos.size()))
+
+      currentBullet = new BulletWrapper(0, "active")
+      pageWrappers[0] = currentBullet
+      pageWrappers[1] = new BulletWrapper(1, "nonactive")
+      pageWrappers[2] = new BulletWrapper(2, "nonactive")
+      pageWrappers[3] = new BulletWrapper(3, "nonactive")
+    }
   }
 
   @Command
-  @NotifyChange(["currentBanner", "pageWrappers"])
+  @NotifyChange(["currentPromo", "pageWrappers"])
   public void next(){
-    images.addLast(currentBanner)
-    currentBanner = images.removeFirst()
+    images.addLast(currentPromo)
+    currentPromo = images.removeFirst()
     moveForwardBullets(1)
   }
 
   @Command
-  @NotifyChange(["currentBanner", "pageWrappers"])
+  @NotifyChange(["currentPromo", "pageWrappers"])
   public void back(){
-    AImage memory = currentBanner
-    currentBanner = images.removeLast()
+    PromoWrapper memory = currentPromo
+    currentPromo = images.removeLast()
     images.addFirst(memory)
     moveBackBullets(1)
   }
 
   public void moveBackBullets(int steps) {
     int diff = currentBullet.getNumber() - steps
-    currentBullet.setCstyle("btn")
+    currentBullet.setCstyle("nonactive")
     if (diff < 0) {
       currentBullet = pageWrappers[pageWrappers.length - 1]
     } else {
       currentBullet = pageWrappers[diff]
     }
-    currentBullet.setCstyle("btn-sel")
+    currentBullet.setCstyle("active")
   }
 
   public void moveForwardBullets(int steps) {
     int diff = currentBullet.getNumber() + steps
-    currentBullet.setCstyle("btn")
+    currentBullet.setCstyle("nonactive")
     if (diff > (pageWrappers.length - 1)) {
       currentBullet = pageWrappers[0]
     } else {
       currentBullet = pageWrappers[diff]
     }
-    currentBullet.setCstyle("btn-sel")
+    currentBullet.setCstyle("active")
   }
 
   @Command
-  @NotifyChange(["currentBanner", "pageWrappers"])
+  @NotifyChange(["currentPromo", "pageWrappers"])
   public void selectSlide(@BindingParam("bullet") BulletWrapper bulletWrapper){
     int diff = bulletWrapper.getNumber() - currentBullet.getNumber()
     if (diff < 0) {

@@ -32,30 +32,7 @@
       <template name="noneditable" var="item">
         <listitem>
           <listcell>
-            <image width="100px">
-              <zscript><![CDATA[
-
-                import ru.spb.soisbelle.*
-                import org.zkoss.image.*
-                import org.codehaus.groovy.grails.commons.*
-                import ru.spb.soisbelle.common.*
-
-                def imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService");
-                def serverFoldersService = ApplicationHolder.getApplication().getMainContext().getBean("serverFoldersService")
-                def loginService = ApplicationHolder.getApplication().getMainContext().getBean("loginService")
-
-                String path = new PathBuilder()
-                            .appendPath(serverFoldersService.userPics)
-                            .appendString(item.email)
-                            .build()
-                String std_name = STD_FILE_NAMES.USER_NAME.getName()
-                int std_size = STD_IMAGE_SIZES.MIDDLE.getSize()
-
-                AImage img = imageService.getImageFile(path, std_name, std_size)
-                self.setContent(img)
-
-              ]]></zscript>
-            </image>
+            <image width="100px" content="${item.image}"/>
           </listcell>
           <listcell>
             <label value="${item.login}"/>
@@ -94,30 +71,7 @@
         <listitem>
           <listcell>
             <vbox align="center">
-              <image id="${item.id}" width="100px">
-                <zscript><![CDATA[
-
-                  import ru.spb.soisbelle.*
-                  import org.zkoss.image.*
-                  import org.codehaus.groovy.grails.commons.*
-                  import ru.spb.soisbelle.common.*
-
-                  def imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService");
-                  def serverFoldersService = ApplicationHolder.getApplication().getMainContext().getBean("serverFoldersService")
-                  def loginService = ApplicationHolder.getApplication().getMainContext().getBean("loginService")
-
-                  String path = new PathBuilder()
-                            .appendPath(serverFoldersService.userPics)
-                            .appendString(item.email)
-                            .build()
-                  String std_name = STD_FILE_NAMES.USER_NAME.getName()
-                  int std_size = STD_IMAGE_SIZES.MIDDLE.getSize()
-
-                  AImage img = imageService.getImageFile(path, std_name, std_size)
-                  self.setContent(img)
-
-                  ]]></zscript>
-              </image>
+              <image id="${item.id}" width="100px" content="${item.image}"/>
               <button label="Загрузить аватар" upload="true"
                       onUpload="@command('uploadImage', inputEvent=event)"/>
             </vbox>

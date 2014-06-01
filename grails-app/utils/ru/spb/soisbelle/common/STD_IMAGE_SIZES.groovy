@@ -5,7 +5,7 @@ package ru.spb.soisbelle.common
  */
 public enum STD_IMAGE_SIZES {
 
-  SMALLEST(100), SMALL(150), MIDDLE(300), LARGE(500)
+  SMALLEST(100), SMALL(150), MIDDLE(300), LARGE(500), LARGEST(961)
 
   private int size
 

@@ -14,9 +14,8 @@
     <h:ul children="@bind(vm.menuItems)">
       <template name="children">
         <h:li>
-          <div width="125px" if="${each.menuImage != null}">
-              <a href="/shop/catalog/?category=${each.id}" label="${each.upperName}"
-                 style="font-family: Century Gothic,serif;font-size: 13pt"/>
+          <div if="${each.menuImage != null}" width="150px;">
+              <a href="/shop/catalog/?category=${each.id}" label="${each.upperName}"/>
           </div>
         </h:li>
       </template>

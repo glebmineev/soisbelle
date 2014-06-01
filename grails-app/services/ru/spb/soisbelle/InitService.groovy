@@ -3,7 +3,9 @@ package ru.spb.soisbelle
 import com.google.common.collect.Lists
 import org.springframework.beans.factory.InitializingBean
 import ru.spb.soisbelle.common.CategoryHandler
+import ru.spb.soisbelle.common.STD_IMAGE_SIZES
 import ru.spb.soisbelle.wrappers.CategoryWrapper
+import ru.spb.soisbelle.wrappers.PromoWrapper
 
 class InitService implements InitializingBean {
 
@@ -14,6 +16,7 @@ class InitService implements InitializingBean {
   List<ProductEntity> hits*/
   List<CategoryEntity> categoriesThru = new ArrayList<CategoryEntity>()
   List<CategoryWrapper> categories = new ArrayList<CategoryWrapper>()
+  List<PromoWrapper> promos = new ArrayList<PromoWrapper>()
   List<ManufacturerEntity> manufacturers
 
   String about
@@ -35,6 +38,7 @@ class InitService implements InitializingBean {
     }
 
     initInfo()
+    initPromos()
 
     manufacturers = ManufacturerEntity.list()
     //TODO:: сделать в админке.
@@ -52,6 +56,13 @@ class InitService implements InitializingBean {
     details = InfoEntity.findByName("Информация")?.getDescription()
     aboutMagazine = InfoEntity.findByName("О магазине")?.getDescription()
     howToBuy = InfoEntity.findByName("Как покупать")?.getDescription()
+  }
+
+  void initPromos(){
+    promos.clear()
+    PromoEntity.list(sort: "name", max: 4).each {it ->
+      promos.add(new PromoWrapper(it, STD_IMAGE_SIZES.LARGEST))
+    }
   }
 
   void updateHits(){

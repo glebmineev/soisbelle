@@ -30,6 +30,8 @@ class AdminController {
 
   def categories() { }
 
+  def promo(){ }
+
   def saveInfo(){ }
 
   def beforeInterceptor = {

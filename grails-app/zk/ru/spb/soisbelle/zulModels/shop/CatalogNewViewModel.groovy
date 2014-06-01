@@ -16,6 +16,7 @@ import org.zkoss.zk.ui.Executions
 import org.zkoss.zk.ui.Page
 import org.zkoss.zk.ui.sys.ExecutionsCtrl
 import org.zkoss.zkplus.databind.BindingListModelList
+import org.zkoss.zul.Div
 import org.zkoss.zul.Include
 import org.zkoss.zul.ListModelList
 import org.zkoss.zul.Textbox
@@ -272,6 +273,21 @@ class CatalogNewViewModel {
   @Command
   public void back(){
     Executions.sendRedirect("/shop/catalog/category?category=${categoryID}")
+  }
+
+  @Command
+  public void applyRowTemplate(@ContextParam(ContextType.TRIGGER_EVENT) Event event) {
+    Page page = event.getTarget().getSpaceOwner() as Page
+    Div productsDiv = page.getFellow("showcase").getFellow("showcase-div") as Div
+    productsDiv.setSclass("products-row-template")
+  }
+
+
+  @Command
+  public void applyCellTemplate(@ContextParam(ContextType.TRIGGER_EVENT) Event event) {
+    Page page = event.getTarget().getSpaceOwner() as Page
+    Div productsDiv = page.getFellow("showcase").getFellow("showcase-div") as Div
+    productsDiv.setSclass("products-cell-template")
   }
 
 }

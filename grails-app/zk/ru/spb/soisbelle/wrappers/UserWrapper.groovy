@@ -2,9 +2,16 @@ package ru.spb.soisbelle.wrappers
 
 import com.google.common.base.Function
 import com.google.common.collect.Collections2
+import org.codehaus.groovy.grails.commons.ApplicationHolder
+import org.codehaus.groovy.grails.commons.GrailsApplication
+import org.codehaus.groovy.grails.plugins.support.aware.GrailsApplicationAware
+import org.zkoss.image.AImage
 import org.zkoss.zkplus.databind.BindingListModelList
 import org.zkoss.zul.ListModelList
 import ru.spb.soisbelle.*
+import ru.spb.soisbelle.common.PathBuilder
+import ru.spb.soisbelle.common.STD_FILE_NAMES
+import ru.spb.soisbelle.common.STD_IMAGE_SIZES
 
 class UserWrapper extends IdentWrapper implements Wrapper {
 
@@ -18,8 +25,12 @@ class UserWrapper extends IdentWrapper implements Wrapper {
 
   ListModelList<RoleWrapper> roles
 
+  AImage image
   UserWrapper memento
   boolean editingStatus = false
+
+  ServerFoldersService serverFoldersService = ApplicationHolder.getApplication().getMainContext().getBean("serverFoldersService")
+  ImageService imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService")
 
   UserWrapper() {}
 
@@ -52,6 +63,16 @@ class UserWrapper extends IdentWrapper implements Wrapper {
     this.roles = new BindingListModelList<RoleWrapper>(allRoles, true)
     this.roles.setMultiple(true)
     this.roles.setSelection(userRoles)
+
+    String path = new PathBuilder()
+        .appendPath(serverFoldersService.userPics)
+        .appendString(user.email)
+        .build()
+    String std_name = STD_FILE_NAMES.PROMO_NAME.getName()
+    int std_size = STD_IMAGE_SIZES.MIDDLE.getSize()
+
+    this.image = imageService.getImageFile(path, std_name, std_size)
+
   }
 
   public void restore(){

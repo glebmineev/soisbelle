@@ -14,7 +14,7 @@ body {
   border:0;
   opacity: 1;
   position: absolute;
-  top: 174px;
+  top: 42%;
   width: 30px;
 }
 
@@ -22,7 +22,17 @@ body {
   text-align: center;
 }
 
-.banner-selector .btn {
+/**
+background: url("bullets.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    display: inline-block;
+    height: 22px;
+    margin: 0 2px;
+    text-indent: -9999px;
+    width: 22px;
+*/
+
+.banner-selector .nonactive {
   display:inline-block;
   width:22px;
   height:22px;
@@ -33,15 +43,14 @@ body {
   cursor:pointer;
 }
 
-.banner-selector .btn-sel {
+.banner-selector .active {
   display:inline-block;
   width:22px;
   height:22px;
-  background:url("../images/bullets.png") no-repeat;
   text-indent:-9999px;
   border:0;
   margin: 0 2px;
-  background-position:0 -22px;
+  background: url("../images/bullets.png") no-repeat 0 -22px;
 }
 
 .center {

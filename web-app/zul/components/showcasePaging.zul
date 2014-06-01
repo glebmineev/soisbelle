@@ -10,12 +10,7 @@
        binder="@init(queueName='showcasepagingqueue')"
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.components.ShowcasePagingViewModel')" width="100%">
     <vbox width="100%">
-      <div sclass="products-cell-template" width="100%">
-        <!-- панель изменения отображения витрины -->
-<!--        <div visible="@load(vm.isChangeShow)">
-          <button image="/images/rows.png" onClick="@command('applyRowTemplate')"/>
-          <button image="/images/cells.png" onClick="@command('applyCellTemplate')"/>
-        </div>-->
+      <div id="showcase-div" sclass="products-cell-template" width="100%">
         <!-- витрина товаров -->
         <h:ul id="products" children="@bind(vm.products)">
           <template name="children">

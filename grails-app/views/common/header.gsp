@@ -9,16 +9,20 @@
       <tpl:zkBody zul="/zul/search/search.zul"/>
     </td>
     <td width="25%" valign="top" align="right">
-      <div class="menu-element" style="width: 80%">
-        <g:link controller="shop" action="register">Регистрация</g:link>
+      <div class="menu-element" style="width: 211px;">
+        <div>
+          <g:link controller="shop" action="register">Регистрация</g:link>
+        </div>
       </div>
     </td>
     <td width="20%" valign="top" align="right">
-      <div class="menu-element" style="width: 80%">
-        <g:link controller="auth" action="login">Войти</g:link>
+      <div class="menu-element" style="width: 118px;margin-right: 10px;">
+        <div>
+          <g:link controller="auth" action="login">Войти</g:link>
+        </div>
       </div>
     </td>
-    <td width="5%" valign="top">
+    <td width="10%" valign="top" align="right">
       <g:link controller="shop" action="cart">
         <g:img dir="images/dsn/header" file="cart.png"/>
       </g:link>

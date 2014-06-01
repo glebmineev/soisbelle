@@ -80,6 +80,11 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
     this.products.clear()
     this.allProducts.clear()
     this.allProducts.addAll(data)
+
+    //allProducts.sort {a,b ->
+    //  a<=>b
+    //}
+
     initServices()
   }
 
@@ -383,21 +388,6 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
       fillNumberPages(prevPage)
     }
 
-  }
-
-  @Command
-  public void applyRowTemplate(@ContextParam(ContextType.TRIGGER_EVENT) Event event) {
-    Include include = event.getTarget().getSpaceOwner() as Include
-    Div productsDiv = include.getFirstChild().getFirstChild() as Div
-    productsDiv.setSclass("products-row-template")
-  }
-
-
-  @Command
-  public void applyCellTemplate(@ContextParam(ContextType.TRIGGER_EVENT) Event event) {
-    Include include = event.getTarget().getSpaceOwner() as Include
-    Div productsDiv = include.getFirstChild().getFirstChild() as Div
-    productsDiv.setSclass("products-cell-template")
   }
 
   public void movePrev(int countMoved){

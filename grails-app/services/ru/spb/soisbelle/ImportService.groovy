@@ -187,8 +187,15 @@ class ImportService extends IImporterService implements ApplicationContextAware 
         //TODO: если категорий нет прикрепляем товары к самой верхней.
         if (categories.size() == 0)
           filtersCache.get(sheet).each { Long filterID ->
-            submenuCategory.addToFilters(FilterEntity.get(filterID))
-            submenuCategory.save(flush: true)
+            CategoryEntity retrived = CategoryEntity.get(submenuCategory.getId())
+            List<Long> filterIds = retrived.getFilters().collect { it.id }
+
+            if (!filterIds.contains(filterID)) {
+              submenuCategory.addToFilters(FilterEntity.get(filterID))
+              submenuCategory.save(flush: true)
+            } else {
+              log.info("Фильтр: ${sheetName} строка: ${rowNumber} был в БД!!")
+            }
           }
 
         categoryCache.put(sheetName, categories)

@@ -16,11 +16,11 @@
       }
 
     </style>-->
-    <div align="center" width="941px" height="320px" xmlns:w='client' style="position:relative;margin-bottom: 35px">
+    <div align="center" width="961px" xmlns:w='client' style="position:relative;">
 
       <div sclass="banner-arrow" style="background-position: 0 0px;left: 0px;" onClick="@command('back')"
            w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
-      <image id="current_banner" content="@bind(vm.currentBanner)"/>
+      <image id="current_banner" content="@bind(vm.currentPromo.image)" style="margin-bottom: 5px"/>
       <div sclass="banner-selector" children="@bind(vm.pageWrappers)">
         <template name="children">
           <div sclass="${each.cstyle}" onClick="@command('selectSlide', bullet=each)" w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
