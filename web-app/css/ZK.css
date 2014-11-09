@@ -1,16 +1,24 @@
-/*#zk_showBusy {
+#zk_showBusy {
   display: none !important;
 }
 
 .z-loading-indicator {
   display: none !important;
-}*/
+}
 
 /* Убираем progress... диалог */
 .z-temp, .z-modal-mask
 {
   display : none !important;
   visibility : hidden !important;
+}
+
+.z-apply-mask {
+  display: none !important;
+}
+
+.z-apply-loading-indicator, .z-apply-loading {
+  display: none !important;
 }
 
 div.process-window {
@@ -134,17 +142,28 @@ th.z-listheader {
   background: none repeat scroll 0 0 #f8bd9f;
 }
 
+th.z-listheader > .z-listheader-content {
+  color: #000000;
+}
+
 tr.z-listitem:hover > .z-listcell {
   background: none repeat scroll 0 0 #f8bd9f;
 }
 
 div.z-scrollbar-indicator, div.z-scrollbar-vertical  {
-  background: none repeat scroll 0 0 #f8bd9f;
+  background: none repeat scroll 0 0 #f8bd9f !important;
 }
-div.z-scrollbar-up, div.z-scrollbar-down {
-  color: #f8bd9f;
+div.z-scrollbar-up {
+  color: #f8bd9f !important;
 }
 
+div.z-scrollbar-down {
+  color: #f8bd9f !important;
+}
+
+i.z-listitem-icon {
+  color: #f8bd9f !important;
+}
 
 div.catalog-listcell-cnt {
   background: none;
