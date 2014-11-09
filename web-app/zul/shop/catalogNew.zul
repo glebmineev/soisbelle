@@ -7,9 +7,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-  <div id="catalog" apply="ru.spb.soisbelle.BindComposer" onClientInfo="@command('refreshWhenBackToCatalog', div=self)"
+  <div id="catalog" apply="ru.spb.soisbelle.BindComposer"
+       onClientInfo="@command('refreshWhenBackToCatalog', div=self)"
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.CatalogNewViewModel')" width="100%">
-
     <!-- Навигация -->
     <hbox align="start">
       <div children="@bind(vm.links)">
