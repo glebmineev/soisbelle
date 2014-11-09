@@ -8,6 +8,7 @@ import org.zkoss.bind.annotation.Init
 import org.zkoss.bind.annotation.NotifyChange
 import org.zkoss.zk.ui.Executions
 import org.zkoss.zk.ui.Sessions
+import org.zkoss.zul.Div
 import org.zkoss.zul.ListModelList
 import ru.spb.soisbelle.ProductEntity
 import ru.spb.soisbelle.wrappers.ProductWrapper
@@ -33,7 +34,7 @@ class SearchResultViewModel {
       return
     List<ProductEntity> list = ProductEntity.createCriteria().list {
       ilike("name", "%${keyword}%")
-      ilike("description", "%${keyword}%")
+      /*ilike("description", "%${keyword}%")*/
     }
     matchedProduct.addAll(list)
     model = new ListModelList<ProductWrapper>();
@@ -43,6 +44,11 @@ class SearchResultViewModel {
   @Command
   public void redirectToProductItem(@BindingParam("product") ProductWrapper product){
     Executions.sendRedirect("/shop/product?product=${product.id}")
+  }
+
+  @Command
+  public void refreshWhenBackToSearchResults(@BindingParam("div") Div self) {
+    self.invalidate()
   }
 
 }

@@ -22,10 +22,12 @@
           </h:li>
         </template>
       </h:ul>
-      <window mode="highlighted" position="center" closable="false" visible="@load(vm.isBusy)">
-        <vbox>
-          <image src="/images/ajax-loader.gif"/>
-        </vbox>
+      <window sclass="process-window" mode="highlighted" position="center" closable="false" visible="@load(vm.isBusy)">
+        <h:div id="loading">
+          <h:span class="loading-span"></h:span>
+          <h:span class="loading-span" id="bubble2"></h:span>
+          <h:span class="loading-span" id="bubble3"></h:span>
+        </h:div>
       </window>
     </div>
     <button label="Еще..." onClick="@command('appendElse')" autodisable="true" visible="@bind(vm.showAppendBtn)"/>

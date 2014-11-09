@@ -7,7 +7,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-  <div id="catalog" apply="ru.spb.soisbelle.BindComposer" onBookmarkChange="@command('back')"
+  <div id="catalog" apply="ru.spb.soisbelle.BindComposer" onClientInfo="@command('refreshWhenBackToCatalog', div=self)"
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.CatalogNewViewModel')" width="100%">
 
     <!-- Навигация -->
@@ -51,12 +51,12 @@
               <!--<caption label="Фильтр"/>-->
 
               <listbox id="manufListbox" model="@bind(vm.manufsFilterModel)" multiple="true" checkmark="true"
-                       height="122px">
+                       height="122px" onSelect="@command('filtred')">
                 <listhead>
                   <listheader label="Производитель"/>
                 </listhead>
                 <template name="model" var="item">
-                  <listitem onClick="@command('filtred')">
+                  <listitem onClick="@command('filtred'))">
                     <listcell>
                       <label value="${item.name}"/>
                     </listcell>
@@ -66,7 +66,7 @@
               <h:br/>
               <!-- Фильтр по применению -->
               <listbox id="usageListbox" model="@bind(vm.usageFilterModel)" multiple="true" checkmark="true"
-                       height="250px">
+                       height="250px" onSelect="@command('filtred')">
                 <listhead>
                   <listheader label="Применение"/>
                 </listhead>

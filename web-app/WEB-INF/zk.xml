@@ -51,5 +51,11 @@
   </system-config>
   <desktop-config>
     <id-to-uuid-prefix>z_</id-to-uuid-prefix>
+    <device-type>ajax</device-type>
+    <embed><![CDATA[
+			<script type="text/javascript">
+				zAu.cmd0.showBusy = function () {return false;}
+			</script>
+		]]></embed>
   </desktop-config>
 </zk>

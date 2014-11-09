@@ -5,19 +5,16 @@
       <configuration>
         <webroots>
           <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.4.0/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/resources-1.2.7/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-bootstrap-1.0.0.M2/web-app" relative="/" />
           <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-atlantic-1.0.0/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-bootstrap-1.0.0.M2/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/resources-1.2.7/web-app" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
     </facet>
     <facet type="hibernate" name="Hibernate">
       <configuration>
-        <datasource-map>
-          <unit-entry name="Gorm" />
-          <unit-entry name="sessionFactory" />
-        </datasource-map>
+        <datasource-map />
         <naming-strategy-map />
       </configuration>
     </facet>
@@ -94,8 +91,8 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm-hibernate-core/jars/grails-datastore-gorm-hibernate-core-3.0.6.RELEASE.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm-hibernate/jars/grails-datastore-gorm-hibernate-3.0.6.RELEASE.jar!/" />
           <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.4.0/lib" />
-          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-bootstrap-1.0.0.M2/lib" />
           <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-atlantic-1.0.0/lib" />
+          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-bootstrap-1.0.0.M2/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

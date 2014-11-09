@@ -13,6 +13,7 @@
   <g:javascript library="hoverIntent" src="megamenu/jquery.hoverIntent.minified.js"/>--}%
 
   <link rel="stylesheet" href="${resource(dir: 'css', file: 'content.css')}" type="text/css">
+  <link rel="stylesheet" href="${resource(dir: 'css', file: 'progressbar.css')}" type="text/css">
 
   <!-- slider stylesheet -->
 %{--  <link rel="stylesheet" href="${resource(dir: 'css/slider/themes/default', file: 'default.css')}" type="text/css"

@@ -29,6 +29,7 @@ class CheckoutViewModel {
 
   LoginService loginService = ApplicationHolder.getApplication().getMainContext().getBean("loginService") as LoginService
   CartService cartService = ApplicationHolder.getApplication().getMainContext().getBean("cartService") as CartService
+  EmailService emailService = ApplicationHolder.getApplication().getMainContext().getBean("emailService") as EmailService
 
   @Init
   public void init() {
@@ -53,6 +54,7 @@ class CheckoutViewModel {
 
     saveCartData(order)
     cartService.cleanCart()
+    emailService.sendUserOrderEmail(email)
     Executions.sendRedirect("/shop/success")
 
   }

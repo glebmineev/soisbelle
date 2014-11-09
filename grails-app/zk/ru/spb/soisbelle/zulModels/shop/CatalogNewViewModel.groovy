@@ -156,7 +156,6 @@ class CatalogNewViewModel {
   @Command
   @NotifyChange(["categories"])
   public void goToCategory(@BindingParam("categoryID") Long categoryID){
-    Executions.getCurrent().getDesktop().setBookmark("${categoryID}")
     Executions.sendRedirect("/shop/catalog?category=${categoryID}")
   }
 
@@ -271,8 +270,13 @@ class CatalogNewViewModel {
   }
 
   @Command
-  public void back(){
-    Executions.sendRedirect("/shop/catalog/category?category=${categoryID}")
+  public void refreshWhenBackToCatalog(@BindingParam("div") Div self){
+    self.invalidate()
+  }
+
+  @Command
+  public void changeBookmark(){
+    Executions.getCurrent().getDesktop().setBookmark("${categoryID}")
   }
 
   @Command

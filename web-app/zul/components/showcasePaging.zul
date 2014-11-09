@@ -15,23 +15,29 @@
         <h:ul id="products" children="@bind(vm.products)">
           <template name="children">
             <h:li>
-              <include src="/zul/components/showcaseItem.zul" productWrapper="${each}" width="215px" height="350px"/>
+              <include src="/zul/components/showcaseItem.zul" productWrapper="${each}"/>
             </h:li>
           </template>
         </h:ul>
-        <window mode="highlighted" position="center" closable="false" visible="@load(vm.isBusy)">
-          <vbox>
+        <window sclass="process-window" mode="highlighted" position="center" closable="false" visible="@load(vm.isBusy)">
+          <!--<vbox>
             <image content="@bind(vm.progressRoll)"/>
-          </vbox>
+          </vbox>-->
+          <h:div id="loading">
+            <h:span class="loading-span"></h:span>
+            <h:span class="loading-span" id="bubble2"></h:span>
+            <h:span class="loading-span" id="bubble3"></h:span>
+          </h:div>
         </window>
       </div>
       <div align="center" width="100%">
         <hbox>
+          <!--<image content="@bind(vm.skipToStartImage)" onClick="@command('skipToStart')"/>-->
           <image content="@bind(vm.backImage)" onClick="@command('prevOnePage')" visible="@bind(not vm.startList)"/>
           <a href="" style="font-size: 14pt;" label=" ... " onClick="@command('prevMore')" visible="@bind(not vm.startPage)"/>
           <div children="@bind(vm.numberPages)">
             <template name="children">
-              <a href="" focus="true" if="${each.selected}" label="${each.number}" style="font-size: 16pt;"
+              <a href="" focus="false" if="${each.selected}" label="${each.number}" style="font-size: 16pt;"
                  onClick="@command('moveToPage', pageNumber=each)"/>
               <a style="font-size: 14pt;" href="" if="${not each.selected}" label="${each.number}"
                  onClick="@command('moveToPage', pageNumber=each)"/>
@@ -40,6 +46,7 @@
           <a href="" style="font-size: 14pt;" label=" ... " onClick="@command('nextMore')" visible="@bind(not vm.endPage)"/>
           <label style="font-size: 18pt;" value="@bind(vm.totalCount)"/>
           <image content="@bind(vm.nextImage)" onClick="@command('nextOnePage')" visible="@bind(not vm.endList)"/>
+          <!--<image content="@bind(vm.skipToEndImage)" onClick="@command('skipToEnd')"/>-->
         </hbox>
       </div>
     </vbox>

@@ -8,9 +8,7 @@
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
   <div apply="ru.spb.soisbelle.BindComposer"
-       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.FooterViewModel')" width="100%">
-
-    <!--<style src="/css/ZK.css"/>-->
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.FooterViewModel')" width="100%" style="margin-left: 5px;">
 
     <div sclass="zMenu">
 

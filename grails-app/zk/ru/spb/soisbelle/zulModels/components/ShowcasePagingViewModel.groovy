@@ -60,6 +60,8 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
 
   AImage nextImage
   AImage backImage
+  AImage skipToStartImage
+  AImage skipToEndImage
   AImage progressRoll
 
   List<PageWrapper> numberPages = new ArrayList<PageWrapper>()
@@ -71,12 +73,16 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
 
     this.nextImage = imageStorageService.getNextImage()
     this.backImage = imageStorageService.getBackImage()
+    this.skipToStartImage = imageStorageService.getSkipToStart()
+    this.skipToEndImage = imageStorageService.getSkipToEnd()
     this.progressRoll = imageStorageService.getProgressRoll()
+
     this.step = countPageItems
     this.isChangeShow = Boolean.parseBoolean(isChangeShow)
     this.isBusy = true
     this.currentPos = 0
     this.firstPos = 0
+
     this.products.clear()
     this.allProducts.clear()
     this.allProducts.addAll(data)

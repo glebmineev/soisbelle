@@ -1,3 +1,26 @@
+/*#zk_showBusy {
+  display: none !important;
+}
+
+.z-loading-indicator {
+  display: none !important;
+}*/
+
+/* Убираем progress... диалог */
+.z-temp, .z-modal-mask
+{
+  display : none !important;
+  visibility : hidden !important;
+}
+
+div.process-window {
+  background: none;
+}
+
+div.process-window .z-window-content {
+  background: none;
+}
+
 /*div.z-tree-body {
   -webkit-border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
@@ -106,6 +129,23 @@ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
   border-right: 1px solid #efefef;
 }*/
 
+
+th.z-listheader {
+  background: none repeat scroll 0 0 #f8bd9f;
+}
+
+tr.z-listitem:hover > .z-listcell {
+  background: none repeat scroll 0 0 #f8bd9f;
+}
+
+div.z-scrollbar-indicator, div.z-scrollbar-vertical  {
+  background: none repeat scroll 0 0 #f8bd9f;
+}
+div.z-scrollbar-up, div.z-scrollbar-down {
+  color: #f8bd9f;
+}
+
+
 div.catalog-listcell-cnt {
   background: none;
   padding-bottom: 10px;
@@ -143,8 +183,8 @@ div.products-row-template > ul > li {
 
 div.products-row-template > ul > li > div {
   text-align: left;
-  width: 100%;
-  height: 250px;
+  width: 701px!important;
+  height: 250px!important;
   margin-bottom: 5px;
   text-align: center;
   background: #ffffff;
@@ -157,7 +197,7 @@ div.products-row-template > ul > li > div {
 /*Ячеистая витрина*/
 
 div.products-cell-template {
-  /*width: 650px;*/
+  width: 650px;
   margin-left: 0px;
 }
 
@@ -168,8 +208,8 @@ div.products-cell-template > ul {
 }
 
 div.products-cell-template > ul > li > div {
-  width: 230px;
-  height: 350px;
+  width: 215px!important;
+  height: 350px!important;
   margin: 0px 15px 15px 0px;
   text-align: center;
   background: #ffffff;

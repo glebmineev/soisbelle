@@ -89,6 +89,28 @@ class EmailService {
     Transport.send(message);
   }
 
+
+  /**
+   * Сброс пароля пользователя.
+   * @param to - почта пользователя, куда слать новый пароль
+   */
+  void sendUserOrderEmail(String to){
+    Session session = getSession()
+    MimeMessage message = getMessage(session, to)
+
+    Multipart mp = new MimeMultipart();
+
+    String htmlBody =
+        new Scanner(grailsApplication.mainContext.getResource("email/userOrder.html").file, "UTF-8").useDelimiter("\\A").next();
+
+    MimeBodyPart htmlPart = new MimeBodyPart();
+    htmlPart.setContent(htmlBody, "text/html; charset=utf-8");
+    mp.addBodyPart(htmlPart);
+    message.setContent(mp)
+
+    Transport.send(message);
+  }
+
   /**
    * Создание сессии для отправки эл. почты.
    * @return сессия.
