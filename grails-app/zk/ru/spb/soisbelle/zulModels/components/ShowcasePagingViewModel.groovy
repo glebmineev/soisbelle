@@ -1,6 +1,5 @@
 package ru.spb.soisbelle.zulModels.components
 
-import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.codehaus.groovy.grails.commons.GrailsApplication
 import org.codehaus.groovy.grails.plugins.support.aware.GrailsApplicationAware
 import org.slf4j.Logger
@@ -8,9 +7,6 @@ import org.slf4j.LoggerFactory
 import org.zkoss.bind.BindUtils
 import org.zkoss.bind.annotation.*
 import org.zkoss.image.AImage
-import org.zkoss.zk.ui.event.Event
-import org.zkoss.zul.Div
-import org.zkoss.zul.Include
 import ru.spb.soisbelle.*
 import ru.spb.soisbelle.wrappers.PageWrapper
 import ru.spb.soisbelle.wrappers.ProductWrapper
@@ -51,6 +47,9 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
   //Количество страниц
   int totalCount
 
+  //перемещения внутри трехстраничного набора.
+  boolean inPaging = false
+
   /**
    * Необходимые сервисы.
    */
@@ -86,6 +85,8 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
     this.products.clear()
     this.allProducts.clear()
     this.allProducts.addAll(data)
+
+    inPaging = true
 
     //allProducts.sort {a,b ->
     //  a<=>b
@@ -192,6 +193,8 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
   @NotifyChange(["products", "currentPos", "numberPages", "totalCount", "startList", "endList"])
   public void moveToPage(@BindingParam("pageNumber") PageWrapper pageWrapper) {
 
+    inPaging = true
+
     int page = pageWrapper.number
     int diff = Math.abs((currentPage - page))
 
@@ -227,6 +230,9 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
   @Command
   @NotifyChange(["products", "currentPos", "numberPages", "endPage", "startPage", "startList", "endList"])
   public void nextMore() {
+
+    inPaging = false
+
     int pageStep = 3
     int lastPage = firstPage + 3
     int d = (totalCount - lastPage)
@@ -235,7 +241,7 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
     if (d > 2) {
       fillNumberPages(lastPage)
       moveNext(pageStep)
-      endPage = false
+      //endPage = false
       startPage = false
     } else {
       //если уже конец списка - не двигаемся дальше
@@ -258,6 +264,8 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
   @Command
   @NotifyChange(["products", "currentPos", "numberPages", "endPage", "startPage", "startList", "endList"])
   public void prevMore() {
+
+    inPaging = false
 
     int pageStep = 3
     numberPages.clear()
@@ -288,6 +296,7 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
   @Command
   @NotifyChange(["products", "currentPos", "numberPages", "endPage", "startPage", "startList", "endList"])
   public void nextOnePage() {
+    inPaging = false
     nextPage()
     setCurrentPos()
     next()
@@ -300,6 +309,7 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
   @Command
   @NotifyChange(["products", "currentPos", "numberPages", "endPage", "startPage", "startList", "endList"])
   public void prevOnePage() {
+    inPaging = false
     prevPage()
     setCurrentPos()
     prev()
@@ -334,14 +344,37 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
     if (diff <= step) {
       //endPage = true
       //startPage = false
-      endList = true
-      startList = false
+      if (totalCount > 3) {
+        endList = true
+        startList = false
+      }
       moveCarousel(oldPos, oldPos + diff)
     } else {
-      startPage = false
-      this.startList = false
+      if (totalCount > 3) {
+        startPage = false
+        startList = false
+      }
       moveCarousel(oldPos, currentPos)
     }
+
+    int visibleEndPoints = totalCount - currentPage
+    if (visibleEndPoints <= 3){
+      endPage = true
+    }
+
+    if (visibleEndPoints < 3){
+      endList = true
+    }
+
+    int visibleStartPoints = currentPage - 3
+    if (visibleStartPoints < 0) {
+      startPage = true
+    }
+
+    if (inPaging && visibleStartPoints < 0){
+      startList = true
+    }
+
   }
 
   private void prev() {
@@ -350,8 +383,20 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
       startList = true
       startPage = true
     }
-    endPage = false
-    endList = false
+    if (totalCount > 3) {
+      endPage = false
+      endList = false
+    }
+
+    if (currentPage < 3) {
+      startPage = true
+    }
+
+    int visibleNextPoints = totalCount - currentPage
+    if (visibleNextPoints <= 3) {
+      endPage = true
+    }
+
     moveCarousel(currentPos - step, currentPos)
   }
 

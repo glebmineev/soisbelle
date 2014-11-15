@@ -8,27 +8,27 @@
 
   <div apply="ru.spb.soisbelle.BindComposer"
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.components.ShowcaseItemModel')">
-    <div align="center">
+    <div sclass="with_img" align="center">
       <image sclass="productImage" content="@bind(vm.productWrapper.image)" onClick="@command('goToProduct')"/>
     </div>
-    <vbox>
-      <div align="center" height="20px">
+    <div sclass="with_content">
+      <div sclass="manufacturer_name" align="center">
         <label style="color: green;" value="@bind(vm.productWrapper.manufacturer)"/>
       </div>
-      <div align="center" height="90px">
-        <label style="font-weight: bold" value="@bind(vm.productWrapper.name)"/>
+      <div sclass="product_name" align="center">
+        <label style="font-weight: bold;" value="@bind(vm.productWrapper.name)"/>
       </div>
-      <div align="center" height="20px">
+      <div sclass="product_price" align="center">
         <label style="font-weight: bold; font-size: 11pt" value="Цена: "/>
         <label style="font-weight: bold; font-size: 11pt" value="@bind(vm.productWrapper.price)"/>
         <label style="font-weight: bold; font-size: 11pt" value=" руб."/>
       </div>
-      <div align="center" width="100%" style="margin-bottom: 5px;">
+      <div sclass="product_cart_btn" align="center" width="100%" style="margin-bottom: 5px;">
         <button visible="@bind(not vm.inCart)" label="В корзину"
                 onClick="@command('toCart')"/>
         <label visible="@bind(vm.inCart)" value="Уже в корзине"/>
       </div>
-    </vbox>
+    </div>
   </div>
 
 </zk>

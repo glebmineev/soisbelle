@@ -56,6 +56,8 @@ class CatalogNewViewModel {
 
   boolean isShowcase = false
 
+  boolean pageIsLoad = false;
+
   @Init
   public void init() {
     categoryID = Executions.getCurrent().getParameter("category") as Long
@@ -72,6 +74,8 @@ class CatalogNewViewModel {
 
     countPageItemModel = new ListModelList<String>(model)
     countPageItemModel.addSelection(model.get(0));
+
+    pageIsLoad = true
 
   }
 
@@ -271,7 +275,10 @@ class CatalogNewViewModel {
 
   @Command
   public void refreshWhenBackToCatalog(@BindingParam("div") Div self){
-    self.invalidate()
+    if (pageIsLoad) {
+      self.invalidate()
+    }
+
   }
 
   @Command

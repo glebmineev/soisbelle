@@ -42,6 +42,7 @@
 
   <!-- ZK -->
   <link rel="stylesheet" href="${resource(dir: 'css', file: 'ZK.css')}"/>
+  <link rel="stylesheet" href="${resource(dir: 'css/showcase', file: 'showcase.css')}"/>
   ${head}
 
   <!-- вертикальный скроллинг -->
