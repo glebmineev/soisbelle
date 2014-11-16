@@ -137,6 +137,12 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
 
         }
 
+
+        int visibleNextPoints = totalCount - currentPage
+        if (visibleNextPoints <= 3) {
+          endPage = true
+        }
+
       }
 
     this.isBusy = false
@@ -213,6 +219,20 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
     selectPage(pageWrapper)
 
     currentPage = page
+
+    long isLittleList = (long) (totalCount / 3)
+
+    if (isLittleList < 2) {
+      int visibleStartPoints = totalCount - firstPage
+      if (visibleStartPoints >= 3){
+        endList = false
+        startList = true
+      } else {
+        endList = true
+        startList = false
+      }
+    }
+
   }
 
   public void selectPage(PageWrapper wrapper) {
@@ -358,7 +378,7 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
     }
 
     int visibleEndPoints = totalCount - currentPage
-    if (visibleEndPoints <= 3){
+    if (visibleEndPoints <= 4){
       endPage = true
     }
 
@@ -371,6 +391,7 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
       startPage = true
     }
 
+    //Если внутри страниц и недалеко от начала, то не отображаем ...
     if (inPaging && visibleStartPoints < 0){
       startList = true
     }

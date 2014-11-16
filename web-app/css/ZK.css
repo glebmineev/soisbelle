@@ -6,6 +6,10 @@
   display: none !important;
 }
 
+.z-loading {
+  display: none !important;
+}
+
 /* Убираем progress... диалог */
 .z-temp, .z-modal-mask
 {

@@ -19,7 +19,7 @@
             </h:li>
           </template>
         </h:ul>
-        <window sclass="process-window" mode="highlighted" position="center" closable="false" visible="@load(vm.isBusy)">
+        <window sclass="process-window" mode="highlighted" position="center" closable="false" visible="@bind(vm.isBusy)">
           <!--<vbox>
             <image content="@bind(vm.progressRoll)"/>
           </vbox>-->
