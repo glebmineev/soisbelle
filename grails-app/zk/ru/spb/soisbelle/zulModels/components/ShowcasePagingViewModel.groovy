@@ -7,6 +7,10 @@ import org.slf4j.LoggerFactory
 import org.zkoss.bind.BindUtils
 import org.zkoss.bind.annotation.*
 import org.zkoss.image.AImage
+import org.zkoss.zk.ui.Component
+import org.zkoss.zk.ui.Page
+import org.zkoss.zul.Div
+import org.zkoss.zul.impl.XulElement
 import ru.spb.soisbelle.*
 import ru.spb.soisbelle.wrappers.PageWrapper
 import ru.spb.soisbelle.wrappers.ProductWrapper

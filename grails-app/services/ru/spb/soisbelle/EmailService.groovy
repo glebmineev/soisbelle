@@ -31,8 +31,8 @@ class EmailService {
   static final String PORT = "587"
   static final String AUTH = "true"
   static final String STARTTLS = "true"
-  static final String LOGIN = "glebmin@gmail.com"
-  static final String PASSWORD = "angel2011"
+  static final String LOGIN = "soisbelletest@gmail.com"
+  static final String PASSWORD = "QWglebmineev1987"
 
   /**
    * Отсыл почты с хэшем для регистрации.
@@ -91,8 +91,8 @@ class EmailService {
 
 
   /**
-   * Сброс пароля пользователя.
-   * @param to - почта пользователя, куда слать новый пароль
+   * Отсыл пистма с номером заказа пользователя.
+   * @param to - почта пользователя, куда информацию о заказе
    */
   void sendUserOrderEmail(String to){
     Session session = getSession()

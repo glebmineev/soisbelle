@@ -1,8 +1,8 @@
-%{--<%@ page import="ru.spb.soisbelle.importer.ConvertUtils" %>
+<%@ page import="ru.spb.soisbelle.importer.ConvertUtils" %>
 <%
   def loginService = grailsApplication.mainContext.getBean("loginService");
-  def cartService = grailsApplication.mainContext.getBean("cartService");
-%>--}%
+  /*def cartService = grailsApplication.mainContext.getBean("cartService");*/
+%>
 <table width="100%" cellpadding="0" cellspacing="5" style="margin-top: 10px;">
   <tr align="left">
     <td width="50%" valign="top">
@@ -18,7 +18,12 @@
     <td width="20%" valign="top" align="right">
       <div class="menu-element" style="width: 118px;margin-right: 10px;">
         <div>
-          <g:link controller="auth" action="login">Войти</g:link>
+          <g:if test="${!loginService.isLogged()}">
+            <g:link controller="auth" action="login">Войти</g:link>
+          </g:if>
+          <g:else>
+            <g:link controller="auth" action="logout">Выйти</g:link>
+          </g:else>
         </div>
       </div>
     </td>
