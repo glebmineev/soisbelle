@@ -108,6 +108,22 @@ span.z-upload input {
   float: left;
 }
 
+/* Кастомизированный grid */
+th.z-column {
+  background: none repeat scroll 0 0 #f8bd9f;
+  border-left: 1px solid #000000;
+}
+
+div.z-column-content {
+  color: #000000;
+  font-style: normal;
+  font-family: Century Gothic,serif;
+}
+
+tr.z-row:hover > .z-cell {
+  background: none repeat scroll 0 0 #f8bd9f;
+}
+
 /*div.z-grid {
   border: none;
   background-image: none;
@@ -293,4 +309,17 @@ div.menu-element div a {
   height: 25px;
   width: 100%;
 }
+
+/* Кнопки */
+.soisbelle-button {
+  background: none repeat scroll 0 0 #f8bd9f;
+  border: 1px solid #000000;
+  line-height: 30px;
+  margin: 0 10px 0 0;
+  text-align: center;
+  border-radius: 0px;
+  font-family: Century Gothic,serif;
+}
+
+
 

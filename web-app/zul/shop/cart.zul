@@ -8,18 +8,18 @@
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
   <div apply="ru.spb.soisbelle.BindComposer"
-          viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.CartViewModel')" width="100%">
-
-    <!--<style src="/css/ZK.css"/>-->
+          viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.CartViewModel')"
+          align="center"
+          width="100%">
 
     <grid model="@bind(vm.cartProduct)" width="100%">
       <columns>
         <column width="170px"/>
-        <column label="Наименование"/>
-        <column label="Цена"/>
-        <column label="Количество"/>
-        <column label="Стоимость"/>
-        <column label="Действия"/>
+        <column label="Наименование" hflex="3" align="center"/>
+        <column label="Цена" hflex="1" align="center"/>
+        <column label="Количество" hflex="1" align="center"/>
+        <column label="Стоимость" hflex="1" align="center"/>
+        <column label="Действия" hflex="1" align="center"/>
       </columns>
       <template name="model" var="productModel">
         <row>
@@ -70,13 +70,15 @@
             </label>
           </cell>
           <cell>
-            <button label="Удалить" onClick="@command('removeItem', productModel=productModel)"/>
+            <button sclass="soisbelle-button" label="Удалить" onClick="@command('removeItem', productModel=productModel)"/>
           </cell>
         </row>
       </template>
     </grid>
 
-    <button label="Оформление заказа" onClick="@command('checkout')"/>
+    <div align="center" height="55px" width="100%" style="background: #ffffff; margin-bottom: 5px; margin-top: 5px">
+      <button sclass="soisbelle-button" style="margin-top: 5px" label="Оформление заказа" onClick="@command('checkout')"/>
+    </div>
 
   </div>
 

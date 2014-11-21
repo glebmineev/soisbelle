@@ -19,10 +19,6 @@
 
     <style>
 
-      span.z-label {
-        font-size: 12pt;
-      }
-
       .z-textbox {
         font-size: 12pt;
         background-color: #fff3f3;
@@ -32,12 +28,27 @@
         background-color: #ffffff;
       }
 
+      .star-required {
+        font-size: 12pt;
+        color: #ff0000;
+      }
+
+      .header-label {
+        font-size: 14pt;
+        margin-top: 5px;
+      }
+
     </style>
+
+    <div align="center">
+      <label value="Оформление заказа" sclass="header-label"/>
+    </div>
 
     <h:table width="100%" cellpadding="5" cellspacing="0" style="margin-top: 10px;">
       <h:tr>
         <h:td width="20%" align="right">
-          <label sclass="formLabel" value="Фамилия, имя:(*)"/>
+          <label sclass="formLabel" value="Фамилия, имя"/>
+          <label value=" * " sclass="star-required"/>
         </h:td>
         <h:td width="50%" align="center">
           <textbox value="@bind(vm.fio)" width="100%"/>
@@ -48,7 +59,7 @@
       </h:tr>
       <h:tr>
         <h:td width="20%" align="right">
-          <label value="Контактный телефон:"/>
+          <label value="Контактный телефон"/>
         </h:td>
         <h:td colspan="2" width="100%" align="left">
           <textbox value="@bind(vm.phone)" width="62%"/>
@@ -56,7 +67,8 @@
       </h:tr>
       <h:tr>
         <h:td width="20%" align="right">
-          <label value="E-mail:(*)"/>
+          <label value="E-mail"/>
+          <label value=" * " sclass="star-required"/>
         </h:td>
         <h:td width="50%" align="left">
           <textbox value="@bind(vm.email)" width="100%"/>
@@ -68,7 +80,8 @@
       </h:tr>
       <h:tr>
         <h:td width="20%" align="right">
-          <label value="Адрес доставки:(*)"/>
+          <label value="Адрес доставки"/>
+          <label value=" * " sclass="star-required"/>
         </h:td>
         <h:td width="50%" align="left">
           <textbox value="@bind(vm.address)"
@@ -89,18 +102,18 @@
       </h:tr>
       <h:tr>
         <h:td width="20%" align="right">
-          <label value="Способы оплаты:"/>
+          <label value="Способы оплаты"/>
         </h:td>
-        <h:td colspan="2" width="80%" align="left">
+<!--        <h:td colspan="2" width="80%" align="left">
           <radiogroup>
             <radio checked="@bind(vm.courier)" label="Оплата курьером"/>
             <radio checked="@bind(vm.emoney)" label="Оплата электронными деньгами"/>
           </radiogroup>
-        </h:td>
+        </h:td>-->
       </h:tr>
       <h:tr>
         <h:td colspan="3" width="100%" align="center">
-          <button label="Подтвердить заказ" onClick="@command('checkout')"/>
+          <button sclass="soisbelle-button" label="Подтвердить заказ" onClick="@command('checkout')"/>
         </h:td>
       </h:tr>
     </h:table>
