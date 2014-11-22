@@ -6,6 +6,8 @@ class CategoryEntity {
   String translitName
   String description
 
+  long order
+
   CategoryEntity parentCategory
 
   static mapping = {
@@ -19,6 +21,7 @@ class CategoryEntity {
       translitName column: 'category_translitname'
       description column: 'category_description'
       parentCategory column: 'category_parentcategory_id'
+      order column: 'category_order'
       //selectedProducts joinTable: [name: 'category_product', key: 'category_id']
       //filters joinTable: [name: 'category_filter', key: 'category_id']
     }
@@ -27,7 +30,7 @@ class CategoryEntity {
 
     products cascade: 'all-delete-orphan'
     //manufacturers cascade: 'all-delete-orphan'
-    listCategory sort: "name", order: "desc", cascade: 'all-delete-orphan'
+    listCategory sort: "order", order: "asc", cascade: 'all-delete-orphan'
     filters cascade: 'all-delete-orphan'
   }
 

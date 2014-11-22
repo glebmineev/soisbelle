@@ -1,0 +1,113 @@
+/* Построчная витрина */
+
+div.products-row-template {
+  width: 640px;
+}
+
+div.products-row-template > ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+div.products-row-template > ul > li {
+  list-style-type: none;
+}
+
+div.products-row-template > ul > li > div {
+  width: 689px!important;
+  height: 250px!important;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  text-align: justify;
+  background: #ffffff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+div.products-row-template > ul > li > div > div > div.with_img {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  width: 200px;
+  border: 1px solid #000000;
+}
+
+div.products-row-template > ul > li > div > div > div.with_content {
+  position: absolute;
+  bottom: 60px;
+  left: 220px;
+  width: 460px;
+  line-height: 20px;
+}
+
+div.products-row-template > ul > li > div > div > div.with_content > div.manufacturer_name {
+  height: 30px;
+}
+
+div.products-row-template > ul > li > div > div > div.with_content > div.product_name {
+  height: 50px;
+}
+
+div.products-row-template > ul > li > div > div > div.with_content > div.product_price {
+  height: 30px;
+}
+
+div.products-row-template > ul > li > div > div > div.with_content > div.product_cart_btn {
+  height: 20px;
+}
+
+/*Ячеистая витрина*/
+
+div.products-cell-template {
+  width: 650px;
+  margin-left: 0px;
+}
+
+div.products-cell-template > ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+div.products-cell-template > ul > li > div {
+  width: 223px!important;
+  height: 350px!important;
+  margin: 5px;
+  text-align: justify;
+  background: #ffffff;
+  background: #FFFFFF;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+div.products-cell-template > ul > li {
+  float: left;
+  list-style-type: none;
+  position: relative;
+}
+
+div.products-cell-template > ul > li > div:hover {
+  box-shadow: 1px 1px 3px #cd0a0a;
+}
+
+div.products-cell-template > ul > li > div > div > div.with_content > div.manufacturer_name {
+  height: 20px;
+}
+
+div.products-cell-template > ul > li > div > div > div.with_content > div.product_name {
+  height: 90px;
+  padding: 5px;
+}
+
+div.products-cell-template > ul > li > div > div > div.with_content > div.product_price {
+  height: 25px;
+}
+
+div.products-cell-template > ul > li > div > div > div.with_content > div.product_cart_btn {
+  height: 20px;
+}
+

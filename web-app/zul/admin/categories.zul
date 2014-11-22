@@ -109,6 +109,14 @@
           </h:td>
         </h:tr>
         <h:tr>
+          <h:td>
+            <label value="Порядок следования:"/>
+          </h:td>
+          <h:td>
+            <textbox value="@bind(vm.order)" width="100%"/>
+          </h:td>
+        </h:tr>
+        <h:tr>
           <h:td colspan="2">
             <button label="Сохранить" onClick="@command('save')"/>
           </h:td>

@@ -38,6 +38,7 @@ class CategoriesViewModel extends DownloadImageViewModel {
 
   String name
   String description
+  long order
 
   InitService initService = ApplicationHolder.getApplication().getMainContext().getBean("initService") as InitService
 
@@ -76,6 +77,7 @@ class CategoriesViewModel extends DownloadImageViewModel {
 
     name = retrived.getName()
     description = retrived.getDescription()
+    order = retrived.getOrder()
   }
 
   public CategoryTreeNode getRootNode() {
@@ -124,6 +126,7 @@ class CategoriesViewModel extends DownloadImageViewModel {
       if (toSave != null) {
         toSave.setName(name)
         toSave.setDescription(description)
+        toSave.setOrder(order)
         if (toSave.validate()) {
           toSave.save(flush: true)
 
@@ -150,7 +153,7 @@ class CategoriesViewModel extends DownloadImageViewModel {
   }
 
   @Command
-  @NotifyChange(["name", "description"])
+  @NotifyChange(["name", "description", "order"])
   public void updateSelectedItem(@ContextParam(ContextType.TRIGGER_EVENT) Event event) {
     Tree tree = event.getTarget() as Tree
     selectedItem = tree.getSelectedItem()

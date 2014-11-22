@@ -3,6 +3,8 @@ package ru.spb.soisbelle.zulModels.shop
 import com.google.common.base.Strings
 import com.google.common.collect.Lists
 import org.codehaus.groovy.grails.commons.ApplicationHolder
+import org.codehaus.groovy.grails.commons.GrailsApplication
+import org.codehaus.groovy.grails.plugins.support.aware.GrailsApplicationAware
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.zkoss.bind.annotation.BindingParam
@@ -11,6 +13,7 @@ import org.zkoss.bind.annotation.ContextParam
 import org.zkoss.bind.annotation.ContextType
 import org.zkoss.bind.annotation.Init
 import org.zkoss.bind.annotation.NotifyChange
+import org.zkoss.image.AImage
 import org.zkoss.zk.ui.Component
 import org.zkoss.zk.ui.Executions
 import org.zkoss.zk.ui.Page
@@ -23,6 +26,7 @@ import org.zkoss.zul.Textbox
 import ru.spb.soisbelle.CategoryEntity
 import org.zkoss.zk.ui.event.*
 import ru.spb.soisbelle.FilterEntity
+import ru.spb.soisbelle.ImageStorageService
 import ru.spb.soisbelle.InitService
 import ru.spb.soisbelle.ManufacturerEntity
 import ru.spb.soisbelle.ProductEntity
@@ -30,9 +34,17 @@ import ru.spb.soisbelle.common.CategoryPathHandler;
 import ru.spb.soisbelle.wrappers.CategoryWrapper
 import ru.spb.soisbelle.wrappers.HrefWrapper
 
-class CatalogNewViewModel {
+class CatalogNewViewModel implements GrailsApplicationAware {
 
   static Logger log = LoggerFactory.getLogger(CatalogNewViewModel.class)
+
+  GrailsApplication grailsApplication
+
+  ImageStorageService imageStorageService
+  InitService initService
+
+  AImage rows
+  AImage cells
 
   List<CategoryWrapper> categories = new ArrayList<CategoryWrapper>()
   //Навигация.
@@ -45,9 +57,6 @@ class CatalogNewViewModel {
 
   ListModelList<ManufacturerEntity> manufsFilterModel
   ListModelList<FilterEntity> usageFilterModel
-
-  InitService initService = ApplicationHolder.getApplication().getMainContext().getBean("initService") as InitService
-
   ListModelList<String> countPageItemModel
 
   Long categoryID
@@ -60,6 +69,12 @@ class CatalogNewViewModel {
 
   @Init
   public void init() {
+
+    initServices()
+
+    rows = imageStorageService.rows
+    cells = imageStorageService.cells
+
     categoryID = Executions.getCurrent().getParameter("category") as Long
     Long productId = Executions.getCurrent().getParameter("product") as Long
     if (categoryID != null)
@@ -77,6 +92,11 @@ class CatalogNewViewModel {
 
     pageIsLoad = true
 
+  }
+
+  public void initServices(){
+    initService = grailsApplication.getMainContext().getBean("initService")
+    imageStorageService = grailsApplication.getMainContext().getBean("imageStorageService")
   }
 
   @NotifyChange(["showCatalog"])
@@ -301,4 +321,8 @@ class CatalogNewViewModel {
     productsDiv.setSclass("products-cell-template")
   }
 
+  @Override
+  void setGrailsApplication(GrailsApplication grailsApplication) {
+    this.grailsApplication = grailsApplication
+  }
 }

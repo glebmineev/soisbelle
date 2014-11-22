@@ -32,7 +32,7 @@
           <groupbox closable="false" if="${vm.categories.size() > 0}" >
             <!--<caption label="Категории"/>-->
             <!-- Список категории -->
-            <listbox id="categories" model="@bind(vm.categories)" height="250px">
+            <listbox id="categories" model="@bind(vm.categories)" height="255px">
               <listhead>
                 <listheader label="${each.name}"/>
               </listhead>
@@ -51,7 +51,7 @@
               <!--<caption label="Фильтр"/>-->
 
               <listbox id="manufListbox" model="@bind(vm.manufsFilterModel)" multiple="true" checkmark="true"
-                       height="122px" onSelect="@command('filtred')">
+                       height="180px" onSelect="@command('filtred')">
                 <listhead>
                   <listheader label="Производитель"/>
                 </listhead>
@@ -104,14 +104,14 @@
         <hbox if="${vm.showCatalog}">
           <!-- панель изменения отображения витрины -->
           <div>
-            <image src="/images/rows.png" onClick="@command('applyRowTemplate')"/>
-            <image src="/images/cells.png" onClick="@command('applyCellTemplate')"/>
+            <image content="${vm.rows}" onClick="@command('applyRowTemplate')"/>
+            <image content="${vm.cells}" onClick="@command('applyCellTemplate')"/>
           </div>
-          <hbox>
+          <div align="right" width="637px">
             <label value="Отоброжать по:"/>
-            <combobox width="50%"
+            <combobox width="20%"
                       model="@bind(vm.countPageItemModel)" onChange="@command('changeShowItems')"/>
-          </hbox>
+          </div>
         </hbox>
 
         <!-- список товаров в текущей категории, отображаеться если не корневая -->

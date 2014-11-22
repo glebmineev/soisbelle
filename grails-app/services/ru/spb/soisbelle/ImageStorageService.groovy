@@ -25,6 +25,9 @@ class ImageStorageService implements InitializingBean {
   AImage progressRoll
   AImage skipToStart
   AImage skipToEnd
+  AImage rows
+  AImage cells
+
 
   void afterPropertiesSet() {
 
@@ -71,6 +74,16 @@ class ImageStorageService implements InitializingBean {
     skipToEnd = new AImage(new PathBuilder()
         .appendPath(serverFoldersService.images)
         .appendString("skip_to_end.png")
+        .build())
+
+    rows = new AImage(new PathBuilder()
+        .appendPath(serverFoldersService.images)
+        .appendString("rows.png")
+        .build())
+
+    cells = new AImage(new PathBuilder()
+        .appendPath(serverFoldersService.images)
+        .appendString("cells.png")
         .build())
 
   }

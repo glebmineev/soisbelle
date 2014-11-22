@@ -24,9 +24,9 @@
         <label style="font-weight: bold; font-size: 11pt" value=" руб."/>
       </div>
       <div sclass="product_cart_btn" align="center" width="100%" style="margin-bottom: 5px;">
-        <button visible="@bind(not vm.inCart)" label="В корзину"
+        <button sclass="soisbelle-button" visible="@bind(not vm.inCart)" label="В корзину"
                 onClick="@command('toCart')"/>
-        <label visible="@bind(vm.inCart)" value="Уже в корзине"/>
+        <button sclass="soisbelle-button" visible="@bind(vm.inCart)" label="Уже в корзине"/>
       </div>
     </div>
   </div>
