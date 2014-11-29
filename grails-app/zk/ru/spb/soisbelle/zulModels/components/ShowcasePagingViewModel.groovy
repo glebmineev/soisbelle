@@ -226,7 +226,8 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
 
     long isLittleList = (long) (totalCount / 3)
 
-    if (isLittleList < 2) {
+    //Если число страниц 5
+    if (isLittleList < 2 && isLittleList >= 1) {
       int visibleStartPoints = totalCount - firstPage
       if (visibleStartPoints >= 3){
         endList = false
@@ -235,6 +236,10 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
         endList = true
         startList = false
       }
+    } else {
+      //Если число стрниц 3
+      endList = true
+      startList = true
     }
 
   }
@@ -269,8 +274,9 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
       startPage = false
     } else {
       //если уже конец списка - не двигаемся дальше
-      if (endPage)
+      if (endPage){
         return
+      }
 
       int diff = (totalCount - firstPage);
       lastPage = totalCount - 2
@@ -382,7 +388,7 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
     }
 
     int visibleEndPoints = totalCount - currentPage
-    if (visibleEndPoints <= 4){
+    if (visibleEndPoints <= 3){
       endPage = true
     }
 

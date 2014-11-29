@@ -1,6 +1,8 @@
 package ru.spb.soisbelle
 
 import org.codehaus.groovy.grails.commons.ApplicationHolder
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.InitializingBean
 import ru.spb.soisbelle.common.PathBuilder
 import ru.spb.soisbelle.common.PathUtils
@@ -11,6 +13,9 @@ import ru.spb.soisbelle.common.PathUtils
 class ServerFoldersService implements InitializingBean {
 
   static transactional = true
+
+  //Логгер
+  static Logger log = LoggerFactory.getLogger(ServerFoldersService.class)
 
   String fileSeparator = System.getProperty("file.separator")
 
@@ -56,7 +61,9 @@ class ServerFoldersService implements InitializingBean {
   void afterPropertiesSet() throws Exception {
     PathUtils stringUtils = new PathUtils()
     String root = ApplicationHolder.application.mainContext.servletContext.getRealPath(fileSeparator)
+    log.info("PATH_TO_SERVER_FOLDER" + root)
     String twoLevelUp = stringUtils.buildPath(2, root)
+    log.info("PATH_TO_SERVER_FOLDER_TWO_LEVEL_UP" + twoLevelUp)
 
     orders = new PathBuilder()
         .appendPath(twoLevelUp)

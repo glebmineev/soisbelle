@@ -2,6 +2,7 @@ package ru.spb.soisbelle.zulModels.shop
 
 import com.google.common.base.Strings
 import com.google.common.collect.Lists
+import grails.orm.HibernateCriteriaBuilder
 import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.codehaus.groovy.grails.commons.GrailsApplication
 import org.codehaus.groovy.grails.plugins.support.aware.GrailsApplicationAware
@@ -139,7 +140,7 @@ class CatalogNewViewModel implements GrailsApplicationAware {
    * @return - все продукты категорий.
    */
   List<ProductEntity> collectAllProducts(CategoryEntity category, List<ProductEntity> products) {
-    List<CategoryEntity> categories = category.listCategory as List<CategoryEntity>
+/*    List<CategoryEntity> categories = category.listCategory as List<CategoryEntity>
     if (categories != null && categories.size() > 0) {
       categories.each { CategoryEntity it ->
         if (it.listCategory != null && it.listCategory.size() > 0)
@@ -147,12 +148,29 @@ class CatalogNewViewModel implements GrailsApplicationAware {
         else
           products.addAll(it.products as List<ProductEntity>)
       }
+    }*/
+
+    //category.products
+
+    HibernateCriteriaBuilder criteria = ProductEntity.createCriteria()
+
+    List<ProductEntity> list = criteria.list(offset: 0, sort: "name", order:"asc") { ProductEntity it ->
+      categories {
+        eq "name", "${category.name}"
+      }
+
     }
 
-    products.addAll(category.products as List<ProductEntity>)
+    ProductEntity.withCriteria {ProductEntity it ->
+      categories {
+        eq "name", "${category.name}"
+      }
+
+    }
+    //products.addAll(category.products as List<ProductEntity>)
 
 
-    return products
+    return list
   }
 
   /**

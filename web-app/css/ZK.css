@@ -170,17 +170,32 @@ tr.z-listitem:hover > .z-listcell {
   background: none repeat scroll 0 0 #f8bd9f;
 }
 
+/* Фон маленькой стрелочки при наведении */
+.z-scrollbar-up:hover, .z-scrollbar-down:hover {
+  background: none repeat scroll 0 0 #f8bd9f;
+}
+
+/* Горизонтальная полоска */
 div.z-scrollbar-indicator, div.z-scrollbar-vertical  {
-  background: none repeat scroll 0 0 #f8bd9f !important;
+  background: none repeat scroll 0 0 #255b17 !important;
 }
+
+/* Маленькая стрелочка вверх */
 div.z-scrollbar-up {
-  color: #f8bd9f !important;
+  color: #255b17 !important;
 }
 
+/* Маленькая стрелочка вниз */
 div.z-scrollbar-down {
-  color: #f8bd9f !important;
+  color: #255b17 !important;
 }
 
+/* Цвет галочки шапки грида */
+i.z-listheader-icon {
+  color: #255b17 !important;
+}
+
+/* Цвет галочки в гриде */
 i.z-listitem-icon {
   color: #f8bd9f !important;
 }
@@ -313,11 +328,9 @@ div.menu-element div a {
 /* Кнопки */
 .soisbelle-button {
   background: none repeat scroll 0 0 #f8bd9f;
-  border: 1px solid #000000;
   line-height: 30px;
   margin: 0 10px 0 0;
   text-align: center;
-  border-radius: 0px;
   font-family: Century Gothic,serif;
 }
 

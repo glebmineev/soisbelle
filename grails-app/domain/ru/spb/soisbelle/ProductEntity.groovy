@@ -32,13 +32,15 @@ class ProductEntity implements Comparable, Domain {
   @FieldInfo(isFilter = true, type = FilterTypes.COMBO_FIELD)
   ManufacturerEntity manufacturer
 
-  CategoryEntity category
+  //CategoryEntity category
 
   //Оценки товара
   Long rate
 
   //Количество проголосовавших людей
   Long countRatePeople
+
+  static belongsTo = [CategoryEntity]
 
   static mapping = {
 
@@ -48,16 +50,16 @@ class ProductEntity implements Comparable, Domain {
       imagePath column: 'product_imagepath', type: 'text'
       engImagePath column: 'product_engimagepath', type: 'text'
       article column: 'product_article'
-      name column: 'product_name'
-      description column: 'product_description'
+      name column: 'product_name', index:'product_name_index'
+      description column: 'product_description', index:'product_description_index'
       usage column: 'product_usage'
       volume column: 'product_volume'
       productProperty column: 'product_productproperty_id'
       price column: 'product_price'
-      manufacturer fetch: "join", column: 'product_manufacturer_id'
+      manufacturer fetch: "join", column: 'product_manufacturer_id', index:'product_manufacturer_id_index'
       countToStock column: 'product_counttostock'
       //categories joinTable: [name: 'category_product', key: 'product_id']
-      category column: 'product_categor_id'
+      //category column: 'product_categor_id'
       filter fetch: "join", column: 'product_filter'
       rate column: 'product_rate'
       countRatePeople column: 'count_rate_people'
@@ -74,7 +76,8 @@ class ProductEntity implements Comparable, Domain {
 
   static hasMany = [
       listOrderProduct: OrderProductEntity,
-      reviews: ReviewsEntity
+      reviews: ReviewsEntity,
+      categories: CategoryEntity
   ]
 
   static constraints = {
@@ -89,7 +92,7 @@ class ProductEntity implements Comparable, Domain {
     productProperty nullable: true
     manufacturer nullable: false
     countToStock nullable: true
-    category nullable: true
+    //category nullable: true
     filter nullable: true
     rate nullable: true
     countRatePeople nullable: true

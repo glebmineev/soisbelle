@@ -24,7 +24,7 @@
 
     <include if="${not vm.isShowcase}" src="/zul/shop/product.zul"/>
 
-    <vbox align="center" width="961px" style="border: 1px solid #000000;" if="${vm.isShowcase}">
+    <vbox align="center" width="961px" if="${vm.isShowcase}">
 
       <!-- Категории -->
       <hbox>
@@ -82,11 +82,11 @@
               <label value="Цена"/>
               <div>
                 <label value="От"/>
-                <textbox id="beforeFilterPrice" onChanging="@command('filtred')"/>
+                <textbox style="margin: 5px;" id="beforeFilterPrice" onChanging="@command('filtred')"/>
               </div>
               <div>
                 <label value="До"/>
-                <textbox id="afterFilterPrice" onChanging="@command('filtred')"/>
+                <textbox style="margin: 5px;" id="afterFilterPrice" onChanging="@command('filtred')"/>
               </div>
             </groupbox>
           </div>
@@ -116,7 +116,7 @@
 
         <!-- список товаров в текущей категории, отображаеться если не корневая -->
         <include id="showcase" width="701px" if="${vm.showCatalog}"
-                 src="/zul/components/showcasePaging.zul" allProducts="${vm.allProducts}" isChangeShow="true" countPageItems="9"/>
+                 src="/zul/components/showcaseSimplePaging.zul" allProducts="${vm.allProducts}" isChangeShow="true" linkLimit="8" limit="9"/>
 <!--        <include id="showcase" width="680px" if="${vm.showCatalog}"
                  src="/zul/components/showcase.zul" allProducts="${vm.allProducts}" isChangeShow="true" showAppendBtn="true"/>-->
         </vbox>

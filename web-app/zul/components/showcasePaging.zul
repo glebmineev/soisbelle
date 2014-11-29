@@ -9,8 +9,9 @@
   <div apply="ru.spb.soisbelle.BindComposer, ru.spb.soisbelle.ShowcaseBindPagingComposer"
        binder="@init(queueName='showcasepagingqueue')"
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.components.ShowcasePagingViewModel')" width="100%">
-    <vbox width="100%">
-      <div id="showcase-div" sclass="products-cell-template" width="100%">
+    <include src="/zul/components/paging.zul"/>
+    <vbox align="center">
+      <div id="showcase-div" sclass="products-cell-template" align="center" width="100%">
         <!-- витрина товаров -->
         <h:ul id="products" children="@bind(vm.products)">
           <template name="children">
@@ -30,25 +31,9 @@
           </h:div>
         </window>
       </div>
-      <div align="center" width="100%">
-        <hbox>
-          <!--<image content="@bind(vm.skipToStartImage)" onClick="@command('skipToStart')"/>-->
-          <image content="@bind(vm.backImage)" onClick="@command('prevOnePage')" visible="@bind(not vm.startList)"/>
-          <a href="" style="font-size: 14pt;" label=" ... " onClick="@command('prevMore')" visible="@bind(not vm.startPage)"/>
-          <div children="@bind(vm.numberPages)">
-            <template name="children">
-              <a href="" focus="false" if="${each.selected}" label="${each.number}" style="font-size: 16pt;"
-                 onClick="@command('moveToPage', pageNumber=each)"/>
-              <a style="font-size: 14pt;" href="" if="${not each.selected}" label="${each.number}"
-                 onClick="@command('moveToPage', pageNumber=each)"/>
-            </template>
-          </div>
-          <a href="" style="font-size: 14pt;" label=" ... " onClick="@command('nextMore')" visible="@bind(not vm.endPage)"/>
-          <label style="font-size: 18pt;" value="@bind(vm.totalCount)"/>
-          <image content="@bind(vm.nextImage)" onClick="@command('nextOnePage')" visible="@bind(not vm.endList)"/>
-          <!--<image content="@bind(vm.skipToEndImage)" onClick="@command('skipToEnd')"/>-->
-        </hbox>
-      </div>
+
     </vbox>
+    <include src="/zul/components/paging.zul"/>
+    <div height="5px"/>
   </div>
 </zk>

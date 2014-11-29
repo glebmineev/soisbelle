@@ -28,7 +28,7 @@ class CategoryEntity {
 
     version false
 
-    products cascade: 'all-delete-orphan'
+    //products cascade: 'all-delete-orphan'
     //manufacturers cascade: 'all-delete-orphan'
     listCategory sort: "order", order: "asc", cascade: 'all-delete-orphan'
     filters cascade: 'all-delete-orphan'

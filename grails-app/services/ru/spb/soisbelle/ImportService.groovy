@@ -27,6 +27,7 @@ class ImportService extends IImporterService implements ApplicationContextAware 
 
   ManufacturerEntity manufacturer
   CategoryEntity menuCategory
+  Map<String, Long> submenuCats = new HashMap<String, Long>()
 
   SaveUtils saveUtils = new SaveUtils()
   Map<String, Set<Long>> filtersCache = new HashMap<String, Set<Long>>()
@@ -159,6 +160,8 @@ class ImportService extends IImporterService implements ApplicationContextAware 
 
         //получаем корневую категорию из названия листа excel файла.
         CategoryEntity submenuCategory = saveUtils.saveCategory(sheet, menuCategory)
+        submenuCats.put(submenuCategory.getName(), submenuCategory.getId())
+
         log.debug("сохранена категория: ${sheet}")
 
         HashMap<String, Long> categories = new HashMap<String, Long>()
@@ -285,23 +288,10 @@ class ImportService extends IImporterService implements ApplicationContextAware 
           String translited = ConverterRU_EN.translit(to)
           product.setEngImagePath(translited)
 
-          if (!Strings.isNullOrEmpty(categoryName) && !categoryName.equals(sheetName)) {
-            HashMap<String, Long> cats = categoryCache.get(sheetName)
-            long categoryId = cats.get(categoryName)
-            product.setCategory(CategoryEntity.get(categoryId))
-            //product.setCategory(CategoryEntity.findByName(categoryName))
-          } else {
-            product.setCategory(CategoryEntity.findByName(sheet))
-          }
+          appenToCategory(categoryName, product, sheetName)
 
           String filterName = it.data.get("C") as String
-          filtersCache.get(sheetName).each { Long filterID ->
-            FilterEntity filter = FilterEntity.get(filterID)
-            if (filter.name.equals(filterName))
-              product.setFilter(filter)//addToFilters(FilterEntity.get(filter.id))
-            //if (filter.name.equals(manufacturer.name))
-            //  product.addToFilters(FilterEntity.get(filter.id))
-          }
+          appendToFilter(filterName, product, sheetName)
 
           if (product.validate()) {
             try {
@@ -338,6 +328,41 @@ class ImportService extends IImporterService implements ApplicationContextAware 
 
     }
 
+  }
+
+  /**
+   * Пикрепление товара к фильтрам
+   * @param filterName
+   * @param product
+   * @param sheetName
+   * @return
+   */
+  public Set<Long> appendToFilter(String filterName, product, String sheetName) {
+    filtersCache.get(sheetName).each { Long filterID ->
+      FilterEntity filter = FilterEntity.get(filterID)
+      if (filter.name.equals(filterName))
+        product.setFilter(filter)//addToFilters(FilterEntity.get(filter.id))
+      //if (filter.name.equals(manufacturer.name))
+      //  product.addToFilters(FilterEntity.get(filter.id))
+    }
+  }
+
+  /**
+   * Прикрепление товара к категориям
+   * @param categoryName
+   * @param product
+   * @param sheetName
+   */
+  public void appenToCategory(String categoryName, ProductEntity product, String sheetName) {
+    if (!Strings.isNullOrEmpty(categoryName) && !categoryName.equals(sheetName)) {
+      HashMap<String, Long> cats = categoryCache.get(sheetName)
+      long categoryId = cats.get(categoryName)
+      product.addToCategories(CategoryEntity.get(categoryId))
+    }
+    //Помимо прикрепления к основной категории, прикрепляем к меню и подменю.
+    product.addToCategories(CategoryEntity.get(menuCategory.getId()))
+    long submenuId = submenuCats.get(sheetName)
+    product.addToCategories(CategoryEntity.get(submenuId))
   }
 
   ProductEntity getProduct(CellHandler cellHandler) {

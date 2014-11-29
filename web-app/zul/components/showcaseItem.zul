@@ -15,13 +15,15 @@
       <div sclass="manufacturer_name" align="center">
         <label style="color: green;" value="@bind(vm.productWrapper.manufacturer)"/>
       </div>
-      <div sclass="product_name" align="center">
-        <label style="font-weight: bold;" value="@bind(vm.productWrapper.name)"/>
-      </div>
-      <div sclass="product_price" align="center">
-        <label style="font-weight: bold; font-size: 11pt" value="Цена: "/>
-        <label style="font-weight: bold; font-size: 11pt" value="@bind(vm.productWrapper.price)"/>
-        <label style="font-weight: bold; font-size: 11pt" value=" руб."/>
+      <div sclass="border">
+        <div sclass="product_name" align="center">
+          <label value="@bind(vm.productWrapper.name)"/>
+        </div>
+        <div sclass="product_price" align="center">
+          <label style="font-weight: bold; font-size: 11pt" value="Цена: "/>
+          <label style="font-weight: bold; font-size: 11pt" value="@bind(vm.productWrapper.price)"/>
+          <label style="font-weight: bold; font-size: 11pt" value=" руб."/>
+        </div>
       </div>
       <div sclass="product_cart_btn" align="center" width="100%" style="margin-bottom: 5px;">
         <button sclass="soisbelle-button" visible="@bind(not vm.inCart)" label="В корзину"

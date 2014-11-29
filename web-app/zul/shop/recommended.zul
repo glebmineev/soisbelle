@@ -38,12 +38,12 @@
                 <label value="@load(each.price)"/>
                 руб.
               </div>
-              <div sclass="menu-element" style="margin:5px;">
+              <div style="margin:5px;">
                 <div width="150px">
-                  <label value="В корзину" visible="@bind(not each.inCart)"
+                  <button sclass="soisbelle-button" label="В корзину" visible="@bind(not each.inCart)"
                          onClick="@command('addToCart', productModel=each)"
                          style="cursor:pointer;"/>
-                  <label visible="@bind(each.inCart)" value="Уже в корзине"/>
+                  <button sclass="soisbelle-button" visible="@bind(each.inCart)" label="Уже в корзине"/>
                 </div>
               </div>
 

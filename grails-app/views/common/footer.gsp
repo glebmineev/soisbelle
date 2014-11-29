@@ -70,11 +70,11 @@
 </div> --}%
 <tpl:zkBody zul="/zul/shop/footer.zul"/>
 <br/>
-<table width="100%">
+%{--<table width="100%">
   <tr>
     <td>
       Copyright 2011-2012 © locon.ru - интернет магазин профессиональной косметики, парфюмерии и товаров для ухода за телом. Все права защищены.
     </td>
   </tr>
-</table>
+</table>--}%
 </div>
