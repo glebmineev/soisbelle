@@ -94,7 +94,9 @@
 
         <!-- хиты и популярные, отображаеться если корневая -->
         <div if="${not vm.showCatalog}" align="center" width="701px">
-          <label style="font-size: 30px; background: #F8BD9F;" width="100%" value="ХИТ ПРОДАЖ"/>
+          <div style="background: #F8BD9F;margin-buttom: 5px" width="100%">
+            <label style="font-size: 30px;" value="ХИТ ПРОДАЖ"/>
+          </div>
           <include src="/zul/components/showcase.zul" allProducts="${vm.allProducts}" isChangeShow="false"
                    showAppendBtn="false"/>
         </div>

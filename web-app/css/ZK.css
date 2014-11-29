@@ -328,9 +328,11 @@ div.menu-element div a {
 /* Кнопки */
 .soisbelle-button {
   background: none repeat scroll 0 0 #f8bd9f;
+  border: 1px solid #000000;
   line-height: 30px;
   margin: 0 10px 0 0;
   text-align: center;
+  /*border-radius: 0px;*/
   font-family: Century Gothic,serif;
 }
 

@@ -9,17 +9,23 @@
   <div align="center" sclass="soisbelle-paging" visible="@bind(not vm.isBusy)">
     <hbox>
       <!--<image content="@bind(vm.skipToStartImage)" onClick="@command('skipToStart')"/>-->
-      <image content="@bind(vm.backImage)" onClick="@command('prevOnePage')" visible="@bind(not vm.startList)"/>
-      <div children="@bind(vm.numberPages)">
+      <div sclass="pagination-img">
+        <image content="@bind(vm.backImage)" onClick="@command('prevOnePage')" visible="@bind(not vm.startList)"/>
+      </div>
+      <div sclass="pagination" children="@bind(vm.numberPages)">
         <template name="children">
-          <a href="" focus="false" if="${each.selected}" label="${each.number}" style="font-size: 16pt;"
+          <a href="" focus="false" if="${each.selected}" label="${each.number}"
              onClick="@command('moveToPage', pageNumber=each)"/>
-          <a style="font-size: 14pt;" href="" if="${not each.selected}" label="${each.number}"
+          <a href="" if="${not each.selected}" label="${each.number}"
              onClick="@command('moveToPage', pageNumber=each)"/>
         </template>
       </div>
-      <label style="font-size: 18pt;" value="@bind(vm.totalCount)"/>
-      <image content="@bind(vm.nextImage)" onClick="@command('nextOnePage')" visible="@bind(not vm.endList)"/>
+      <div sclass="pagination">
+        <label sclass="total-count" value="@bind(vm.totalCount)"/>
+      </div>
+      <div sclass="pagination-img">
+        <image content="@bind(vm.nextImage)" onClick="@command('nextOnePage')" visible="@bind(not vm.endList)"/>
+      </div>
       <!--<image content="@bind(vm.skipToEndImage)" onClick="@command('skipToEnd')"/>-->
     </hbox>
   </div>
