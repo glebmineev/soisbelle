@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+  <div apply="ru.spb.soisbelle.ShowcaseSimpleBindPagingComposer"
+       binder="@init(queueName='showcasesimplepagingqueue')"
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.components.ShowcaseSimplePagingViewModel')" width="100%">
+    <include src="/zul/components/simplePaging.zul"/>
+    <vbox align="center">
+      <div id="showcase-div" sclass="products-cell-template" align="center" width="100%">
+        <!-- витрина товаров -->
+        <h:ul id="products" children="@bind(vm.products)">
+          <template name="children">
+            <h:li>
+              <include src="/zul/components/showcaseItem.zul" productWrapper="${each}"/>
+            </h:li>
+          </template>
+        </h:ul>
+        <window sclass="process-window" mode="highlighted" position="center" closable="false" visible="@bind(vm.isBusy)">
+          <h:div id="loading">
+            <h:span class="loading-span"></h:span>
+            <h:span class="loading-span" id="bubble2"></h:span>
+            <h:span class="loading-span" id="bubble3"></h:span>
+          </h:div>
+        </window>
+      </div>
+
+    </vbox>
+    <include src="/zul/components/simplePaging.zul"/>
+    <div height="5px"/>
+  </div>
+</zk>
