@@ -201,7 +201,7 @@ class ShowcaseSimplePagingViewModel implements GrailsApplicationAware {
     int from = ((int) currentPages[0] / limit)
     int diff = (number - (from + 1))
     if (number != totalCount) {
-      moveProductList((int) currentPages[diff], (int) currentPages[diff] + 9)
+      moveProductList((int) currentPages[diff], (int) currentPages[diff] + limit)
     } else {
       moveProductList((int) currentPages[diff], allProducts.size())
     }

@@ -12,6 +12,7 @@ import org.zkoss.zk.ui.event.EventQueues
 import ru.spb.soisbelle.wrappers.ProductWrapper
 import ru.spb.soisbelle.zulModels.components.ShowcaseViewModel
 
+@Deprecated
 class ShowcaseBindComposer extends GrailsBindComposer implements IShowcaseComposer {
 
   ShowcaseService showcaseService = ApplicationHolder.getApplication().getMainContext().getBean("showcaseService") as ShowcaseService

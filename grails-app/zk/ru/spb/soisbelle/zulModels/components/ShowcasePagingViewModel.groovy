@@ -20,6 +20,7 @@ import java.math.RoundingMode
 /**
  * Модель компонента витрины.
  */
+@Deprecated
 class ShowcasePagingViewModel implements GrailsApplicationAware {
 
   GrailsApplication grailsApplication
