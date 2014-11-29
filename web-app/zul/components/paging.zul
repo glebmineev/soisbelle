@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+  <div align="center" sclass="soisbelle-paging" visible="@bind(not vm.isBusy)">
+    <hbox>
+      <!--<image content="@bind(vm.skipToStartImage)" onClick="@command('skipToStart')"/>-->
+      <image content="@bind(vm.backImage)" onClick="@command('prevOnePage')" visible="@bind(not vm.startList)"/>
+      <a href="" style="font-size: 14pt;" label=" ... " onClick="@command('prevMore')" visible="@bind(not vm.startPage)"/>
+      <div children="@bind(vm.numberPages)">
+        <template name="children">
+          <a href="" focus="false" if="${each.selected}" label="${each.number}" style="font-size: 16pt;"
+             onClick="@command('moveToPage', pageNumber=each)"/>
+          <a style="font-size: 14pt;" href="" if="${not each.selected}" label="${each.number}"
+             onClick="@command('moveToPage', pageNumber=each)"/>
+        </template>
+      </div>
+      <a href="" style="font-size: 14pt;" label=" ... " onClick="@command('nextMore')" visible="@bind(not vm.endPage)"/>
+      <label style="font-size: 18pt;" value="@bind(vm.totalCount)"/>
+      <image content="@bind(vm.nextImage)" onClick="@command('nextOnePage')" visible="@bind(not vm.endList)"/>
+      <!--<image content="@bind(vm.skipToEndImage)" onClick="@command('skipToEnd')"/>-->
+    </hbox>
+  </div>
+
+</zk>
