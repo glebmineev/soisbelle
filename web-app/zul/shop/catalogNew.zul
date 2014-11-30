@@ -110,7 +110,7 @@
             <image content="${vm.cells}" onClick="@command('applyCellTemplate')"/>
           </div>
           <div align="right" width="637px">
-            <label value="Отоброжать по:"/>
+            <label style="color: #F8BD9F" value="Отоброжать по:"/>
             <combobox width="20%"
                       model="@bind(vm.countPageItemModel)" onChange="@command('changeShowItems')"/>
           </div>

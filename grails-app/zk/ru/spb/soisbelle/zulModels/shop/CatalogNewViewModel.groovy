@@ -230,7 +230,7 @@ class CatalogNewViewModel implements GrailsApplicationAware {
 
     Page page = ExecutionsCtrl.getCurrentCtrl().getCurrentPage()
     Include showcase = page.getFellow("showcase") as Include
-    showcase.setDynamicProperty("countPageItems", selection.first() as Long)
+    showcase.setDynamicProperty("limit", selection.first() as Long)
     showcase.invalidate()
   }
 

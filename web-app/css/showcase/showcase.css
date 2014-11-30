@@ -102,6 +102,19 @@ div.products-cell-template > ul > li {
 
 div.products-cell-template > ul > li > div:hover {
   box-shadow: 1px 1px 3px #cd0a0a;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#eee));
+  background-image: -webkit-linear-gradient(top, #f7f7f7, #eee);
+  background-image: -moz-linear-gradient(top, #f7f7f7, #eee);
+  background-image: -ms-linear-gradient(top, #f7f7f7, #eee);
+  background-image: -o-linear-gradient(top, #f7f7f7, #eee);
+  background-image: linear-gradient(top, #f7f7f7, #eee);
+  -webkit-box-shadow: 2px 2px 4px -1px rgba(0,0,0, .55);
+  -moz-box-shadow: 2px 2px 4px -1px rgba(0,0,0, .55);
+  box-shadow: 2px 2px 4px -1px rgba(0,0,0, .55);
+}
+
+div.products-cell-template > ul > li > div > div > div.with_img {
+  height: 150px;
 }
 
 div.products-cell-template > ul > li > div > div > div.with_content > div.manufacturer_name {

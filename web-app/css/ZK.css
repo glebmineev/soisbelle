@@ -163,7 +163,7 @@ th.z-listheader {
 }
 
 th.z-listheader > .z-listheader-content {
-  color: #000000;
+  color: #693947;
 }
 
 tr.z-listitem:hover > .z-listcell {
@@ -177,27 +177,27 @@ tr.z-listitem:hover > .z-listcell {
 
 /* Горизонтальная полоска */
 div.z-scrollbar-indicator, div.z-scrollbar-vertical  {
-  background: none repeat scroll 0 0 #255b17 !important;
+  background: none repeat scroll 0 0 #693947 !important;
 }
 
 /* Маленькая стрелочка вверх */
 div.z-scrollbar-up {
-  color: #255b17 !important;
+  color: #693947 !important;
 }
 
 /* Маленькая стрелочка вниз */
 div.z-scrollbar-down {
-  color: #255b17 !important;
+  color: #693947 !important;
 }
 
 /* Цвет галочки шапки грида */
 i.z-listheader-icon {
-  color: #255b17 !important;
+  color: #693947 !important;
 }
 
 /* Цвет галочки в гриде */
 i.z-listitem-icon {
-  color: #f8bd9f !important;
+  color: #693947 !important;
 }
 
 div.catalog-listcell-cnt {
