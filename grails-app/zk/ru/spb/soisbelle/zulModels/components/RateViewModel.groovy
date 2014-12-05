@@ -45,7 +45,7 @@ class RateViewModel {
     int index = 0
 
     long rate = product.getRate()
-    long people = product.getCountRatePeople()
+    long people = product.getCountRatePeople() != null ? product.getCountRatePeople() : 0
 
     Float starsCoefficient = 0
     if (people != 0) {

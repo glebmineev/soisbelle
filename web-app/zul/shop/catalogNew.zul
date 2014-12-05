@@ -15,9 +15,9 @@
       <div children="@bind(vm.links)">
         <template name="children">
           <a sclass="navigationLink" href="@load(each.href)"
-             label="@load(each.name)" style="font-size: 16pt;"/>
-          <label if="${forEachStatus.index != vm.links.size()-1}"
-                 value="/" style="font-size: 16pt;"/>
+             label="@load(each.name)"/>
+          <label sclass="navigationSlash" if="${forEachStatus.index != vm.links.size()-1}"
+                 value="/"/>
         </template>
       </div>
     </hbox>
@@ -103,13 +103,13 @@
 
         <vbox>
 
-        <hbox if="${vm.showCatalog}">
+        <hbox if="${vm.showCatalog}" style="margin-left: 5px;">
           <!-- панель изменения отображения витрины -->
           <div>
             <image content="${vm.rows}" onClick="@command('applyRowTemplate')"/>
             <image content="${vm.cells}" onClick="@command('applyCellTemplate')"/>
           </div>
-          <div align="right" width="637px">
+          <div align="right" width="633px">
             <label style="color: #F8BD9F" value="Отоброжать по:"/>
             <combobox width="20%"
                       model="@bind(vm.countPageItemModel)" onChange="@command('changeShowItems')"/>

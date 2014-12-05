@@ -163,14 +163,20 @@ background: url("bullets.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
   text-align:center
 }
 
-.navigationLink {
+a.navigationLink {
+  font-size: 16pt;
+  color:#F8BD9F;
   text-decoration: none;
-  color: #000000;
 }
 
-.navigationLink:hover {
+a.navigationLink:hover {
   text-decoration: underline;
-  color: #316ac5;
+  color: #F8BD9F;
+}
+
+span.navigationSlash {
+  font-size: 16pt;
+  color:#F8BD9F;
 }
 
 .productBox {

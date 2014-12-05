@@ -14,39 +14,14 @@
 
     <hlayout width="100%">
       <div id="imageDiv" width="320px" align="center" sclass="imageBoxAdmin">
-        <image id="productImage" style="margin: 10px" onClick="@command('zoomImage')"/>
-        <zscript><![CDATA[
-
-          import ru.spb.soisbelle.*
-          import org.codehaus.groovy.grails.commons.ApplicationHolder
-          import org.zkoss.image.*
-          import org.zkoss.zk.ui.*
-          import ru.spb.soisbelle.common.*
-
-          ImageService imageService =
-                                ApplicationHolder.getApplication().getMainContext().getBean("imageService");
-
-          ServerFoldersService serverFoldersService = ApplicationHolder.getApplication().getMainContext().
-                                    getBean("serverFoldersService") as ServerFoldersService
-
-          def productId = Executions.getCurrent().getParameter("product") as Long
-          ProductEntity product = ProductEntity.get(productId)
-          if (product != null) {
-              String path = new PathBuilder()
-                            .appendPath(serverFoldersService.productImages)
-                            .appendString(product.engImagePath)
-                            .build()
-              String std_name = STD_FILE_NAMES.PRODUCT_NAME.getName()
-              int std_size = STD_IMAGE_SIZES.MIDDLE.getSize()
-
-              AImage img = imageService.getImageFile(path, std_name, std_size)
-              productImage.setContent(img)
-          }
-
-          ]]></zscript>
+        <image id="productImage" content="@load(vm.model.image)" style="margin: 10px" onClick="@command('zoomImage')"/>
       </div>
       <vbox>
-        <label value="@load(vm.model.name)" style="font-size: 16pt"/>
+        <div sclass="catalog-outer-container">
+          <div sclass="catalog-inner-container">
+            <label value="@load(vm.model.name)"/>
+          </div>
+        </div>
         <tabbox width="562px">
           <tabs>
             <tab label="Применение"/>

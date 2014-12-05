@@ -358,6 +358,7 @@ class ImportService extends IImporterService implements ApplicationContextAware 
       HashMap<String, Long> cats = categoryCache.get(sheetName)
       long categoryId = cats.get(categoryName)
       product.addToCategories(CategoryEntity.get(categoryId))
+      product.setEndCategory(CategoryEntity.get(categoryId))
     }
     //Помимо прикрепления к основной категории, прикрепляем к меню и подменю.
     product.addToCategories(CategoryEntity.get(menuCategory.getId()))

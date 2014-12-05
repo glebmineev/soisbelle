@@ -1,6 +1,8 @@
 package ru.spb.soisbelle.zulModels.shop
 
 import org.codehaus.groovy.grails.commons.ApplicationHolder
+import org.codehaus.groovy.grails.commons.GrailsApplication
+import org.codehaus.groovy.grails.plugins.support.aware.GrailsApplicationAware
 import org.slf4j.*
 import org.zkoss.bind.BindUtils
 import org.zkoss.bind.annotation.Command
@@ -15,33 +17,40 @@ import ru.spb.soisbelle.common.STD_FILE_NAMES
 import ru.spb.soisbelle.common.STD_IMAGE_SIZES
 import ru.spb.soisbelle.wrappers.ProductWrapper
 
-class ProductViewModel {
+class ProductViewModel implements GrailsApplicationAware {
 
   //Логгер
   static Logger log = LoggerFactory.getLogger(ProductViewModel.class)
+
+  GrailsApplication grailsApplication
 
   Long productId
   List<ReviewsEntity> reviews
 
   ProductWrapper model
 
-  CartService cartService = ApplicationHolder.getApplication().getMainContext().getBean("cartService") as CartService
-  ImageService imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService") as ImageService
-  ServerFoldersService serverFoldersService = ApplicationHolder.getApplication().getMainContext().
-      getBean("serverFoldersService") as ServerFoldersService
+  CartService cartService
+  ImageService imageService
+  ServerFoldersService serverFoldersService
 
   @Init
   public void init() {
     productId = Executions.getCurrent().getParameter("product") as Long
     if (productId != null) {
+      initServices()
       initGrid()
       initReviews()
     }
+  }
 
+  public void initServices(){
+    cartService = grailsApplication.getMainContext().getBean("cartService")
+    imageService = grailsApplication.getMainContext().getBean("imageService")
+    serverFoldersService = grailsApplication.getMainContext().getBean("serverFoldersService")
   }
 
   public void initGrid() {
-    model = new ProductWrapper(ProductEntity.get(productId))
+    model = new ProductWrapper(ProductEntity.get(productId), STD_IMAGE_SIZES.MIDDLE.getSize())
     cartService.initAsCartItem(model)
   }
 
@@ -92,18 +101,11 @@ class ProductViewModel {
     model.setInCart(true)
     cartService.addToCart(ProductEntity.get(productId))
     BindUtils.postNotifyChange(null, null, model, "inCart");
-    /*Window wnd = new Window()
-    wnd.setWidth("60%")
-    wnd.setHeight("450px")
-    wnd.setPage(ExecutionsCtrl.getCurrentCtrl().getCurrentPage())
+  }
 
-    Map<Object, Object> params = new HashMap<Object, Object>()
-    params.put("id", productId)
-
-    Executions.createComponents("/zul/shop/successWnd.zul", wnd, params)
-    wnd.doModal()
-    wnd.setVisible(true)*/
-
+  @Override
+  void setGrailsApplication(GrailsApplication grailsApplication) {
+    this.grailsApplication = grailsApplication
   }
 
 }

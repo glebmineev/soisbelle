@@ -86,7 +86,7 @@ class CatalogNewViewModel implements GrailsApplicationAware {
     List<String> model = new ArrayList<String>();
     model.add("9");
     model.add("15");
-    model.add("20");
+    model.add("21");
 
     countPageItemModel = new ListModelList<String>(model)
     countPageItemModel.addSelection(model.get(0));
@@ -307,7 +307,7 @@ class CatalogNewViewModel implements GrailsApplicationAware {
 
   public void buildProductNavPath(Long productID) {
     ProductEntity product = ProductEntity.get(productID)
-    rebuildCategoryNavPath(product.getCategory().id)
+    rebuildCategoryNavPath(product.getEndCategory().id)
     links.add(new HrefWrapper(product.name, "/shop/catalog?product=${product.id}"))
   }
 

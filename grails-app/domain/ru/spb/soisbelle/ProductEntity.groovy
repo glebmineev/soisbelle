@@ -32,7 +32,7 @@ class ProductEntity implements Comparable, Domain {
   @FieldInfo(isFilter = true, type = FilterTypes.COMBO_FIELD)
   ManufacturerEntity manufacturer
 
-  //CategoryEntity category
+  CategoryEntity endCategory
 
   //Оценки товара
   Long rate
@@ -58,20 +58,16 @@ class ProductEntity implements Comparable, Domain {
       price column: 'product_price'
       manufacturer fetch: "join", column: 'product_manufacturer_id', index:'product_manufacturer_id_index'
       countToStock column: 'product_counttostock'
-      //categories joinTable: [name: 'category_product', key: 'product_id']
-      //category column: 'product_categor_id'
       filter fetch: "join", column: 'product_filter'
       rate column: 'product_rate'
       countRatePeople column: 'count_rate_people'
+      endCategory column: 'category_end_category_id'
     }
 
     version false
 
-    //categories cascade: 'all-delete-orphan'
-    //listCategoryProduct lazy: false,  cascade: 'all-delete-orphan'
     listOrderProduct cascade: 'all-delete-orphan'
     reviews cascade: 'all-delete-orphan'
-    //filters cascade: 'all-delete-orphan'
   }
 
   static hasMany = [
@@ -92,10 +88,10 @@ class ProductEntity implements Comparable, Domain {
     productProperty nullable: true
     manufacturer nullable: false
     countToStock nullable: true
-    //category nullable: true
     filter nullable: true
     rate nullable: true
     countRatePeople nullable: true
+    endCategory nullable: true
   }
 
   public String toString() {

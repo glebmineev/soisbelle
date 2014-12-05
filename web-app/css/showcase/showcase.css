@@ -20,7 +20,7 @@ div.products-row-template > ul > li > div:first-child {
 
 div.products-row-template > ul > li > div {
   width: 689px!important;
-  height: 250px!important;
+  height: 255px!important;
   margin-bottom: 10px;
   margin-left: 5px;
   text-align: justify;
@@ -33,23 +33,24 @@ div.products-row-template > ul > li > div {
 
 div.products-row-template > ul > li > div > div > div.with_img {
   position: absolute;
-  top: 50px;
+  top: 40px;
   left: 20px;
-  width: 200px;
-  height: 200px;
-  border: 1px solid #000000;
+  width: 160px;
+  height: 160px;
+  border: 1px solid #6F3C4F;
+  cursor:pointer;
 }
 
 div.products-row-template > ul > li > div > div > div.with_content {
   position: absolute;
-  bottom: 60px;
-  left: 220px;
-  width: 460px;
+  bottom: 25px;
+  left: 174px;
+  width: 500px;
   line-height: 20px;
 }
 
 div.products-row-template > ul > li > div > div > div.with_content > div.manufacturer_name {
-  height: 30px;
+  height: 20px;
 }
 
 div.products-row-template > ul > li > div > div > div.with_content > div.border {
@@ -58,11 +59,24 @@ div.products-row-template > ul > li > div > div > div.with_content > div.border 
 }
 
 div.products-row-template > ul > li > div > div > div.with_content > div.border > div.product_name {
-  height: 50px;
+  height: 120px;
+  width: 100%;
+  display: table;
+  overflow: hidden;
 }
 
+div.products-row-template > ul > li > div > div > div.with_content > div.border > div.product_name > div.innerContainer {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5px;
+}
+
+
 div.products-row-template > ul > li > div > div > div.with_content > div.border > div.product_price {
-  height: 40px;
+  height: 38px;
 }
 
 div.products-row-template > ul > li > div > div > div.with_content > div.product_cart_btn {
@@ -115,6 +129,7 @@ div.products-cell-template > ul > li > div:hover {
 
 div.products-cell-template > ul > li > div > div > div.with_img {
   height: 150px;
+  cursor:pointer;
 }
 
 div.products-cell-template > ul > li > div > div > div.with_content > div.manufacturer_name {

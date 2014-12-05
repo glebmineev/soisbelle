@@ -17,7 +17,9 @@
       </div>
       <div sclass="border">
         <div sclass="product_name" align="center">
-          <label value="@bind(vm.productWrapper.name)"/>
+          <div sclass="innerContainer">
+            <label value="@bind(vm.productWrapper.name)"/>
+          </div>
         </div>
         <div sclass="product_price" align="center">
           <label style="font-weight: bold; font-size: 11pt" value="Цена: "/>

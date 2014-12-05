@@ -1,6 +1,8 @@
 package ru.spb.soisbelle.wrappers
 
 import org.codehaus.groovy.grails.commons.ApplicationHolder
+import org.codehaus.groovy.grails.commons.GrailsApplication
+import org.codehaus.groovy.grails.plugins.support.aware.GrailsApplicationAware
 import org.zkoss.image.AImage
 import org.zkoss.zul.ListModelList
 import ru.spb.soisbelle.CartService

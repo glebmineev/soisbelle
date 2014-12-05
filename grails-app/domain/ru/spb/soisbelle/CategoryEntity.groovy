@@ -10,6 +10,11 @@ class CategoryEntity {
 
   CategoryEntity parentCategory
 
+  static mappedBy = [
+      endProducts: "endCategory",
+      products: "categories"
+  ]
+
   static mapping = {
 
     datasource 'ALL'
@@ -28,8 +33,6 @@ class CategoryEntity {
 
     version false
 
-    //products cascade: 'all-delete-orphan'
-    //manufacturers cascade: 'all-delete-orphan'
     listCategory sort: "order", order: "asc", cascade: 'all-delete-orphan'
     filters cascade: 'all-delete-orphan'
   }
@@ -38,9 +41,9 @@ class CategoryEntity {
 
   static hasMany = [
       products: ProductEntity,
+      endProducts: ProductEntity,
       listCategory: CategoryEntity,
       filters: FilterEntity
-      //manufacturers: ManufacturerEntity
   ]
 
   static constraints = {
@@ -52,4 +55,5 @@ class CategoryEntity {
   public String toString() {
     return name
   }
+
 }
