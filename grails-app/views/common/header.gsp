@@ -1,7 +1,7 @@
 <%@ page import="ru.spb.soisbelle.importer.ConvertUtils" %>
 <%
   def loginService = grailsApplication.mainContext.getBean("loginService");
-  /*def cartService = grailsApplication.mainContext.getBean("cartService");*/
+  def cartService = grailsApplication.mainContext.getBean("cartService");
 %>
 <table width="100%" cellpadding="0" cellspacing="5" style="margin-top: 10px;">
   <tr align="left">
@@ -29,7 +29,13 @@
     </td>
     <td width="10%" valign="top" align="right">
       <g:link controller="shop" action="cart">
-        <g:img dir="images/dsn/header" file="cart.png"/>
+        <div>
+          <g:img dir="images/dsn/header" file="cart.png"/>
+          <div>
+            ${cartService.getTotalCount()}
+            ${cartService.getTotalPrice()}
+          </div>
+        </div>
       </g:link>
     </td>
   </tr>

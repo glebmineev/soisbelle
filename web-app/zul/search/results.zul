@@ -11,7 +11,7 @@
   <div id="searchResults" apply="ru.spb.soisbelle.BindComposer"
           viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.search.SearchResultViewModel')"
           onClientInfo="@command('refreshWhenBackToSearchResults', div=self)"
-          width="100%" height="815px" align="center">
+          width="100%" height="830px" align="center">
 
     <include id="showcase" width="100%" allProducts="${vm.matchedProduct}"
              src="/zul/components/showcaseSimplePaging.zul" isChangeShow="true" linkLimit="8" limit="8"/>

@@ -17,99 +17,76 @@
              fio=vm.fio, email=vm.email, address=vm.address)"
           width="100%">
 
-    <style>
-
-      .z-textbox {
-        font-size: 12pt;
-        background-color: #fff3f3;
-      }
-
-      .z-textbox:hover {
-        background-color: #ffffff;
-      }
-
-      .star-required {
-        font-size: 12pt;
-        color: #ff0000;
-      }
-
-      .header-label {
-        font-size: 14pt;
-        margin-top: 5px;
-      }
-
-    </style>
-
     <div align="center">
-      <label value="Оформление заказа" sclass="header-label"/>
+      <label value="Оформление заказа" style="font-size: 14pt;margin-top: 5px"/>
     </div>
 
     <h:table width="100%" cellpadding="5" cellspacing="0" style="margin-top: 10px;">
       <h:tr>
         <h:td width="20%" align="right">
-          <label sclass="formLabel" value="Фамилия, имя"/>
-          <label value=" * " sclass="star-required"/>
+          <label value="Фамилия, имя" sclass="form-label"/>
+          <label value=" * " sclass="required-field"/>
         </h:td>
         <h:td width="50%" align="center">
-          <textbox value="@bind(vm.fio)" width="100%"/>
+          <textbox sclass="form-textbox" value="@bind(vm.fio)" width="100%"/>
         </h:td>
         <h:td width="30%" align="left">
-          <label sclass="error" value="@load(vmsgs['fio'])" />
+          <label sclass="validation-error" value="@load(vmsgs['fio'])" />
         </h:td>
       </h:tr>
       <h:tr>
         <h:td width="20%" align="right">
-          <label value="Контактный телефон"/>
+          <label value="Контактный телефон" sclass="form-label"/>
         </h:td>
         <h:td colspan="2" width="100%" align="left">
-          <textbox value="@bind(vm.phone)" width="62%"/>
+          <textbox sclass="form-textbox" value="@bind(vm.phone)" width="62%"/>
         </h:td>
       </h:tr>
       <h:tr>
         <h:td width="20%" align="right">
-          <label value="E-mail"/>
-          <label value=" * " sclass="star-required"/>
+          <label value="E-mail" sclass="form-label"/>
+          <label value=" * " sclass="required-field"/>
         </h:td>
         <h:td width="50%" align="left">
-          <textbox value="@bind(vm.email)" width="100%"/>
+          <textbox sclass="form-textbox" value="@bind(vm.email)" width="100%"/>
         </h:td>
         <h:td width="30%">
-          <label sclass="error"
+          <label sclass="validation-error"
                  value="@load(vmsgs['email'])" />
         </h:td>
       </h:tr>
       <h:tr>
         <h:td width="20%" align="right">
-          <label value="Адрес доставки"/>
-          <label value=" * " sclass="star-required"/>
+          <label value="Адрес доставки" sclass="form-label"/>
+          <label value=" * " sclass="required-field"/>
         </h:td>
         <h:td width="50%" align="left">
-          <textbox value="@bind(vm.address)"
+          <textbox sclass="form-textbox" value="@bind(vm.address)"
                    width="100%" rows="3" cols="15"/>
         </h:td>
         <h:td width="30%">
-          <label sclass="error"
+          <label sclass="validation-error"
                  value="@load(vmsgs['address'])" />
         </h:td>
       </h:tr>
       <h:tr>
         <h:td width="20%" align="right">
-          <label value="Примечания:"/>
+          <label value="Примечания:" sclass="form-label"/>
         </h:td>
         <h:td colspan="2" width="80%" align="left">
-          <textbox value="@bind(vm.notes)"  width="62%" rows="3" cols="15"/>
+          <textbox sclass="form-textbox" value="@bind(vm.notes)"  width="62%" rows="3" cols="15"/>
         </h:td>
       </h:tr>
       <h:tr>
         <h:td width="20%" align="right">
-          <label value="Способы оплаты"/>
+          <label value="Способы оплаты" sclass="form-label"/>
         </h:td>
-<!--        <h:td colspan="2" width="80%" align="left">
+        <h:td colspan="2" width="80%" align="left">
           <radiogroup>
             <radio checked="@bind(vm.courier)" label="Оплата курьером"/>
-            <radio checked="@bind(vm.emoney)" label="Оплата электронными деньгами"/>
+            <!--<radio checked="@bind(vm.emoney)" label="Оплата электронными деньгами"/>-->
           </radiogroup>
-        </h:td>-->
+        </h:td>
       </h:tr>
       <h:tr>
         <h:td colspan="3" width="100%" align="center">

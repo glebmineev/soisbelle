@@ -23,141 +23,115 @@
                 address=vm.address)"
        width="100%">
 
-    <style>
-
-      .z-textbox {
-        font-size: 12pt;
-        background-color: #fff3f3;
-      }
-
-      .z-textbox:hover {
-        background-color: #ffffff;
-      }
-
-      .star-required {
-        font-size: 12pt;
-        color: #ff0000;
-      }
-
-      .register-label {
-        font-size: 12pt;
-      }
-
-      .header-label {
-        font-size: 14pt;
-      }
-
-    </style>
-
     <vlayout>
       <div align="center">
-        <label value="Регистрация" sclass="header-label"/>
+        <label value="Регистрация" style="font-size: 14pt"/>
       </div>
 
       <h:table width="100%" cellspacing="5" cellpadding="5" >
         <h:tr>
           <h:td width="20%" align="right">
-            <label value="Логин" sclass="register-label"/>
-            <label value=" * " sclass="star-required"/>
+            <label value="Логин" sclass="form-label"/>
+            <label value=" * " sclass="required-field"/>
           </h:td>
           <h:td width="50%" align="left">
-            <textbox value="@bind(vm.login)" width="100%"/>
+            <textbox sclass="form-textbox" value="@bind(vm.login)" width="100%"/>
           </h:td>
           <h:td width="30%">
-            <label sclass="error"
+            <label sclass="validation-error"
                    value="@load(vmsgs['login'])"/>
           </h:td>
         </h:tr>
         <h:tr>
           <h:td width="20%" align="right">
-            <label value="Пароль" sclass="register-label"/>
-            <label value=" * " sclass="star-required"/>
+            <label value="Пароль" sclass="form-label"/>
+            <label value=" * " sclass="required-field"/>
           </h:td>
           <h:td width="50%" align="left">
-            <textbox type="password" value="@bind(vm.password)" width="100%"/>
+            <textbox sclass="form-textbox" type="password" value="@bind(vm.password)" width="100%"/>
           </h:td>
           <h:td width="30%">
-            <label sclass="error"
+            <label sclass="validation-error"
                    value="@load(vmsgs['password'])"/>
           </h:td>
         </h:tr>
         <h:tr>
           <h:td width="20%" align="right">
-            <label value="Повторите пароль" sclass="register-label"/>
-            <label value=" * " sclass="star-required"/>
+            <label value="Повторите пароль" sclass="form-label"/>
+            <label value=" * " sclass="required-field"/>
           </h:td>
           <h:td width="50%" align="left">
-            <textbox type="password" value="@bind(vm.repassword)" width="100%"/>
+            <textbox sclass="form-textbox" type="password" value="@bind(vm.repassword)" width="100%"/>
           </h:td>
           <h:td width="30%">
-            <label sclass="error"
+            <label sclass="validation-error"
                    value="@load(vmsgs['password'])"/>
           </h:td>
         </h:tr>
         <h:tr>
           <h:td width="30%" align="right">
-            <label value="Фамилия, имя" sclass="register-label"/>
-            <label value=" * " sclass="star-required"/>
+            <label value="Фамилия, имя" sclass="form-label"/>
+            <label value=" * " sclass="required-field"/>
           </h:td>
           <h:td width="50%" align="left">
-            <textbox value="@bind(vm.fio)" width="100%"/>
+            <textbox sclass="form-textbox" value="@bind(vm.fio)" width="100%"/>
           </h:td>
           <h:td>
-            <label sclass="error"
+            <label sclass="validation-error"
                    value="@load(vmsgs['fio'])"/>
           </h:td>
         </h:tr>
         <h:tr>
           <h:td width="20%" align="right">
-            <label value="Контактный телефон" sclass="register-label"/>
+            <label value="Контактный телефон" sclass="form-label"/>
           </h:td>
           <h:td width="50%" align="left">
-            <textbox value="@bind(vm.phone)" width="100%"/>
+            <textbox sclass="form-textbox" value="@bind(vm.phone)" width="100%"/>
           </h:td>
           <h:td width="30%"/>
         </h:tr>
         <h:tr>
           <h:td width="20%" align="right">
-            <label value="E-mail " sclass="register-label"/>
-            <label value=" * " sclass="star-required"/>
+            <label value="E-mail " sclass="form-label"/>
+            <label value=" * " sclass="required-field"/>
           </h:td>
           <h:td width="50%" align="center">
-            <textbox value="@bind(vm.email)" width="100%"/>
+            <textbox sclass="form-textbox" value="@bind(vm.email)" width="100%"/>
           </h:td>
           <h:td width="30%" align="left">
-            <label sclass="error"
+            <label sclass="validation-error"
                    value="@load(vmsgs['email'])"/>
           </h:td>
         </h:tr>
         <h:tr>
           <h:td width="30%" align="right">
-            <label value="Адрес доставки " sclass="register-label"/>
-            <label value=" * " sclass="star-required"/>
+            <label value="Адрес доставки " sclass="form-label"/>
+            <label value=" * " sclass="required-field"/>
           </h:td>
           <h:td width="50%" align="center">
-            <textbox value="@bind(vm.address)" rows="3" cols="15" width="100%"/>
+            <textbox sclass="form-textbox" value="@bind(vm.address)" rows="3" cols="15" width="100%"/>
           </h:td>
           <h:td width="30%" align="left">
-            <label sclass="error"
+            <label sclass="validation-error"
                    value="@load(vmsgs['address'])"/>
           </h:td>
         </h:tr>
         <h:tr>
           <h:td width="20%" align="right" valign="top">
-            <label value="Введите код с картинки " sclass="register-label"/>
+            <label value="Введите код с картинки " sclass="form-label"/>
           </h:td>
           <h:td width="50%" align="left">
 
-              <textbox value="@bind(vm.captchaInput)" width="100%"/>
+              <textbox value="@bind(vm.captchaInput)" width="100%" sclass="form-textbox"/>
               <div style="margin-top: 5px;" width="100%">
-                <captcha value="@bind(vm.captcha)" style="border: 1px solid #ff9600;" length="5" width="260px" height="40px"/>
+                <captcha sclass="form-capcha" value="@bind(vm.captcha)" length="5" width="260px" height="40px"/>
                 <button sclass="soisbelle-button" style="margin-left: 5px" label="Сформировать заново"
                         onClick="@command('regenerate')" width="200px"/>
               </div>
 
           </h:td>
-          <h:td width="30%" align="left">
-            <label sclass="error"
+          <h:td width="30%" align="left" valign="top">
+            <label sclass="validation-error"
                    value="@load(vmsgs['captcha'])"/>
           </h:td>
         </h:tr>

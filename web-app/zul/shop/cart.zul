@@ -25,33 +25,7 @@
         <row>
           <cell>
             <div align="center" width="160px" sclass="imageBox">
-              <image>
-                <zscript><![CDATA[
-
-                 import ru.spb.soisbelle.*
-                 import org.zkoss.image.*
-                 import org.codehaus.groovy.grails.commons.*
-                 import ru.spb.soisbelle.common.*
-
-                 ImageService imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService");
-
-                 ServerFoldersService serverFoldersService = ApplicationHolder.getApplication().getMainContext().
-                                    getBean("serverFoldersService") as ServerFoldersService
-
-                 ProductEntity product = ProductEntity.get(productModel.id)
-
-                 String path = new PathBuilder()
-                            .appendPath(serverFoldersService.productImages)
-                            .appendString(product.engImagePath)
-                            .build()
-                 String std_name = STD_FILE_NAMES.PRODUCT_NAME.getName()
-                 int std_size = STD_IMAGE_SIZES.SMALL.getSize()
-
-                 AImage img = imageService.getImageFile(path, std_name, std_size)
-                 self.setContent(img)
-
-                ]]></zscript>
-              </image>
+              <image content="${productModel.image}"/>
             </div>
           </cell>
           <cell>
@@ -77,7 +51,7 @@
     </grid>
 
     <div align="center" height="55px" width="100%" style="background: #ffffff; margin-bottom: 5px; margin-top: 5px">
-      <button sclass="soisbelle-button" style="margin-top: 5px" label="Оформление заказа" onClick="@command('checkout')"/>
+      <button sclass="soisbelle-button" style="margin-top: 10px" label="Оформление заказа" onClick="@command('checkout')"/>
     </div>
 
   </div>

@@ -18,6 +18,7 @@ import org.zkoss.zul.ListModelList
 import org.zkoss.zul.Spinner
 import ru.spb.soisbelle.CartService
 import ru.spb.soisbelle.ProductEntity
+import ru.spb.soisbelle.common.STD_IMAGE_SIZES
 import ru.spb.soisbelle.wrappers.ProductWrapper
 
 /**
@@ -43,7 +44,7 @@ class CartViewModel implements GrailsApplicationAware {
     cartService = grailsApplication.getMainContext().getBean("cartService")
     List<ProductWrapper> models = new ArrayList<ProductWrapper>()
     cartService.getCartProducts().each {it ->
-      ProductWrapper model = new ProductWrapper(it)
+      ProductWrapper model = new ProductWrapper(it, STD_IMAGE_SIZES.SMALL.getSize())
       cartService.initAsCartItem(model)
       models.add(model)
     }

@@ -92,10 +92,11 @@ background: url("bullets.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
   margin-top: 10px;
   margin-bottom: 10px;
   background: #FFFFFF;
+/*  opacity: 0.7; *//* Полупрозрачный фон *//*
+  filter: alpha(Opacity=70); *//* Прозрачность в IE */
   -webkit-border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
-  border: 1px solid #346F97;
 }
 
 .rounded {
@@ -140,11 +141,7 @@ background: url("bullets.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 .imageBox {
   height: 160px;
   background: #ffffff;
-  background: #FFFFFF;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  border: 1px solid #346F97;
+  border: 1px solid #643845;
   display:table-cell;
   vertical-align:middle;
   text-align:center
@@ -217,12 +214,6 @@ span.navigationSlash {
   background-color: #F8BD9F;
 }
 
-.error {
-  color: #ff0000;
-  font-size: 9pt;
-  margin: 1px;
-}
-
 .categoryList {
   width: 875px;
   margin-left: 25px;
@@ -251,4 +242,40 @@ span.navigationSlash {
   border: 3px solid #DDDDDD;
 }
 
-/* Форма регистрации */
+/* Формы */
+span.validation-error {
+  color: #ff0000;
+  font-size: 9pt;
+  margin: 1px;
+}
+
+input.form-textbox {
+  font-size: 12pt;
+  background-color: #fff3f3;
+}
+
+input.form-textbox:hover {
+  background-color: #ffffff;
+}
+
+textarea.form-textbox {
+  font-size: 12pt;
+  background-color: #fff3f3;
+}
+
+textarea.form-textbox:hover {
+  background-color: #ffffff;
+}
+
+span.required-field {
+  font-size: 12pt;
+  color: #ff0000;
+}
+
+span.form-label {
+  font-size: 12pt;
+}
+
+img.form-capcha {
+  border: 1px solid #ff9600;
+}
