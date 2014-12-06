@@ -9,8 +9,10 @@
   <div align="center" sclass="soisbelle-paging" visible="@bind(not vm.isBusy)">
     <hbox>
       <!--<image content="@bind(vm.skipToStartImage)" onClick="@command('skipToStart')"/>-->
-      <div sclass="pagination-img">
-        <image content="@bind(vm.backImage)" onClick="@command('prevOnePage')" visible="@bind(not vm.startList)"/>
+      <div sclass="pagination-img" visible="@bind(not vm.startList)">
+        <div sclass="pagination-img-arrow-less" onClick="@command('prevOnePage')"/>
+        <!--<image sclass="arrow-less"
+        content="@bind(vm.backImage)" onClick="@command('prevOnePage')" visible="@bind(not vm.startList)"/>-->
       </div>
       <div sclass="pagination" children="@bind(vm.numberPages)">
         <template name="children">
@@ -23,8 +25,9 @@
       <div sclass="pagination">
         <label sclass="total-count" value="@bind(vm.totalCount)"/>
       </div>
-      <div sclass="pagination-img">
-        <image content="@bind(vm.nextImage)" onClick="@command('nextOnePage')" visible="@bind(not vm.endList)"/>
+      <div sclass="pagination-img" visible="@bind(not vm.endList)">
+        <div sclass="pagination-img-arrow-better" onClick="@command('nextOnePage')"/>
+        <!--<image sclass="arrow-better" content="@bind(vm.nextImage)" onClick="@command('nextOnePage')" visible="@bind(not vm.endList)"/>-->
       </div>
       <!--<image content="@bind(vm.skipToEndImage)" onClick="@command('skipToEnd')"/>-->
     </hbox>

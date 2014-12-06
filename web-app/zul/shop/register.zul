@@ -143,15 +143,15 @@
           </h:td>
         </h:tr>
         <h:tr>
-          <h:td width="20%" align="right">
+          <h:td width="20%" align="right" valign="top">
             <label value="Введите код с картинки " sclass="register-label"/>
           </h:td>
           <h:td width="50%" align="left">
 
               <textbox value="@bind(vm.captchaInput)" width="100%"/>
-              <div>
-                <captcha value="@bind(vm.captcha)" length="5" width="252px" height="50px"/>
-                <button sclass="soisbelle-button" style="margin-left: 2px" label="Сформировать заново"
+              <div style="margin-top: 5px;" width="100%">
+                <captcha value="@bind(vm.captcha)" style="border: 1px solid #ff9600;" length="5" width="260px" height="40px"/>
+                <button sclass="soisbelle-button" style="margin-left: 5px" label="Сформировать заново"
                         onClick="@command('regenerate')" width="200px"/>
               </div>
 

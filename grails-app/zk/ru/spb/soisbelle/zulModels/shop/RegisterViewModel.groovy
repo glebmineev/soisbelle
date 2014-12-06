@@ -27,7 +27,7 @@ class RegisterViewModel {
   String email
   String address
 
-  RandomStringGenerator rsg = new RandomStringGenerator(4);
+  RandomStringGenerator rsg = new RandomStringGenerator(6);
   String captcha = rsg.getRandomString()
   String captchaInput
 

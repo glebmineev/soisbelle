@@ -161,12 +161,12 @@ class CatalogNewViewModel implements GrailsApplicationAware {
 
     }
 
-    ProductEntity.withCriteria {ProductEntity it ->
+/*    ProductEntity.withCriteria {ProductEntity it ->
       categories {
         eq "name", "${category.name}"
       }
 
-    }
+    }*/
     //products.addAll(category.products as List<ProductEntity>)
 
 
