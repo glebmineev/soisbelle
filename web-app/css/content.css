@@ -279,3 +279,29 @@ span.form-label {
 img.form-capcha {
   border: 1px solid #ff9600;
 }
+
+/* Корзина */
+div.cart {
+  width: 150px;
+  height: 40px;
+  text-align: justify;
+  background: none;
+  border: 1px solid #F8BD9F;
+  position: relative;
+}
+
+div.cart > div.cart-img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 50px;
+}
+
+div.cart > div.cart-counters {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100px;
+  font-family: Century Gothic,serif;
+  color: #F8BD9F;
+}

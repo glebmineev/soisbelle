@@ -28,15 +28,20 @@
       </div>
     </td>
     <td width="10%" valign="top" align="right">
-      <g:link controller="shop" action="cart">
-        <div>
-          <g:img dir="images/dsn/header" file="cart.png"/>
-          <div>
-            ${cartService.getTotalCount()}
-            ${cartService.getTotalPrice()}
-          </div>
+      <div class="cart">
+        <div class="cart-img">
+          <g:link controller="shop" action="cart">
+            <g:img dir="images/dsn/header" file="cart.png"/>
+          </g:link>
         </div>
-      </g:link>
+
+        <div class="cart-counters">
+          <span id="totalCount">${cartService.getTotalCount()} товар</span>
+          <br/>
+          <span id="totalPrice">${cartService.getTotalPrice()} Р</span>
+        </div>
+      </div>
+
     </td>
   </tr>
   <tr align="left" valign="top">

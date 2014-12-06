@@ -131,11 +131,11 @@ class CartService implements Serializable {
   }
 
   public renderTotalPrice() {
-    Clients.evalJavaScript("\$('#totalPrice').html('${totalPrice as String}')")
+    Clients.evalJavaScript("\$('#totalPrice').html('${totalPrice as String} Р')")
   }
 
   public renderTotalCount() {
-    Clients.evalJavaScript("\$('#totalCount').html('${totalCount as String}')")
+    Clients.evalJavaScript("\$('#totalCount').html('${totalCount as String} товар')")
   }
 
   public Long getTotalPrice() {
