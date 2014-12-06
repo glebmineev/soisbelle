@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Запрос на регистрацию.</title>
+</head>
+<body>
+<div>
+    <b>Здравствуйте $login</b>
+    <p>Мы благодарим Вас за регистрацию в интернет-магазине «Sois belle»
+Ваш зарегистрированный адрес электронной почты: $email
+Для перехода в интернет-магазин, щелкните пожалуйста
+<a href="http://localhost:8080/soisbelle/shop/activate?activateCode=$activation_code">здесь</a>
+Для входа в личный кабинет, щелкните здесь: Личный кабинет.
+    С уважением,
+    Коллектив интернет-магазина «Sois belle»»
+    </p>
+</div>
+</body>
+</html>

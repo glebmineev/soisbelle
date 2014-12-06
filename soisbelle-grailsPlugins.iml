@@ -59,6 +59,9 @@
     <orderEntry type="module-library" exported="">
       <library name="Grails User Library (soisbelle-grailsPlugins)">
         <CLASSES>
+          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.4.0/lib" />
+          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-atlantic-1.0.0/lib" />
+          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-bootstrap-1.0.0.M2/lib" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/javax.activation/activation/jars/activation-1.1.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/javax.mail/mail/jars/mail-1.4.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/com.jhlabs/filters/jars/filters-2.0.235-1.jar!/" />
@@ -93,9 +96,9 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.javassist/javassist/jars/javassist-3.17.1-GA.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm-hibernate-core/jars/grails-datastore-gorm-hibernate-core-3.0.6.RELEASE.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm-hibernate/jars/grails-datastore-gorm-hibernate-3.0.6.RELEASE.jar!/" />
-          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-2.4.0/lib" />
-          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-atlantic-1.0.0/lib" />
-          <root url="file://$USER_HOME$/.grails/2.3.8/projects/soisbelle/plugins/zk-bootstrap-1.0.0.M2/lib" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.groovy/groovy/jars/groovy-2.3.8.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.groovy/groovy-xml/jars/groovy-xml-2.3.8.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.groovy/groovy-templates/jars/groovy-templates-2.3.8.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

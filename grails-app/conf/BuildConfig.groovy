@@ -40,6 +40,7 @@ grails.project.dependency.resolution = {
     compile 'org.imgscalr:imgscalr-lib:4.2'
     compile 'com.jhlabs:filters:2.0.235-1'
     compile 'javax.mail:mail:1.4'
+    compile 'org.codehaus.groovy:groovy-templates:2.3.8'
     //compile 'commons-codec:commons-codec:1.3'
     //runtime 'mysql:mysql-connector-java:5.1.16'
   }

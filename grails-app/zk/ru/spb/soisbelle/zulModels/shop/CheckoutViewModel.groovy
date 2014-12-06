@@ -54,7 +54,7 @@ class CheckoutViewModel {
 
     saveCartData(order)
     cartService.cleanCart()
-    emailService.sendUserOrderEmail(email)
+    emailService.sendUserOrderEmail(order.getNumber(), email)
     Executions.sendRedirect("/shop/success")
 
   }

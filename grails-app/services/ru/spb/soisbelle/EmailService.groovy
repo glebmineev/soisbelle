@@ -1,5 +1,6 @@
 package ru.spb.soisbelle
 
+import groovy.text.GStringTemplateEngine
 import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.codehaus.groovy.grails.commons.GrailsApplication
 import org.slf4j.Logger
@@ -39,7 +40,7 @@ class EmailService {
    * @param to - кому шлем.
    * @param hash - хеш.
    */
-  void sendConfirmationEmail(String to, String hash) {
+  void sendConfirmationEmail(String login, String to, String hash) {
 
     try {
 
@@ -49,13 +50,13 @@ class EmailService {
 
       Multipart mp = new MimeMultipart();
 
-      String htmlBody =
-        new Scanner(grailsApplication.mainContext.getResource("email/template.html").file, "UTF-8").useDelimiter("\\A").next();
-
-      String replaced = htmlBody.replace("ACTIVATION_CODE", hash)
+      def binding = ["login": login, "email": to, "activation_code": hash]
+      File file = grailsApplication.mainContext.getResource("email/registration_request.template").getFile()
+      GStringTemplateEngine engine = new GStringTemplateEngine();
+      Writable data = engine.createTemplate(file).make(binding)
 
       MimeBodyPart htmlPart = new MimeBodyPart();
-      htmlPart.setContent(replaced, "text/html; charset=utf-8");
+      htmlPart.setContent(data.toString(), "text/html; charset=utf-8");
       mp.addBodyPart(htmlPart);
       message.setContent(mp)
 
@@ -94,17 +95,19 @@ class EmailService {
    * Отсыл пистма с номером заказа пользователя.
    * @param to - почта пользователя, куда информацию о заказе
    */
-  void sendUserOrderEmail(String to){
+  void sendUserOrderEmail(String orderNumber, String to){
     Session session = getSession()
     MimeMessage message = getMessage(session, to)
 
     Multipart mp = new MimeMultipart();
 
-    String htmlBody =
-        new Scanner(grailsApplication.mainContext.getResource("email/userOrder.html").file, "UTF-8").useDelimiter("\\A").next();
+    def binding = ["order_number": orderNumber]
+    File file = grailsApplication.mainContext.getResource("email/new_order.template").getFile()
+    GStringTemplateEngine engine = new GStringTemplateEngine();
+    Writable data = engine.createTemplate(file).make(binding)
 
     MimeBodyPart htmlPart = new MimeBodyPart();
-    htmlPart.setContent(htmlBody, "text/html; charset=utf-8");
+    htmlPart.setContent(data.toString(), "text/html; charset=utf-8");
     mp.addBodyPart(htmlPart);
     message.setContent(mp)
 
