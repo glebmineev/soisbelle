@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddaf4c20-561e-454b-b01c-09a6929cfd8f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/email/new_order.template" />
       <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\UrlMappings$__clinit__closure1_closure2_closure4.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\AdminController$_closure1.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\AdminController.class" afterPath="" />
@@ -322,13 +323,7 @@
       <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\RegisterViewModel.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\ReviewsViewModel$_addReview_closure1.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\ReviewsViewModel.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/CatalogNewViewModel.groovy" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/CatalogNewViewModel.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/ImportService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/ImportService.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/css/ZK.css" afterPath="$PROJECT_DIR$/web-app/css/ZK.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/shop/catalogNew.zul" afterPath="$PROJECT_DIR$/web-app/zul/shop/catalogNew.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/css/content.css" afterPath="$PROJECT_DIR$/web-app/css/content.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/email/registration_request.template" afterPath="$PROJECT_DIR$/web-app/email/registration_request.template" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/css/showcase/showcase.css" afterPath="$PROJECT_DIR$/web-app/css/showcase/showcase.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/stacktrace.log" afterPath="$PROJECT_DIR$/target/stacktrace.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -408,30 +403,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmailService.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/EmailService.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="20" selection-start="3111" selection-end="3111" vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="2686">
-              <folding>
-                <element signature="e#26#66#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImportService.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ImportService.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/ImportService.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="365" column="77" selection-start="13249" selection-end="13249" vertical-scroll-proportion="0.42911154" vertical-offset="5740" max-vertical-offset="6749">
+            <state line="365" column="77" selection-start="13249" selection-end="13249" vertical-scroll-proportion="0.0" vertical-offset="5740" max-vertical-offset="6749">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="catalogNew.zul" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="catalogNew.zul" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web-app/zul/shop/catalogNew.zul">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="63" selection-start="4180" selection-end="4180" vertical-scroll-proportion="0.0" vertical-offset="1426" max-vertical-offset="2346">
+            <state line="83" column="38" selection-start="3599" selection-end="3599" vertical-scroll-proportion="-0.67266184" vertical-offset="1598" max-vertical-offset="2584">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manufacturerWnd.zul" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web-app/zul/admin/windows/manufacturerWnd.zul">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="39" selection-start="946" selection-end="971" vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="1598">
               <folding />
             </state>
           </provider>
@@ -449,7 +442,7 @@
       <file leaf-file-name="showcaseItem.zul" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web-app/zul/components/showcaseItem.zul">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="16" selection-start="1497" selection-end="1522" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="731">
+            <state line="30" column="16" selection-start="1497" selection-end="1522" vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="731">
               <folding />
             </state>
           </provider>
@@ -863,28 +856,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="showcase" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soisbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soisbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="grails-app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -908,24 +879,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="soisbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soisbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soisbelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="conf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1331,7 +1284,7 @@
       <workItem from="1416152677569" duration="29621000" />
       <workItem from="1416657548515" duration="69199000" />
       <workItem from="1417296137130" duration="27014000" />
-      <workItem from="1417803056183" duration="26860000" />
+      <workItem from="1417803056183" duration="27407000" />
     </task>
     <task id="LOCAL-00001" summary="Новое меню&#10;">
       <created>1393788042855</created>
@@ -1513,11 +1466,15 @@
       <created>1417877908531</created>
       <updated>1417877908531</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="доработка импорта&#10;">
+      <created>1417975663990</created>
+      <updated>1417975663990</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="631179000" />
+    <option name="totallyTimeSpent" value="631726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1546,7 +1503,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32427844" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.426146" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.426146" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23791541" sideWeight="0.50151056" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18051359" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
@@ -1608,7 +1565,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="кастомный пейджинг&#10;" />
     <MESSAGE value="рейтинг товара" />
     <MESSAGE value="zoomImage" />
     <MESSAGE value="zoomImage&#10;" />
@@ -1633,7 +1589,8 @@
     <MESSAGE value="верстка форм&#10;" />
     <MESSAGE value="улучшение юзабильности корзины&#10;" />
     <MESSAGE value="переход на шаблонизатор писем.&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="переход на шаблонизатор писем.&#10;" />
+    <MESSAGE value="доработка импорта&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="доработка импорта&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1643,27 +1600,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/groovy/ru/spb/soisbelle/annotation/FieldInfo.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="18" selection-start="398" selection-end="398" vertical-scroll-proportion="0.37638375" vertical-offset="0" max-vertical-offset="542">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcaseItemModel.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="33" selection-start="893" selection-end="893" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="748">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/components/ShowcaseViewModel.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2550">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web-app/zul/components/showcase.zul">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="82" selection-start="454" selection-end="474" vertical-scroll-proportion="0.15682657" vertical-offset="51" max-vertical-offset="697">
@@ -1977,23 +1913,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/zul/components/showcaseItem.zul">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="16" selection-start="1497" selection-end="1522" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="731">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/zul/shop/catalogNew.zul">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="63" selection-start="4180" selection-end="4180" vertical-scroll-proportion="0.0" vertical-offset="1426" max-vertical-offset="2346">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/ShowcaseBindComposer.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="26" selection-start="526" selection-end="546" vertical-scroll-proportion="0.16068053" vertical-offset="0" max-vertical-offset="731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/ImportService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="365" column="77" selection-start="13249" selection-end="13249" vertical-scroll-proportion="0.0" vertical-offset="5740" max-vertical-offset="6749">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.IntelliJIdea13/system/extResources/bddf09e6_zul.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="56440">
           <folding />
         </state>
       </provider>
@@ -2005,9 +1941,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/ru/spb/soisbelle/ImportService.groovy">
+    <entry file="file://$PROJECT_DIR$/web-app/zul/components/showcaseItem.zul">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="365" column="77" selection-start="13249" selection-end="13249" vertical-scroll-proportion="0.42911154" vertical-offset="5740" max-vertical-offset="6749">
+        <state line="30" column="16" selection-start="1497" selection-end="1522" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/zul/admin/categories.zul">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="16" selection-start="2019" selection-end="2044" vertical-scroll-proportion="0.43019944" vertical-offset="750" max-vertical-offset="2295">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/zul/admin/windows/manufacturerWnd.zul">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="39" selection-start="946" selection-end="971" vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="1598">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/zul/shop/catalogNew.zul">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="38" selection-start="3599" selection-end="3599" vertical-scroll-proportion="-0.67266184" vertical-offset="1598" max-vertical-offset="2584">
           <folding />
         </state>
       </provider>

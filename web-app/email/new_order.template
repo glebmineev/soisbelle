@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Ваш заказ.</title>
+</head>
+<body>
+Здравствуйте! Благодарим Вас за обращение к интернет-магазину «Sois belle»!
+Ваш номер заказа №$order_number
+В течение 20 минут с Вами свяжется наш консультант (оператор) для предоставления информации по продукции и Вашему заказу.
+</body>
+</html>
