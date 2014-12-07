@@ -16,6 +16,7 @@ import ru.spb.soisbelle.common.PathBuilder
 import ru.spb.soisbelle.common.STD_FILE_NAMES
 import ru.spb.soisbelle.common.STD_IMAGE_SIZES
 import ru.spb.soisbelle.wrappers.ProductWrapper
+import ru.spb.soisbelle.wrappers.ReviewWrapper
 
 class ProductViewModel implements GrailsApplicationAware {
 
@@ -25,7 +26,7 @@ class ProductViewModel implements GrailsApplicationAware {
   GrailsApplication grailsApplication
 
   Long productId
-  List<ReviewsEntity> reviews
+  List<ReviewWrapper> reviews = new ArrayList<ReviewWrapper>()
 
   ProductWrapper model
 
@@ -56,7 +57,10 @@ class ProductViewModel implements GrailsApplicationAware {
 
   public void initReviews() {
     ProductEntity product = ProductEntity.get(productId)
-    reviews = product.reviews as List<ReviewsEntity>
+    product.reviews.each {it ->
+      ReviewWrapper wrapper = new ReviewWrapper(it)
+      reviews.add(wrapper)
+    }
   }
 
   @Command
@@ -89,8 +93,6 @@ class ProductViewModel implements GrailsApplicationAware {
     params.put("id", productId)
 
     Window wnd = Executions.createComponents("/zul/shop/reviewsWnd.zul", null, params) as Window
-    wnd.setWidth("50%")
-    wnd.setHeight("400px")
     wnd.setPage(ExecutionsCtrl.getCurrentCtrl().getCurrentPage())
     wnd.doModal()
     wnd.setVisible(true)

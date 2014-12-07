@@ -80,17 +80,31 @@
               </listbox>
             </groupbox>
             <groupbox closable="false" style="margin-top: 5px;">
-              <!-- Фильтр по цене -->
               <label sclass="freq-font" value="Цена"/>
-              <div>
-                <label sclass="freq-font" value="От"/>
-                <textbox style="margin: 5px;" id="beforeFilterPrice"/>
-              </div>
-              <div>
-                <label sclass="freq-font" value="До"/>
-                <textbox style="margin: 5px;" id="afterFilterPrice"/>
-              </div>
-              <button sclass="soisbelle-button" style="margin-left: 123px;" label="Применить" onClick="@command('filtred')"/>
+              <!-- Фильтр по цене -->
+              <h:table width="100%" cellpadding="0" cellspacing="5">
+                <h:tr>
+                  <h:td width="20%" align="right">
+                    <label sclass="freq-font" value="От"/>
+                  </h:td>
+                  <h:td width="80%" align="left">
+                    <textbox style="margin: 5px;" id="beforeFilterPrice"/>
+                  </h:td>
+                </h:tr>
+                <h:tr>
+                  <h:td width="20%" align="right">
+                    <label sclass="freq-font" value="До"/>
+                  </h:td>
+                  <h:td width="80%" align="left">
+                    <textbox style="margin: 5px;" id="afterFilterPrice"/>
+                  </h:td>
+                </h:tr>
+                <h:tr>
+                  <h:td colspan="2" width="100%" align="right">
+                    <button sclass="soisbelle-button" label="Применить" onClick="@command('filtred')"/>
+                  </h:td>
+                </h:tr>
+              </h:table>
             </groupbox>
           </div>
         </vbox>

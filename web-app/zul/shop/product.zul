@@ -64,20 +64,11 @@
     <div if="${vm.reviews.size() > 0}" children="@bind(vm.reviews)" align="center" sclass="info">
       <template name="children">
         <vbox align="center">
-          <div align="center" style="background: #8A98A9;">
-            <label value="@load(each.fio)"/>
-            <label>
-              <zscript><![CDATA[
-                  import java.text.*
-
-                  DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-                  def date = "${each.date.getDay()}.${each.date.getMonth()}.${each.date.getYear()}"
-                  self.setValue(date)
-                ]]>
-              </zscript>
-            </label>
+          <div align="center" style="background: #8A98A9;" width="100%">
+            <label value="${each.fio}"/>
+            <label value="${each.date}"/>
           </div>
-          <label value="@load(each.content)" height="100px" width="100%"/>
+          <label value="${each.content}" height="100px" width="100%"/>
         </vbox>
       </template>
     </div>

@@ -311,3 +311,11 @@ span.freq-font {
   font-family: Century Gothic,serif;
   color: #F8BD9F;
 }
+
+/* Окна */
+div.soisbelle-wnd {
+  border: 1px solid #ddd;
+  background-color: #eee;
+  box-shadow: 2px 2px 4px -1px rgba(0,0,0, .55);
+}
+
