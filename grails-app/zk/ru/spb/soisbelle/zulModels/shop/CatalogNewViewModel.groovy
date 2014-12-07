@@ -210,8 +210,8 @@ class CatalogNewViewModel implements GrailsApplicationAware {
     filtredProducts.clear()
     applyManufacturers()
     applyUsageFilter()
-    if (event instanceof InputEvent)
-      applyPriceFilter(event)
+    /*if (event instanceof InputEvent)*/
+    applyPriceFilter(event)
 
     Page page = ExecutionsCtrl.getCurrentCtrl().getCurrentPage()
     Include showcase = page.getFellow("showcase") as Include
@@ -257,40 +257,40 @@ class CatalogNewViewModel implements GrailsApplicationAware {
   /**
    * Фильтрация по цене.
    */
-  public void applyPriceFilter(InputEvent event) {
+  public void applyPriceFilter(Event event) {
 
     Long beforeValue = getBeforeValue(event)
     Long afterValue = getAfterValue(event)
 
-    if (beforeValue > Long.MIN_VALUE && afterValue < Long.MAX_VALUE)
+    if (beforeValue >= Long.MIN_VALUE && afterValue <= Long.MAX_VALUE)
       filtredProducts = filtredProducts.findAll { it ->
         long price = it.price
         price >= (beforeValue) && price <= (afterValue)
       }
   }
 
-  Long getBeforeValue(InputEvent event) {
-    Component target = event.getTarget()
-    String id = target.getId()
-    if ("beforeFilterPrice".equals(id))
-      return !Strings.isNullOrEmpty(event.getValue()) ? event.getValue() as Long : Long.MIN_VALUE
-    else
+  Long getBeforeValue(Event event) {
+    Textbox target = (Textbox) event.getPage().getFellow("beforeFilterPrice")
+    //String id = target.getId()
+    /*if ("beforeFilterPrice".equals(id))*/
+      return !Strings.isNullOrEmpty(target.getValue()) ? target.getValue() as Long : Long.MIN_VALUE
+/*    else
     {
       Textbox before = event.getPage().getFellow("beforeFilterPrice") as Textbox
       return !Strings.isNullOrEmpty(before.getValue()) ? before.getValue() as Long : 0L
-    }
+    }*/
   }
 
-  Long getAfterValue(InputEvent event) {
-    Component target = event.getTarget()
-    String id = target.getId()
-    if ("afterFilterPrice".equals(id))
-      return !Strings.isNullOrEmpty(event.getValue()) ? event.getValue() as Long : Long.MAX_VALUE
-    else
+  Long getAfterValue(Event event) {
+    Textbox target = (Textbox) event.getPage().getFellow("afterFilterPrice")
+/*    String id = target.getId()
+    if ("afterFilterPrice".equals(id))*/
+      return !Strings.isNullOrEmpty(target.getValue()) ? target.getValue() as Long : Long.MAX_VALUE
+/*    else
     {
       Textbox after = event.getPage().getFellow("afterFilterPrice") as Textbox
       return !Strings.isNullOrEmpty(after.getValue()) ? after.getValue() as Long : Long.MAX_VALUE
-    }
+    }*/
   }
 
   /**

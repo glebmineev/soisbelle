@@ -354,15 +354,17 @@ class ImportService extends IImporterService implements ApplicationContextAware 
    * @param sheetName
    */
   public void appenToCategory(String categoryName, ProductEntity product, String sheetName) {
+    long submenuId = submenuCats.get(sheetName)
     if (!Strings.isNullOrEmpty(categoryName) && !categoryName.equals(sheetName)) {
       HashMap<String, Long> cats = categoryCache.get(sheetName)
       long categoryId = cats.get(categoryName)
       product.addToCategories(CategoryEntity.get(categoryId))
       product.setEndCategory(CategoryEntity.get(categoryId))
+    } else {
+      product.setEndCategory(CategoryEntity.get(submenuId))
     }
     //Помимо прикрепления к основной категории, прикрепляем к меню и подменю.
     product.addToCategories(CategoryEntity.get(menuCategory.getId()))
-    long submenuId = submenuCats.get(sheetName)
     product.addToCategories(CategoryEntity.get(submenuId))
   }
 

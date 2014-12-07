@@ -78,16 +78,19 @@
                   </listitem>
                 </template>
               </listbox>
+            </groupbox>
+            <groupbox closable="false" style="margin-top: 5px;">
               <!-- Фильтр по цене -->
-              <label value="Цена"/>
+              <label sclass="freq-font" value="Цена"/>
               <div>
-                <label value="От"/>
-                <textbox style="margin: 5px;" id="beforeFilterPrice" onChanging="@command('filtred')"/>
+                <label sclass="freq-font" value="От"/>
+                <textbox style="margin: 5px;" id="beforeFilterPrice"/>
               </div>
               <div>
-                <label value="До"/>
-                <textbox style="margin: 5px;" id="afterFilterPrice" onChanging="@command('filtred')"/>
+                <label sclass="freq-font" value="До"/>
+                <textbox style="margin: 5px;" id="afterFilterPrice"/>
               </div>
+              <button sclass="soisbelle-button" style="margin-left: 123px;" label="Применить" onClick="@command('filtred')"/>
             </groupbox>
           </div>
         </vbox>

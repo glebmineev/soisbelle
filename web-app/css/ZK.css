@@ -335,5 +335,9 @@ button.soisbelle-button {
   font-family: Century Gothic,serif;
 }
 
+/* Кастомизация groubox */
+div.z-groupbox-content {
+  border-color: #F8BD9F;
+}
 
 

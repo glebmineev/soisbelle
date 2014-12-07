@@ -305,3 +305,9 @@ div.cart > div.cart-counters {
   font-family: Century Gothic,serif;
   color: #F8BD9F;
 }
+
+/* Часто исользуемый шрифт */
+span.freq-font {
+  font-family: Century Gothic,serif;
+  color: #F8BD9F;
+}
