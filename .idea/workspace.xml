@@ -322,13 +322,7 @@
       <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\RegisterViewModel.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\ReviewsViewModel$_addReview_closure1.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\gleb\Projects\soisbelle\target\classes\ru\spb\locon\zulModels\shop\ReviewsViewModel.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/ProductViewModel.groovy" afterPath="$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/ProductViewModel.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/shop/catalogNew.zul" afterPath="$PROJECT_DIR$/web-app/zul/shop/catalogNew.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/css/content.css" afterPath="$PROJECT_DIR$/web-app/css/content.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/shop/product.zul" afterPath="$PROJECT_DIR$/web-app/zul/shop/product.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/zul/shop/reviewsWnd.zul" afterPath="$PROJECT_DIR$/web-app/zul/shop/reviewsWnd.zul" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/stacktrace.log" afterPath="$PROJECT_DIR$/target/stacktrace.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="soisbelle.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -409,7 +403,7 @@
       <file leaf-file-name="ProductViewModel.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/ProductViewModel.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="34" selection-start="2004" selection-end="2004" vertical-scroll-proportion="0.28228784" vertical-offset="663" max-vertical-offset="1751">
+            <state line="75" column="4" selection-start="2378" selection-end="2378" vertical-scroll-proportion="0.9095941" vertical-offset="510" max-vertical-offset="1751">
               <folding />
             </state>
           </provider>
@@ -1279,7 +1273,7 @@
       <workItem from="1416152677569" duration="29621000" />
       <workItem from="1416657548515" duration="69199000" />
       <workItem from="1417296137130" duration="27014000" />
-      <workItem from="1417803056183" duration="31742000" />
+      <workItem from="1417803056183" duration="31890000" />
     </task>
     <task id="LOCAL-00001" summary="Новое меню&#10;">
       <created>1393788042855</created>
@@ -1469,11 +1463,15 @@
       <created>1417976174933</created>
       <updated>1417976174933</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Правки карточки товара&#10;">
+      <created>1417980553548</created>
+      <updated>1417980553548</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="636061000" />
+    <option name="totallyTimeSpent" value="636209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1564,7 +1562,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="рейтинг товара" />
     <MESSAGE value="zoomImage" />
     <MESSAGE value="zoomImage&#10;" />
     <MESSAGE value="добавление меню для администирования&#10;" />
@@ -1589,7 +1586,8 @@
     <MESSAGE value="улучшение юзабильности корзины&#10;" />
     <MESSAGE value="переход на шаблонизатор писем.&#10;" />
     <MESSAGE value="доработка импорта&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="доработка импорта&#10;" />
+    <MESSAGE value="Правки карточки товара&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Правки карточки товара&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1972,7 +1970,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/zk/ru/spb/soisbelle/zulModels/shop/ProductViewModel.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="34" selection-start="2004" selection-end="2004" vertical-scroll-proportion="0.28228784" vertical-offset="663" max-vertical-offset="1751">
+        <state line="75" column="4" selection-start="2378" selection-end="2378" vertical-scroll-proportion="0.9095941" vertical-offset="510" max-vertical-offset="1751">
           <folding />
         </state>
       </provider>
