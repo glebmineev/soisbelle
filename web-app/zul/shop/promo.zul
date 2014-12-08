@@ -4,30 +4,38 @@
 <?page zscriptLanguage="GroovyGrails"?>
 
 <zk xmlns="http://www.zkoss.org/2005/zul"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
   <div apply="ru.spb.soisbelle.BindComposer"
-       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.sliders.PromoSliderViewModel')" width="100%" align="center">
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.sliders.PromoSliderViewModel')" width="100%"
+       align="center">
 
-<!--    <style>
-
-      .z-image {
-        cursor:pointer;
-      }
-
-    </style>-->
-    <div align="center" width="961px" xmlns:w='client' style="position:relative;">
-
-      <div sclass="banner-arrow" style="background-position: 0 0px;left: 0px;" onClick="@command('back')"
-           w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
-      <image id="current_banner" content="@bind(vm.currentPromo.image)" style="margin-bottom: 5px"/>
-      <div sclass="banner-selector" children="@bind(vm.pageWrappers)">
-        <template name="children">
-          <div sclass="${each.cstyle}" onClick="@command('selectSlide', bullet=each)" w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
-        </template>
+    <div sclass="soisbelle-container" xmlns:w='client' >
+      <div id="cbp-fwslider" sclass="cbp-fwslider">
+        <h:ul>
+            <h:li>
+              <a sclass="soisbelle-slider-a" href="#">
+                <image id="current_banner" content="@bind(vm.currentPromo.image)"/>
+              </a>
+            </h:li>
+        </h:ul>
+        <h:nav>
+          <label sclass="cbp-fwprev"
+                 onClick="@command('back')"
+                 w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"
+                 style="display: block;">&lt;</label>
+          <label sclass="cbp-fwnext"
+                 onClick="@command('next')"
+                 w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"
+                 style="display: block;">&gt;</label>
+        </h:nav>
+        <div sclass="cbp-fwdots" children="@bind(vm.pageWrappers)">
+          <template name="children">
+            <label sclass="${each.cstyle}" onClick="@command('selectSlide', bullet=each)"
+                   w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
+          </template>
+        </div>
       </div>
-      <div sclass="banner-arrow" style="background-position: -30px 0;right: 0px;" onClick="@command('next')"
-           w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
     </div>
   </div>
 </zk>

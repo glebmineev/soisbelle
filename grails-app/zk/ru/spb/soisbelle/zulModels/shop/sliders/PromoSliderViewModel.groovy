@@ -24,24 +24,26 @@ class PromoSliderViewModel implements GrailsApplicationAware {
 
   Deque<PromoWrapper> images = new LinkedBlockingDeque<PromoWrapper>(4);
   PromoWrapper currentPromo
-  BulletWrapper[] pageWrappers = new BulletWrapper[4]
+  BulletWrapper[] pageWrappers
   BulletWrapper currentBullet
 
   @Init
   public void init(){
     initService = grailsApplication.getMainContext().getBean("initService")
 
-
     ArrayList<PromoWrapper> promos = initService.promos
     if (promos.size() != 0) {
       currentPromo = initService.promos.get(0)
       images.addAll(initService.promos.subList(1, initService.promos.size()))
 
-      currentBullet = new BulletWrapper(0, "active")
+      pageWrappers = new BulletWrapper[initService.promos.size()]
+
+      for (int i = 0; i < pageWrappers.length; i++) {
+        pageWrappers[i] = new BulletWrapper(i, "")
+      }
+
+      currentBullet = new BulletWrapper(0, "cbp-fwcurrent")
       pageWrappers[0] = currentBullet
-      pageWrappers[1] = new BulletWrapper(1, "nonactive")
-      pageWrappers[2] = new BulletWrapper(2, "nonactive")
-      pageWrappers[3] = new BulletWrapper(3, "nonactive")
     }
   }
 
@@ -64,24 +66,24 @@ class PromoSliderViewModel implements GrailsApplicationAware {
 
   public void moveBackBullets(int steps) {
     int diff = currentBullet.getNumber() - steps
-    currentBullet.setCstyle("nonactive")
+    currentBullet.setCstyle("")
     if (diff < 0) {
       currentBullet = pageWrappers[pageWrappers.length - 1]
     } else {
       currentBullet = pageWrappers[diff]
     }
-    currentBullet.setCstyle("active")
+    currentBullet.setCstyle("cbp-fwcurrent")
   }
 
   public void moveForwardBullets(int steps) {
     int diff = currentBullet.getNumber() + steps
-    currentBullet.setCstyle("nonactive")
+    currentBullet.setCstyle("")
     if (diff > (pageWrappers.length - 1)) {
       currentBullet = pageWrappers[0]
     } else {
       currentBullet = pageWrappers[diff]
     }
-    currentBullet.setCstyle("active")
+    currentBullet.setCstyle("cbp-fwcurrent")
   }
 
   @Command
