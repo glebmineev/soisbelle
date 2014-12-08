@@ -33,7 +33,7 @@ class ProductsSliderViewModel extends SliderViewModel {
 
   @Command
   public void redirectToProductItem(@BindingParam("productModel") ProductWrapper productModel){
-    Executions.sendRedirect("/shop/product?product=${productModel.id}")
+    Executions.sendRedirect("/shop/catalog?product=${productModel.id}")
   }
 
 }

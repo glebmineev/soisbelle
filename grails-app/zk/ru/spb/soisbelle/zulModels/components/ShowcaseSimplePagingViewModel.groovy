@@ -230,7 +230,12 @@ class ShowcaseSimplePagingViewModel implements GrailsApplicationAware {
     movePageNumbers()
 
     long[] currentPages = allPages[offset];
-    moveProductList((int) currentPages[0], (int) currentPages[1])
+
+    int st = currentPages[0]
+    //Если последняя страница всего одна и товаров на ней меньше чем limit, то надо расчитать остаток.
+    int ed = currentPages.length == 1 ? ((int) currentPages[0] + (allProducts.size() - ((int) currentPages[0]))) : (int) currentPages[1]
+
+    moveProductList(st, ed)
 
     //видимость стрелок вперед назад.
     if (offset == ( allPages.length - 1 )) {
@@ -252,8 +257,6 @@ class ShowcaseSimplePagingViewModel implements GrailsApplicationAware {
     movePageNumbers()
 
     long[] currentPages = allPages[offset];
-    int from = ((int) currentPages[0] / limit)
-    int to = ((int) currentPages[currentPages.length - 1] / limit) + 1
     moveProductList((int) currentPages[0], (int) currentPages[1])
 
     //видимость стрелок вперед назад.
