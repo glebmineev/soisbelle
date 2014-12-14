@@ -11,10 +11,12 @@
 
     <div id="products" children="@bind(vm.categoriesWithProducts)">
       <template name="children">
-        <vbox align="center">
-          <label value="${each.categoryName}"/>
+        <div align="center" if="${not each.isEmpty}">
+          <div style="background: none repeat scroll 0 0 #f8bd9f;">
+            <label value="${each.categoryName}"/>
+          </div>
           <include src="/zul/components/products.zul" products="${each.products}"/>
-        </vbox>
+        </div>
       </template>
     </div>
 

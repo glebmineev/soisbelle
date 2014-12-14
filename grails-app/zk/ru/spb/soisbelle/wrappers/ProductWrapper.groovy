@@ -55,20 +55,7 @@ class ProductWrapper extends IdentWrapper implements Wrapper {
 
   public ProductWrapper(ProductEntity productEntity) {
 
-    this.id = productEntity.id
-    this.name = productEntity.name
-    this.article = productEntity.article
-    this.price = productEntity.price
-    this.volume = productEntity.volume
-    this.usage = productEntity.usage
-
-    this.countRatePeople = productEntity.countRatePeople != null ? productEntity.getCountRatePeople() : 0
-    this.rate = productEntity.rate != null ? productEntity.getRate() : 0
-
-    this.description = productEntity.description
-    this.countToStock = productEntity.countToStock
-    this.manufacturer = productEntity.manufacturer
-    this.filter = productEntity.filter
+    fillStandardFields(productEntity)
 
     String path = new PathBuilder()
         .appendPath(serverFoldersService.productImages)
@@ -86,16 +73,7 @@ class ProductWrapper extends IdentWrapper implements Wrapper {
 
   public ProductWrapper(ProductEntity productEntity, int imageSize) {
 
-    this.id = productEntity.id
-    this.name = productEntity.name
-    this.article = productEntity.article
-    this.price = productEntity.price
-    this.volume = productEntity.volume
-    this.usage = productEntity.usage
-    this.description = productEntity.description
-    this.countToStock = productEntity.countToStock
-    this.manufacturer = productEntity.manufacturer
-    this.filter = productEntity.filter
+    fillStandardFields(productEntity)
 
     String path = new PathBuilder()
         .appendPath(serverFoldersService.productImages)
@@ -109,6 +87,22 @@ class ProductWrapper extends IdentWrapper implements Wrapper {
     manufacturers = new ListModelList<ManufacturerEntity>(ManufacturerEntity.list(sort: "name"))
     manufacturers.addToSelection(manufacturer)
 
+  }
+
+  private void fillStandardFields(ProductEntity productEntity) {
+    this.id = productEntity.id
+    this.name = productEntity.name
+    this.article = productEntity.article
+    this.price = productEntity.price
+    this.volume = productEntity.volume
+    this.usage = productEntity.usage
+    this.description = productEntity.description
+    this.countToStock = productEntity.countToStock
+    this.manufacturer = productEntity.manufacturer
+    this.filter = productEntity.filter
+
+    this.countRatePeople = productEntity.countRatePeople != null ? productEntity.getCountRatePeople() : 0
+    this.rate = productEntity.rate != null ? productEntity.getRate() : 0
   }
 
   public void restore(){

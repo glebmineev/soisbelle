@@ -8,11 +8,14 @@ import ru.spb.soisbelle.ProductEntity
 class CategoriesWithProducts {
 
   String categoryName
+  boolean isEmpty = false
   List<ProductEntity> products = new ArrayList<ProductEntity>()
 
   CategoriesWithProducts(String categoryName, List<ProductEntity> products) {
     this.categoryName = categoryName
     this.products = products
+    if (products.size() == 0)
+      this.isEmpty = true
   }
 
 }

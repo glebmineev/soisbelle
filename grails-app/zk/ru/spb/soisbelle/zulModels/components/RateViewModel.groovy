@@ -82,7 +82,7 @@ class RateViewModel {
     ProductEntity.withTransaction {
       ProductEntity entity = ProductEntity.get(product.id)
       entity.setRate((product.getRate() + currentRateWrapper.getIndex()))
-      entity.setCountRatePeople(product.getCountRatePeople() + 1)
+      entity.setCountRatePeople((product.getCountRatePeople() != null ? product.getCountRatePeople() : 0) + 1)
       if (entity.validate())
         entity.save(flush: true)
 
