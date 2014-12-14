@@ -15,13 +15,13 @@
     <vbox width="100%" align="center">
 
       <h:h2>Введите email и пароль</h:h2>
-      <hbox widths="100px,300px">
+      <hbox widths="100px,300px" align="center">
         <div align="right">
           <label value="email: "/>
         </div>
         <textbox value="@bind(vm.email)" width="100%"/>
       </hbox>
-      <hbox widths="100px,300px">
+      <hbox widths="100px,300px" align="center">
         <div align="right">
           <label value="Пароль: "/>
         </div>

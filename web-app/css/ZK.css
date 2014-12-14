@@ -124,6 +124,25 @@ tr.z-row:hover > .z-cell {
   background: none repeat scroll 0 0 #f8bd9f;
 }
 
+/* Кастомизация комбобокса */
+a.z-combobox-button:hover {
+  background: none repeat scroll 0 0 #f8bd9f;
+  border: 1px solid #6F3D49;
+}
+
+li.z-comboitem:hover {
+  background: none repeat scroll 0 0 #f8bd9f;
+}
+
+/* Кастомизация спиннера */
+a.z-spinner-up:hover {
+  background: none repeat scroll 0 0 #6F3D49;
+}
+
+a.z-spinner-down:hover {
+  background: none repeat scroll 0 0 #6F3D49;
+}
+
 /*div.z-grid {
   border: none;
   background-image: none;

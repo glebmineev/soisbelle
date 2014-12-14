@@ -5,54 +5,6 @@ body {
  /* background: url("../images/blue_bg.jpg") repeat;*/
 }
 
-.banner-arrow{
-  display:block;
-  background: url("../images/arrows.png") no-repeat;
-  cursor: pointer;
-  height: 30px;
-  text-indent:-9999px;
-  border:0;
-  opacity: 1;
-  position: absolute;
-  top: 42%;
-  width: 30px;
-}
-
-.banner-selector {
-  text-align: center;
-}
-
-/**
-background: url("bullets.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border: 0 none;
-    display: inline-block;
-    height: 22px;
-    margin: 0 2px;
-    text-indent: -9999px;
-    width: 22px;
-*/
-
-.banner-selector .nonactive {
-  display:inline-block;
-  width:22px;
-  height:22px;
-  background:url("../images/bullets.png") no-repeat;
-  text-indent:-9999px;
-  border:0;
-  margin: 0 2px;
-  cursor:pointer;
-}
-
-.banner-selector .active {
-  display:inline-block;
-  width:22px;
-  height:22px;
-  text-indent:-9999px;
-  border:0;
-  margin: 0 2px;
-  background: url("../images/bullets.png") no-repeat 0 -22px;
-}
-
 .center {
   /*background: url("../images/dsn/fon/fon.png") no-repeat;*/
   margin: 0 auto;
