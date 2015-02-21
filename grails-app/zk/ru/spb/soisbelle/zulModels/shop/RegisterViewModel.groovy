@@ -12,6 +12,9 @@ import ru.spb.soisbelle.RoleEntity
 import ru.spb.soisbelle.UserEntity
 import ru.spb.soisbelle.captcha.RandomStringGenerator
 
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
+
 class RegisterViewModel {
 
   EmailService emailService = ApplicationHolder.getApplication().getMainContext().getBean("emailService") as EmailService
@@ -30,6 +33,8 @@ class RegisterViewModel {
   RandomStringGenerator rsg = new RandomStringGenerator(6);
   String captcha = rsg.getRandomString()
   String captchaInput
+
+  ExecutorService service = Executors.newScheduledThreadPool(2);
 
   @Init
   public void init() { }
@@ -61,7 +66,15 @@ class RegisterViewModel {
 
       if (user.validate()) {
         user.save(flush: true)
-        emailService.sendConfirmationEmail(user.getLogin(), user.getEmail(), hash)
+        service.execute(new Runnable() {
+
+          @Override
+          void run() {
+            emailService.sendConfirmationEmail(user.getLogin(), user.getEmail(), hash)
+          }
+
+        })
+
         Executions.sendRedirect("/shop/seeYouEmail")
       }
     }

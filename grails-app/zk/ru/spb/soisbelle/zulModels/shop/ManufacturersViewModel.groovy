@@ -7,6 +7,7 @@ import ru.spb.soisbelle.CategoryEntity
 import ru.spb.soisbelle.ManufacturerEntity
 import ru.spb.soisbelle.ProductEntity
 import ru.spb.soisbelle.wrappers.CategoriesWithProducts
+import ru.spb.soisbelle.wrappers.ManufacturerWrapper
 import ru.spb.soisbelle.wrappers.ProductWrapper
 
 /**
@@ -16,11 +17,15 @@ import ru.spb.soisbelle.wrappers.ProductWrapper
 class ManufacturersViewModel {
 
   List<CategoriesWithProducts> categoriesWithProducts = new ArrayList<CategoriesWithProducts>()
+  ManufacturerWrapper manufacturerWrapper
 
   @Init
   public void init() {
     Long manufacturer_id = Executions.getCurrent().getParameter("manufacturer") as Long
     ManufacturerEntity manufacturer = ManufacturerEntity.get(manufacturer_id)
+
+    manufacturerWrapper = new ManufacturerWrapper(manufacturer);
+
     CategoryEntity.findAllWhere(parentCategory: null).each {it ->
       CategoryEntity mainCategory = CategoryEntity.get(it.getId())
       List<ProductEntity> products = collectAllProducts(mainCategory, new ArrayList<ProductEntity>())

@@ -11,10 +11,30 @@
   <div id="searchResults" apply="ru.spb.soisbelle.BindComposer"
           viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.search.SearchResultViewModel')"
           onClientInfo="@command('refreshWhenBackToSearchResults', div=self)"
-          width="100%" height="830px" align="center">
+          width="100%" align="center">
 
-    <include id="showcase" width="100%" allProducts="${vm.matchedProduct}"
-             src="/zul/components/showcaseSimplePaging.zul" isChangeShow="true" linkLimit="8" limit="8"/>
+    <div style="position: relative;" height="35px">
+      <!-- панель изменения отображения витрины -->
+      <div style="position: absolute;  left: 0px;">
+        <image content="${vm.rows}" onClick="@command('applyRowTemplate')"/>
+        <image content="${vm.cells}" onClick="@command('applyCellTemplate')"/>
+      </div>
+      <div align="right" width="638px" style="position: absolute;right:7px;">
+        <label style="color: #F8BD9F" value="Отоброжать по:"/>
+        <combobox width="20%"
+                  model="@bind(vm.countPageItemModel)" onChange="@command('changeShowItems')"/>
+      </div>
+    </div>
+
+    <include id="showcase" width="100%"
+             allProducts="${vm.matchedProduct}"
+             listType="narrow"
+             showPaging="true"
+             src="/zul/components/showcaseSimplePaging.zul"
+             isChangeShow="true"
+             linkLimit="8"
+             limit="8"
+             showOptionsPanel="true"/>
 
   </div>
 

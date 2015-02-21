@@ -38,7 +38,7 @@
         <textbox value="@bind(vm.email)" width="100%"/>
       </hbox>
       <div>
-        <button type="submit" label="Воотановить пароль" style="margin: 5px;" onClick="@command('dropPass')"/>
+        <button type="submit" label="Восстановить пароль" style="margin: 5px;" onClick="@command('dropPass')"/>
       </div>
     </vbox>
 

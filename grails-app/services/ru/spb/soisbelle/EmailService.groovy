@@ -46,7 +46,7 @@ class EmailService {
 
       Session session = getSession()
 
-      MimeMessage message = getMessage(session, to)
+      MimeMessage message = getMessage(session, "Подтверждение регистрации", to)
 
       Multipart mp = new MimeMultipart();
 
@@ -73,7 +73,7 @@ class EmailService {
    */
   void sendPassEmail(String to, String new_pass){
     Session session = getSession()
-    MimeMessage message = getMessage(session, to)
+    MimeMessage message = getMessage(session, "Восстановление пароля", to)
 
     Multipart mp = new MimeMultipart();
 
@@ -95,13 +95,13 @@ class EmailService {
    * Отсыл пистма с номером заказа пользователя.
    * @param to - почта пользователя, куда информацию о заказе
    */
-  void sendUserOrderEmail(String orderNumber, String to){
+  void sendUserOrderEmail(String orderNumber, String fio, String to){
     Session session = getSession()
-    MimeMessage message = getMessage(session, to)
+    MimeMessage message = getMessage(session, "Номер заказа в интернет магазине \"Sois belle\"", to)
 
     Multipart mp = new MimeMultipart();
 
-    def binding = ["order_number": orderNumber]
+    def binding = ["order_number": orderNumber, "user_name": fio]
     File file = grailsApplication.mainContext.getResource("email/new_order.template").getFile()
     GStringTemplateEngine engine = new GStringTemplateEngine();
     Writable data = engine.createTemplate(file).make(binding)
@@ -140,12 +140,12 @@ class EmailService {
    * @param to - кому слать(эл. ящик)
    * @return сообщение.
    */
-  private MimeMessage getMessage(Session session, String to) {
+  private MimeMessage getMessage(Session session, String subj, String to) {
     Message message = new MimeMessage(session);
     message.setFrom(new InternetAddress("glebsis"));
     message.setRecipients(Message.RecipientType.TO,
         InternetAddress.parse(to));
-    message.setSubject("test", "UTF-8");
+    message.setSubject(subj, "UTF-8");
     message
   }
 

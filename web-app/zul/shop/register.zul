@@ -124,8 +124,8 @@
 
               <textbox value="@bind(vm.captchaInput)" width="100%" sclass="form-textbox"/>
               <div style="margin-top: 5px;" width="100%">
-                <captcha sclass="form-capcha" value="@bind(vm.captcha)" length="5" width="260px" height="40px"/>
-                <button sclass="soisbelle-button" style="margin-left: 5px" label="Сформировать заново"
+                <captcha sclass="form-capcha" value="@bind(vm.captcha)" length="5" width="248px" height="40px"/>
+                <button sclass="soisbelle-square-button" style="margin-left: 5px" label="Сформировать заново"
                         onClick="@command('regenerate')" width="200px"/>
               </div>
 
@@ -137,7 +137,7 @@
         </h:tr>
         <h:tr>
           <h:td colspan="3" width="100%" align="center">
-            <button sclass="soisbelle-button" label="Зарегистрироваться" onClick="@command('register')"/>
+            <button sclass="soisbelle-square-button" label="Зарегистрироваться" onClick="@command('register')"/>
           </h:td>
         </h:tr>
       </h:table>

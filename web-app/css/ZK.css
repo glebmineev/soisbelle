@@ -179,10 +179,16 @@ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
 
 th.z-listheader {
   background: none repeat scroll 0 0 #f8bd9f;
+
 }
 
 th.z-listheader > .z-listheader-content {
   color: #693947;
+}
+
+th.z-listhead-bar {
+  background: none repeat scroll 0 0 #f8bd9f;
+  border-left: 0;
 }
 
 tr.z-listitem:hover > .z-listcell {
@@ -351,6 +357,15 @@ button.soisbelle-button {
   line-height: 20px;
   text-align: center;
   /*border-radius: 0px;*/
+  font-family: Century Gothic,serif;
+}
+
+button.soisbelle-square-button {
+  background: none repeat scroll 0 0 #f8bd9f;
+  border: 1px solid #000000;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 0px;
   font-family: Century Gothic,serif;
 }
 

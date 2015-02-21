@@ -13,7 +13,7 @@
     </div>
     <div sclass="with_content">
       <div sclass="manufacturer_name" align="center">
-        <label style="color: green;" value="@bind(vm.productWrapper.manufacturer)"/>
+        <label value="@bind(vm.productWrapper.manufacturer)"/>
       </div>
       <div sclass="border">
         <div sclass="product_name" align="center">
@@ -22,9 +22,9 @@
           </div>
         </div>
         <div sclass="product_price" align="center">
-          <label style="font-weight: bold; font-size: 11pt" value="Цена: "/>
-          <label style="font-weight: bold; font-size: 11pt" value="@bind(vm.productWrapper.price)"/>
-          <label style="font-weight: bold; font-size: 11pt" value=" руб."/>
+          <label value="Цена: "/>
+          <label value="@bind(vm.productWrapper.price)"/>
+          <label value=" руб."/>
         </div>
       </div>
       <div sclass="product_cart_btn" align="center" width="100%" style="margin-bottom: 5px;">

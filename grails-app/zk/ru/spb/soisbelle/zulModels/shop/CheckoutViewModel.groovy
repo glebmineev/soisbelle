@@ -6,6 +6,9 @@ import org.zkoss.bind.annotation.Init
 import org.zkoss.zk.ui.Executions
 import ru.spb.soisbelle.*
 
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
+
 /**
  * Created with IntelliJ IDEA.
  * User: gleb
@@ -30,6 +33,7 @@ class CheckoutViewModel {
   LoginService loginService = ApplicationHolder.getApplication().getMainContext().getBean("loginService") as LoginService
   CartService cartService = ApplicationHolder.getApplication().getMainContext().getBean("cartService") as CartService
   EmailService emailService = ApplicationHolder.getApplication().getMainContext().getBean("emailService") as EmailService
+  ExecutorService service = Executors.newScheduledThreadPool(2);
 
   @Init
   public void init() {
@@ -54,7 +58,17 @@ class CheckoutViewModel {
 
     saveCartData(order)
     cartService.cleanCart()
-    emailService.sendUserOrderEmail(order.getNumber(), email)
+
+
+    service.execute(new Runnable() {
+
+      @Override
+      void run() {
+        emailService.sendUserOrderEmail(order.getNumber(), fio, email)
+      }
+
+    })
+
     Executions.sendRedirect("/shop/success")
 
   }

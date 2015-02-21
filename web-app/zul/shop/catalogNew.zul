@@ -28,7 +28,7 @@
 
       <!-- Категории -->
       <hbox>
-        <vbox id="showProgress" width="250px">
+        <vbox id="showProgress" width="255px">
           <groupbox closable="false" if="${vm.categories.size() > 0}" >
             <!--<caption label="Категории"/>-->
             <!-- Список категории -->
@@ -111,33 +111,44 @@
 
         <!-- хиты и популярные, отображаеться если корневая -->
         <div if="${not vm.showCatalog}" align="center" width="701px">
-          <div style="background: #F8BD9F;margin-buttom: 5px" width="100%">
+          <div style="background: #F8BD9F;margin-bottom: 5px;margin-right: 7px;opacity: 0.7;" width="100%">
             <label style="font-size: 30px;" value="ХИТ ПРОДАЖ"/>
           </div>
-          <include src="/zul/components/showcase.zul" allProducts="${vm.allProducts}" isChangeShow="false"
-                   showAppendBtn="false"/>
+          <include src="/zul/components/showcaseSimplePaging.zul" width="701px"
+                   allProducts="${vm.allProducts}"
+                   isChangeShow="false"
+                   linkLimit="8"
+                   limit="9"
+                   listType="large"
+                   showPaging="false"
+                   showOptionsPanel="false"/>
         </div>
 
         <vbox>
 
-        <hbox if="${vm.showCatalog}" style="margin-left: 5px;">
-          <!-- панель изменения отображения витрины -->
-          <div>
-            <image content="${vm.rows}" onClick="@command('applyRowTemplate')"/>
-            <image content="${vm.cells}" onClick="@command('applyCellTemplate')"/>
+          <div if="${vm.showCatalog}" style="position: relative;" height="30px">
+            <!-- панель изменения отображения витрины -->
+            <div style="position: absolute;  left: 0px;">
+              <image content="${vm.rows}" onClick="@command('applyRowTemplate')"/>
+              <image content="${vm.cells}" onClick="@command('applyCellTemplate')"/>
+            </div>
+            <div align="right" width="638px" style="position: absolute;right:7px;">
+              <label style="color: #F8BD9F" value="Отоброжать по:"/>
+              <combobox width="20%"
+                        model="@bind(vm.countPageItemModel)" onChange="@command('changeShowItems')"/>
+            </div>
           </div>
-          <div align="right" width="633px">
-            <label style="color: #F8BD9F" value="Отоброжать по:"/>
-            <combobox width="20%"
-                      model="@bind(vm.countPageItemModel)" onChange="@command('changeShowItems')"/>
-          </div>
-        </hbox>
 
         <!-- список товаров в текущей категории, отображаеться если не корневая -->
         <include id="showcase" width="701px" if="${vm.showCatalog}"
-                 src="/zul/components/showcaseSimplePaging.zul" allProducts="${vm.allProducts}" isChangeShow="true" linkLimit="8" limit="9"/>
-<!--        <include id="showcase" width="680px" if="${vm.showCatalog}"
-                 src="/zul/components/showcase.zul" allProducts="${vm.allProducts}" isChangeShow="true" showAppendBtn="true"/>-->
+                 src="/zul/components/showcaseSimplePaging.zul"
+                 listType="large"
+                 showPaging="true"
+                 allProducts="${vm.allProducts}"
+                 isChangeShow="true"
+                 linkLimit="8"
+                 limit="9"
+                 showOptionsPanel="true"/>
         </vbox>
 
       </hbox>

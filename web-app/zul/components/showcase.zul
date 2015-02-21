@@ -17,8 +17,8 @@
       <!-- витрина товаров -->
       <h:ul id="products" children="@bind(vm.products)">
         <template name="children">
-          <h:li>
-            <include src="/zul/components/showcaseItem.zul" productWrapper="${each}" width="215px" height="350px"/>
+          <h:li class="large">
+            <include src="/zul/components/showcaseItem.zul" productWrapper="${each}" width="100%" height="100%"/>
           </h:li>
         </template>
       </h:ul>

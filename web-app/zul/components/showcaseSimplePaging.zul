@@ -9,17 +9,19 @@
   <div apply="ru.spb.soisbelle.ShowcaseSimpleBindPagingComposer"
        binder="@init(queueName='showcasesimplepagingqueue')"
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.components.ShowcaseSimplePagingViewModel')" width="100%">
-    <include src="/zul/components/simplePaging.zul"/>
+
+    <include visible="@bind(vm.showPaging)" src="/zul/components/simplePaging.zul"/>
     <vbox align="center">
       <div id="showcase-div" sclass="products-cell-template" align="center" width="100%">
         <!-- витрина товаров -->
         <h:ul id="products" children="@bind(vm.products)">
           <template name="children">
-            <h:li>
+            <h:li class="${vm.listType}">
               <include src="/zul/components/showcaseItem.zul" productWrapper="${each}"/>
             </h:li>
           </template>
         </h:ul>
+        <div height="300px" visible="@bind(vm.isBusy)"/>
         <window sclass="process-window" mode="highlighted" position="center" closable="false" visible="@bind(vm.isBusy)">
           <h:div id="loading">
             <h:span class="loading-span"></h:span>
@@ -28,9 +30,8 @@
           </h:div>
         </window>
       </div>
-
     </vbox>
-    <include src="/zul/components/simplePaging.zul"/>
+    <include visible="@bind(vm.showPaging)" src="/zul/components/simplePaging.zul"/>
     <div height="5px"/>
   </div>
 </zk>

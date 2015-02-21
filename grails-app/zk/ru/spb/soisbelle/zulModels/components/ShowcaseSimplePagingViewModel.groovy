@@ -7,6 +7,12 @@ import org.slf4j.LoggerFactory
 import org.zkoss.bind.BindUtils
 import org.zkoss.bind.annotation.*
 import org.zkoss.image.AImage
+import org.zkoss.zk.ui.Page
+import org.zkoss.zk.ui.event.Event
+import org.zkoss.zk.ui.sys.ExecutionsCtrl
+import org.zkoss.zul.Div
+import org.zkoss.zul.Include
+import org.zkoss.zul.ListModelList
 import ru.spb.soisbelle.CartService
 import ru.spb.soisbelle.ImageStorageService
 import ru.spb.soisbelle.InitService
@@ -52,6 +58,14 @@ class ShowcaseSimplePagingViewModel implements GrailsApplicationAware {
 
   long[][] allPages
 
+  //стиль списка - широкие ячейки или узкие
+  String listType
+
+  //показывать ли пейджинг.
+  boolean showPaging
+  //показывать ли панель опций отображения
+  boolean showOptionsPanel
+
   /**
    * Необходимые сервисы.
    */
@@ -65,11 +79,16 @@ class ShowcaseSimplePagingViewModel implements GrailsApplicationAware {
   AImage skipToStartImage
   AImage skipToEndImage
 
+  ListModelList<String> countPageItemModel
+
   List<PageWrapper> numberPages = new ArrayList<PageWrapper>()
 
   @Init
   public void init(@ExecutionArgParam("allProducts") List<ProductEntity> data,
                    @ExecutionArgParam("isChangeShow") String isChangeShow,
+                   @ExecutionArgParam("listType") String listType,
+                   @ExecutionArgParam("showPaging") String showPaging,
+                   @ExecutionArgParam("showOptionsPanel") String showOptionsPanel,
                    @ExecutionArgParam("linkLimit") String linkLimit,
                    @ExecutionArgParam("limit") String limit) {
 
@@ -88,6 +107,9 @@ class ShowcaseSimplePagingViewModel implements GrailsApplicationAware {
     this.allProducts.addAll(data)
     this.linkLimit = linkLimit as Long
     this.limit = limit as Integer
+    this.listType = listType
+    this.showPaging = Boolean.parseBoolean(showPaging)
+    this.showOptionsPanel = Boolean.parseBoolean(showOptionsPanel)
 
     initServices()
   }
@@ -103,7 +125,7 @@ class ShowcaseSimplePagingViewModel implements GrailsApplicationAware {
    * @param data
    */
   @GlobalCommand
-  @NotifyChange(["products", "isBusy", "numberPages", "totalCount", "startList", "endList"])
+  @NotifyChange(["products", "isBusy", "numberPages", "totalCount", "startList", "endList", "showPaging", "showOptionsPanel", "countPageItemModel"])
   public void refreshShowcase(@BindingParam("data") List<ProductWrapper> data) {
     products.clear()
     int dateSize = data.size()
@@ -127,6 +149,11 @@ class ShowcaseSimplePagingViewModel implements GrailsApplicationAware {
 
       fillPageArr()
 
+    }
+
+    if (allProducts.size() == null) {
+      this.showPaging = false
+      this.showOptionsPanel = false
     }
 
     this.isBusy = false

@@ -53,6 +53,7 @@ class EditorViewModel {
   /*
    * метод формирует модель дерева категорий.
    */
+
   void createTreeModel(CategoryTreeNode parent, List<CategoryEntity> children) {
     children.each { CategoryEntity category ->
       CategoryTreeNode node = new CategoryTreeNode(category, category.name)
@@ -216,8 +217,6 @@ class EditorViewModel {
       @Override
       void refreshModel() {
 
-
-
         /*if (selectedItem != null) {
           CategoryTreeNode value = selectedItem.getValue() as CategoryTreeNode
           int index = value.getChildren().size()
@@ -318,6 +317,20 @@ class EditorViewModel {
     ProductEntity.withTransaction { status ->
 
       ProductEntity product = ProductEntity.get(item.id)
+
+      CategoryEntity.withTransaction { status2 ->
+
+        CategoryEntity category = CategoryEntity.get(product.endCategory.id)
+        category.removeFromEndProducts(product)
+        category.save(flush: true)
+
+        product.categories.each { it ->
+          CategoryEntity category2 = CategoryEntity.get(it.id)
+          category2.removeFromProducts(product)
+          category2.save(flush: true)
+        }
+      }
+
       product.delete(flush: true)
       imageService.cleanStore(product)
 
