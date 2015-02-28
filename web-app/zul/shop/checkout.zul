@@ -30,7 +30,7 @@
         <h:td width="50%" align="center">
           <textbox sclass="form-textbox" value="@bind(vm.fio)" width="100%"/>
         </h:td>
-        <h:td width="30%" align="left">
+        <h:td width="30%">
           <label sclass="validation-error" value="@load(vmsgs['fio'])" />
         </h:td>
       </h:tr>

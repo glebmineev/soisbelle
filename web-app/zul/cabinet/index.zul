@@ -12,44 +12,23 @@
 
     <style src="/css/ZK.css"/>
 
-    <h:table width="100%">
+    <h:table width="100%" style="margin-bottom: 10px;">
       <h:tr>
         <h:td width="20%">
-          <div sclass="rounded">
+          <div sclass="cabinet-left-column">
             <div align="center" width="100%">
               <label value="@load(vm.fio)" style="font-size: 16pt"/>
             </div>
             <vbox width="20%" align="left" style="margin: 15px;">
-              <image id="targetImage" width="180px"/>
-              <zscript><![CDATA[
-              import ru.spb.soisbelle.*
-              import org.zkoss.image.*
-              import org.codehaus.groovy.grails.commons.*
-              import ru.spb.soisbelle.common.*
-
-              def imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService");
-              def serverFoldersService = ApplicationHolder.getApplication().getMainContext().getBean("serverFoldersService")
-              def loginService = ApplicationHolder.getApplication().getMainContext().getBean("loginService")
-
-              String path = new PathBuilder()
-                            .appendPath(serverFoldersService.userPics)
-                            .appendString(loginService.getCurrentUser().email)
-                            .build()
-              String std_name = STD_FILE_NAMES.CATEGORY_NAME.getName()
-              int std_size = STD_IMAGE_SIZES.MIDDLE.getSize()
-
-              AImage img = imageService.getImageFile(path, std_name, std_size)
-              targetImage.setContent(img)
-
-          ]]></zscript>
-              <a href="/cabinet/orders" label="Заказы"/>
-              <a href="/cabinet/profile" label="Редактировать профиль"/>
-              <a href="/cabinet/changePass" label="Сменить пароль"/>
+              <image content="@load(vm.img)" width="180px"/>
+              <a sclass="cabinetLink" href="/cabinet/orders" label="Заказы"/>
+              <a sclass="cabinetLink" href="/cabinet/profile" label="Редактировать профиль"/>
+              <a sclass="cabinetLink" href="/cabinet/changePass" label="Сменить пароль"/>
             </vbox>
           </div>
         </h:td>
         <h:td width="80%" valign="top">
-          <include src="/zul/cabinet/orders.zul" sclass="rounded"/>
+          <include src="/zul/cabinet/orders.zul"/>
         </h:td>
       </h:tr>
     </h:table>

@@ -57,7 +57,7 @@ class ProductViewModel implements GrailsApplicationAware {
 
   public void initReviews() {
     ProductEntity product = ProductEntity.get(productId)
-    product.reviews.each {it ->
+    product.reviews.sort().each {it ->
       ReviewWrapper wrapper = new ReviewWrapper(it)
       reviews.add(wrapper)
     }

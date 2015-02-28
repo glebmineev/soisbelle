@@ -10,7 +10,9 @@
     </tpl:block>
 
     <tpl:block name="wrap_content">
-      <tpl:zkBody zul="/zul/cabinet/changePass.zul"/>
+      <div class="info">
+        <tpl:zkBody zul="/zul/cabinet/changePass.zul"/>
+      </div>
     </tpl:block>
 
     <tpl:block name="footer">

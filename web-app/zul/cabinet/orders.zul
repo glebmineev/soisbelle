@@ -5,62 +5,60 @@
 <zk xmlns="http://www.zkoss.org/2005/zul"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
-    <!--<style src="/css/ZK.css"/>-->
+  <!--<style src="/css/ZK.css"/>-->
 
-    <h:table apply="ru.spb.soisbelle.BindComposer"
-             viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.cabinet.OrdersViewModel')" width="100%">
-      <h:tr>
-          <h:td width="50%">
-            <label value="Номер заказа"/>
-          </h:td>
-          <h:td width="50%">
-            <label value="Статус"/>
-          </h:td>
-      </h:tr>
-      <h:tr children="@bind(vm.ordersModel)">
-        <template name="children">
-        <h:td width="50%">
-          <label value="${each.number}"/>
-        </h:td>
-        <h:td width="50%">
-          <label if="${each.isProcessed}" value="В процессе"/>
-          <label if="${each.isComplete}" value="Завершен"/>
-          <label if="${each.isCancel}" value="Отменен"/>
-        </h:td>
-        </template>
-      </h:tr>
-    </h:table>
+  <div apply="ru.spb.soisbelle.BindComposer"
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.cabinet.OrdersViewModel')" width="100%">
 
-<!--    <grid id="orders" mold="paging" width="100%"
-             model="@load(vm.ordersModel)" pageSize="10" emptyMessage="Заказов нет.">
+    <grid model="@load(vm.ordersModel)">
       <columns>
-        <column label="Номер"/>
-&lt;!&ndash;        <column label="ФИО"/>
-        <column label="Телефон"/>
-        <column label="E-mail"/>&ndash;&gt;
-        <column label="Статус"/>
+        <column label="Номер заказа" align="center"/>
+        <column label="Статус" align="center"/>
       </columns>
-      <template name="model">
-        <row onClick="@command('openOrder', order=each)">
+      <template name="model" var="orderModel">
+        <row>
           <cell>
-            <label value="${each.number}"/>
-          </cell>
-&lt;!&ndash;          <cell>
-            <label value="${each.fio}"/>
+            <label value="${orderModel.number}"/>
           </cell>
           <cell>
-            <label value="${each.phone}"/>
-          </cell>
-          <cell>
-            <label value="${each.email}"/>
-          </cell>&ndash;&gt;
-          <cell>
-            <label if="${each.isProcessed}" value="В процессе"/>
-            <label if="${each.isComplete}" value="Завершен"/>
-            <label if="${each.isCancel}" value="Отменен"/>
+            <label if="${orderModel.isProcessed}" value="В процессе"/>
+            <label if="${orderModel.isComplete}" value="Завершен"/>
+            <label if="${orderModel.isCancel}" value="Отменен"/>
           </cell>
         </row>
       </template>
-    </grid>-->
+    </grid>
+  </div>
+  <!--    <grid id="orders" mold="paging" width="100%"
+               model="@load(vm.ordersModel)" pageSize="10" emptyMessage="Заказов нет.">
+        <columns>
+          <column label="Номер"/>
+  &lt;!&ndash;        <column label="ФИО"/>
+          <column label="Телефон"/>
+          <column label="E-mail"/>&ndash;&gt;
+          <column label="Статус"/>
+        </columns>
+        <template name="model">
+          <row onClick="@command('openOrder', order=each)">
+            <cell>
+              <label value="${each.number}"/>
+            </cell>
+  &lt;!&ndash;          <cell>
+              <label value="${each.fio}"/>
+            </cell>
+            <cell>
+              <label value="${each.phone}"/>
+            </cell>
+            <cell>
+              <label value="${each.email}"/>
+            </cell>&ndash;&gt;
+            <cell>
+              <label if="${each.isProcessed}" value="В процессе"/>
+              <label if="${each.isComplete}" value="Завершен"/>
+              <label if="${each.isCancel}" value="Отменен"/>
+            </cell>
+          </row>
+        </template>
+      </grid>-->
 
 </zk>

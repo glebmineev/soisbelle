@@ -11,7 +11,7 @@
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.ReviewsViewModel')"
        validationMessages="@id('vmsgs')"
        form="@id('fx') @load(vm.productID) @save(vm.productID, before='addReview')
-             @validator('ru.spb.soisbelle.validators.ReviewValidator', fio=vm.fio, captcha=vm.captcha, captchaInput=vm.captchaInput, review=vm.review)"
+             @validator('ru.spb.soisbelle.validators.ReviewValidator', fio=vm.fio, email=vm.email, captcha=vm.captcha, captchaInput=vm.captchaInput, review=vm.review)"
        sclass="soisbelle-wnd"
        width="60%" height="70%" onOK="@command('addReview')">
 
@@ -66,7 +66,7 @@
               <textbox sclass="form-textbox" value="@bind(vm.captchaInput)" width="100%"/>
               <div style="margin-top: 10px;" width="100%">
                 <captcha sclass="form-capcha" value="@bind(vm.captcha)" length="5" width="220px" height="40px"/>
-                <button sclass="soisbelle-button" style="margin-left: 38px" label="Сформировать заново"
+                <button sclass="soisbelle-square-button" style="margin-left: 38px" label="Сформировать заново"
                         onClick="@command('regenerate')"/>
               </div>
           </h:td>
@@ -77,8 +77,8 @@
         </h:tr>
         <h:tr>
           <h:td colspan="3" align="center" width="100%">
-            <button sclass="soisbelle-button" style="margin-right:5px;" label="Добавить" onClick="@command('addReview')"/>
-            <button sclass="soisbelle-button" label="Закрыть" onClick="@command('closeWnd')"/>
+            <button sclass="soisbelle-square-button" style="margin-right:5px;" label="Добавить" onClick="@command('addReview')"/>
+            <button sclass="soisbelle-square-button" label="Закрыть" onClick="@command('closeWnd')"/>
           </h:td>
         </h:tr>
       </h:table>

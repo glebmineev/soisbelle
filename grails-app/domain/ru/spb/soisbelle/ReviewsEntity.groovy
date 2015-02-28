@@ -30,7 +30,7 @@ class ReviewsEntity {
   static constraints = {
     fio nullable: false
     email nullable: true
-    content nullable: false
+    content maxSize: 65535, nullable: false
     date nullable: false
     rate nullable: true
   }

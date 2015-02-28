@@ -13,7 +13,11 @@ import org.zkoss.zul.Div
 import org.zkoss.zul.Image
 import ru.spb.soisbelle.ImageService
 import ru.spb.soisbelle.LoginService
+import ru.spb.soisbelle.ServerFoldersService
 import ru.spb.soisbelle.UserEntity
+import ru.spb.soisbelle.common.PathBuilder
+import ru.spb.soisbelle.common.STD_FILE_NAMES
+import ru.spb.soisbelle.common.STD_IMAGE_SIZES
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,6 +32,7 @@ class CabinetViewModel {
   String phone
   String email
   String address
+  AImage img
 
   String uuid
 
@@ -35,6 +40,7 @@ class CabinetViewModel {
 
   LoginService loginService = ApplicationHolder.getApplication().getMainContext().getBean("loginService") as LoginService
   ImageService imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService") as ImageService
+  ServerFoldersService serverFoldersService = ApplicationHolder.getApplication().getMainContext().getBean("serverFoldersService") as ServerFoldersService
 
   @Init
   public void init() {
@@ -43,6 +49,16 @@ class CabinetViewModel {
     phone = user.phone
     email = user.email
     address = user.address
+
+    String path = new PathBuilder()
+        .appendPath(serverFoldersService.userPics)
+        .appendString(loginService.getCurrentUser().email)
+        .build()
+    String std_name = STD_FILE_NAMES.CATEGORY_NAME.getName()
+    int std_size = STD_IMAGE_SIZES.MIDDLE.getSize()
+
+    img = imageService.getImageFile(path, std_name, std_size)
+
   }
 
   @Command

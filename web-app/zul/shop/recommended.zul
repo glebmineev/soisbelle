@@ -30,8 +30,8 @@
                 <image sclass="productImage" content="@load(each.image)"
                        onClick="@command('redirectToProductItem', productModel=each)"/>
               </div>
-              <label height="20px" value="@load(each.manufacturer.name)"/>
-              <div height="60px">
+              <label height="20px" style="color: #cd0a0a" value="@load(each.manufacturer.name)"/>
+              <div height="75px">
                 <label value="@load(each.name)"/>
               </div>
               <div>Цена:
@@ -40,10 +40,10 @@
               </div>
               <div style="margin:5px;">
                 <div width="150px">
-                  <button sclass="soisbelle-button" label="В корзину" visible="@bind(not each.inCart)"
+                  <button sclass="soisbelle-square-button" label="В корзину" visible="@bind(not each.inCart)"
                          onClick="@command('addToCart', productModel=each)"
                          style="cursor:pointer;"/>
-                  <button sclass="soisbelle-button" visible="@bind(each.inCart)" label="Уже в корзине"/>
+                  <button sclass="soisbelle-square-button" visible="@bind(each.inCart)" label="Уже в корзине"/>
                 </div>
               </div>
 

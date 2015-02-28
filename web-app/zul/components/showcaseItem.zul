@@ -28,9 +28,9 @@
         </div>
       </div>
       <div sclass="product_cart_btn" align="center" width="100%" style="margin-bottom: 5px;">
-        <button sclass="soisbelle-button" visible="@bind(not vm.inCart)" label="В корзину"
+        <button sclass="soisbelle-square-button" visible="@bind(not vm.inCart)" label="В корзину"
                 onClick="@command('toCart')"/>
-        <button sclass="soisbelle-button" visible="@bind(vm.inCart)" label="Уже в корзине"/>
+        <button sclass="soisbelle-square-button" visible="@bind(vm.inCart)" label="Уже в корзине"/>
       </div>
     </div>
   </div>

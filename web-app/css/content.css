@@ -106,7 +106,6 @@ body {
 .imageBoxAdmin {
   height: 320px;
   background: #ffffff;
-  background: #FFFFFF;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -114,6 +113,15 @@ body {
   display:table-cell;
   vertical-align:middle;
   text-align:center
+}
+
+.imageBoxLarge {
+  height: 320px;
+  background: #ffffff;
+  border: none;
+  display:table-cell;
+  vertical-align:middle;
+  text-align:center;
 }
 
 a.navigationLink {
@@ -239,7 +247,7 @@ img.form-capcha {
 /* Корзина */
 div.cart {
   width: 150px;
-  height: 40px;
+  height: 33px;
   text-align: justify;
   background: none;
   border: 1px solid #F8BD9F;
@@ -258,6 +266,7 @@ div.cart > div.cart-counters {
   top: 0px;
   right: 0px;
   width: 100px;
+  font-size: 8pt;
   font-family: Century Gothic,serif;
   color: #F8BD9F;
 }
@@ -273,5 +282,32 @@ div.soisbelle-wnd {
   border: 1px solid #ddd;
   background-color: #eee;
   box-shadow: 2px 2px 4px -1px rgba(0,0,0, .55);
+}
+
+span.product-price {
+  font-size: 16pt;
+  color:#f8bd9f;
+}
+
+/* Личный кабинет */
+
+a.cabinetLink {
+  font-size: 16pt;
+  color: #6E3B4E;
+  text-decoration: none;
+}
+
+a.cabinetLink:hover {
+  text-decoration: underline;
+  color: #F8BD9F;
+}
+
+.cabinet-left-column {
+  width: 100%;
+  background: #FFFFFF;
+  font-family: Century Gothic,serif;
+  font-size: large;
+  text-align:center;
+  padding: 10px;
 }
 

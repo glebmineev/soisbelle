@@ -12,9 +12,11 @@
     <!--<style src="/css/ZK.css"/>-->
     <!-- Навигация -->
 
-    <hlayout width="100%">
-      <div id="imageDiv" width="320px" align="center" sclass="imageBoxAdmin">
-        <image id="productImage" content="@load(vm.model.image)" style="margin: 10px" onClick="@command('zoomImage')"/>
+    <hbox widths="35%,65%" width="100%">
+      <div style="margin-top: 15px;">
+        <div id="imageDiv" width="320px" align="center" sclass="imageBoxLarge">
+          <image id="productImage" content="@load(vm.model.image)" onClick="@command('zoomImage')"/>
+        </div>
       </div>
       <vbox>
         <div sclass="catalog-outer-container">
@@ -22,57 +24,51 @@
             <label value="@load(vm.model.name)"/>
           </div>
         </div>
-        <tabbox width="562px">
+        <tabbox>
           <tabs>
             <tab label="Применение"/>
             <tab label="Описание"/>
           </tabs>
           <tabpanels style="background: #ffffff;">
-            <tabpanel height="192px">
-              <vlayout>
-                <div style="overflow: auto;" height="195px">
-                  <label value="@load(vm.model.usage)"/>
-                </div>
-              </vlayout>
+            <tabpanel style="overflow:auto"  height="192px">
+              <label value="@load(vm.model.usage)"/>
             </tabpanel>
-            <tabpanel height="192px">
-              <vlayout>
-                <div style="overflow: auto;" height="195px">
-                  <label value="@load(vm.model.description)"/>
-                </div>
-              </vlayout>
+            <tabpanel style="overflow:auto" height="192px">
+              <label value="@load(vm.model.description)"/>
             </tabpanel>
           </tabpanels>
         </tabbox>
         <hbox>
-          <label style="font-size: 16pt;" value="Цена:"/>
-          <label style="font-size: 16pt;" value="@load(vm.model.price)"/>
-          <label style="font-size: 16pt;" value="руб."/>
+          <label sclass="product-price" value="Цена:"/>
+          <label sclass="product-price" value="@load(vm.model.price)"/>
+          <label sclass="product-price" value="руб."/>
         </hbox>
         <include src="/zul/components/rate.zul" product="${vm.model}"/>
-        <button visible="@load(not vm.model.inCart)"
+        <button sclass="soisbelle-square-button" visible="@load(not vm.model.inCart)"
                 label="В корзину" onClick="@command('addToCart')"/>
-        <label visible="@bind(vm.model.inCart)" value="Уже в корзине"/>
+        <button sclass="soisbelle-square-button" visible="@bind(vm.model.inCart)" label="Уже в корзине"/>
       </vbox>
-    </hlayout>
+    </hbox>
 
     <!-- Отзывы -->
     <div sclass="info" align="center">
       <label value="Отзывы" style="font-size: 16pt;"/>
     </div>
 
-    <div if="${vm.reviews.size() > 0}" children="@bind(vm.reviews)" align="center" sclass="info">
+    <div if="${vm.reviews.size() > 0}" children="@bind(vm.reviews)" sclass="info">
       <template name="children">
-        <vbox align="center">
-          <div align="center" style="background: #8A98A9;" width="100%">
-            <label value="${each.fio}"/>
-            <label value="${each.date}"/>
-          </div>
-          <label value="${each.content}" height="100px" width="100%"/>
-        </vbox>
+        <div align="center" style="background: #F8BD9F;" width="100%">
+          <label value="${each.fio}"/>
+          <label value="${each.date}"/>
+        </div>
+        <div align="left">
+          <label value="${each.content}" width="100%"/>
+        </div>
       </template>
     </div>
-    <button label="Добавить отзыв" autodisable="true" onClick="@command('addReviews')"/>
+    <div style="width:100%;margin-bottom:10px;" align="center">
+      <button sclass="soisbelle-square-button" label="Добавить отзыв" autodisable="true" onClick="@command('addReviews')"/>
+    </div>
 
   </div>
 

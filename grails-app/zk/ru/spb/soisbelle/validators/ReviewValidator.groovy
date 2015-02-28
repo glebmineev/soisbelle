@@ -16,6 +16,7 @@ class ReviewValidator extends AbstractValidator {
   @Override
   void validate(ValidationContext ctx) {
     validateFio(ctx, ctx.getValidatorArg("fio") as String)
+    validateEmail(ctx, ctx.getValidatorArg("email") as String)
     validateReview(ctx, ctx.getValidatorArg("review") as String)
     validateCaptcha(ctx, ctx.getValidatorArg("captcha") as String,
                          ctx.getValidatorArg("captchaInput") as String)
@@ -36,5 +37,9 @@ class ReviewValidator extends AbstractValidator {
       this.addInvalidMessage(ctx, "captcha", "Введенные символы неверны!");
   }
 
+  public void validateEmail(ValidationContext ctx, String value){
+    if (Strings.isNullOrEmpty(value))
+      this.addInvalidMessage(ctx, "email", "Поле email не может быть пустым!");
+  }
 
 }

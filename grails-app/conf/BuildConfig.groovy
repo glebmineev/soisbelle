@@ -16,7 +16,7 @@ grails.project.dependency.resolution = {
   checksums true // Whether to verify checksums on resolve
 
   repositories {
-    inherits true // Whether to inherit repository definitions from plugins
+    //inherits true // Whether to inherit repository definitions from plugins
     mavenRepo "http://dl.bintray.com/zkgrails/release"
     grailsPlugins()
     grailsHome()
@@ -30,6 +30,7 @@ grails.project.dependency.resolution = {
     //mavenRepo "http://repository.codehaus.org"
     //mavenRepo "http://download.java.net/maven/2/"
     //mavenRepo "http://repository.jboss.com/maven2/"
+    mavenRepo "http://repo.grails.org/grails/plugins"
   }
   dependencies {
     // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
@@ -56,7 +57,7 @@ grails.project.dependency.resolution = {
     //runtime ":zipped-resources:1.0"
     //runtime ":cached-resources:1.0"
     //runtime ":yui-minify-resources:0.1.4"
-    compile ":zk:2.5.2"
+    compile ":zk:2.4.0"
     compile ":zk-bootstrap:1.0.0" // ZK Bootstrap support
     compile ":zk-atlantic:1.0.1"     // ZK Atlantic flat theme
     //compile ":zkui:0.5.4"

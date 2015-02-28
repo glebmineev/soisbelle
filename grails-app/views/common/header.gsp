@@ -31,7 +31,7 @@
       <div class="cart">
         <div class="cart-img">
           <g:link controller="shop" action="cart">
-            <g:img dir="images/dsn/header" file="cart.png"/>
+            <g:img dir="images/dsn/header" file="cart32.png"/>
           </g:link>
         </div>
 

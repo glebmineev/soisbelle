@@ -42,7 +42,7 @@ div.cbp-fwslider nav span {
   width: 50px;
   height: 100px;
   background: #F8BD9F;
-  color: #fff;
+  color: #6F3C4F;
   font-size: 50px;
   text-align: center;
   margin-top: -50px;
@@ -75,19 +75,19 @@ div.cbp-fwdots span {
   display: inline-block;
   width: 18px;
   height: 18px;
-  background: #ddd;
+  background: #F8BD9F;
   margin: 4px;
   border-radius: 50%;
   cursor: pointer;
 }
 
 div.cbp-fwdots span:hover {
-  background: #999;
+  background: #C5C9A6;
 }
 
 div.cbp-fwdots span.cbp-fwcurrent {
-  background: #F8BD9F;
-  box-shadow: 0 0 0 2px #F8BD9F;
+  background: #A7585D;
+  box-shadow: 0 0 0 2px #C28161;
   -webkit-transition: box-shadow 0.2s ease-in-out;
   -moz-transition: box-shadow 0.2s ease-in-out;
   transition: box-shadow 0.2s ease-in-out;

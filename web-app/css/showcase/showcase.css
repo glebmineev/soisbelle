@@ -61,6 +61,7 @@ div.products-row-template > ul > li > div > div > div.with_content {
 
 div.products-row-template > ul > li > div > div > div.with_content > div.manufacturer_name {
   height: 20px;
+  color: #cd0a0a;
 }
 
 div.products-row-template > ul > li > div > div > div.with_content > div.border {
@@ -158,10 +159,11 @@ div.products-cell-template > ul > li > div > div > div.with_img {
 
 div.products-cell-template > ul > li > div > div > div.with_content > div.manufacturer_name {
   height: 20px;
+  color: #cd0a0a;
 }
 
 div.products-cell-template > ul > li > div > div > div.with_content > div.border {
-  border: 1px solid #000000;
+  /*border: 1px solid #000000;*/
   margin: 5px;
 }
 
@@ -183,8 +185,8 @@ div.products-cell-template > ul > li > div > div > div.with_content > div.produc
 /* Пагинация */
 div.soisbelle-paging {
   background: #F8BD9F;
-  opacity: 0.7; /* Полупрозрачный фон */
-  filter: alpha(Opacity=70); /* Прозрачность в IE */
+  opacity: 0.5; /* Полупрозрачный фон */
+  filter: alpha(Opacity=50); /* Прозрачность в IE */
   margin-right: 7px;
   margin-top: 0px;
   margin-bottom: 5px;

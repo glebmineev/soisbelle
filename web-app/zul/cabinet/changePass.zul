@@ -17,67 +17,53 @@
                 retypeNewPass=vm.retypeNewPass)"
        width="100%">
 
-    <style>
-
-      span.z-label {
-      font-size: 14pt;
-      }
-
-      .z-textbox {
-      font-size: 14pt;
-      background-color: #fff3f3;
-      }
-
-      .z-textbox:hover {
-      background-color: #ffffff;
-      }
-
-    </style>
-
     <div align="center" width="100%">
       <label style="font-size: 20px;" value="Смена пароля"/>
     </div>
 
-    <h:table width="100%" cellspacing="5" cellpadding="0">
+    <h:table width="100%" cellpadding="5" cellspacing="0" style="margin-top: 10px;">
       <h:tr>
         <h:td width="20%" align="right">
-          <label value="Введите старый пароль:"/>
+          <label value="Введите старый пароль:" sclass="form-label"/>
+          <label value=" * " sclass="required-field"/>
         </h:td>
-        <h:td width="50%" align="left">
-          <textbox value="@bind(vm.oldPass)" type="password" width="100%"/>
+        <h:td width="50%" align="center">
+          <textbox sclass="form-textbox" value="@bind(vm.oldPass)" type="password" width="100%"/>
         </h:td>
         <h:td width="30%">
-          <label sclass="error"
+          <label sclass="validation-error"
                  value="@load(vmsgs['oldPass'])"/>
         </h:td>
       </h:tr>
       <h:tr>
         <h:td width="20%" align="right">
-          <label value="Введите новый пароль:"/>
+          <label value="Введите новый пароль:" sclass="form-label"/>
+          <label value=" * " sclass="required-field"/>
         </h:td>
-        <h:td width="50%" align="left">
-          <textbox value="@bind(vm.newPass)" type="password" width="100%"/>
+        <h:td width="50%" align="center">
+          <textbox sclass="form-textbox" value="@bind(vm.newPass)" type="password" width="100%"/>
         </h:td>
         <h:td width="30%">
-          <label sclass="error"
+          <label sclass="validation-error"
                  value="@load(vmsgs['newPass'])"/>
         </h:td>
       </h:tr>
       <h:tr>
         <h:td width="20%" align="right">
-          <label value="Введите новый пароль:"/>
+          <label value="Повторите новый пароль:" sclass="form-label"/>
+          <label value=" * " sclass="required-field"/>
         </h:td>
-        <h:td width="50%" align="left">
-          <textbox value="@bind(vm.retypeNewPass)" type="password" width="100%"/>
+        <h:td width="50%" align="center">
+          <textbox sclass="form-textbox" value="@bind(vm.retypeNewPass)" type="password" width="100%"/>
         </h:td>
         <h:td width="30%">
-          <label sclass="error"
-                 value="@load(vmsgs['retypeNewPass'])"/>
+          <label sclass="validation-error"
+                 value="@load(vmsgs['newPass'])"/>
         </h:td>
       </h:tr>
       <h:tr>
         <h:td colspan="3" width="100%" align="center">
-          <button label="Сменить пароль" onClick="@command('changePass')"/>
+          <button sclass="soisbelle-square-button" label="Сменить пароль" onClick="@command('changePass')"/>
         </h:td>
       </h:tr>
     </h:table>

@@ -12,7 +12,7 @@
 
     <div sclass="zMenu">
 
-      <style src="/css/ZK.css"/>
+      <!--<style src="/css/ZK.css"/>-->
 
       <h:ul children="@bind(vm.menuItems)">
         <template name="children">

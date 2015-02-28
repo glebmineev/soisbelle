@@ -374,4 +374,29 @@ div.z-groupbox-content {
   border-color: #F8BD9F;
 }
 
+/* Табы */
+
+.z-tab-selected {
+  background: none repeat scroll 0 0 #fff!important;
+}
+
+.z-tab-selected > a > span.z-tab-text {
+  color: #774551;
+}
+
+.z-tab-selected > a {
+  text-decoration: none;
+}
+
+.z-tab > a {
+  text-decoration: none;
+}
+
+.z-tab {
+  background: none repeat scroll 0 0 #774551;
+}
+
+.z-tab:hover {
+  background: none repeat scroll 0 0 #F8BD9F;
+}
 

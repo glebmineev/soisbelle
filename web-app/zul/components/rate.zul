@@ -19,7 +19,7 @@
         <image content="${each.star}" onClick="@command('changeRate', rate=each)"/>
       </template>
     </div>
-    <button label="Рейтинг!" onClick="@command('addRateToProduct')" visible="@bind(vm.showUpdateRateButton)"/>
+    <button sclass="soisbelle-square-button" label="Рейтинг!" onClick="@command('addRateToProduct')" visible="@bind(vm.showUpdateRateButton)"/>
   </div>
 
 </zk>

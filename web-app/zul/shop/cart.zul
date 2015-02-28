@@ -12,7 +12,7 @@
           align="center"
           width="100%">
 
-    <grid model="@bind(vm.cartProduct)" width="100%">
+    <grid model="@bind(vm.cartProduct)" width="100%" emptyMessage="Корзина пуста">
       <columns>
         <column width="170px"/>
         <column label="Наименование" hflex="3" align="center"/>
@@ -44,14 +44,14 @@
             </label>
           </cell>
           <cell>
-            <button sclass="soisbelle-button" label="Удалить" onClick="@command('removeItem', productModel=productModel)"/>
+            <button sclass="soisbelle-square-button" label="Удалить" onClick="@command('removeItem', productModel=productModel)"/>
           </cell>
         </row>
       </template>
     </grid>
 
-    <div align="center" height="55px" width="100%" style="background: #ffffff; margin-bottom: 5px; margin-top: 5px">
-      <button sclass="soisbelle-button" style="margin-top: 10px" label="Оформление заказа" onClick="@command('checkout')"/>
+    <div if="${vm.cartProduct.size() > 0}" align="center" height="55px" width="100%" style="background: #ffffff; margin-bottom: 5px; margin-top: 5px">
+      <button sclass="soisbelle-square-button" style="margin-top: 10px" label="Оформление заказа" onClick="@command('checkout')"/>
     </div>
 
   </div>
