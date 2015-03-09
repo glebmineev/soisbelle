@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd"
+    >
+
+
+<window apply="ru.spb.soisbelle.BindComposer"
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.admin.EmailConfigViewModel')"
+       validationMessages="@id('vmsgs')"
+       form="@id('fx') @load(vm.login) @save(vm.login, before='saveConfig')
+                @validator('ru.spb.soisbelle.validators.EmailConfigValidator',
+                host=vm.host,
+                port=vm.port,
+                auth=vm.auth,
+                starttls=vm.starttls,
+                login=vm.login,
+                password=vm.password)"
+       width="100%">
+
+    <vlayout>
+      <div align="center">
+        <label value="Настройки почты" style="font-size: 14pt"/>
+      </div>
+
+      <h:table width="100%" cellspacing="5" cellpadding="5" >
+        <h:tr>
+          <h:td width="20%" align="right">
+            <label value="HOST" sclass="form-label"/>
+            <label value=" * " sclass="required-field"/>
+          </h:td>
+          <h:td width="50%" align="left">
+            <textbox sclass="form-textbox" value="@bind(vm.host)" width="100%"/>
+          </h:td>
+          <h:td width="30%">
+            <label sclass="validation-error"
+                   value="@load(vmsgs['host'])"/>
+          </h:td>
+        </h:tr>
+        <h:tr>
+          <h:td width="20%" align="right">
+            <label value="PORT" sclass="form-label"/>
+            <label value=" * " sclass="required-field"/>
+          </h:td>
+          <h:td width="50%" align="left">
+            <textbox sclass="form-textbox" value="@bind(vm.port)" width="100%"/>
+          </h:td>
+          <h:td width="30%">
+            <label sclass="validation-error"
+                   value="@load(vmsgs['port'])"/>
+          </h:td>
+        </h:tr>
+        <h:tr>
+          <h:td width="20%" align="right">
+            <label value="AUTH" sclass="form-label"/>
+            <label value=" * " sclass="required-field"/>
+          </h:td>
+          <h:td width="50%" align="left">
+            <textbox sclass="form-textbox" value="@bind(vm.auth)" width="100%"/>
+          </h:td>
+          <h:td width="30%">
+            <label sclass="validation-error"
+                   value="@load(vmsgs['auth'])"/>
+          </h:td>
+        </h:tr>
+        <h:tr>
+          <h:td width="30%" align="right">
+            <label value="STARTTLS" sclass="form-label"/>
+            <label value=" * " sclass="required-field"/>
+          </h:td>
+          <h:td width="50%" align="left">
+            <textbox sclass="form-textbox" value="@bind(vm.starttls)" width="100%"/>
+          </h:td>
+          <h:td>
+            <label sclass="validation-error"
+                   value="@load(vmsgs['starttls'])"/>
+          </h:td>
+        </h:tr>
+        <h:tr>
+          <h:td width="30%" align="right">
+            <label value="LOGIN" sclass="form-label"/>
+            <label value=" * " sclass="required-field"/>
+          </h:td>
+          <h:td width="50%" align="left">
+            <textbox sclass="form-textbox" value="@bind(vm.login)" width="100%"/>
+          </h:td>
+          <h:td>
+            <label sclass="validation-error"
+                   value="@load(vmsgs['login'])"/>
+          </h:td>
+        </h:tr>
+        <h:tr>
+          <h:td width="20%" align="right">
+            <label value="PASSWORD" sclass="form-label"/>
+            <label value=" * " sclass="required-field"/>
+          </h:td>
+          <h:td width="50%" align="center">
+            <textbox sclass="form-textbox" value="@bind(vm.password)" width="100%"/>
+          </h:td>
+          <h:td width="30%" align="left">
+            <label sclass="validation-error"
+                   value="@load(vmsgs['password'])"/>
+          </h:td>
+        </h:tr>
+        <h:tr>
+          <h:td colspan="3" width="100%" align="center">
+            <button sclass="soisbelle-square-button" label="Сохранить" onClick="@command('saveConfig')"/>
+          </h:td>
+        </h:tr>
+      </h:table>
+    </vlayout>
+  </window>
+
+</zk>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd"
+    >
+
+  <div apply="ru.spb.soisbelle.BindComposer"
+          viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.admin.EmailsViewModel')"
+          width="100%">
+
+    <h:table width="100%" cellpadding="0" cellspacing="0">
+      <h:tr>
+        <h:td width="100%">
+          <tabbox>
+            <tabs>
+              <tab label="Восстановление пароля"/>
+              <tab label="Заказ"/>
+              <tab label="Регистрация"/>
+            </tabs>
+            <tabpanels>
+              <tabpanel>
+                <ckeditor value="@bind(vm.passwordRecovery)" onSave="@command('savePasswordRecovery')"/>
+                <button label="Сохранить" onClick="@command('savePasswordRecovery')"/>
+              </tabpanel>
+              <tabpanel>
+                <ckeditor value="@bind(vm.newOrder)" onSave="@command('saveNewOrder')"/>
+                <button label="Сохранить" onClick="@command('saveNewOrder')"/>
+              </tabpanel>
+              <tabpanel>
+                <ckeditor value="@bind(vm.registration)" onSave="@command('saveRegistration')"/>
+                <button label="Сохранить" onClick="@command('saveRegistration')"/>
+              </tabpanel>
+            </tabpanels>
+          </tabbox>
+        </h:td>
+      </h:tr>
+    </h:table>
+  </div>
+
+
+</zk>
