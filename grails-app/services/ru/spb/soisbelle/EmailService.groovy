@@ -5,6 +5,7 @@ import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.codehaus.groovy.grails.commons.GrailsApplication
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import org.springframework.beans.factory.InitializingBean
 
 import javax.mail.*
 import javax.mail.MessagingException
@@ -16,7 +17,7 @@ import javax.mail.internet.MimeBodyPart
 import javax.mail.internet.MimeMessage
 import javax.mail.internet.MimeMultipart
 
-class EmailService {
+class EmailService implements InitializingBean {
 
   static transactional = true
   static scope = "session";
@@ -28,12 +29,38 @@ class EmailService {
   //Логгер
   static Logger logger = LoggerFactory.getLogger(EmailService.class)
 
-  static final String HOST = "smtp.gmail.com"
-  static final String PORT = "587"
-  static final String AUTH = "true"
-  static final String STARTTLS = "true"
-  static final String LOGIN = "soisbelletest@gmail.com"
-  static final String PASSWORD = "QWglebmineev1987"
+  String HOST //= "smtp.gmail.com"
+  String PORT //= "587"
+  String AUTH //= "true"
+  String STARTTLS //= "true"
+  String LOGIN //= "soisbelletest@gmail.com"
+  String PASSWORD //= "QWglebmineev1987"
+
+  String passwordRecoveryTemplate
+  String newOrderTemplate
+  String registrationTemplate
+
+  @Override
+  void afterPropertiesSet() throws Exception {
+    initEmailConfig()
+    initTemplates()
+  }
+
+  void initEmailConfig() {
+    EmailConfigEntity emailConfig = EmailConfigEntity.findByName("Конфигурация")
+    HOST = emailConfig.getHost()
+    PORT = emailConfig.getPort()
+    AUTH = emailConfig.getAuth()
+    STARTTLS = emailConfig.getStarttls()
+    LOGIN = emailConfig.getLogin()
+    PASSWORD = emailConfig.getPassword()
+  }
+
+  void initTemplates() {
+    passwordRecoveryTemplate = EmailTemplateEntity.findByName("Восстановление пароля")?.getEmailHtml()
+    newOrderTemplate = EmailTemplateEntity.findByName("Заказ")?.getEmailHtml()
+    registrationTemplate = EmailTemplateEntity.findByName("Регистрация")?.getEmailHtml()
+  }
 
   /**
    * Отсыл почты с хэшем для регистрации.
@@ -51,9 +78,9 @@ class EmailService {
       Multipart mp = new MimeMultipart();
 
       def binding = ["login": login, "email": to, "activation_code": hash]
-      File file = grailsApplication.mainContext.getResource("email/registration_request.template").getFile()
+      //File file = grailsApplication.mainContext.getResource("email/registration_request.template").getFile()
       GStringTemplateEngine engine = new GStringTemplateEngine();
-      Writable data = engine.createTemplate(file).make(binding)
+      Writable data = engine.createTemplate(registrationTemplate).make(binding)
 
       MimeBodyPart htmlPart = new MimeBodyPart();
       htmlPart.setContent(data.toString(), "text/html; charset=utf-8");
@@ -77,13 +104,18 @@ class EmailService {
 
     Multipart mp = new MimeMultipart();
 
-    String htmlBody =
+    /*String htmlBody =
       new Scanner(grailsApplication.mainContext.getResource("email/newPass_template.html").file, "UTF-8").useDelimiter("\\A").next();
 
-    String replaced = htmlBody.replace("NEW_PASS", new_pass)
+    String replaced = htmlBody.replace("NEW_PASS", new_pass)*/
+
+    def binding = ["new_pass": new_pass]
+    //File file = grailsApplication.mainContext.getResource("email/new_order.template").getFile()
+    GStringTemplateEngine engine = new GStringTemplateEngine();
+    Writable data = engine.createTemplate(passwordRecoveryTemplate).make(binding)
 
     MimeBodyPart htmlPart = new MimeBodyPart();
-    htmlPart.setContent(replaced, "text/html; charset=utf-8");
+    htmlPart.setContent(data.toString(), "text/html; charset=utf-8");
     mp.addBodyPart(htmlPart);
     message.setContent(mp)
 
@@ -102,9 +134,9 @@ class EmailService {
     Multipart mp = new MimeMultipart();
 
     def binding = ["order_number": orderNumber, "user_name": fio]
-    File file = grailsApplication.mainContext.getResource("email/new_order.template").getFile()
+    //File file = grailsApplication.mainContext.getResource("email/new_order.template").getFile()
     GStringTemplateEngine engine = new GStringTemplateEngine();
-    Writable data = engine.createTemplate(file).make(binding)
+    Writable data = engine.createTemplate(newOrderTemplate).make(binding)
 
     MimeBodyPart htmlPart = new MimeBodyPart();
     htmlPart.setContent(data.toString(), "text/html; charset=utf-8");
@@ -148,5 +180,6 @@ class EmailService {
     message.setSubject(subj, "UTF-8");
     message
   }
+
 
 }

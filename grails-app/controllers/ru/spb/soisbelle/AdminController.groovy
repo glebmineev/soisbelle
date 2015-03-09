@@ -32,6 +32,10 @@ class AdminController {
 
   def promo(){ }
 
+  def emailTemplates(){ }
+
+  def emailConfig(){ }
+
   def saveInfo(){ }
 
   def beforeInterceptor = {

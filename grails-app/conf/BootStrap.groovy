@@ -72,6 +72,7 @@ class BootStrap {
     AdminMenuItemEntity.withTransaction {
 
       AdminMenuItemEntity editors = AdminMenuItemEntity.findOrSaveWhere(name: "Редакторы", href: null, parentMenuItem: null)
+      AdminMenuItemEntity emails = AdminMenuItemEntity.findOrSaveWhere(name: "Письма", href: null, parentMenuItem: null)
       AdminMenuItemEntity.findOrSaveWhere(name: "Заказы", href: "admin/orders", parentMenuItem: null)
       AdminMenuItemEntity.findOrSaveWhere(name: "Перейти в магазин", href: "shop/index", parentMenuItem: null)
       AdminMenuItemEntity.findOrSaveWhere(name: "Импорт", href: "admin/importCatalog", parentMenuItem: null)
@@ -84,6 +85,18 @@ class BootStrap {
       AdminMenuItemEntity.findOrSaveWhere(name: "Пользователи", href: "admin/users", parentMenuItem: editors)
       AdminMenuItemEntity.findOrSaveWhere(name: "Товары", href: "admin/products" , parentMenuItem: editors)
       AdminMenuItemEntity.findOrSaveWhere(name: "Промо", href: "admin/promo" , parentMenuItem: editors)
+      AdminMenuItemEntity.findOrSaveWhere(name: "Шаблоны писем", href: "admin/emailTemplates" , parentMenuItem: emails)
+      AdminMenuItemEntity.findOrSaveWhere(name: "Настройки почты", href: "admin/emailConfig" , parentMenuItem: emails)
+    }
+
+    EmailTemplateEntity.withTransaction {
+      EmailTemplateEntity.findOrSaveWhere(name: "Восстановление пароля")
+      EmailTemplateEntity.findOrSaveWhere(name: "Заказ")
+      EmailTemplateEntity.findOrSaveWhere(name: "Регистрация")
+    }
+
+    EmailConfigEntity.withTransaction {
+      EmailConfigEntity.findOrSaveWhere(name: "Конфигурация")
     }
 
     //imageService.syncAllImagesWithServer()

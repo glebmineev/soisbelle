@@ -11,7 +11,13 @@
     <td width="25%" valign="top" align="right">
       <div class="menu-element" style="width: 211px;">
         <div>
-          <g:link controller="shop" action="register">Регистрация</g:link>
+          <g:if test="${!loginService.isLogged()}">
+            <g:link controller="shop" action="register">Регистрация</g:link>
+          </g:if>
+          <g:else>
+            <g:link controller="cabinet" action="index">Личный кабинет</g:link>
+          </g:else>
+
         </div>
       </div>
     </td>
