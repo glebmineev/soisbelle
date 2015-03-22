@@ -8,7 +8,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-  <style>
+<!--  <style>
     span.z-upload{
     font-size:0;
     display:inline-block;
@@ -31,39 +31,43 @@
     }
 
     .z-upload-icon{
-    <!--background-image:url(${c:encodeThemeURL('~./zul/img/misc/prgmeter.png')});-->
+    &lt;!&ndash;background-image:url(${c:encodeThemeURL('~./zul/img/misc/prgmeter.png')});&ndash;&gt;
     overflow:hidden
     }
-  </style>
+  </style>-->
 
   <div apply="ru.spb.soisbelle.BindComposer"
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.admin.ManufacturersViewModel')" width="100%">
 
     <listbox id="products" width="100%"
-             model="@bind(vm.manufacturersModel) @template((each.editingStatus) ? 'editable' : 'noneditable')"
+             model="@bind(vm.manufacturersModel)"
              mold="paging"
              pageSize="10">
       <listhead>
-        <listheader width="120px" align="center"/>
+        <listheader width="110px" align="center"/>
         <listheader align="center" label="Наименование"/>
         <listheader align="center" label="Краткое наименование"/>
         <listheader align="center" label="Описание"/>
         <listheader align="center" label="Действия"/>
       </listhead>
-      <template name="noneditable">
+      <template name="model">
         <listitem>
           <listcell>
-            <image width="100px" content="${each.image}"/>
+            <div sclass="imageBoxSmall">
+              <image content="${each.image}"/>
+            </div>
           </listcell>
           <listcell label="${each.name}"/>
           <listcell label="${each.shortName}"/>
           <listcell label="${each.description}"/>
           <listcell>
-            <image src="/images/pencil.png" onClick="@command('changeEditableStatus', changeStatusWrapper=each)"/>
+            <image content="@bind(vm.pencil)" onClick="@command('edit', wrapper=each)"/>
+            <image content="@bind(vm.failed)"
+                   onClick="@command('deleteManufacturer', wrapper=each)"/>
           </listcell>
         </listitem>
       </template>
-      <template name="editable">
+<!--      <template name="editable">
         <listitem>
           <listcell>
             <vbox align="center">
@@ -88,9 +92,11 @@
             <image src="/images/cancel.png" onClick="@command('cancelEditing', changeStatusWrapper=each)"/>
           </listcell>
         </listitem>
-      </template>
+      </template>-->
     </listbox>
-    <button label="Создать" onClick="@command('createNew')"/>
+    <div style="margin: 15px;" align="center">
+      <button sclass="soisbelle-square-button" label="Создать" onClick="@command('createNew')"/>
+    </div>
 
   </div>
 

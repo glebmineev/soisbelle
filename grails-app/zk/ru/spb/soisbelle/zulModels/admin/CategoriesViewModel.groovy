@@ -52,6 +52,7 @@ class CategoriesViewModel extends DownloadImageViewModel {
 
   @Override
   void initialize() {
+    image = imageService.getImageFile("", "", 0)
     //To change body of implemented methods use File | Settings | File Templates.
   }
 

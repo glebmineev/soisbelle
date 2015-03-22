@@ -28,27 +28,27 @@
             <tabpanels>
               <tabpanel>
                 <ckeditor value="@bind(vm.contacts)"/>
-                <button label="Сохранить" onClick="@command('saveContacts')"/>
+                <button sclass="soisbelle-square-button" label="Сохранить" onClick="@command('saveContacts')"/>
               </tabpanel>
               <tabpanel>
                 <ckeditor value="@bind(vm.about)" onSave="@command('saveAbout')"/>
-                <button label="Сохранить" onClick="@command('saveAbout')"/>
+                <button sclass="soisbelle-square-button" label="Сохранить" onClick="@command('saveAbout')"/>
               </tabpanel>
               <tabpanel>
                 <ckeditor value="@bind(vm.delivery)" onSave="@command('saveDelivery')"/>
-                <button label="Сохранить" onClick="@command('saveDelivery')"/>
+                <button sclass="soisbelle-square-button" label="Сохранить" onClick="@command('saveDelivery')"/>
               </tabpanel>
               <tabpanel>
                 <ckeditor value="@bind(vm.details)" onSave="@command('saveDetails')"/>
-                <button label="Сохранить" onClick="@command('saveDetails')"/>
+                <button sclass="soisbelle-square-button" label="Сохранить" onClick="@command('saveDetails')"/>
               </tabpanel>
               <tabpanel>
                 <ckeditor value="@bind(vm.aboutMagazine)" onSave="@command('saveAboutMagazine')"/>
-                <button label="Сохранить" onClick="@command('saveAboutMagazine')"/>
+                <button sclass="soisbelle-square-button" label="Сохранить" onClick="@command('saveAboutMagazine')"/>
               </tabpanel>
               <tabpanel>
                 <ckeditor value="@bind(vm.howToBuy)" onSave="@command('saveHowToBuy')"/>
-                <button label="Сохранить" onClick="@command('saveHowToBuy')"/>
+                <button sclass="soisbelle-square-button" label="Сохранить" onClick="@command('saveHowToBuy')"/>
               </tabpanel>
             </tabpanels>
           </tabbox>

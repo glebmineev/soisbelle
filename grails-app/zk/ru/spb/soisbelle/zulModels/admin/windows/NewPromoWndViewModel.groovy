@@ -12,6 +12,7 @@ import org.zkoss.bind.annotation.Command
 import org.zkoss.bind.annotation.ContextParam
 import org.zkoss.bind.annotation.ContextType
 import org.zkoss.bind.annotation.Init
+import org.zkoss.image.AImage
 import org.zkoss.zk.ui.Executions
 import org.zkoss.zk.ui.event.Event
 import org.zkoss.zul.Window
@@ -20,6 +21,8 @@ import ru.spb.soisbelle.PromoEntity
 import ru.spb.soisbelle.common.PathBuilder
 import ru.spb.soisbelle.common.STD_FILE_NAMES
 import ru.spb.soisbelle.common.STD_IMAGE_SIZES
+import ru.spb.soisbelle.wrappers.ManufacturerWrapper
+import ru.spb.soisbelle.wrappers.PromoWrapper
 import ru.spb.soisbelle.zulModels.core.DownloadImageViewModel
 
 /**
@@ -35,24 +38,40 @@ class NewPromoWndViewModel extends DownloadImageViewModel implements GrailsAppli
   //Логгер
   static Logger log = LoggerFactory.getLogger(ManufacturerWndViewModel.class)
 
+  Long id
   String name
+  AImage image
 
   @Override
   void downloadParams() {
-    std_name = STD_FILE_NAMES.USER_NAME.getName()
-    std_image_size = STD_IMAGE_SIZES.LARGEST.getSize()
+    std_name = STD_FILE_NAMES.PRODUCT_NAME.getName()
+    std_image_size = STD_IMAGE_SIZES.SMALLEST.getSize()
     targetImage = "targetImage"
   }
 
   @Override
   void initialize() {
     initService = grailsApplication.getMainContext().getBean("initService")
+    HashMap<String, Object> arg = Executions.getCurrent().getArg() as HashMap<String, Object>
+
+    if (arg.size() > 0) {
+
+      PromoWrapper wrapper = arg.get("wrapper") as PromoWrapper
+      this.id = wrapper.getId()
+      this.name = wrapper.getName()
+      this.image = wrapper.getImage()
+
+    }
   }
 
   @Command
   public void savePromo() {
 
-    PromoEntity toSave = new PromoEntity()
+    PromoEntity toSave = PromoEntity.get(id)
+
+    if (toSave == null)
+      toSave = new PromoEntity()
+
     toSave.setName(name)
 
     if (toSave.validate()) {
@@ -82,9 +101,16 @@ class NewPromoWndViewModel extends DownloadImageViewModel implements GrailsAppli
 
   @Command
   public void closeWnd(@ContextParam(ContextType.TRIGGER_EVENT) Event event) {
-    Window wnd = event.getTarget().getSpaceOwner() as Window
+/*    Window wnd = event.getTarget().getSpaceOwner() as Window
     Window owner = wnd.getParent().getParent().getParent() as Window
-    owner.detach()
+    owner.detach()*/
+    try {
+      Window wnd = event.getTarget().getSpaceOwner() as Window
+      Window owner = wnd as Window
+      owner.detach()
+    } catch (Exception ex) {
+      log.debug(ex.getMessage())
+    }
   }
 
 
