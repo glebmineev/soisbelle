@@ -94,6 +94,15 @@ body {
   top: 150px;
 }
 
+.imageBoxSmall {
+  height: 100px;
+  background: #ffffff;
+  border: 1px solid #643845;
+  display:table-cell;
+  vertical-align:middle;
+  text-align:center
+}
+
 .imageBox {
   height: 160px;
   background: #ffffff;

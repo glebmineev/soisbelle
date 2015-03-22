@@ -1,15 +1,18 @@
 package ru.spb.soisbelle.zulModels.admin
 
 import org.apache.commons.io.FileUtils
+import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.zkoss.bind.BindUtils
 import org.zkoss.bind.annotation.BindingParam
 import org.zkoss.bind.annotation.Command
 import org.zkoss.bind.annotation.Init
 import org.zkoss.bind.annotation.NotifyChange
+import org.zkoss.image.AImage
 import org.zkoss.zk.ui.Executions
 import org.zkoss.zk.ui.sys.ExecutionsCtrl
 import org.zkoss.zul.ListModelList
 import org.zkoss.zul.Window
+import ru.spb.soisbelle.ImageStorageService
 import ru.spb.soisbelle.ManufacturerEntity
 import ru.spb.soisbelle.common.PathBuilder
 import ru.spb.soisbelle.common.STD_FILE_NAMES
@@ -21,6 +24,10 @@ import ru.spb.soisbelle.zulModels.core.DownloadImageViewModel
 class ManufacturersViewModel extends DownloadImageViewModel {
 
   ListModelList<ManufacturerWrapper> manufacturersModel
+  AImage pencil
+  AImage failed
+
+  ImageStorageService imageStorageService = ApplicationHolder.getApplication().getMainContext().getBean("imageStorageService") as ImageStorageService
 
   @Override
   void downloadParams() {
@@ -39,9 +46,13 @@ class ManufacturersViewModel extends DownloadImageViewModel {
     }
 
     manufacturersModel = new ListModelList<ManufacturerWrapper>(models)
+
+    pencil = imageStorageService.pencil
+    failed = imageStorageService.failed
+
   }
 
-  @Command
+/*  @Command
   public void changeEditableStatus(@BindingParam("changeStatusWrapper") ManufacturerWrapper wrapper) {
     targetImage = wrapper.id
     wrapper.setEditingStatus(!wrapper.getEditingStatus())
@@ -50,7 +61,7 @@ class ManufacturersViewModel extends DownloadImageViewModel {
 
   public void refreshRowTemplate(ManufacturerWrapper wrapper) {
     BindUtils.postNotifyChange(null, null, wrapper, "editingStatus");
-  }
+  }*/
 
   @Command
   public void updateManufacturer(@BindingParam("changeStatusWrapper") ManufacturerWrapper wrapper) {
@@ -86,8 +97,8 @@ class ManufacturersViewModel extends DownloadImageViewModel {
   }
 
   @Command
-  @NotifyChange(["usersModel"])
-  public void deleteManufacturer(@BindingParam("changeStatusWrapper") ManufacturerWrapper wrapper) {
+  @NotifyChange(["manufacturersModel"])
+  public void deleteManufacturer(@BindingParam("wrapper") ManufacturerWrapper wrapper) {
 
     ManufacturerEntity.withTransaction {
       ManufacturerEntity toDelete = ManufacturerEntity.get(wrapper.id)
@@ -120,6 +131,16 @@ class ManufacturersViewModel extends DownloadImageViewModel {
   @Command
   public void createNew(){
     Map<Object, Object> params = new HashMap<Object, Object>()
+    Window wnd = Executions.createComponents("/zul/admin/windows/manufacturerWnd.zul", null, params) as Window
+    wnd.setPage(ExecutionsCtrl.getCurrentCtrl().getCurrentPage())
+    wnd.doModal()
+    wnd.setVisible(true)
+  }
+
+  @Command
+  public void edit(@BindingParam("wrapper") ManufacturerWrapper wrapper){
+    Map<Object, Object> params = new HashMap<Object, Object>()
+    params.put("wrapper", wrapper)
     Window wnd = Executions.createComponents("/zul/admin/windows/manufacturerWnd.zul", null, params) as Window
     wnd.setPage(ExecutionsCtrl.getCurrentCtrl().getCurrentPage())
     wnd.doModal()

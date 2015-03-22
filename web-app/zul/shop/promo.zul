@@ -11,6 +11,7 @@
        align="center">
 
     <div sclass="soisbelle-container" xmlns:w='client' >
+      <timer id="timer" delay="5000" repeats="true" onTimer="@command('next')"/>
       <div id="cbp-fwslider" sclass="cbp-fwslider">
         <h:ul>
             <h:li>

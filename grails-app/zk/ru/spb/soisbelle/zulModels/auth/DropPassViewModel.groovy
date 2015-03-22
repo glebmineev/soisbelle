@@ -8,6 +8,9 @@ import ru.spb.soisbelle.EmailService
 import ru.spb.soisbelle.UserEntity
 import ru.spb.soisbelle.common.PasswordGenerator
 
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
+
 
 class DropPassViewModel {
 
@@ -18,6 +21,8 @@ class DropPassViewModel {
   //Сервис отсыла письма с паролем
   EmailService emailService =
     ApplicationHolder.getApplication().getMainContext().getBean("emailService") as EmailService
+
+  ExecutorService service = Executors.newScheduledThreadPool(2);
 
   @Init
   public void init(){ }
@@ -32,7 +37,16 @@ class DropPassViewModel {
         user.setPassword(new_pass.encodeAsSHA1())
         user.save(flush: true)
       }
-      emailService.sendPassEmail(this.email, new_pass)
+
+      service.execute(new Runnable() {
+
+        @Override
+        void run() {
+          emailService.sendPassEmail(email, new_pass)
+        }
+
+      })
+
     }
 
     Executions.sendRedirect("/shop/success")

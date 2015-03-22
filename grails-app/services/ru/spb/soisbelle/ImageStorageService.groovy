@@ -27,6 +27,8 @@ class ImageStorageService implements InitializingBean {
   AImage skipToEnd
   AImage rows
   AImage cells
+  AImage pencil
+  AImage failed
 
 
   void afterPropertiesSet() {
@@ -84,6 +86,16 @@ class ImageStorageService implements InitializingBean {
     cells = new AImage(new PathBuilder()
         .appendPath(serverFoldersService.images)
         .appendString("cells.png")
+        .build())
+
+    pencil = new AImage(new PathBuilder()
+        .appendPath(serverFoldersService.images)
+        .appendString("pencil.png")
+        .build())
+
+    failed = new AImage(new PathBuilder()
+        .appendPath(serverFoldersService.images)
+        .appendString("failed.png")
         .build())
 
   }

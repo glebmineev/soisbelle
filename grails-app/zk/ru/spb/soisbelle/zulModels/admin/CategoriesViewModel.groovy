@@ -38,6 +38,7 @@ class CategoriesViewModel extends DownloadImageViewModel {
 
   String name
   String description
+  AImage image
   long order
 
   InitService initService = ApplicationHolder.getApplication().getMainContext().getBean("initService") as InitService
@@ -55,11 +56,11 @@ class CategoriesViewModel extends DownloadImageViewModel {
   }
 
   @Command
-  void refreshData(@ContextParam(ContextType.TRIGGER_EVENT) Event event) {
+  void refreshData() {
     CategoryEntity retrived = CategoryEntity.get(categoryID)
-
+/*
     Page page = event.getTarget().getPage();
-    Image targetImage = page.getFellow(targetImage) as Image
+    Image targetImage = page.getFellow(targetImage) as Image*/
 
     String categoryPath = CategoryPathHandler.generatePathAsString(
         CategoryPathHandler.getCategoryPath(CategoryEntity.get(categoryID)))
@@ -73,11 +74,12 @@ class CategoriesViewModel extends DownloadImageViewModel {
 
     AImage img = imageService.getImageFile(path, std_name, std_size)
 
-    targetImage.setContent(img)
+    //targetImage.setContent(img)
 
     name = retrived.getName()
     description = retrived.getDescription()
     order = retrived.getOrder()
+    image = img
   }
 
   public CategoryTreeNode getRootNode() {
@@ -153,12 +155,12 @@ class CategoriesViewModel extends DownloadImageViewModel {
   }
 
   @Command
-  @NotifyChange(["name", "description", "order"])
+  @NotifyChange(["name", "description", "order", "image"])
   public void updateSelectedItem(@ContextParam(ContextType.TRIGGER_EVENT) Event event) {
     Tree tree = event.getTarget() as Tree
     selectedItem = tree.getSelectedItem()
     categoryID = ((CategoryTreeNode) selectedItem.getValue()).data.id
-    refreshData(event)
+    refreshData()
   }
 
   @Command

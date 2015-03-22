@@ -17,7 +17,7 @@
              sizedByContent="false"
              pageSize="10" emptyMessage="Нет никаких акций щаз...">
       <listhead>
-        <listheader width="110px" align="center"/>
+        <listheader width="160px" align="center"/>
         <listheader align="center" label="Имя"/>
         <listheader align="center"/>
       </listhead>

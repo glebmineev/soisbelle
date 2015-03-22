@@ -69,7 +69,7 @@
           </h:td>
         </h:tr>
         <h:tr>
-          <h:td width="30%" align="right">
+          <h:td width="20%" align="right">
             <label value="Фамилия, имя" sclass="form-label"/>
             <label value=" * " sclass="required-field"/>
           </h:td>

@@ -12,75 +12,59 @@
           validationMessages="@id('vmsgs')"
           form="@id('fx') @load(vm.name) @save(vm.name, before='saveManufacturer')
              @validator('ru.spb.soisbelle.validators.StdWndValidator', name=vm.name)"
-          width="440px"
-          height="250px"
-          position="center">
+          width="840px"
+          height="410px"
+          position="center"
+          style="border: 1px solid #643845; background: #BECAD6;">
 
-    <h:table width="100%" cellpadding="0" cellspacing="5">
+    <h:table width="100%" cellpadding="5" cellspacing="5">
       <h:tr>
-        <h:td width="20%" align="right">
-          <div width="80px">
-            <image id="targetImage" width="80px"/>
-            <zscript><![CDATA[
-
-               import ru.spb.soisbelle.*
-               import org.zkoss.image.*
-               import org.codehaus.groovy.grails.commons.*
-               import ru.spb.soisbelle.common.*
-
-               ImageService imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService");
-
-               ServerFoldersService serverFoldersService = ApplicationHolder.getApplication().getMainContext().
-                                    getBean("serverFoldersService") as ServerFoldersService
-
-
-               String path = new PathBuilder()
-                            .appendPath(serverFoldersService.images)
-                            .build()
-               String std_name = STD_FILE_NAMES.PRODUCT_NAME.getName()
-               int std_size = STD_IMAGE_SIZES.MIDDLE.getSize()
-
-               AImage img = imageService.getImageFile(path, std_name, std_size)
-               targetImage.setContent(img)
-
-             ]]></zscript>
+        <h:td width="30%" align="right">
+          <div sclass="imageBoxSmall">
+            <image id="targetImage" content="@bind(vm.image)"/>
           </div>
         </h:td>
-        <h:td width="00%" align="center">
-          <button label="Загрузить изображение" upload="true" onUpload="@command('uploadImage')"/>
+        <h:td width="50%" align="left">
+          <button sclass="soisbelle-square-button" label="Загрузить изображение" upload="true" onUpload="@command('uploadImage')"/>
+        </h:td>
+        <h:td width="20%"/>
+      </h:tr>
+      <h:tr>
+        <h:td width="30%" align="right">
+          <label value="Наименование" sclass="form-label"/>
+          <label value=" * " sclass="required-field"/>
+        </h:td>
+        <h:td width="50%" align="left">
+          <textbox sclass="form-textbox" value="@bind(vm.name)" width="100%"/>
+        </h:td>
+        <h:td width="20%">
+          <label  sclass="validation-error"
+                  value="@load(vmsgs['name'])"/>
         </h:td>
       </h:tr>
       <h:tr>
-        <h:td width="20%" align="right">
-          <label sclass="formLabel" value="Наименование:(*)"/>
+        <h:td width="30%" align="right">
+          <label sclass="form-label" value="Краткое наименование"/>
         </h:td>
-        <h:td width="50%" align="center">
-          <textbox value="@bind(vm.name)" width="100%"/>
+        <h:td width="50%" align="left">
+          <textbox sclass="form-textbox" value="@bind(vm.shortName)" width="100%"/>
         </h:td>
-        <h:td width="30%" align="left">
-          <label sclass="error" value="@load(vmsgs['name'])"/>
-        </h:td>
+        <h:td width="20%"/>
       </h:tr>
       <h:tr>
-        <h:td width="20%" align="right">
-          <label sclass="formLabel" value="Краткое наименование:"/>
+        <h:td width="30%" align="right">
+          <label sclass="form-label" value="Описание"/>
         </h:td>
-        <h:td colspan="2" width="80%" align="center">
-          <textbox value="@bind(vm.shortName)" width="100%"/>
+        <h:td width="50%" align="left">
+          <textbox sclass="form-textbox" cols="50" rows="5" width="100%" value="@bind(vm.description)"/>
         </h:td>
-      </h:tr>
-      <h:tr>
-        <h:td width="20%" align="right">
-          <label sclass="formLabel" value="Описание:"/>
-        </h:td>
-        <h:td colspan="2" width="80%" align="center">
-          <textbox value="@bind(vm.description)" width="100%"/>
-        </h:td>
+        <h:td width="20%"/>
       </h:tr>
       <h:tr>
         <h:td colspan="3" align="center">
-          <button label="Сохранить" onClick="@command('saveManufacturer')"/>
-          <button label="Отмена" onClick="@command('closeWnd')"/>
+          <button sclass="soisbelle-square-button" label="Сохранить" onClick="@command('saveManufacturer')"/>
+          <space/>
+          <button sclass="soisbelle-square-button" label="Отмена" onClick="@command('closeWnd')"/>
         </h:td>
       </h:tr>
     </h:table>
