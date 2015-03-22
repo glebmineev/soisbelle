@@ -1,8 +1,7 @@
 <g:applyLayout name="main">
-    <tpl:useTemplate template="/template">
+    <tpl:useTemplate template="/adminTemplate">
 
         <tpl:block name="header">
-            <h1>Администрирование магазина</h1>
         </tpl:block>
 
         <tpl:block name="menu">
