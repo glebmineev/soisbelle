@@ -408,3 +408,24 @@ div.z-groupbox-content {
   background: none repeat scroll 0 0 #F8BD9F;
 }
 
+/* Кастомизация меню */
+div.z-menubar {
+  background: none repeat scroll 0 0 #F8BD9F;
+}
+
+ul.dropdown-menu {
+  border-radius: 0;
+}
+
+ul.dropdown-menu > li > a:hover,
+ul.dropdown-menu > li > a:focus  {
+  background: none repeat scroll 0 0 #774551;
+}
+
+li.z-menuitem .z-menuitem-content {
+  text-decoration: none;
+}
+
+li.z-menu .z-menu-content {
+  text-decoration: none;
+}
