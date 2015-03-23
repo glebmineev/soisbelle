@@ -61,7 +61,7 @@
           <listcell label="${each.shortName}"/>
           <listcell label="${each.description}"/>
           <listcell>
-            <image content="@bind(vm.pencil)" onClick="@command('edit', wrapper=each)"/>
+            <image content="@bind(vm.pencil)" onClick="@command('editManufacturer', wrapper=each)"/>
             <image content="@bind(vm.failed)"
                    onClick="@command('deleteManufacturer', wrapper=each)"/>
           </listcell>

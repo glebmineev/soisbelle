@@ -1,12 +1,14 @@
 package ru.spb.soisbelle
 
 import ru.spb.soisbelle.core.Domain
+import ru.spb.soisbelle.core.IImagable
 
-class ManufacturerEntity implements Domain {
+class ManufacturerEntity implements Domain, IImagable {
 
   String name
   String shortName
   String description
+  String picUuid
 
   static mapping = {
 
@@ -18,6 +20,7 @@ class ManufacturerEntity implements Domain {
       name column: 'manufacturer_name'
       shortName column: 'manufacturer_shortname'
       description column: 'manufacturer_description'
+      picUuid column: 'manufacturer_picuuid'
     }
     version false
 
@@ -33,6 +36,7 @@ class ManufacturerEntity implements Domain {
     name nullable: true
     shortName nullable: true
     description nullable: true
+    picUuid nullable: true
   }
 
   public String toString() {

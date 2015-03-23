@@ -13,6 +13,7 @@ class UserValidator extends AbstractValidator {
   @Override
   void validate(ValidationContext ctx) {
     validateLogin(ctx, ctx.getValidatorArg("login") as String)
+    //validateEmail(ctx, ctx.getValidatorArg("email") as String)
     validateEmail(ctx, ctx.getValidatorArg("email") as String)
     validateFio(ctx, ctx.getValidatorArg("fio") as String)
     validateAddress(ctx, ctx.getValidatorArg("address") as String)
@@ -36,8 +37,8 @@ class UserValidator extends AbstractValidator {
   }
 
   public void validateEmail(ValidationContext ctx, String value){
-    if (UserEntity.findByEmail(value))
-      this.addInvalidMessage(ctx, "email", "Пользователь с таким email уже зарегестрирован");
+/*    if (UserEntity.findByEmail(value))
+      this.addInvalidMessage(ctx, "email", "Пользователь с таким email уже зарегестрирован");*/
     if (Strings.isNullOrEmpty(value))
       this.addInvalidMessage(ctx, "email", "Поле не может быть пустым");
   }

@@ -8,6 +8,7 @@
   <div width="100%" apply="ru.spb.soisbelle.BindComposer"
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.menu.AdminMenuViewModel')">
 
+    <style src="/css/ZK.css"/>
 
     <menubar children="@bind(vm.wrappers)">
       <template name="children" var="item">

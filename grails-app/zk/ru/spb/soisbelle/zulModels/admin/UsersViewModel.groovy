@@ -4,17 +4,20 @@ import com.google.common.base.Function
 import com.google.common.base.Strings
 import com.google.common.collect.Collections2
 import org.apache.commons.io.FileUtils
+import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.zkoss.bind.BindUtils
 import org.zkoss.bind.annotation.BindingParam
 import org.zkoss.bind.annotation.Command
 import org.zkoss.bind.annotation.Init
 import org.zkoss.bind.annotation.NotifyChange
+import org.zkoss.image.AImage
 import org.zkoss.zk.ui.Executions
 import org.zkoss.zk.ui.sys.ExecutionsCtrl
 import org.zkoss.zul.Div
 import org.zkoss.zul.ListModelList
 import org.zkoss.zul.Vlayout
 import org.zkoss.zul.Window
+import ru.spb.soisbelle.ImageStorageService
 import ru.spb.soisbelle.RoleEntity
 import ru.spb.soisbelle.UserEntity
 import ru.spb.soisbelle.common.PathBuilder
@@ -27,7 +30,11 @@ import ru.spb.soisbelle.zulModels.core.DownloadImageViewModel
 @Init(superclass=true)
 class UsersViewModel extends DownloadImageViewModel {
 
+  AImage pencil
+  AImage failed
+
   ListModelList<UserWrapper> usersModel
+  ImageStorageService imageStorageService = ApplicationHolder.getApplication().getMainContext().getBean("imageStorageService") as ImageStorageService
 
   @Override
   void downloadParams() {
@@ -46,6 +53,10 @@ class UsersViewModel extends DownloadImageViewModel {
     }
 
     usersModel = new ListModelList<UserWrapper>(models)
+
+    this.pencil = imageStorageService.pencil
+    this.failed = imageStorageService.failed
+
   }
 
   @Command
@@ -166,7 +177,7 @@ class UsersViewModel extends DownloadImageViewModel {
   }
 
   @Command
-  public void createNew(){
+  public void createNewUser(){
 
     Window wnd = new Window()
     wnd.setWidth("80%")
@@ -181,6 +192,29 @@ class UsersViewModel extends DownloadImageViewModel {
     div.appendChild(panel)
 
     Map<Object, Object> params = new HashMap<Object, Object>()
+    Executions.createComponents("/zul/admin/windows/createNewUserWnd.zul", panel, params) as Window
+    wnd.setPage(ExecutionsCtrl.getCurrentCtrl().getCurrentPage())
+    wnd.doModal()
+    wnd.setVisible(true)
+  }
+
+  @Command
+  public void editUser(@BindingParam("wrapper") UserWrapper wrapper){
+
+    Window wnd = new Window()
+    wnd.setWidth("80%")
+    wnd.setHeight("500px")
+    wnd.setPage(ExecutionsCtrl.getCurrentCtrl().getCurrentPage())
+    Div div = new Div()
+    div.setStyle("overflow: auto;")
+    div.setWidth("100%")
+    div.setHeight("500px")
+    wnd.appendChild(div)
+    Vlayout panel = new Vlayout()
+    div.appendChild(panel)
+
+    Map<Object, Object> params = new HashMap<Object, Object>()
+    params.put("wrapper", wrapper)
     Executions.createComponents("/zul/admin/windows/createNewUserWnd.zul", panel, params) as Window
     wnd.setPage(ExecutionsCtrl.getCurrentCtrl().getCurrentPage())
     wnd.doModal()

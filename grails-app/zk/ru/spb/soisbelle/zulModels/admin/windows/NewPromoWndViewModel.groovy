@@ -1,6 +1,7 @@
 package ru.spb.soisbelle.zulModels.admin.windows
 
 import com.google.common.base.Function
+import com.google.common.base.Strings
 import com.google.common.collect.Collections2
 import org.apache.commons.io.FileUtils
 import org.codehaus.groovy.grails.commons.ApplicationHolder
@@ -72,6 +73,11 @@ class NewPromoWndViewModel extends DownloadImageViewModel implements GrailsAppli
     if (toSave == null)
       toSave = new PromoEntity()
 
+    if (Strings.isNullOrEmpty(toSave.picUuid)){
+      toSave.setPicUuid(UUID.randomUUID().toString())
+    }
+
+
     toSave.setName(name)
 
     if (toSave.validate()) {
@@ -85,7 +91,7 @@ class NewPromoWndViewModel extends DownloadImageViewModel implements GrailsAppli
 
         File store = new File(new PathBuilder()
             .appendPath(serverFoldersService.promoPics)
-            .appendString("${toSave.id}_${toSave.getName()}")
+            .appendString(toSave.picUuid)
             .build())
         if (!store.exists())
           store.mkdirs()

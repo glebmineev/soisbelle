@@ -14,7 +14,7 @@
                 @validator('ru.spb.soisbelle.validators.StdWndValidator',
                 name=vm.name)"
           width="840px"
-          height="310px"
+          height="270px"
           position="center"
           style="border: 1px solid #643845; background: #BECAD6;">
 

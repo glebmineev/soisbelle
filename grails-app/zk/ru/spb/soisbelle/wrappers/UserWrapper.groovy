@@ -23,6 +23,8 @@ class UserWrapper extends IdentWrapper implements Wrapper {
   String email
   String address
 
+  boolean isActive
+
   ListModelList<RoleWrapper> roles
 
   AImage image
@@ -42,6 +44,7 @@ class UserWrapper extends IdentWrapper implements Wrapper {
     this.phone = user.phone
     this.email = user.email
     this.address = user.address
+    this.isActive = user.isActive
 
     //Тянем все группы.
     List<RoleWrapper> allRoles = Collections2.transform(RoleEntity.list(), new Function<RoleEntity, RoleWrapper>() {

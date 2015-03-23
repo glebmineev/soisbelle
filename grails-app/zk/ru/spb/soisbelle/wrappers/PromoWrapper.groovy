@@ -1,5 +1,6 @@
 package ru.spb.soisbelle.wrappers
 
+import com.google.common.base.Strings
 import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.zkoss.image.AImage
 import ru.spb.soisbelle.ImageService
@@ -31,7 +32,7 @@ class PromoWrapper extends IdentWrapper implements Wrapper {
 
     String path = new PathBuilder()
         .appendPath(serverFoldersService.promoPics)
-        .appendString("${promoEntity.id}_${promoEntity.getName()}")
+        .appendString(Strings.isNullOrEmpty(promoEntity.picUuid) ? "" : promoEntity.picUuid)
         .build()
     String std_name = STD_FILE_NAMES.PROMO_NAME.getName()
     int std_size = STD_IMAGE_SIZES.SMALL.getSize()

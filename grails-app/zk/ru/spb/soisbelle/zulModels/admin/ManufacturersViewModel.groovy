@@ -45,10 +45,10 @@ class ManufacturersViewModel extends DownloadImageViewModel {
       models.add(model)
     }
 
-    manufacturersModel = new ListModelList<ManufacturerWrapper>(models)
+    this.manufacturersModel = new ListModelList<ManufacturerWrapper>(models)
 
-    pencil = imageStorageService.pencil
-    failed = imageStorageService.failed
+    this.pencil = imageStorageService.pencil
+    this.failed = imageStorageService.failed
 
   }
 
@@ -93,7 +93,7 @@ class ManufacturersViewModel extends DownloadImageViewModel {
       }
     }
 
-    changeEditableStatus(wrapper)
+    //changeEditableStatus(wrapper)
   }
 
   @Command
@@ -125,7 +125,7 @@ class ManufacturersViewModel extends DownloadImageViewModel {
   @Command
   public void cancelEditing(@BindingParam("changeStatusWrapper") ManufacturerWrapper wrapper) {
     wrapper.restore()
-    changeEditableStatus(wrapper)
+    //changeEditableStatus(wrapper)
   }
 
   @Command
@@ -138,7 +138,7 @@ class ManufacturersViewModel extends DownloadImageViewModel {
   }
 
   @Command
-  public void edit(@BindingParam("wrapper") ManufacturerWrapper wrapper){
+  public void editManufacturer(@BindingParam("wrapper") ManufacturerWrapper wrapper){
     Map<Object, Object> params = new HashMap<Object, Object>()
     params.put("wrapper", wrapper)
     Window wnd = Executions.createComponents("/zul/admin/windows/manufacturerWnd.zul", null, params) as Window

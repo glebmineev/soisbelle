@@ -1,5 +1,6 @@
 package ru.spb.soisbelle.zulModels.admin.windows
 
+import com.google.common.base.Strings
 import org.apache.commons.io.FileUtils
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -60,8 +61,13 @@ class ManufacturerWndViewModel extends DownloadImageViewModel {
   public void saveManufacturer(){
     ManufacturerEntity.withTransaction {
       ManufacturerEntity toSave = ManufacturerEntity.get(id)
-      if (toSave == null)
+      if (toSave == null) {
         toSave = new ManufacturerEntity()
+      }
+
+      if (Strings.isNullOrEmpty(toSave.getPicUuid())){
+        toSave.setPicUuid(UUID.randomUUID().toString())
+      }
 
       toSave.setName(name)
       toSave.setShortName(shortName)
@@ -76,7 +82,7 @@ class ManufacturerWndViewModel extends DownloadImageViewModel {
               .build())
           File store = new File(new PathBuilder()
               .appendPath(serverFoldersService.manufacturersPics)
-              .appendString(toSave.name)
+              .appendString(toSave.picUuid)
               .build())
           if (!store.exists())
             store.mkdirs()

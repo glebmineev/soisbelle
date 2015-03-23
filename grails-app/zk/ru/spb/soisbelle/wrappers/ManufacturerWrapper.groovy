@@ -1,5 +1,6 @@
 package ru.spb.soisbelle.wrappers
 
+import com.google.common.base.Strings
 import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.zkoss.image.AImage
 import ru.spb.soisbelle.ImageService
@@ -34,7 +35,7 @@ class ManufacturerWrapper extends IdentWrapper implements Wrapper {
 
     String path = new PathBuilder()
         .appendPath(serverFoldersService.manufacturersPics)
-        .appendString(manufacturer.name)
+        .appendString(Strings.isNullOrEmpty(manufacturer.picUuid) ? "" : manufacturer.picUuid)
         .build()
     String std_name = STD_FILE_NAMES.MANUFACTURER_NAME.getName()
     int std_size = STD_IMAGE_SIZES.SMALLEST.getSize()
