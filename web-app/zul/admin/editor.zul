@@ -97,7 +97,7 @@
             </template>
           </listbox>
           <h:br/>
-          <button label="Поиск" onClick="@command('search')"/>
+          <button sclass="soisbelle-square-button" label="Поиск" onClick="@command('search')"/>
         </groupbox>
       </vbox>
 
@@ -144,8 +144,9 @@
                 <label value="${each.name}" style="font-size: 18px;margin-top: 5px;margin-bottom: 5px;"/>
                 <label value="Цена: ${each.price}" style="font-size: 14px;margin-bottom: 5px;"/>
                 <hbox>
-                  <button label="Удалить" onClick="@command('deleteProduct', product=each)"/>
-                  <button label="Редактировать" onClick="@command('addProduct', product=each)"/>
+                  <button sclass="soisbelle-square-button" label="Удалить" onClick="@command('deleteProduct', product=each)"/>
+                  <space/>
+                  <button sclass="soisbelle-square-button" label="Редактировать" onClick="@command('addProduct', product=each)"/>
                 </hbox>
               </vbox>
             </listcell>

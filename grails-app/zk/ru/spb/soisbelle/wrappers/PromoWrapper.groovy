@@ -48,7 +48,7 @@ class PromoWrapper extends IdentWrapper implements Wrapper {
 
     String path = new PathBuilder()
         .appendPath(serverFoldersService.promoPics)
-        .appendString("${promoEntity.id}_${promoEntity.getName()}")
+        .appendString(promoEntity.picUuid)
         .build()
     String std_name = STD_FILE_NAMES.PROMO_NAME.getName()
     int std_size = imageSize.getSize()

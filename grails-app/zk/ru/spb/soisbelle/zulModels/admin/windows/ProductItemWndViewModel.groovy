@@ -115,7 +115,7 @@ class ProductItemWndViewModel extends DownloadImageViewModel {
     String ext = fullFileName.split("\\.")[1]
 
     uuid = imageService.saveImageInTemp(media.getStreamData(), STD_FILE_NAMES.PRODUCT_NAME.getName(), ext)
-    ImageUtils.tripleResizeImage(uuid, STD_FILE_NAMES.PRODUCT_NAME.getName(), ext)
+    ImageUtils.fourResizeImage(uuid, STD_FILE_NAMES.PRODUCT_NAME.getName(), ext)
     image.setContent(new AImage(new PathBuilder()
         .appendPath(serverFoldersService.temp)
         .appendPath(uuid)

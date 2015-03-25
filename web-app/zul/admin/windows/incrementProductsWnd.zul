@@ -9,9 +9,10 @@
 
   <window id="productItem" apply="ru.spb.soisbelle.BindComposer"
           viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.admin.windows.IncrementProductsWnd')"
-          width="220px"
+          width="300px"
           height="120px"
-          position="center">
+          position="center"
+          style="border: 1px solid #643845; background: #BECAD6;">
     <vbox align="center">
       <label value="Увеличить цену товаров." style="font-size: 14pt;"/>
       <hbox align="center">
@@ -20,9 +21,11 @@
             mold="rounded" readonly="true" step="1" cols="3" constraint="min 0"/>
       </hbox>
       <hbox>
-        <button label="Выбранные" onClick="@command('incrementSelected')"/>
-        <button label="Все" onClick="@command('incrementAll')"/>
-        <button label="Отмена" onClick="@command('closeWnd')"/>
+        <button sclass="soisbelle-square-button" label="Выбранные" onClick="@command('incrementSelected')"/>
+        <space/>
+        <button sclass="soisbelle-square-button" label="Все" onClick="@command('incrementAll')"/>
+        <space/>
+        <button sclass="soisbelle-square-button" label="Отмена" onClick="@command('closeWnd')"/>
       </hbox>
     </vbox>
   </window>

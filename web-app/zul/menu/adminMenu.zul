@@ -10,7 +10,7 @@
 
     <style src="/css/ZK.css"/>
 
-    <menubar children="@bind(vm.wrappers)">
+    <menubar children="@bind(vm.wrappers)" autodrop="true">
       <template name="children" var="item">
         <menu label="${item.name}" if="${item.children.size() != 0}">
           <menupopup>

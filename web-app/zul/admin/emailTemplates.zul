@@ -25,15 +25,15 @@
             <tabpanels>
               <tabpanel>
                 <ckeditor value="@bind(vm.passwordRecovery)" onSave="@command('savePasswordRecovery')"/>
-                <button label="Сохранить" onClick="@command('savePasswordRecovery')"/>
+                <button sclass="soisbelle-square-button" label="Сохранить" onClick="@command('savePasswordRecovery')"/>
               </tabpanel>
               <tabpanel>
                 <ckeditor value="@bind(vm.newOrder)" onSave="@command('saveNewOrder')"/>
-                <button label="Сохранить" onClick="@command('saveNewOrder')"/>
+                <button sclass="soisbelle-square-button" label="Сохранить" onClick="@command('saveNewOrder')"/>
               </tabpanel>
               <tabpanel>
                 <ckeditor value="@bind(vm.registration)" onSave="@command('saveRegistration')"/>
-                <button label="Сохранить" onClick="@command('saveRegistration')"/>
+                <button sclass="soisbelle-square-button" label="Сохранить" onClick="@command('saveRegistration')"/>
               </tabpanel>
             </tabpanels>
           </tabbox>

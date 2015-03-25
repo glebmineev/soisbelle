@@ -104,7 +104,7 @@ class ImageService {
           .appendExt(ext).build())
 
       FileUtils.copyURLToFile(website, image)
-      ImageUtils.tripleResizeImage(downloadDir, STD_FILE_NAMES.PRODUCT_NAME.getName(), ext)
+      ImageUtils.fourResizeImage(downloadDir, STD_FILE_NAMES.PRODUCT_NAME.getName(), ext)
 
       isDownloaded = true
 

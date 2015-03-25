@@ -29,6 +29,7 @@ class ImageUtils {
   private static final int small = STD_IMAGE_SIZES.SMALL.getSize()
   private static final int middle = STD_IMAGE_SIZES.MIDDLE.getSize()
   private static final int large = STD_IMAGE_SIZES.LARGE.getSize()
+  private static final int largest = STD_IMAGE_SIZES.LARGEST.getSize()
 
   /**
    * Загрузка картинки на сервер с нужными размерами.
@@ -80,7 +81,7 @@ class ImageUtils {
     }
   }
 
-  public static void tripleResizeImage(String path, String fileName, String ext) {
+  public static void fourResizeImage(String path, String fileName, String ext) {
     try {
       BufferedImage source = ImageIO.read(new File(new PathBuilder()
           .appendPath(path)
@@ -101,6 +102,11 @@ class ImageUtils {
           .appendPath(path)
           .appendString("${fileName}-${large}")
           .appendExt(ext).build()), large, ext)
+
+      writeImage(source, new File(new PathBuilder()
+          .appendPath(path)
+          .appendString("${fileName}-${largest}")
+          .appendExt(ext).build()), largest, ext)
 
     } catch (IOException ex) {
       log.error("Ошибка обработки картинки " + new PathBuilder()

@@ -55,7 +55,7 @@ public abstract class DownloadImageViewModel {
 
     uuid = imageService.saveImageInTemp(media.getStreamData(), std_name, ext)
     ImageUtils.resizeImage(new PathBuilder().appendPath(serverFoldersService.temp).appendString(uuid).build(), std_name, ext, std_image_size)
-    ImageUtils.tripleResizeImage(new PathBuilder().appendPath(serverFoldersService.temp).appendString(uuid).build(), std_name, ext)
+    ImageUtils.fourResizeImage(new PathBuilder().appendPath(serverFoldersService.temp).appendString(uuid).build(), std_name, ext)
     image.setContent(new AImage(new PathBuilder()
         .appendPath(serverFoldersService.temp)
         .appendPath(uuid)

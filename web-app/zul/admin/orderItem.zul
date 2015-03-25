@@ -107,9 +107,11 @@
         </template>
       </grid>
       <div align="center" style="margin: 10px;" width="100%">
-        <button label="Заказ обработан" onClick="@command('completeOrder')"/>
-        <button label="Отменить заказ" onClick="@command('cancelOrder')"/>
-        <button label="Закрыть" onClick="@command('closeWnd')"/>
+        <button sclass="soisbelle-square-button" label="Заказ обработан" onClick="@command('completeOrder')"/>
+        <space/>
+        <button sclass="soisbelle-square-button" label="Отменить заказ" onClick="@command('cancelOrder')"/>
+        <space/>
+        <button sclass="soisbelle-square-button" label="Закрыть" onClick="@command('closeWnd')"/>
       </div>
     </vbox>
 
