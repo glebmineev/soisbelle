@@ -1,5 +1,6 @@
 package ru.spb.soisbelle.zulModels.admin
 
+import com.google.common.base.Strings
 import org.apache.commons.io.FileUtils
 import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.zkoss.bind.BindUtils

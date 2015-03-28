@@ -81,7 +81,7 @@ class SearchResultViewModel implements GrailsApplicationAware {
     model.add("24");
 
     countPageItemModel = new ListModelList<String>(model)
-    countPageItemModel.addSelection(model.get(0));
+    countPageItemModel.addToSelection(model.get(0));
 
   }
 

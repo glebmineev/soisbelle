@@ -8,12 +8,6 @@
   <div apply="ru.spb.soisbelle.BindComposer"
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.sliders.ManufacturersSliderViewModel')" width="100%" align="center">
 
-    <style>
-      .z-image {
-      cursor:pointer;
-      }
-    </style>
-
     <hbox align="center">
       <div width="20px">
         <image content="@bind(vm.backImage)" onClick="@command('back')" visible="@bind(vm.currentPos > 0)"/>
@@ -22,7 +16,7 @@
       <hbox align="center" style="margin-top: 5px" height="90px" children="@bind(vm.glass)">
         <template name="children">
           <vbox align="center">
-            <image content="@load(each.image)" onClick="@command('redirectToManufacturers', wrapper=each)"/>
+            <image style="cursor: pointer;margin: 10px;" content="@load(each.image)" onClick="@command('redirectToManufacturers', wrapper=each)"/>
           </vbox>
         </template>
       </hbox>

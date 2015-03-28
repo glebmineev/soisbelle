@@ -14,6 +14,7 @@ class ManufacturerWrapper extends IdentWrapper implements Wrapper {
 
   String shortName
   String description
+  String shortDescription
 
   ManufacturerWrapper memento
   boolean editingStatus = false
@@ -32,6 +33,9 @@ class ManufacturerWrapper extends IdentWrapper implements Wrapper {
     this.name = manufacturer.name
     this.shortName = manufacturer.shortName
     this.description = manufacturer.description
+
+    String descShort = manufacturer.description
+    this.shortDescription = Strings.isNullOrEmpty(descShort) ? "" : "${descShort.substring(0, 30)} ... "
 
     String path = new PathBuilder()
         .appendPath(serverFoldersService.manufacturersPics)

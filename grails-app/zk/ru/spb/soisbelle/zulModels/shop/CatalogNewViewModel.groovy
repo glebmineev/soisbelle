@@ -89,7 +89,7 @@ class CatalogNewViewModel implements GrailsApplicationAware {
     model.add("21");
 
     countPageItemModel = new ListModelList<String>(model)
-    countPageItemModel.addSelection(model.get(0));
+    countPageItemModel.addToSelection(model.get(0));
 
     pageIsLoad = true
 

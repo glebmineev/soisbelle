@@ -59,7 +59,7 @@
           </listcell>
           <listcell label="${each.name}"/>
           <listcell label="${each.shortName}"/>
-          <listcell label="${each.description}"/>
+          <listcell label="${each.shortDescription}"/>
           <listcell>
             <image content="@bind(vm.pencil)" onClick="@command('editManufacturer', wrapper=each)"/>
             <image content="@bind(vm.failed)"

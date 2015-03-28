@@ -33,9 +33,9 @@ class ManufacturerEntity implements Domain, IImagable {
   ]
 
   static constraints = {
-    name nullable: true
+    name nullable: true, maxSize: 65535
     shortName nullable: true
-    description nullable: true
+    description nullable: true, maxSize: 65535
     picUuid nullable: true
   }
 

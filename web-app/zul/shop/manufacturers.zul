@@ -7,20 +7,42 @@
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
   <div apply="ru.spb.soisbelle.BindComposer"
-       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.ManufacturersViewModel')">
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.ManufacturersViewModel')" width="100%" align="center">
 
     <div style="margin-bottom: 10px;">
       <div style="background: none repeat scroll 0 0 #ffffff;">
         <label value="${vm.manufacturerWrapper.name}" style="font-size: 20pt;"/>
         <h:br/>
-        <image style="border: 1px solid #693947;" content="${vm.manufacturerWrapper.image}"/>
-        <div>
+        <div align="left" style="margin: 5px;">
           ${vm.manufacturerWrapper.description}
         </div>
       </div>
     </div>
 
-    <div id="products" children="@bind(vm.categoriesWithProducts)">
+    <div style="position: relative;" height="35px">
+      <!-- панель изменения отображения витрины -->
+      <div style="position: absolute;  left: 0px;">
+        <image height="24px" width="24px" sclass="rows-image" onClick="@command('applyRowTemplate')"/>
+        <image height="24px" width="24px" sclass="cells-image" onClick="@command('applyCellTemplate')"/>
+      </div>
+      <div align="right" width="638px" style="position: absolute;right:7px;">
+        <label style="color: #F8BD9F" value="Отоброжать по:"/>
+        <combobox width="20%"
+                  model="@bind(vm.countPageItemModel)" onChange="@command('changeShowItems')"/>
+      </div>
+    </div>
+
+    <include id="showcase" width="100%"
+             allProducts="${vm.products}"
+             listType="narrow"
+             showPaging="true"
+             src="/zul/components/showcaseSimplePaging.zul"
+             isChangeShow="true"
+             linkLimit="8"
+             limit="8"
+             showOptionsPanel="true"/>
+
+<!--    <div id="products" children="@bind(vm.categoriesWithProducts)">
       <template name="children">
         <div align="center" if="${not each.isEmpty}">
           <div style="background: none repeat scroll 0 0 #f8bd9f;">
@@ -31,7 +53,7 @@
           </div>
         </div>
       </template>
-    </div>
+    </div>-->
 
   </div>
 

@@ -24,6 +24,7 @@
               <a sclass="cabinetLink" href="/cabinet/orders" label="Заказы"/>
               <a sclass="cabinetLink" href="/cabinet/profile" label="Редактировать профиль"/>
               <a sclass="cabinetLink" href="/cabinet/changePass" label="Сменить пароль"/>
+              <a sclass="cabinetLink" href="/auth/logout" label="Выход"/>
             </vbox>
           </div>
         </h:td>

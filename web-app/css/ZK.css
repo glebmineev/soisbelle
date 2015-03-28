@@ -458,3 +458,12 @@ li.z-menuitem .z-menuitem-content {
 li.z-menu .z-menu-content {
   text-decoration: none;
 }
+
+/* Всяческие картинки */
+.cells-image {
+  background: url("../images/cells.png") no-repeat;
+}
+
+.rows-image {
+  background: url("../images/rows.png") no-repeat;
+}
