@@ -161,10 +161,10 @@ class EditorViewModel {
       public void onEvent(Event event2) throws Exception {
         int r = 0
         refreshProducts(retrivedCategory)
-        link.removeEventListener("onEcho", this);
+        link.removeEventListener("onEcho", this)
       }
     });
-    Events.echoEvent("onEcho", link, null);
+    Events.echoEvent("onEcho", link, null)
 
   }
 
@@ -175,7 +175,7 @@ class EditorViewModel {
     productsModel.clear()
     productsModel.addAll(collectAllProducts(retrivedCategory, Lists.newArrayList()))
     isBusy = false
-    BindUtils.postNotifyChange(null, null, this, "isBusy");
+    BindUtils.postNotifyChange(null, null, this, "isBusy")
   }
 
   /**

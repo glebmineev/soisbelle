@@ -173,7 +173,7 @@ class ProductsViewModel {
     this.isBusy = false
     this.products.clear()
     this.products.addAll(fillWrappers(getModelByFilters()))
-    BindUtils.postNotifyChange("productgridbindqueue", null, this, "isBusy");
+    BindUtils.postNotifyChange("productgridbindqueue", null, this, "isBusy")
 /*    service.execute(new Runnable() {
 
       @Override
@@ -194,7 +194,7 @@ class ProductsViewModel {
     int t = 6
 
     this.isBusy = true
-    BindUtils.postNotifyChange("productgridbindqueue", null, this, "isBusy");
+    BindUtils.postNotifyChange("productgridbindqueue", null, this, "isBusy")
 
     this.products.clear()
     //products.addAll(fillWrappers(getModelByFilters()))
@@ -203,10 +203,10 @@ class ProductsViewModel {
 
       public void onEvent(Event event) throws Exception {
         rebuildData()
-        link.removeEventListener("onEcho", this);
+        link.removeEventListener("onEcho", this)
       }
     });
-    Events.echoEvent("onEcho", link, null);
+    Events.echoEvent("onEcho", link, null)
 
   }
 
