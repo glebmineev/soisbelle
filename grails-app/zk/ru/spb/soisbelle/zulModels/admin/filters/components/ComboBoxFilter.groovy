@@ -33,11 +33,13 @@ class ComboBoxFilter extends Combobox {
     model.addAll(filterBean.field.getType().newInstance().list())
     setModel(model)
 
+    ComboBoxFilter link = this
+
     this.addEventListener(Events.ON_SELECT, new org.zkoss.zk.ui.event.EventListener() {
 
       @Override
       void onEvent(Event t) {
-        filterBean.callback.changed(new ObjectFilter(filterBean.field, getSelectedItem().value, null))
+        filterBean.callback.changed(new ObjectFilter(filterBean.field, getSelectedItem().value, null), link)
       }
 
     })

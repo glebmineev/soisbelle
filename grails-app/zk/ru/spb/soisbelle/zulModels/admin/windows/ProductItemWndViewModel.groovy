@@ -141,7 +141,7 @@ class ProductItemWndViewModel extends DownloadImageViewModel {
    */
   public void saveProduct(ProductEntity product) {
     ProductEntity.withTransaction {
-      product.setCategory(CategoryEntity.get(categoryID))
+      product.addToCategories(CategoryEntity.get(categoryID))
       product.setName(name)
       product.setArticle(article)
       product.setManufacturer(selectedManufacturer)
@@ -184,7 +184,7 @@ class ProductItemWndViewModel extends DownloadImageViewModel {
   public void updateProduct(ProductEntity product) {
 
     ProductEntity.withTransaction {
-      product.setCategory(CategoryEntity.get(categoryID))
+      product.addToCategories(CategoryEntity.get(categoryID))
       product.setName(name)
       product.setArticle(article)
       product.setManufacturer(selectedManufacturer)

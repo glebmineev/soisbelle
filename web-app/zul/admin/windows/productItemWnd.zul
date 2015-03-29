@@ -15,11 +15,11 @@
   <window id="productItem" apply="ru.spb.soisbelle.BindComposer"
           viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.admin.windows.ProductItemWndViewModel')" width="100%">
 
-    <style src="/css/ZK.css"/>
+<!--    <style src="/css/ZK.css"/>-->
 
-    <attribute name="onCreate">
+<!--    <attribute name="onCreate">
 
-    </attribute>
+    </attribute>-->
 
     <!--   <h:textarea id="ckeditor" class="ckeditor" cols="10" rows="20"/>
        <button label="Сохранить" w:onClick="sendToServer();" id="save"/>

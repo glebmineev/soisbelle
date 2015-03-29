@@ -32,13 +32,15 @@ class NumberBoxFilter extends Intbox {
     this.setWidth("100%")
     this.setInstant(true)
 
+    NumberBoxFilter link = this
+
     this.addEventListener(Events.ON_CHANGING, new org.zkoss.zk.ui.event.EventListener() {
 
       @Override
       void onEvent(Event t) {
         InputEvent inputEvent = (InputEvent) t
 
-        filterBean.callback.changed(new ObjectFilter(filterBean.field, inputEvent.value, null))
+        filterBean.callback.changed(new ObjectFilter(filterBean.field, inputEvent.value, null), link)
 
         setSelectionRange(inputEvent.start, inputEvent.start)
       }

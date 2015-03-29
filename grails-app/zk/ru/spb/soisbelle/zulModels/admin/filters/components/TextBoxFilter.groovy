@@ -27,13 +27,15 @@ class TextBoxFilter extends Textbox {
     this.setWidth("80%")
     this.setInstant(true)
 
+    TextBoxFilter link = this
+
     this.addEventListener(Events.ON_CHANGING, new EventListener() {
 
       @Override
       void onEvent(Event t) {
         InputEvent inputEvent = (InputEvent) t
 
-        filterBean.callback.changed(new ObjectFilter(filterBean.field, inputEvent.value, null))
+        filterBean.callback.changed(new ObjectFilter(filterBean.field, inputEvent.value, null), link)
 
         setSelectionRange(inputEvent.start, inputEvent.start)
       }

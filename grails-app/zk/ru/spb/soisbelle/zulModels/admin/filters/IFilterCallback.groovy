@@ -1,5 +1,6 @@
 package ru.spb.soisbelle.zulModels.admin.filters
 
+import org.zkoss.zul.impl.XulElement
 import ru.spb.soisbelle.zulModels.admin.filters.data.ObjectFilter
 
 /**
@@ -9,6 +10,6 @@ import ru.spb.soisbelle.zulModels.admin.filters.data.ObjectFilter
  */
 interface IFilterCallback {
 
-  void changed(ObjectFilter objectFilter)
+  void changed(ObjectFilter objectFilter, XulElement link)
 
 }

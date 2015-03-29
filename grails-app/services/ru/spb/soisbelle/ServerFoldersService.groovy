@@ -61,9 +61,9 @@ class ServerFoldersService implements InitializingBean {
   void afterPropertiesSet() throws Exception {
     PathUtils stringUtils = new PathUtils()
     String root = ApplicationHolder.application.mainContext.servletContext.getRealPath(fileSeparator)
-    log.info("PATH_TO_SERVER_FOLDER" + root)
+    log.info("PATH_TO_SERVER_FOLDER " + root)
     String twoLevelUp = stringUtils.buildPath(2, root)
-    log.info("PATH_TO_SERVER_FOLDER_TWO_LEVEL_UP" + twoLevelUp)
+    log.info("PATH_TO_SERVER_FOLDER_TWO_LEVEL_UP " + twoLevelUp)
 
     orders = new PathBuilder()
         .appendPath(twoLevelUp)

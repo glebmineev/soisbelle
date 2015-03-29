@@ -8,16 +8,16 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
-  <div id="editorWnd" apply="ru.spb.soisbelle.BindComposer"
+  <div id="editorWnd" apply="ru.spb.soisbelle.ProductGridBindComposer"
+       binder="@init(queueName='productgridbindqueue')"
           viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.admin.ProductsViewModel')"
           width="100%">
-
     <listbox id="products" width="100%"
-             model="@bind(vm.products) @template((each.editingStatus) ? 'editable' : 'noneditable')"
+             model="@bind(vm.products)"
              mold="paging"
              emptyMessage="Товаров в магазине нет"
              checkmark="true"
-             pageSize="10">
+             pageSize="10" visible="@bind(not vm.isBusy)">
       <listhead>
         <listheader width="40px" align="center"/>
         <listheader align="center" label="Артикул"/>
@@ -40,13 +40,13 @@
                      use="ru.spb.soisbelle.zulModels.admin.filters.components.NumberBoxFilter" filterBean="${each}"/>
             <vbox if="${each.filterType == 'mesureField'}"
                      use="ru.spb.soisbelle.zulModels.admin.filters.components.MeasureFilter" filterBean="${each}"/>
-            <combobox if="${each.filterType == 'comboField'}" width="60%"
+            <combobox if="${each.filterType == 'comboField'}" width="50%"
                      use="ru.spb.soisbelle.zulModels.admin.filters.components.ComboBoxFilter" filterBean="${each}"/>
           </hbox>
         </auxheader>
         <auxheader/>
       </auxhead>
-      <template name="noneditable">
+      <template name="model">
         <listitem>
           <listcell/>
           <listcell label="${each.article}"/>
@@ -55,11 +55,13 @@
           <listcell label="${each.countToStock}"/>
           <listcell label="${each.manufacturer}"/>
           <listcell>
-            <image src="/images/pencil.png" onClick="@command('changeEditableStatus', wrapper=each)"/>
+            <image src="/images/pencil.png" onClick="@command('editProduct', wrapper=each)"/>
+            <image src="/images/failed.png"
+                   onClick="@command('deleteProduct', wrapper=each)"/>
           </listcell>
         </listitem>
       </template>
-      <template name="editable">
+<!--      <template name="editable">
         <listitem>
           <listcell/>
           <listcell>
@@ -84,8 +86,17 @@
             <image src="/images/cancel.png" onClick="@command('cancelEditing', wrapper=each)"/>
           </listcell>
         </listitem>
-      </template>
+      </template>-->
     </listbox>
+    <!-- окошко длительного процесса -->
+    <div height="300px" visible="@bind(vm.isBusy)"/>
+    <window id="isBusy" sclass="process-window" mode="highlighted" position="center" closable="false" visible="@bind(vm.isBusy)">
+      <h:div id="loading">
+        <h:span class="loading-span"></h:span>
+        <h:span class="loading-span" id="bubble2"></h:span>
+        <h:span class="loading-span" id="bubble3"></h:span>
+      </h:div>
+    </window>
   </div>
 
 </zk>

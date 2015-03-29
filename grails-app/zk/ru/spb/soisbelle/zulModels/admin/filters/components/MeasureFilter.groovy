@@ -41,13 +41,16 @@ class MeasureFilter extends Vbox {
     startBox.appendChild(startMeasure)
     startMeasure.setInstant(true)
     startMeasure.setWidth("100%")
+
+    Intbox startLink = startMeasure
+
     startMeasure.addEventListener(Events.ON_CHANGING, new org.zkoss.zk.ui.event.EventListener() {
 
       @Override
       void onEvent(Event t) {
         InputEvent inputEvent = (InputEvent) t
         startValue = inputEvent.value
-        filterBean.callback.changed(new ObjectFilter(filterBean.field, startValue, endValue))
+        filterBean.callback.changed(new ObjectFilter(filterBean.field, startValue, endValue), startLink)
         startMeasure.setSelectionRange(inputEvent.start, inputEvent.start)
       }
 
@@ -58,13 +61,16 @@ class MeasureFilter extends Vbox {
     endBox.appendChild(endMeasure)
     endMeasure.setInstant(true)
     endMeasure.setWidth("100%")
+
+    Intbox endLink = endMeasure
+
     endMeasure.addEventListener(Events.ON_CHANGING, new org.zkoss.zk.ui.event.EventListener() {
 
       @Override
       void onEvent(Event t) {
         InputEvent inputEvent = (InputEvent) t
         endValue = inputEvent.value
-        filterBean.callback.changed(new ObjectFilter(filterBean.field, startValue, endValue))
+        filterBean.callback.changed(new ObjectFilter(filterBean.field, startValue, endValue), endLink)
         endMeasure.setSelectionRange(inputEvent.start, inputEvent.start)
       }
 
