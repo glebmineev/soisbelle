@@ -9,8 +9,10 @@ import org.zkoss.bind.annotation.ContextParam
 import org.zkoss.bind.annotation.ContextType
 import org.zkoss.bind.annotation.Init
 import org.zkoss.bind.annotation.NotifyChange
+import org.zkoss.zk.ui.Component
 import org.zkoss.zk.ui.Executions
 import org.zkoss.zk.ui.event.Event
+import org.zkoss.zk.ui.event.Events
 import org.zkoss.zk.ui.sys.ExecutionsCtrl
 import org.zkoss.zkplus.databind.BindingListModelList
 import org.zkoss.zul.*
@@ -34,6 +36,8 @@ class EditorViewModel {
   CartService cartService = ApplicationHolder.getApplication().getMainContext().getBean("cartService") as CartService
   InitService initService = ApplicationHolder.getApplication().getMainContext().getBean("initService") as InitService
   ImageService imageService = ApplicationHolder.getApplication().getMainContext().getBean("imageService") as ImageService
+
+  boolean isBusy
 
   @Init
   public void init() {
@@ -130,7 +134,7 @@ class EditorViewModel {
    * @param event
    */
   @Command
-  @NotifyChange(["categoryTreeModel", "productsModel"])
+  @NotifyChange(["categoryTreeModel", "productsModel", "isBusy"])
   public void refreshModels(@ContextParam(ContextType.TRIGGER_EVENT) Event event) {
     Treeitem treeitem = event.getTarget() as Treeitem
     treeitem.setOpen(!treeitem.isOpen())
@@ -149,10 +153,29 @@ class EditorViewModel {
     usageFilterModel.clear()
     usageFilterModel.addAll(products.filter.unique() as List<FilterEntity>)
 
+    this.isBusy = true
+
+    Component link = event.getTarget().getSpaceOwner().getFellow("products")
+    link.addEventListener("onEcho", new org.zkoss.zk.ui.event.EventListener<Event>() {
+
+      public void onEvent(Event event2) throws Exception {
+        int r = 0
+        refreshProducts(retrivedCategory)
+        link.removeEventListener("onEcho", this);
+      }
+    });
+    Events.echoEvent("onEcho", link, null);
+
+  }
+
+  @Command
+  @NotifyChange(["categoryTreeModel", "productsModel", "isBusy"])
+  public void refreshProducts(CategoryEntity retrivedCategory) {
     //обновляем модель товаров.
     productsModel.clear()
     productsModel.addAll(collectAllProducts(retrivedCategory, Lists.newArrayList()))
-
+    isBusy = false
+    BindUtils.postNotifyChange(null, null, this, "isBusy");
   }
 
   /**

@@ -101,17 +101,18 @@
         </groupbox>
       </vbox>
 
-      <listbox  id="products" mold="paging" model="@bind(vm.productsModel)" height="100%" pageSize="10">
-        <listhead>
-          <listheader width="170px"/>
-          <listheader/>
-        </listhead>
-        <template name="model">
-          <listitem>
-            <listcell>
-              <div align="center" width="160px" sclass="imageBox">
-                <image>
-                  <zscript><![CDATA[
+      <vbox>
+        <listbox  id="products" mold="paging" model="@bind(vm.productsModel)" height="100%" pageSize="10" visible="@bind(not vm.isBusy)">
+          <listhead>
+            <listheader width="170px"/>
+            <listheader/>
+          </listhead>
+          <template name="model">
+            <listitem>
+              <listcell>
+                <div align="center" width="160px" sclass="imageBox">
+                  <image>
+                    <zscript><![CDATA[
                       import ru.spb.soisbelle.*
                       import org.zkoss.image.*
                       import org.codehaus.groovy.grails.commons.*
@@ -135,25 +136,35 @@
                       self.setContent(img)
 
                   ]]></zscript>
-                </image>
-              </div>
-            </listcell>
-            <listcell>
-              <vbox>
-                <label value="${each.manufacturer.name}" style="font-size: 14px;margin-top: 5px;margin-bottom: 5px;"/>
-                <label value="${each.name}" style="font-size: 18px;margin-top: 5px;margin-bottom: 5px;"/>
-                <label value="Цена: ${each.price}" style="font-size: 14px;margin-bottom: 5px;"/>
-                <hbox>
-                  <button sclass="soisbelle-square-button" label="Удалить" onClick="@command('deleteProduct', product=each)"/>
-                  <space/>
-                  <button sclass="soisbelle-square-button" label="Редактировать" onClick="@command('addProduct', product=each)"/>
-                </hbox>
-              </vbox>
-            </listcell>
-          </listitem>
-        </template>
+                  </image>
+                </div>
+              </listcell>
+              <listcell>
+                <vbox>
+                  <label value="${each.manufacturer.name}" style="font-size: 14px;margin-top: 5px;margin-bottom: 5px;"/>
+                  <label value="${each.name}" style="font-size: 18px;margin-top: 5px;margin-bottom: 5px;"/>
+                  <label value="Цена: ${each.price}" style="font-size: 14px;margin-bottom: 5px;"/>
+                  <hbox>
+                    <button sclass="soisbelle-square-button" label="Удалить" onClick="@command('deleteProduct', product=each)"/>
+                    <space/>
+                    <button sclass="soisbelle-square-button" label="Редактировать" onClick="@command('addProduct', product=each)"/>
+                  </hbox>
+                </vbox>
+              </listcell>
+            </listitem>
+          </template>
 
-      </listbox>
+        </listbox>
+        <div height="300px" visible="@bind(vm.isBusy)"/>
+        <window id="isBusy" sclass="process-window" mode="highlighted" position="center" closable="false" visible="@bind(vm.isBusy)">
+          <h:div id="loading">
+            <h:span class="loading-span"></h:span>
+            <h:span class="loading-span" id="bubble2"></h:span>
+            <h:span class="loading-span" id="bubble3"></h:span>
+          </h:div>
+        </window>
+      </vbox>
+
 
     </hbox>
   </window>
