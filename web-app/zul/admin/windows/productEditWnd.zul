@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?variable-resolver class="ru.spb.soisbelle.window.ProjectVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+  <window id="productItem" apply="ru.spb.soisbelle.BindComposer"
+          viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.admin.windows.ProductEditWndViewModel')"
+          width="100%">
+
+    <h:table width="100%" cellpadding="0" cellspacing="15">
+      <h:tr>
+        <h:td align="right" width="50%">
+          <div id="imageDiv" width="320px" align="center" sclass="imageBoxAdmin">
+            <image id="targetImage" content="@bind(vm.image)" style="margin: 10px"/>
+          </div>
+        </h:td>
+        <h:td align="left" width="50%">
+          <div align="left">
+            <button label="Загрузить изображение" upload="true" onUpload="@command('uploadImage')"/>
+          </div>
+        </h:td>
+      </h:tr>
+    </h:table>
+
+    <grid id="producItemGrid" height="100%">
+      <columns>
+        <column align="right" hflex="1"/>
+        <column align="left" hflex="2"/>
+      </columns>
+      <rows>
+        <row>
+          <cell>
+            <label value="Артикул: "/>
+          </cell>
+          <cell>
+            <textbox value="@bind(vm.article)" width="100%"/>
+          </cell>
+        </row>
+        <row>
+          <cell>
+            <label value="Наименование: "/>
+          </cell>
+          <cell>
+            <textbox value="@bind(vm.name)" width="100%"/>
+          </cell>
+        </row>
+        <row>
+          <cell>
+            <label value="Описание: "/>
+          </cell>
+          <cell>
+            <ckeditor value="@bind(vm.description)" width="100%"/>
+          </cell>
+        </row>
+        <row>
+          <cell>
+            <label value="Цена: "/>
+          </cell>
+          <cell>
+            <textbox value="@bind(vm.price)" width="100%"/>
+          </cell>
+        </row>
+        <row>
+          <cell>
+            <label value="Объем: "/>
+          </cell>
+          <cell>
+            <textbox value="@bind(vm.volume)" width="100%"/>
+          </cell>
+        </row>
+        <row>
+          <cell>
+            <label value="Фильтр: "/>
+          </cell>
+          <cell>
+            <combobox selectedItem="@bind(vm.selectedFilter)" model="@bind(vm.filterModel)" width="100%"/>
+          </cell>
+        </row>
+        <row>
+          <cell>
+            <label value="Производитель: "/>
+          </cell>
+          <cell>
+            <combobox selectedItem="@bind(vm.selectedManufacturer)" model="@load(vm.manufacturerModel)" width="100%"/>
+          </cell>
+        </row>
+      </rows>
+    </grid>
+
+    <div align="center" style="margin: 10px;">
+      <button id="save" sclass="soisbelle-square-button" label="Сохранить" onClick="@command('saveItem')"/>
+      <space/>
+      <button label="Закрыть" sclass="soisbelle-square-button" onClick="@command('closeWnd')"
+              visible="@load(vm.isModal)"/>
+    </div>
+
+  </window>
+</zk>
