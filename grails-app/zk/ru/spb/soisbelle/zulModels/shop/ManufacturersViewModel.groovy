@@ -1,5 +1,6 @@
 package ru.spb.soisbelle.zulModels.shop
 
+import org.zkoss.bind.annotation.BindingParam
 import org.zkoss.bind.annotation.Command
 import org.zkoss.bind.annotation.ContextParam
 import org.zkoss.bind.annotation.ContextType
@@ -16,6 +17,7 @@ import ru.spb.soisbelle.CategoryEntity
 import ru.spb.soisbelle.ManufacturerEntity
 import ru.spb.soisbelle.ProductEntity
 import ru.spb.soisbelle.wrappers.CategoriesWithProducts
+import ru.spb.soisbelle.wrappers.HrefWrapper
 import ru.spb.soisbelle.wrappers.ManufacturerWrapper
 import ru.spb.soisbelle.wrappers.ProductWrapper
 
@@ -27,6 +29,9 @@ class ManufacturersViewModel {
   ManufacturerWrapper manufacturerWrapper
   List<ProductEntity> products = new ArrayList<>()
   ListModelList<String> countPageItemModel
+  //Навигация.
+  List<HrefWrapper> links = new LinkedList<HrefWrapper>()
+  boolean pageIsLoad = false
 
   @Init
   public void init() {
@@ -43,6 +48,23 @@ class ManufacturersViewModel {
 
     countPageItemModel = new ListModelList<String>(model)
     countPageItemModel.addToSelection(model.get(0));
+
+    initLinks()
+
+    pageIsLoad = true
+
+  }
+
+  void initLinks(){
+    links.add(new HrefWrapper("Главная", "/shop"))
+    links.add(new HrefWrapper(manufacturerWrapper.name, "/shop/manufacturers?manufacturer=${manufacturerWrapper.id}"))
+  }
+
+  @Command
+  public void refreshWhenBackToCatalog(@BindingParam("div") Div self){
+    if (pageIsLoad) {
+      self.invalidate()
+    }
 
   }
 

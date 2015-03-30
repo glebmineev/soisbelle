@@ -66,7 +66,7 @@ class CatalogNewViewModel implements GrailsApplicationAware {
 
   boolean isShowcase = false
 
-  boolean pageIsLoad = false;
+  boolean pageIsLoad = false
 
   @Init
   public void init() {

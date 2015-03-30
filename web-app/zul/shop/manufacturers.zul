@@ -7,7 +7,20 @@
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
   <div apply="ru.spb.soisbelle.BindComposer"
-       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.ManufacturersViewModel')" width="100%" align="center">
+       onClientInfo="@command('refreshWhenBackToCatalog', div=self)"
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.shop.ManufacturersViewModel')" width="100%">
+
+    <!-- Навигация -->
+    <hbox align="start">
+      <div children="@bind(vm.links)">
+        <template name="children">
+          <a sclass="navigationLink" href="@load(each.href)"
+             label="@load(each.name)"/>
+          <label sclass="navigationSlash" if="${forEachStatus.index != vm.links.size()-1}"
+                 value="/"/>
+        </template>
+      </div>
+    </hbox>
 
     <div style="margin-bottom: 10px;">
       <div style="background: none repeat scroll 0 0 #ffffff;">
@@ -31,29 +44,30 @@
                   model="@bind(vm.countPageItemModel)" onChange="@command('changeShowItems')"/>
       </div>
     </div>
+    <div align="center">
+      <include id="showcase" width="100%"
+               allProducts="${vm.products}"
+               listType="narrow"
+               showPaging="true"
+               src="/zul/components/showcaseSimplePaging.zul"
+               isChangeShow="true"
+               linkLimit="8"
+               limit="8"
+               showOptionsPanel="true"/>
+    </div>
 
-    <include id="showcase" width="100%"
-             allProducts="${vm.products}"
-             listType="narrow"
-             showPaging="true"
-             src="/zul/components/showcaseSimplePaging.zul"
-             isChangeShow="true"
-             linkLimit="8"
-             limit="8"
-             showOptionsPanel="true"/>
-
-<!--    <div id="products" children="@bind(vm.categoriesWithProducts)">
-      <template name="children">
-        <div align="center" if="${not each.isEmpty}">
-          <div style="background: none repeat scroll 0 0 #f8bd9f;">
-            <label value="${each.categoryName}" style="font-size: 14pt;"/>
-          </div>
-          <div style="background: none repeat scroll 0 0 #613544;">
-            <include src="/zul/components/products.zul" products="${each.products}"/>
-          </div>
-        </div>
-      </template>
-    </div>-->
+    <!--    <div id="products" children="@bind(vm.categoriesWithProducts)">
+          <template name="children">
+            <div align="center" if="${not each.isEmpty}">
+              <div style="background: none repeat scroll 0 0 #f8bd9f;">
+                <label value="${each.categoryName}" style="font-size: 14pt;"/>
+              </div>
+              <div style="background: none repeat scroll 0 0 #613544;">
+                <include src="/zul/components/products.zul" products="${each.products}"/>
+              </div>
+            </div>
+          </template>
+        </div>-->
 
   </div>
 

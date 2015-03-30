@@ -134,7 +134,7 @@ class EditorViewModel {
    * @param event
    */
   @Command
-  @NotifyChange(["categoryTreeModel", "productsModel", "isBusy"])
+  @NotifyChange(["categoryTreeModel", "productsModel", "manufsFilterModel", "usageFilterModel", "isBusy"])
   public void refreshModels(@ContextParam(ContextType.TRIGGER_EVENT) Event event) {
     Treeitem treeitem = event.getTarget() as Treeitem
     treeitem.setOpen(!treeitem.isOpen())
@@ -169,7 +169,7 @@ class EditorViewModel {
   }
 
   @Command
-  @NotifyChange(["categoryTreeModel", "productsModel", "isBusy"])
+  @NotifyChange(["productsModel", "isBusy"])
   public void refreshProducts(CategoryEntity retrivedCategory) {
     //обновляем модель товаров.
     productsModel.clear()
