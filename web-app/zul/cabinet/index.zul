@@ -10,7 +10,7 @@
   <div apply="ru.spb.soisbelle.BindComposer" align="center"
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.cabinet.CabinetViewModel')" width="100%">
 
-    <style src="/css/ZK.css"/>
+<!--    <style src="/css/ZK.css"/>-->
 
     <h:table width="100%" style="margin-bottom: 10px;">
       <h:tr>
@@ -29,7 +29,7 @@
           </div>
         </h:td>
         <h:td width="80%" valign="top">
-          <include src="/zul/cabinet/orders.zul"/>
+          <include src="/zul/cabinet/orders.zul" showNavigation="false"/>
         </h:td>
       </h:tr>
     </h:table>

@@ -13,6 +13,7 @@ import ru.spb.soisbelle.UserEntity
 import ru.spb.soisbelle.common.PathBuilder
 import ru.spb.soisbelle.common.STD_FILE_NAMES
 import ru.spb.soisbelle.common.STD_IMAGE_SIZES
+import ru.spb.soisbelle.wrappers.HrefWrapper
 import ru.spb.soisbelle.zulModels.core.DownloadImageViewModel
 
 @Init(superclass=true)
@@ -25,6 +26,9 @@ class ProfileViewModel extends DownloadImageViewModel {
   AImage img
 
   LoginService loginService = ApplicationHolder.getApplication().getMainContext().getBean("loginService") as LoginService
+
+  //Навигация.
+  List<HrefWrapper> links = new LinkedList<HrefWrapper>()
 
   @Override
   void downloadParams() {
@@ -50,6 +54,13 @@ class ProfileViewModel extends DownloadImageViewModel {
 
     img = imageService.getImageFile(path, std_name, std_size)
 
+    initLinks()
+
+  }
+
+  void initLinks() {
+    links.add(new HrefWrapper("Личный кабинет", "/cabinet"))
+    links.add(new HrefWrapper("Редактирование профиля", "/cabinet/profile"))
   }
 
   @Command

@@ -11,7 +11,7 @@
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.components.ShowcaseSimplePagingViewModel')" width="100%">
 
     <include visible="@bind(vm.showPaging)" src="/zul/components/simplePaging.zul"/>
-    <vbox align="center">
+
       <div id="showcase-div" sclass="products-cell-template" align="center" width="100%">
         <!-- витрина товаров -->
         <h:ul id="products" children="@bind(vm.products)">
@@ -19,6 +19,8 @@
             <h:li class="${vm.listType}">
               <include src="/zul/components/showcaseItem.zul" productWrapper="${each}"/>
             </h:li>
+            <h:li class="helper" if="${((forEachStatus.index + 1) % vm.cellsInRow) == 0}" unless="${forEachStatus.index == 0}"/>
+            <label sclass="spacer" if="${((forEachStatus.index + 1) % vm.cellsInRow) != 0}"/>
           </template>
         </h:ul>
         <div height="300px" visible="@bind(vm.isBusy)"/>
@@ -30,8 +32,7 @@
           </h:div>
         </window>
       </div>
-    </vbox>
+
     <include visible="@bind(vm.showPaging)" src="/zul/components/simplePaging.zul"/>
-    <div height="5px"/>
   </div>
 </zk>

@@ -26,15 +26,15 @@
         </div>
         <tabbox>
           <tabs>
-            <tab label="Применение"/>
             <tab label="Описание"/>
+            <tab label="Применение"/>
           </tabs>
           <tabpanels style="background: #ffffff;">
-            <tabpanel style="overflow:auto"  height="192px">
-              <label value="@load(vm.model.usage)"/>
-            </tabpanel>
             <tabpanel style="overflow:auto" height="192px">
               <label value="@load(vm.model.description)"/>
+            </tabpanel>
+            <tabpanel style="overflow:auto"  height="192px">
+              <label value="@load(vm.model.usage)"/>
             </tabpanel>
           </tabpanels>
         </tabbox>

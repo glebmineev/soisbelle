@@ -18,6 +18,8 @@
               <a href="/shop/catalog/?category=${each.id}" label="${each.upperName}"/>
           </div>
         </h:li>
+        <h:li class="helper" if="${forEachStatus.index == vm.menuItems.size()}"/>
+        <label style="margin-right: 5px;" if="${vm.menuItems.size() > (forEachStatus.index + 1)}"/>
       </template>
     </h:ul>
     </div>

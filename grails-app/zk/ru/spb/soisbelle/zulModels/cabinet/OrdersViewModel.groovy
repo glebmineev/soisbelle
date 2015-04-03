@@ -1,7 +1,9 @@
 package ru.spb.soisbelle.zulModels.cabinet
 
+import com.google.common.base.Strings
 import org.zkoss.bind.annotation.BindingParam
 import org.zkoss.bind.annotation.Command
+import org.zkoss.bind.annotation.ExecutionArgParam
 import org.zkoss.bind.annotation.Init
 import org.zkoss.zk.ui.Executions
 import org.zkoss.zk.ui.sys.ExecutionsCtrl
@@ -12,17 +14,36 @@ import org.zkoss.zul.Vlayout
 import org.zkoss.zul.Window
 import ru.spb.soisbelle.LoginService
 import ru.spb.soisbelle.OrderEntity
+import ru.spb.soisbelle.wrappers.HrefWrapper
 
 class OrdersViewModel {
 
   ListModelList<OrderEntity> ordersModel
   LoginService loginService = SpringUtil.getApplicationContext().getBean("loginService") as LoginService
 
+  boolean showNavigation = true
+
+  //Навигация.
+  List<HrefWrapper> links = new LinkedList<HrefWrapper>()
+
   @Init
-  public void init() {
+  public void init(@ExecutionArgParam("showNavigation") String showNavigation) {
+
+    if (!Strings.isNullOrEmpty(showNavigation)) {
+      this.showNavigation = Boolean.parseBoolean(showNavigation)
+    }
+
     List<OrderEntity> ordersList = getOrders()
     if (ordersList != null)
       ordersModel = new ListModelList<OrderEntity>(ordersList)
+
+    initLinks()
+
+  }
+
+  void initLinks() {
+    links.add(new HrefWrapper("Личный кабинет", "/cabinet"))
+    links.add(new HrefWrapper("Заказы", "/cabinet/orders"))
   }
 
   List<OrderEntity> getOrders(){

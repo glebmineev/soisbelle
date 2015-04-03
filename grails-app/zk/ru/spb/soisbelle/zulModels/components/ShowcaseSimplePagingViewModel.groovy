@@ -55,6 +55,8 @@ class ShowcaseSimplePagingViewModel implements GrailsApplicationAware {
   int linkLimit
   //Количество страниц
   int totalCount
+  //Количество ячеек в ряде
+  int cellsInRow
 
   long[][] allPages
 
@@ -88,6 +90,7 @@ class ShowcaseSimplePagingViewModel implements GrailsApplicationAware {
                    @ExecutionArgParam("isChangeShow") String isChangeShow,
                    @ExecutionArgParam("listType") String listType,
                    @ExecutionArgParam("showPaging") String showPaging,
+                   @ExecutionArgParam("cellsInRow") String cellsInRow,
                    @ExecutionArgParam("showOptionsPanel") String showOptionsPanel,
                    @ExecutionArgParam("linkLimit") String linkLimit,
                    @ExecutionArgParam("limit") String limit) {
@@ -102,6 +105,7 @@ class ShowcaseSimplePagingViewModel implements GrailsApplicationAware {
     this.isChangeShow = Boolean.parseBoolean(isChangeShow)
     this.isBusy = true
 
+    this.cellsInRow = cellsInRow as Integer
     this.products.clear()
     this.allProducts.clear()
     this.allProducts.addAll(data)

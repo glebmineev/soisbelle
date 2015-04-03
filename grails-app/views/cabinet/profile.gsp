@@ -10,7 +10,7 @@
     </tpl:block>
 
     <tpl:block name="wrap_content">
-      <div class="info">
+      <div>
         <tpl:zkBody zul="/zul/cabinet/profile.zul"/>
       </div>
     </tpl:block>

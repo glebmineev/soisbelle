@@ -9,7 +9,7 @@
   <window apply="ru.spb.soisbelle.BindComposer"
           viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.cabinet.OrderItemViewModel')" width="100%">
 
-    <style src="/css/ZK.css"/>
+    <!--<style src="/css/ZK.css"/>-->
 
     <vbox align="center" width="100%">
       <label value="@load(vm.status)"/>

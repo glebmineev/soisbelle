@@ -38,13 +38,12 @@
         <image height="24px" width="24px" sclass="rows-image" onClick="@command('applyRowTemplate')"/>
         <image height="24px" width="24px" sclass="cells-image" onClick="@command('applyCellTemplate')"/>
       </div>
-      <div align="right" width="638px" style="position: absolute;right:7px;">
+      <div align="right" style="position: absolute;right:31px;">
         <label style="color: #F8BD9F" value="Отоброжать по:"/>
         <combobox width="20%"
                   model="@bind(vm.countPageItemModel)" onChange="@command('changeShowItems')"/>
       </div>
     </div>
-    <div align="center">
       <include id="showcase" width="100%"
                allProducts="${vm.products}"
                listType="narrow"
@@ -53,9 +52,8 @@
                isChangeShow="true"
                linkLimit="8"
                limit="8"
+               cellsInRow="4"
                showOptionsPanel="true"/>
-    </div>
-
     <!--    <div id="products" children="@bind(vm.categoriesWithProducts)">
           <template name="children">
             <div align="center" if="${not each.isEmpty}">

@@ -1,5 +1,10 @@
 /* Построчная витрина */
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 div.products-row-template {
   width: 640px;
 }
@@ -12,18 +17,22 @@ div.products-row-template > ul {
 
 div.products-row-template > ul > li.large {
   list-style-type: none;
-  width: 694px;
+  width: 702px;
   height: 255px;
   margin-bottom: 5px;
 }
 
 div.products-row-template > ul > li.narrow {
   list-style-type: none;
-  width: 694px;
+  width: 702px;
   height: 255px;
   margin-bottom: 5px;
 }
 
+div.products-row-template > ul > li.helper {
+  background: none;
+  list-style-type: none;
+}
 /*div.products-row-template > ul > li > div:first-child {
   margin-top: 0px;
 }*/
@@ -44,7 +53,7 @@ div.products-row-template > ul > li > div {
 div.products-row-template > ul > li > div > div > div.with_img {
   position: absolute;
   top: 40px;
-  left: 20px;
+  left: 26px;
   width: 160px;
   height: 160px;
   border: 1px solid #6F3C4F;
@@ -54,7 +63,7 @@ div.products-row-template > ul > li > div > div > div.with_img {
 div.products-row-template > ul > li > div > div > div.with_content {
   position: absolute;
   bottom: 25px;
-  left: 174px;
+  left: 180px;
   width: 500px;
   line-height: 20px;
 }
@@ -104,9 +113,12 @@ div.products-cell-template {
 }
 
 div.products-cell-template > ul {
-  text-align: center;
+  list-style: none;
+  text-align: justify;
+  text-justify: auto;
+/*  text-align: center;
   margin: 0;
-  padding: 0;
+  padding: 0;*/
 }
 
 div.products-cell-template > ul > li > div {
@@ -115,28 +127,49 @@ div.products-cell-template > ul > li > div {
   /*margin: 5px;*/
   text-align: justify;
   background: #ffffff;
-  background: #FFFFFF;
 /*  -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;*/
 }
 
 div.products-cell-template > ul > li.large {
-  float: left;
+  display: -moz-inline-box;
+  display: inline-block;
+  vertical-align:top;
+  text-align: center;
+  margin-bottom: 5px;
+  width: 230.5px;
+  height: 348px;
+/*  float: left;
   list-style-type: none;
   position: relative;
   width: 228px;
   height: 348px;
-  margin: 0 5px 5px 0;
+  margin: 0 5px 5px 0;*/
 }
 
 div.products-cell-template > ul > li.narrow {
-  float: left;
+  display: -moz-inline-box;
+  display: inline-block;
+  vertical-align:top;
+  text-align: center;
+  margin-bottom: 5px;
+  width: 236.5px;
+  height: 348px;
+/*  float: left;
   list-style-type: none;
   position: relative;
   width: 235px;
   height: 348px;
-  margin: 0 5px 5px 0;
+  margin: 0 5px 5px 0;*/
+}
+div.products-cell-template > ul > span.spacer {
+  margin-right: 5px;
+}
+
+div.products-cell-template > ul > li.helper {
+  width: 100%;
+  background: none;
 }
 
 div.products-cell-template > ul > li > div:hover {
@@ -187,7 +220,6 @@ div.soisbelle-paging {
   background: #F8BD9F;
   opacity: 0.5; /* Полупрозрачный фон */
   filter: alpha(Opacity=50); /* Прозрачность в IE */
-  margin-right: 7px;
   margin-top: 0px;
   margin-bottom: 5px;
   padding: 5px;

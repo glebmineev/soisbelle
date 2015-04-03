@@ -16,7 +16,19 @@
                 address=vm.address)"
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.cabinet.ProfileViewModel')" width="100%">
 
-    <div>
+    <!-- Навигация -->
+    <hbox align="start">
+      <div children="@bind(vm.links)">
+        <template name="children">
+          <a sclass="navigationLink" href="@load(each.href)"
+             label="@load(each.name)"/>
+          <label sclass="navigationSlash" if="${forEachStatus.index != vm.links.size()-1}"
+                 value="/"/>
+        </template>
+      </div>
+    </hbox>
+
+    <div sclass="info">
       <h:table width="100%" cellpadding="5" cellspacing="0" style="margin-top: 10px;">
         <h:tr>
           <h:td width="40%" align="right">
@@ -66,8 +78,8 @@
         </h:tr>
 
       </h:table>
+      <button sclass="soisbelle-square-button" label="Сохранить" onClick="@command('save')"/>
     </div>
-    <button sclass="soisbelle-square-button" label="Сохранить" onClick="@command('save')"/>
 
   </div>
 

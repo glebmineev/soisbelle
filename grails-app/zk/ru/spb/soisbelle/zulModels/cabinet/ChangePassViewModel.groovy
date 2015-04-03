@@ -6,6 +6,7 @@ import org.zkoss.bind.annotation.Init
 import org.zkoss.zk.ui.Executions
 import ru.spb.soisbelle.LoginService
 import ru.spb.soisbelle.UserEntity
+import ru.spb.soisbelle.wrappers.HrefWrapper
 
 class ChangePassViewModel {
 
@@ -27,9 +28,13 @@ class ChangePassViewModel {
   LoginService loginService =
     ApplicationHolder.getApplication().getMainContext().getBean("loginService") as LoginService
 
+  //Навигация.
+  List<HrefWrapper> links = new LinkedList<HrefWrapper>()
+
   @Init
   public void init(){
-
+    links.add(new HrefWrapper("Личный кабинет", "/cabinet"))
+    links.add(new HrefWrapper("Смена пароля", "/cabinet/changePass"))
   }
 
   @Command

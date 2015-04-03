@@ -10,6 +10,18 @@
   <div apply="ru.spb.soisbelle.BindComposer"
        viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.cabinet.OrdersViewModel')" width="100%">
 
+    <!-- Навигация -->
+    <hbox align="start" visible="@bind(vm.showNavigation)">
+      <div children="@bind(vm.links)">
+        <template name="children">
+          <a sclass="navigationLink" href="@load(each.href)"
+             label="@load(each.name)"/>
+          <label sclass="navigationSlash" if="${forEachStatus.index != vm.links.size()-1}"
+                 value="/"/>
+        </template>
+      </div>
+    </hbox>
+
     <grid model="@load(vm.ordersModel)">
       <columns>
         <column label="Номер заказа" align="center"/>

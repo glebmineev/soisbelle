@@ -12,11 +12,11 @@ body {
 }
 
 #menu {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   position: relative;
   text-align: center;
   width: 961px;
-  height: 51px;
+  height: 34px;
 }
 
 #header {
@@ -115,10 +115,10 @@ body {
 .imageBoxAdmin {
   height: 320px;
   background: #ffffff;
-  -webkit-border-radius: 10px;
+/*  -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
-  border-radius: 10px;
-  border: 1px solid #346F97;
+  border-radius: 10px;*/
+  border: 1px solid #774551;
   display:table-cell;
   vertical-align:middle;
   text-align:center

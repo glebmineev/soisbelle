@@ -19,7 +19,7 @@
         <image content="${vm.rows}" onClick="@command('applyRowTemplate')"/>
         <image content="${vm.cells}" onClick="@command('applyCellTemplate')"/>
       </div>
-      <div align="right" width="638px" style="position: absolute;right:7px;">
+      <div align="right" style="position: absolute;right:31px;">
         <label style="color: #F8BD9F" value="Отоброжать по:"/>
         <combobox width="20%"
                   model="@bind(vm.countPageItemModel)" onChange="@command('changeShowItems')"/>
@@ -30,6 +30,7 @@
              allProducts="${vm.matchedProduct}"
              listType="narrow"
              showPaging="true"
+             cellsInRow="4"
              src="/zul/components/showcaseSimplePaging.zul"
              isChangeShow="true"
              linkLimit="8"
