@@ -22,26 +22,28 @@
       </div>
     </hbox>
 
-    <div style="margin-bottom: 10px;">
-      <div style="background: none repeat scroll 0 0 #ffffff;">
-        <label value="${vm.manufacturerWrapper.name}" style="font-size: 20pt;"/>
+    <div sclass="manufacturer-panel">
+      <div sclass="manufacturer-panel-container">
+        <label sclass="manufacturer-name" value="${vm.manufacturerWrapper.name}" style="font-size: 20pt;"/>
         <h:br/>
-        <div align="left" style="margin: 5px;">
-          ${vm.manufacturerWrapper.description}
+        <div align="left" sclass="manufacturer-description">
+          <label>${vm.manufacturerWrapper.description}</label>
         </div>
       </div>
     </div>
 
-    <div style="position: relative;" height="35px">
+    <div sclass="header-panel">
       <!-- панель изменения отображения витрины -->
-      <div style="position: absolute;  left: 0px;">
+      <div sclass="view-type">
         <image height="24px" width="24px" sclass="rows-image" onClick="@command('applyRowTemplate')"/>
         <image height="24px" width="24px" sclass="cells-image" onClick="@command('applyCellTemplate')"/>
       </div>
-      <div align="right" style="position: absolute;right:31px;">
-        <label style="color: #F8BD9F" value="Отоброжать по:"/>
-        <combobox width="20%"
+      <div sclass="count-show-list">
+        <hbox>
+          <label sclass="freq-font" value="Отоброжать по:"/>
+          <combobox width="100%"
                   model="@bind(vm.countPageItemModel)" onChange="@command('changeShowItems')"/>
+        </hbox>
       </div>
     </div>
       <include id="showcase" width="100%"

@@ -13,7 +13,9 @@ import ru.spb.soisbelle.wrappers.ProductWrapper
  */
 class ShowcaseService implements ApplicationContextAware{
 
-  static scope = "prototype"
+  static transactional = true
+  static scope = "session";
+  static proxy = true
 
   ApplicationContext applicationContext
   IShowcaseComposer composer

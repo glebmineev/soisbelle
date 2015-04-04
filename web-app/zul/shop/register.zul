@@ -25,7 +25,7 @@
 
     <vlayout>
       <div align="center">
-        <label value="Регистрация" style="font-size: 14pt"/>
+        <label value="Регистрация" sclass="form-label-header"/>
       </div>
 
       <h:table width="100%" cellspacing="5" cellpadding="5" >

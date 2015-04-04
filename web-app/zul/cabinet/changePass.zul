@@ -31,19 +31,19 @@
 
     <div sclass="info">
       <div align="center" width="100%">
-        <label style="font-size: 20px;" value="Смена пароля"/>
+        <label sclass="form-label-header" value="Смена пароля"/>
       </div>
 
-      <h:table width="100%" cellpadding="5" cellspacing="0" style="margin-top: 10px;">
+      <h:table width="100%" cellpadding="5" cellspacing="5">
         <h:tr>
-          <h:td width="20%" align="right">
+          <h:td width="30%" align="right">
             <label value="Введите старый пароль:" sclass="form-label"/>
             <label value=" * " sclass="required-field"/>
           </h:td>
           <h:td width="50%" align="center">
             <textbox sclass="form-textbox" value="@bind(vm.oldPass)" type="password" width="100%"/>
           </h:td>
-          <h:td width="30%" align="left">
+          <h:td width="20%" align="left">
             <label sclass="validation-error"
                    value="@load(vmsgs['oldPass'])"/>
           </h:td>

@@ -29,7 +29,7 @@
     </hbox>
 
     <div sclass="info">
-      <h:table width="100%" cellpadding="5" cellspacing="0" style="margin-top: 10px;">
+      <h:table width="100%" cellpadding="5" cellspacing="5">
         <h:tr>
           <h:td width="40%" align="right">
             <image id="targetImage" content="@bind(vm.img)" width="180px"/>

@@ -15,7 +15,7 @@
        sclass="soisbelle-wnd"
        width="60%" height="70%" onOK="@command('addReview')">
 
-      <h:table width="100%" height="100%" cellpadding="5" cellspacing="0">
+      <h:table width="100%" height="100%" cellpadding="5" cellspacing="5">
         <h:tr>
           <h:td colspan="3" align="center">
             <label sclass="form-label" value="Добавить отзыв"/>
@@ -65,7 +65,7 @@
           <h:td width="60%" align="left">
               <textbox sclass="form-textbox" value="@bind(vm.captchaInput)" width="100%"/>
               <div style="margin-top: 10px;" width="100%">
-                <captcha sclass="form-capcha" value="@bind(vm.captcha)" length="5" width="220px" height="40px"/>
+                <captcha sclass="form-capcha" value="@bind(vm.captcha)" length="5" width="210px" height="40px"/>
                 <button sclass="soisbelle-square-button" style="margin-left: 38px" label="Сформировать заново"
                         onClick="@command('regenerate')"/>
               </div>

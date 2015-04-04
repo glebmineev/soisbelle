@@ -14,7 +14,7 @@
 
     <vlayout>
       <div sclass="recommended-header" width="100%">
-        <label style="font-size: 20px; background: #F8BD9F;" value="ХИТ ПРОДАЖ"/>
+        <label value="ХИТ ПРОДАЖ"/>
       </div>
       <hbox align="center" xmlns:w='client'>
         <div width="20px">
@@ -22,21 +22,22 @@
                  w:onClick="jq(this.$f('current_banner')).hide().fadeIn()"/>
         </div>
 
-        <hbox id="current_banner" align="center" style="margin: 5px 0px 10px 0" height="90px"
+        <hbox id="current_banner" align="center" sclass="current_banner"
               children="@bind(vm.glass)">
           <template name="children">
-            <vbox width="200px" align="center" style="background: #ffffff;margin: 0 10px 0 10px">
+            <vbox align="center" sclass="recommended-banner">
               <div align="center" sclass="productImageCatalog">
                 <image sclass="productImage" content="@load(each.image)"
                        onClick="@command('redirectToProductItem', productModel=each)"/>
               </div>
-              <label height="20px" style="color: #cd0a0a" value="@load(each.manufacturer.name)"/>
-              <div height="75px">
+              <label sclass="recommended-manufacturer-name" value="@load(each.manufacturer.name)"/>
+              <div sclass="recommended-product-name">
                 <label value="@load(each.name)"/>
               </div>
-              <div>Цена:
-                <label value="@load(each.price)"/>
-                руб.
+              <div>
+                <label sclass="recommended-price" value="Цена:"/>
+                <label sclass="recommended-price" value="@load(each.price)"/>
+                <label sclass="recommended-price" value="руб."/>
               </div>
               <div style="margin:5px;">
                 <div width="150px">

@@ -47,7 +47,6 @@ body {
   font-family: Century Gothic,serif;
   font-size: large;
   text-align:center;
-  padding: 10px;
 /*  opacity: 0.7; *//* Полупрозрачный фон *//*
   filter: alpha(Opacity=70); *//* Прозрачность в IE */
 /*  -webkit-border-radius: 10px 10px 10px 10px;
@@ -137,6 +136,7 @@ a.navigationLink {
   font-size: 16pt;
   color:#F8BD9F;
   text-decoration: none;
+  font-family: Century Gothic,serif;
 }
 
 a.navigationLink:hover {
@@ -180,12 +180,22 @@ span.navigationSlash {
   font-family: Arial;
 }
 
+/* Хиты продаж */
+
 .recommended-header {
   text-align: center;
   margin: 0 auto;
   border-bottom: 1px solid #8A98A9;
   background-color: #F8BD9F;
+  font-family: Century Gothic,serif;
 }
+
+.recommended-header > span {
+  font-size: 20px;
+  background: #F8BD9F;
+}
+
+
 
 .categoryList {
   width: 875px;
@@ -220,6 +230,7 @@ span.validation-error {
   color: #ff0000;
   font-size: 9pt;
   margin: 1px;
+  font-family: Century Gothic,serif;
 }
 
 input.form-textbox {
@@ -247,6 +258,23 @@ span.required-field {
 
 span.form-label {
   font-size: 12pt;
+  font-family: Century Gothic,serif;
+}
+
+span.form-label-header {
+  font-size: 14pt;
+  font-family: Century Gothic,serif;
+}
+
+div.big-label-header {
+  opacity: 0.7;
+  background: #F8BD9F;
+
+}
+
+div.big-label-header > span {
+  font-size: 30px;
+  font-family: Century Gothic,serif;
 }
 
 img.form-capcha {
@@ -256,7 +284,7 @@ img.form-capcha {
 /* Корзина */
 div.cart {
   width: 150px;
-  height: 33px;
+  height: 34px;
   text-align: justify;
   background: none;
   border: 1px solid #F8BD9F;
@@ -268,6 +296,7 @@ div.cart > div.cart-img {
   top: 0px;
   left: 0px;
   width: 50px;
+  height: 34px;
 }
 
 div.cart > div.cart-counters {
@@ -275,7 +304,8 @@ div.cart > div.cart-counters {
   top: 0px;
   right: 0px;
   width: 100px;
-  font-size: 8pt;
+  height: 34px;
+  font-size: 9pt;
   font-family: Century Gothic,serif;
   color: #F8BD9F;
 }
@@ -296,6 +326,7 @@ div.soisbelle-wnd {
 span.product-price {
   font-size: 16pt;
   color:#f8bd9f;
+  font-family: Century Gothic,serif;
 }
 
 /* Личный кабинет */
@@ -318,5 +349,27 @@ a.cabinetLink:hover {
   font-size: large;
   text-align:center;
   padding: 10px;
+}
+
+div.manufacturer-panel {
+  margin-bottom: 10px;
+}
+
+div.manufacturer-panel > div.manufacturer-panel-container {
+  background: none repeat scroll 0 0 #ffffff;
+  color: #000;
+}
+
+div.manufacturer-panel > div.manufacturer-panel-container > div.manufacturer-name {
+  color: #000;
+  font-family: Century Gothic,serif;
+}
+
+div.manufacturer-panel > div.manufacturer-panel-container > div.manufacturer-description {
+  margin: 5px;
+}
+
+div.manufacturer-panel > div.manufacturer-panel-container > div.manufacturer-description > span {
+  font-family: Century Gothic,serif;
 }
 

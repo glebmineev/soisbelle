@@ -52,7 +52,7 @@
 
     <!-- Отзывы -->
     <div sclass="info" align="center">
-      <label value="Отзывы" style="font-size: 16pt;"/>
+      <label value="Отзывы" sclass="form-label-header"/>
     </div>
 
     <div if="${vm.reviews.size() > 0}" children="@bind(vm.reviews)" sclass="info">

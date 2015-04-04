@@ -17,11 +17,12 @@
              fio=vm.fio, email=vm.email, address=vm.address)"
           width="100%">
 
+    <vlayout>
     <div align="center">
-      <label value="Оформление заказа" style="font-size: 14pt;margin-top: 5px"/>
+      <label value="Оформление заказа" sclass="form-label-header"/>
     </div>
 
-    <h:table width="100%" cellpadding="5" cellspacing="0" style="margin-top: 10px;">
+    <h:table width="100%" cellpadding="5" cellspacing="5">
       <h:tr>
         <h:td width="20%" align="right">
           <label value="Фамилия, имя" sclass="form-label"/>
@@ -30,7 +31,7 @@
         <h:td width="50%" align="center">
           <textbox sclass="form-textbox" value="@bind(vm.fio)" width="100%"/>
         </h:td>
-        <h:td width="30%">
+        <h:td width="30%" align="left">
           <label sclass="validation-error" value="@load(vmsgs['fio'])" />
         </h:td>
       </h:tr>
@@ -50,7 +51,7 @@
         <h:td width="50%" align="left">
           <textbox sclass="form-textbox" value="@bind(vm.email)" width="100%"/>
         </h:td>
-        <h:td width="30%">
+        <h:td width="30%" align="left">
           <label sclass="validation-error"
                  value="@load(vmsgs['email'])" />
         </h:td>
@@ -64,7 +65,7 @@
           <textbox sclass="form-textbox" value="@bind(vm.address)"
                    width="100%" rows="3" cols="15"/>
         </h:td>
-        <h:td width="30%">
+        <h:td width="30%" align="left">
           <label sclass="validation-error"
                  value="@load(vmsgs['address'])" />
         </h:td>
@@ -94,7 +95,7 @@
         </h:td>
       </h:tr>
     </h:table>
-
+    </vlayout>
   </div>
 
 </zk>

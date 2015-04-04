@@ -16,5 +16,6 @@ div.catalog-inner-container {
 
 div.catalog-outer-container > div.catalog-inner-container > span {
   font-size: 16pt;
-  color: #F8BD9F
+  color: #F8BD9F;
+  font-family: Century Gothic,serif;
 }

@@ -73,6 +73,10 @@ div.products-row-template > ul > li > div > div > div.with_content > div.manufac
   color: #cd0a0a;
 }
 
+div.products-row-template > ul > li > div > div > div.with_content > div.manufacturer_name > span {
+  font-family: Century Gothic,serif;
+}
+
 div.products-row-template > ul > li > div > div > div.with_content > div.border {
   border: 1px solid #000000;
   margin: 5px;
@@ -83,6 +87,10 @@ div.products-row-template > ul > li > div > div > div.with_content > div.border 
   width: 100%;
   display: table;
   overflow: hidden;
+}
+
+div.products-row-template > ul > li > div > div > div.with_content > div.product_name > div.innerContainer > span {
+  font-family: Century Gothic,serif;
 }
 
 div.products-row-template > ul > li > div > div > div.with_content > div.border > div.product_name > div.innerContainer {
@@ -99,6 +107,10 @@ div.products-row-template > ul > li > div > div > div.with_content > div.border 
   height: 38px;
   font-weight: bold;
   font-size: 11pt
+}
+
+div.products-row-template > ul > li > div > div > div.with_content > div.border > div.product_price > span {
+  font-family: Century Gothic,serif;
 }
 
 div.products-row-template > ul > li > div > div > div.with_content > div.product_cart_btn {
@@ -195,6 +207,10 @@ div.products-cell-template > ul > li > div > div > div.with_content > div.manufa
   color: #cd0a0a;
 }
 
+div.products-cell-template > ul > li > div > div > div.with_content > div.manufacturer_name > span {
+  font-family: Century Gothic,serif;
+}
+
 div.products-cell-template > ul > li > div > div > div.with_content > div.border {
   /*border: 1px solid #000000;*/
   margin: 5px;
@@ -205,10 +221,19 @@ div.products-cell-template > ul > li > div > div > div.with_content > div.border
   padding: 5px;
 }
 
+div.products-cell-template > ul > li > div > div > div.with_content > div.border >
+div.product_name > div.innerContainer > span.z-label {
+  font-family: Century Gothic,serif;
+}
+
 div.products-cell-template > ul > li > div > div > div.with_content > div.border > div.product_price {
   height: 25px;
   font-weight: bold;
   font-size: 11pt
+}
+
+div.products-cell-template > ul > li > div > div > div.with_content > div.product_price > span.z-label {
+  font-family: Century Gothic,serif;
 }
 
 div.products-cell-template > ul > li > div > div > div.with_content > div.product_cart_btn {
@@ -359,4 +384,18 @@ div.pagination a:hover, div.meneame a:active {
   color: #ff6500;
 }
 
+div.header-panel {
+  position: relative;
+  height: 35px;
+}
+
+div.header-panel > div.view-type {
+  position: absolute;
+  left:0;
+}
+
+div.header-panel > div.count-show-list {
+  position: absolute;
+  right:0;
+}
 

@@ -202,6 +202,10 @@ th.z-listheader > .z-listheader-content {
   color: #693947;
 }
 
+th.z-listheader > .z-listheader-content > span.z-listheader-checkable {
+  font-family: Century Gothic,serif;
+}
+
 th.z-listhead-bar {
   background: none repeat scroll 0 0 #f8bd9f;
   border-left: 0;
@@ -209,6 +213,10 @@ th.z-listhead-bar {
 
 tr.z-listitem:hover > .z-listcell {
   background: none repeat scroll 0 0 #f8bd9f;
+}
+
+tr.z-listitem > .z-listcell > .z-listcell-content {
+  font-family: Century Gothic,serif;
 }
 
 /* Фон маленькой стрелочки при наведении */
@@ -382,6 +390,34 @@ div.menu-element div a {
   background: url("../images/dsn/fon/rec_bg.jpg") repeat;
 }
 
+table.current_banner {
+  margin: 5px 0px 10px 0;
+}
+
+table.recommended-banner {
+  background: #ffffff;
+  margin: 0 10px 0 10px;
+  width: 200px;
+}
+
+span.recommended-manufacturer-name {
+  color: #cd0a0a;
+  height: 20px;
+  font-family: Century Gothic,serif;
+}
+
+div.recommended-product-name {
+  height: 85px;
+}
+
+div.recommended-product-name > span{
+  font-family: Century Gothic,serif;
+}
+
+span.recommended-price {
+  font-family: Century Gothic,serif;
+}
+
 .z-label {
   font-family: Century Gothic,serif;
 }
@@ -454,16 +490,28 @@ div.z-groupbox-content {
   text-decoration: none;
 }
 
+.z-tab-selected > a > span {
+  font-family: Century Gothic,serif;
+}
+
 .z-tab > a {
   text-decoration: none;
 }
 
-.z-tab {
+.z-tab > a > span {
+  font-family: Century Gothic,serif;
+}
+
+li.z-tab {
   background: none repeat scroll 0 0 #774551;
 }
 
-.z-tab:hover {
+li.z-tab:hover {
   background: none repeat scroll 0 0 #F8BD9F;
+}
+
+div.z-tabbox-top > .z-tabpanels > .z-tabpanel  > span {
+  font-family: Century Gothic,serif;
 }
 
 /* Кастомизация меню */
