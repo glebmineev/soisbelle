@@ -128,7 +128,7 @@
                    showOptionsPanel="false"/>
         </vbox>
 
-        <vbox width="702px" onClientInfo="@command('refreshWhenBackToCatalog', div=self)" align="center">
+        <vbox width="702px" align="center">
 
           <div if="${vm.showCatalog}" sclass="header-panel">
             <!-- панель изменения отображения витрины -->

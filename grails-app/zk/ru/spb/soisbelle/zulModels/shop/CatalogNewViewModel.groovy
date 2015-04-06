@@ -334,6 +334,11 @@ class CatalogNewViewModel implements GrailsApplicationAware {
   }
 
   @Command
+  public void changeBookmark(){
+    Executions.getCurrent().getDesktop().setBookmark("${categoryID}")
+  }
+
+  @Command
   public void applyRowTemplate(@ContextParam(ContextType.TRIGGER_EVENT) Event event) {
     Page page = event.getTarget().getSpaceOwner() as Page
     Div productsDiv = page.getFellow("showcase").getFellow("showcase-div") as Div
