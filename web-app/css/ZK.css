@@ -558,6 +558,70 @@ li.z-menu .z-menu-content {
   text-decoration: none;
 }
 
+div.z-menubar > ul > li.z-menu-selected
+{
+  background: none repeat scroll 0 0 #774551;
+}
+
+div.z-menubar > ul > li.z-menuitem:hover
+{
+  background: none repeat scroll 0 0 #774551;
+}
+
+div.z-menubar > ul > li > a:hover > span,
+div.z-menubar > ul > li > a:focus > span
+{
+  color: #F8BD9F;
+}
+div.z-menubar > ul > li.z-menuitem > a.z-menuitem-content:hover {
+  background: none repeat scroll 0 0 #774551;
+}
+
+div.z-menubar > ul > li.z-menu > a.z-menu-content:hover,
+div.z-menubar > ul > li.z-menu > a.z-menu-content:focus
+{
+  background: none repeat scroll 0 0 #774551;
+}
+
+div.z-menubar > ul > li.z-menu-selected > a.z-menu-content:hover > i.z-menu-icon,
+div.z-menubar > ul > li.z-menu-selected > a.z-menu-content:focus > i.z-menu-icon{
+  background: none repeat scroll 0 0 #774551;
+  color: #F8BD9F;
+}
+
+.z-menu-content, .z-menuitem-content {
+  font-family: Century Gothic,serif;
+  background: none repeat scroll 0 0 #F8BD9F;
+}
+
+div.z-menupopup {
+  background: none repeat scroll 0 0 #F8BD9F;
+  padding: 0;
+}
+
+div.z-menupopup > .z-menu-content {
+  background: none repeat scroll 0 0 #774551;
+
+}
+
+div.z-menupopup > ul.z-menupopup-content > li.z-menuitem > a.z-menuitem-content:hover {
+  background: none repeat scroll 0 0 #774551;
+}
+
+div.z-menupopup > ul.z-menupopup-content > li.z-menuitem > a.z-menuitem-content:hover > span.z-menuitem-text {
+  color: #F8BD9F;
+}
+
+div.z-menupopup > ul.z-menupopup-content > li.z-menuitem > a.z-menuitem-content > span.z-menuitem-text {
+  font-family: Century Gothic,serif;
+}
+
+.z-menu-selected > a.z-menu-content,
+.z-menu-selected i.z-menu-icon {
+  background: none repeat scroll 0 0 #C4CCA5;
+  color: #774551;
+}
+
 /* Всяческие картинки */
 .cells-image {
   background: url("../images/cells.png") no-repeat;
