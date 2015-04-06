@@ -64,7 +64,7 @@ class ReviewsViewModel {
         product.addToReviews(reviews)
         if (product.validate()) {
           product.save(flush: true)
-          Executions.sendRedirect("/shop/catalog?product=${product.id}")
+          Executions.sendRedirect("/shop/product?product=${product.id}")
         }
       }
     }

@@ -30,15 +30,15 @@
     </style>
     <vbox width="100%" align="center">
 
-      <h:h2>Введите email</h:h2>
+      <label value="Введите email" sclass="form-label-header"/>
       <hbox widths="100px,300px">
         <div align="right">
-          <label value="email: "/>
+          <label sclass="form-label" value="email: "/>
         </div>
-        <textbox value="@bind(vm.email)" width="100%"/>
+        <textbox sclass="form-textbox" value="@bind(vm.email)" width="100%"/>
       </hbox>
       <div>
-        <button type="submit" label="Восстановить пароль" style="margin: 5px;" onClick="@command('dropPass')"/>
+        <button sclass="soisbelle-square-button" type="submit" label="Восстановить пароль" style="margin: 5px;" onClick="@command('dropPass')"/>
       </div>
     </vbox>
 

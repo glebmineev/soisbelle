@@ -22,7 +22,7 @@
       </div>
     </hbox>
 
-    <include if="${not vm.isShowcase}" src="/zul/shop/product.zul"/>
+    <!--<include if="${not vm.isShowcase}" src="/zul/shop/product.zul"/>-->
 
     <vbox align="center" width="961px" if="${vm.isShowcase}">
 
@@ -117,7 +117,7 @@
           <div sclass="big-label-header" width="100%">
             <label value="ХИТ ПРОДАЖ"/>
           </div>
-          <include src="/zul/components/showcaseSimplePaging.zul"
+          <include id="recommended" src="/zul/components/showcaseSimplePaging.zul"
                    allProducts="${vm.allProducts}"
                    isChangeShow="false"
                    linkLimit="8"
@@ -128,7 +128,7 @@
                    showOptionsPanel="false"/>
         </vbox>
 
-        <vbox width="702px" align="center">
+        <vbox width="702px" onClientInfo="@command('refreshWhenBackToCatalog', div=self)" align="center">
 
           <div if="${vm.showCatalog}" sclass="header-panel">
             <!-- панель изменения отображения витрины -->

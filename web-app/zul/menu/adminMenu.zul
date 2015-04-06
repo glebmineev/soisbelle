@@ -6,11 +6,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:h="http://www.w3.org/1999/xhtml"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
   <div width="100%" apply="ru.spb.soisbelle.BindComposer"
-       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.menu.AdminMenuViewModel')">
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.menu.AdminMenuViewModel')"
+      style="margin-bottom: 10px">
 
     <style src="/css/ZK.css"/>
 
-    <menubar children="@bind(vm.wrappers)" autodrop="true">
+    <menubar  children="@bind(vm.wrappers)" autodrop="true">
       <template name="children" var="item">
         <menu label="${item.name}" if="${item.children.size() != 0}">
           <menupopup>

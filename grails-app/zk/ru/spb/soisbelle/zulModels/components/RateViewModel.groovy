@@ -8,7 +8,7 @@ import org.zkoss.bind.annotation.Init
 import org.zkoss.bind.annotation.NotifyChange
 import ru.spb.soisbelle.ImageStorageService
 import ru.spb.soisbelle.ProductEntity
-import ru.spb.soisbelle.wrappers.ProductWrapper
+import ru.spb.soisbelle.wrappers.ProductImageryWrapper
 import ru.spb.soisbelle.wrappers.RateWrapper
 
 /**
@@ -20,7 +20,7 @@ class RateViewModel {
 
   RateWrapper currentRateWrapper = null
 
-  ProductWrapper product
+  ProductImageryWrapper product
   int countStars = 10
 
   boolean showUpdateRateButton = false
@@ -29,7 +29,7 @@ class RateViewModel {
       ApplicationHolder.getApplication().getMainContext().getBean("imageStorageService") as ImageStorageService
 
   @Init
-  public void init(@ExecutionArgParam("product") ProductWrapper product) {
+  public void init(@ExecutionArgParam("product") ProductImageryWrapper product) {
     this.product = product
     this.showUpdateRateButton = false
     fillRating(product)
@@ -39,7 +39,7 @@ class RateViewModel {
    * Заполнение панели рейтинга
    * @param product - товар
    */
-  void fillRating(ProductWrapper product) {
+  void fillRating(ProductImageryWrapper product) {
     rates.clear()
 
     int index = 0
@@ -86,7 +86,7 @@ class RateViewModel {
       if (entity.validate())
         entity.save(flush: true)
 
-      product = new ProductWrapper(entity)
+      product = new ProductImageryWrapper(entity)
 
       fillRating(product)
 

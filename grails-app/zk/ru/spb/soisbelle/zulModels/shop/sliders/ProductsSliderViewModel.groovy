@@ -5,7 +5,7 @@ import org.zkoss.bind.annotation.Command
 import org.zkoss.bind.annotation.Init
 import org.zkoss.zk.ui.Executions
 import ru.spb.soisbelle.core.Domain
-import ru.spb.soisbelle.wrappers.ProductWrapper
+import ru.spb.soisbelle.wrappers.ProductImageryWrapper
 import ru.spb.soisbelle.wrappers.Wrapper
 import ru.spb.soisbelle.zulModels.core.SliderViewModel
 
@@ -27,13 +27,13 @@ class ProductsSliderViewModel extends SliderViewModel {
 
   @Override
   Wrapper transformEntity(Domain entity) {
-    ProductWrapper wrapper = new ProductWrapper(entity)
+    ProductImageryWrapper wrapper = new ProductImageryWrapper(entity)
     return wrapper
   }
 
   @Command
-  public void redirectToProductItem(@BindingParam("productModel") ProductWrapper productModel){
-    Executions.sendRedirect("/shop/catalog?product=${productModel.id}")
+  public void redirectToProductItem(@BindingParam("productModel") ProductImageryWrapper productModel){
+    Executions.sendRedirect("/shop/product?product=${productModel.id}")
   }
 
 }

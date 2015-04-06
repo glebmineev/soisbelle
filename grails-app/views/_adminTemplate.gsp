@@ -76,7 +76,7 @@
     ${header}
   </div>
 
-  <div id="menu">
+  <div id="admin_menu">
     ${menu}
   </div>
 

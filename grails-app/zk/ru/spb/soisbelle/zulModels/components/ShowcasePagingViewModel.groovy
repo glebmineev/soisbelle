@@ -13,7 +13,7 @@ import org.zkoss.zul.Div
 import org.zkoss.zul.impl.XulElement
 import ru.spb.soisbelle.*
 import ru.spb.soisbelle.wrappers.PageWrapper
-import ru.spb.soisbelle.wrappers.ProductWrapper
+import ru.spb.soisbelle.wrappers.ProductImageryWrapper
 
 import java.math.RoundingMode
 
@@ -29,7 +29,7 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
   //Все товары
   List<ProductEntity> allProducts = new ArrayList<ProductEntity>()
   //Показываемые пользователю товары
-  List<ProductWrapper> products = new ArrayList<ProductWrapper>()
+  List<ProductImageryWrapper> products = new ArrayList<ProductImageryWrapper>()
   // Шаг
   int step
   //Индекс в списке всех товаров(allProducts)
@@ -112,7 +112,7 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
    */
   @GlobalCommand
   @NotifyChange(["products", "isBusy", "currentPos", "numberPages", "totalCount", "endPage", "startPage", "startList", "endList"])
-  public void refreshShowcase(@BindingParam("data") List<ProductWrapper> data) {
+  public void refreshShowcase(@BindingParam("data") List<ProductImageryWrapper> data) {
     this.currentPos = 0;
     products.clear()
     int dateSize = data.size()
@@ -435,7 +435,7 @@ class ShowcasePagingViewModel implements GrailsApplicationAware {
   void moveCarousel(int start, int end) {
     products.clear()
     allProducts.subList(start, end).each { it ->
-      ProductWrapper wrapper = new ProductWrapper(it)
+      ProductImageryWrapper wrapper = new ProductImageryWrapper(it)
       boolean inCart = cartService.findedInCart(wrapper.id)
       wrapper.setInCart(inCart)
       products.add(wrapper)

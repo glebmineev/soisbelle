@@ -10,8 +10,7 @@ import org.zkoss.zk.ui.Executions
 import org.zkoss.zul.ListModelList
 import ru.spb.soisbelle.*
 import ru.spb.soisbelle.common.PathBuilder
-import ru.spb.soisbelle.common.STD_IMAGE_SIZES
-import ru.spb.soisbelle.wrappers.ProductWrapper
+import ru.spb.soisbelle.wrappers.ProductImageryWrapper
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,7 +21,7 @@ import ru.spb.soisbelle.wrappers.ProductWrapper
  */
 class RecommendedViewModel {
 
-  ListModelList<ProductWrapper> products;
+  ListModelList<ProductImageryWrapper> products;
 
   InitService initService = ApplicationHolder.getApplication().getMainContext().getBean("initService") as InitService
   CartService cartService = ApplicationHolder.getApplication().getMainContext().getBean("cartService") as CartService
@@ -39,21 +38,21 @@ class RecommendedViewModel {
         .appendPath("recommended")
         .appendString("toCart.png")
         .build())
-    products = new ListModelList<ProductWrapper>()
+    products = new ListModelList<ProductImageryWrapper>()
     initService.recommended.each {it ->
-      ProductWrapper model = new ProductWrapper(it)
+      ProductImageryWrapper model = new ProductImageryWrapper(it)
       cartService.initAsCartItem(model)
       products.add(model)
     }
   }
 
   @Command
-  public void redirectToProductItem(@BindingParam("productModel") ProductWrapper productModel){
+  public void redirectToProductItem(@BindingParam("productModel") ProductImageryWrapper productModel){
     Executions.sendRedirect("/shop/product?product=${productModel.id}")
   }
 
   @Command
-  public void addToCart(@BindingParam("productModel") ProductWrapper productModel){
+  public void addToCart(@BindingParam("productModel") ProductImageryWrapper productModel){
     productModel.setInCart(true)
     cartService.addToCart(ProductEntity.get(productModel.id))
     BindUtils.postNotifyChange(null, null, productModel, "inCart");

@@ -1,6 +1,6 @@
 package ru.spb.soisbelle.zulModels.shop.sliders
 
-import org.codehaus.groovy.grails.commons.ApplicationHolder
+
 import org.codehaus.groovy.grails.commons.GrailsApplication
 import org.codehaus.groovy.grails.plugins.support.aware.GrailsApplicationAware
 import org.zkoss.bind.BindUtils
@@ -9,14 +9,11 @@ import org.zkoss.bind.annotation.Command
 import org.zkoss.bind.annotation.Init
 import org.zkoss.image.AImage
 import org.zkoss.zk.ui.Executions
-import org.zkoss.zul.ListModelList
 import ru.spb.soisbelle.CartService
 import ru.spb.soisbelle.InitService
 import ru.spb.soisbelle.ProductEntity
-import ru.spb.soisbelle.ServerFoldersService
-import ru.spb.soisbelle.common.PathBuilder
 import ru.spb.soisbelle.core.Domain
-import ru.spb.soisbelle.wrappers.ProductWrapper
+import ru.spb.soisbelle.wrappers.ProductImageryWrapper
 import ru.spb.soisbelle.wrappers.Wrapper
 import ru.spb.soisbelle.zulModels.core.SliderViewModel
 
@@ -48,19 +45,19 @@ class FamousProductsSliderViewModel extends SliderViewModel implements GrailsApp
 
   @Override
   Wrapper transformEntity(Domain entity) {
-    ProductWrapper wrapper = new ProductWrapper(entity)
+    ProductImageryWrapper wrapper = new ProductImageryWrapper(entity)
     cartService.initAsCartItem(wrapper)
     return wrapper
   }
 
   @Command
-  public void redirectToProductItem(@BindingParam("productModel") ProductWrapper productModel){
-    Executions.sendRedirect("/shop/catalog?product=${productModel.id}")
+  public void redirectToProductItem(@BindingParam("productModel") ProductImageryWrapper productModel){
+    Executions.sendRedirect("/shop/product?product=${productModel.id}")
     //Executions.sendRedirect("/shop/product?product=${productModel.id}")
   }
 
   @Command
-  public void addToCart(@BindingParam("productModel") ProductWrapper productModel){
+  public void addToCart(@BindingParam("productModel") ProductImageryWrapper productModel){
     productModel.setInCart(true)
     cartService.addToCart(ProductEntity.get(productModel.id))
     BindUtils.postNotifyChange(null, null, productModel, "inCart");

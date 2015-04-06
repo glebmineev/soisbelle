@@ -7,11 +7,6 @@ import org.slf4j.LoggerFactory
 import org.zkoss.bind.BindUtils
 import org.zkoss.bind.annotation.*
 import org.zkoss.image.AImage
-import org.zkoss.zk.ui.Page
-import org.zkoss.zk.ui.event.Event
-import org.zkoss.zk.ui.sys.ExecutionsCtrl
-import org.zkoss.zul.Div
-import org.zkoss.zul.Include
 import org.zkoss.zul.ListModelList
 import ru.spb.soisbelle.CartService
 import ru.spb.soisbelle.ImageStorageService
@@ -19,7 +14,7 @@ import ru.spb.soisbelle.InitService
 import ru.spb.soisbelle.ProductEntity
 import ru.spb.soisbelle.showcase.ArrayChunkUtils
 import ru.spb.soisbelle.wrappers.PageWrapper
-import ru.spb.soisbelle.wrappers.ProductWrapper
+import ru.spb.soisbelle.wrappers.ProductImageryWrapper
 
 import java.math.RoundingMode
 
@@ -34,7 +29,7 @@ class ShowcaseSimplePagingViewModel implements GrailsApplicationAware {
   //Все товары
   List<ProductEntity> allProducts = new ArrayList<ProductEntity>()
   //Показываемые пользователю товары
-  List<ProductWrapper> products = new ArrayList<ProductWrapper>()
+  List<ProductImageryWrapper> products = new ArrayList<ProductImageryWrapper>()
   // Показывать ли окно загрузки.
   boolean isBusy
   //Показывать или нет панель изменения вида отображения витрины.
@@ -130,7 +125,7 @@ class ShowcaseSimplePagingViewModel implements GrailsApplicationAware {
    */
   @GlobalCommand
   @NotifyChange(["products", "isBusy", "numberPages", "totalCount", "startList", "endList", "showPaging", "showOptionsPanel", "countPageItemModel"])
-  public void refreshShowcase(@BindingParam("data") List<ProductWrapper> data) {
+  public void refreshShowcase(@BindingParam("data") List<ProductImageryWrapper> data) {
     products.clear()
     int dateSize = data.size()
     offset = 0
@@ -309,7 +304,7 @@ class ShowcaseSimplePagingViewModel implements GrailsApplicationAware {
   void moveProductList(int start, int end) {
     products.clear()
     allProducts.subList(start, end).each { it ->
-      ProductWrapper wrapper = new ProductWrapper(it)
+      ProductImageryWrapper wrapper = new ProductImageryWrapper(it)
       boolean inCart = cartService.findedInCart(wrapper.id)
       wrapper.setInCart(inCart)
       products.add(wrapper)

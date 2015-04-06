@@ -6,6 +6,7 @@ import org.zkoss.bind.annotation.ContextParam
 import org.zkoss.bind.annotation.ContextType
 import org.zkoss.bind.annotation.ExecutionArgParam
 import org.zkoss.bind.annotation.Init
+import org.zkoss.zk.ui.Component
 import org.zkoss.zk.ui.Executions
 import org.zkoss.zk.ui.Page
 import org.zkoss.zk.ui.event.Event
@@ -13,13 +14,10 @@ import org.zkoss.zk.ui.sys.ExecutionsCtrl
 import org.zkoss.zul.Div
 import org.zkoss.zul.Include
 import org.zkoss.zul.ListModelList
-import ru.spb.soisbelle.CategoryEntity
 import ru.spb.soisbelle.ManufacturerEntity
 import ru.spb.soisbelle.ProductEntity
-import ru.spb.soisbelle.wrappers.CategoriesWithProducts
 import ru.spb.soisbelle.wrappers.HrefWrapper
 import ru.spb.soisbelle.wrappers.ManufacturerWrapper
-import ru.spb.soisbelle.wrappers.ProductWrapper
 
 /**
  * Created by gleb on 14.05.14.
@@ -51,8 +49,6 @@ class ManufacturersViewModel {
 
     initLinks()
 
-    pageIsLoad = true
-
   }
 
   void initLinks(){
@@ -63,8 +59,11 @@ class ManufacturersViewModel {
   @Command
   public void refreshWhenBackToCatalog(@BindingParam("div") Div self){
     if (pageIsLoad) {
+      Component showcase = self.getFellow("showcase")
+      showcase.removeChild(showcase.getFellow("showcase-div"))
       self.invalidate()
     }
+    pageIsLoad = true
 
   }
 

@@ -1,6 +1,5 @@
 package ru.spb.soisbelle.zulModels.shop
 
-import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.codehaus.groovy.grails.commons.GrailsApplication
 import org.codehaus.groovy.grails.plugins.support.aware.GrailsApplicationAware
 import org.slf4j.*
@@ -12,10 +11,12 @@ import org.zkoss.zk.ui.Executions
 import org.zkoss.zk.ui.sys.ExecutionsCtrl
 import org.zkoss.zul.Window
 import ru.spb.soisbelle.*
+import ru.spb.soisbelle.common.CategoryPathHandler
 import ru.spb.soisbelle.common.PathBuilder
 import ru.spb.soisbelle.common.STD_FILE_NAMES
 import ru.spb.soisbelle.common.STD_IMAGE_SIZES
-import ru.spb.soisbelle.wrappers.ProductWrapper
+import ru.spb.soisbelle.wrappers.HrefWrapper
+import ru.spb.soisbelle.wrappers.ProductImageryWrapper
 import ru.spb.soisbelle.wrappers.ReviewWrapper
 
 class ProductViewModel implements GrailsApplicationAware {
@@ -28,7 +29,10 @@ class ProductViewModel implements GrailsApplicationAware {
   Long productId
   List<ReviewWrapper> reviews = new ArrayList<ReviewWrapper>()
 
-  ProductWrapper model
+  //Навигация.
+  List<HrefWrapper> links = new LinkedList<HrefWrapper>()
+
+  ProductImageryWrapper model
 
   CartService cartService
   ImageService imageService
@@ -41,6 +45,25 @@ class ProductViewModel implements GrailsApplicationAware {
       initServices()
       initGrid()
       initReviews()
+      buildProductNavPath(productId)
+    }
+  }
+
+  public void buildProductNavPath(Long productID) {
+    ProductEntity product = ProductEntity.get(productID)
+    rebuildCategoryNavPath(product.getEndCategory().id)
+    links.add(new HrefWrapper(product.name, "/shop/product?product=${product.id}"))
+  }
+
+  /**
+   * Формирование навигации.
+   * @param categoryID - текущщая категория.
+   */
+  void rebuildCategoryNavPath(Long categoryID) {
+    List<CategoryEntity> categories = CategoryPathHandler.getCategoryPath(CategoryEntity.get(categoryID))
+    links.clear()
+    categories.each { it ->
+      links.add(new HrefWrapper(it.name, "/shop/catalog/category?category=${it.id}"))
     }
   }
 
@@ -51,7 +74,7 @@ class ProductViewModel implements GrailsApplicationAware {
   }
 
   public void initGrid() {
-    model = new ProductWrapper(ProductEntity.get(productId), STD_IMAGE_SIZES.MIDDLE.getSize())
+    model = new ProductImageryWrapper(ProductEntity.get(productId), STD_IMAGE_SIZES.MIDDLE.getSize())
     cartService.initAsCartItem(model)
   }
 

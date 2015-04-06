@@ -8,18 +8,18 @@ import org.zkoss.bind.annotation.NotifyChange
 import org.zkoss.zk.ui.Executions
 import ru.spb.soisbelle.CartService
 import ru.spb.soisbelle.ProductEntity
-import ru.spb.soisbelle.wrappers.ProductWrapper
+import ru.spb.soisbelle.wrappers.ProductImageryWrapper
 
 public class ShowcaseItemModel {
 
-  ProductWrapper productWrapper
+  ProductImageryWrapper productWrapper
 
   boolean inCart = false
 
   CartService cartService = ApplicationHolder.getApplication().getMainContext().getBean("cartService") as CartService
 
   @Init
-  public void init(@ExecutionArgParam("productWrapper") ProductWrapper productWrapper){
+  public void init(@ExecutionArgParam("productWrapper") ProductImageryWrapper productWrapper){
 
     this.productWrapper = productWrapper
     this.inCart = productWrapper.inCart
@@ -40,7 +40,7 @@ public class ShowcaseItemModel {
   @Command
   public void goToProduct(){
     //Executions.getCurrent().getDesktop().setBookmark("catalog")
-    Executions.sendRedirect("/shop/catalog?product=${productWrapper.id}")
+    Executions.sendRedirect("/shop/product?product=${productWrapper.id}")
   }
 
 }

@@ -1,9 +1,8 @@
 package ru.spb.soisbelle
 
-import ru.spb.soisbelle.wrappers.ProductWrapper
-
+import ru.spb.soisbelle.wrappers.ProductImageryWrapper
 public interface IShowcaseComposer {
 
-  void complete(List<ProductWrapper> data)
+  void complete(List<ProductImageryWrapper> data)
 
 }

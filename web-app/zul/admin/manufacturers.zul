@@ -37,7 +37,8 @@
   </style>-->
 
   <div apply="ru.spb.soisbelle.BindComposer"
-       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.admin.ManufacturersViewModel')" width="100%">
+       viewModel="@id('vm') @init('ru.spb.soisbelle.zulModels.admin.ManufacturersViewModel')"
+       width="100%">
 
     <listbox id="products" width="100%"
              model="@bind(vm.manufacturersModel)"

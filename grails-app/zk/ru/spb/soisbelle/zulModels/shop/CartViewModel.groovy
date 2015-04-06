@@ -1,12 +1,9 @@
 package ru.spb.soisbelle.zulModels.shop
 
-import org.codehaus.groovy.grails.commons.ApplicationHolder
 import org.codehaus.groovy.grails.commons.GrailsApplication
-import org.codehaus.groovy.grails.commons.spring.GrailsApplicationContext
 import org.codehaus.groovy.grails.plugins.support.aware.GrailsApplicationAware
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.springframework.context.ApplicationContext
 import org.zkoss.bind.BindUtils
 import org.zkoss.bind.annotation.BindingParam
 import org.zkoss.bind.annotation.Command
@@ -19,7 +16,7 @@ import org.zkoss.zul.Spinner
 import ru.spb.soisbelle.CartService
 import ru.spb.soisbelle.ProductEntity
 import ru.spb.soisbelle.common.STD_IMAGE_SIZES
-import ru.spb.soisbelle.wrappers.ProductWrapper
+import ru.spb.soisbelle.wrappers.ProductImageryWrapper
 
 /**
  * Created with IntelliJ IDEA.
@@ -35,31 +32,31 @@ class CartViewModel implements GrailsApplicationAware {
   //Логгер
   static Logger log = LoggerFactory.getLogger(CartViewModel.class)
 
-  ListModelList<ProductWrapper> cartProduct
+  ListModelList<ProductImageryWrapper> cartProduct
 
   CartService cartService //= ApplicationHolder.getApplication().getMainContext().getBean("cartService") as CartService
 
   @Init
   public void init(){
     cartService = grailsApplication.getMainContext().getBean("cartService")
-    List<ProductWrapper> models = new ArrayList<ProductWrapper>()
+    List<ProductImageryWrapper> models = new ArrayList<ProductImageryWrapper>()
     cartService.getCartProducts().each {it ->
-      ProductWrapper model = new ProductWrapper(it, STD_IMAGE_SIZES.SMALL.getSize())
+      ProductImageryWrapper model = new ProductImageryWrapper(it, STD_IMAGE_SIZES.SMALL.getSize())
       cartService.initAsCartItem(model)
       models.add(model)
     }
-    cartProduct = new ListModelList<ProductWrapper>(models)
+    cartProduct = new ListModelList<ProductImageryWrapper>(models)
   }
 
   @Command
   @NotifyChange(["cartProduct"])
-  public void removeItem(@BindingParam("productModel") ProductWrapper productModel){
+  public void removeItem(@BindingParam("productModel") ProductImageryWrapper productModel){
     try {
       cartService.removeFromCart(ProductEntity.get(productModel.id))
 
-      List<ProductWrapper> models = new ArrayList<ProductWrapper>()
+      List<ProductImageryWrapper> models = new ArrayList<ProductImageryWrapper>()
       cartService.getCartProducts().each {it ->
-        ProductWrapper model = new ProductWrapper(it)
+        ProductImageryWrapper model = new ProductImageryWrapper(it)
         cartService.initAsCartItem(model)
         models.add(model)
       }
@@ -73,7 +70,7 @@ class CartViewModel implements GrailsApplicationAware {
   }
 
   @Command
-  public void processCount(@BindingParam("productModel") ProductWrapper productModel,
+  public void processCount(@BindingParam("productModel") ProductImageryWrapper productModel,
                            @BindingParam("inputEvent") InputEvent event){
     try {
       Long currentValue = event.value as Long

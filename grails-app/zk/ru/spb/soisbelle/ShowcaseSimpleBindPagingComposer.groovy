@@ -9,8 +9,7 @@ import org.zkoss.zk.ui.Component
 import org.zkoss.zk.ui.Desktop
 import org.zkoss.zk.ui.Executions
 import org.zkoss.zk.ui.event.EventQueues
-import ru.spb.soisbelle.wrappers.ProductWrapper
-import ru.spb.soisbelle.zulModels.components.ShowcasePagingViewModel
+import ru.spb.soisbelle.wrappers.ProductImageryWrapper
 import ru.spb.soisbelle.zulModels.components.ShowcaseSimplePagingViewModel
 
 class ShowcaseSimpleBindPagingComposer extends GrailsBindComposer implements IShowcaseComposer {
@@ -40,7 +39,7 @@ class ShowcaseSimpleBindPagingComposer extends GrailsBindComposer implements ISh
   }
 
   @Override
-  void complete(List<ProductWrapper> data) {
+  void complete(List<ProductImageryWrapper> data) {
     Map<String, Object> args = new HashMap<String, Object>()
     args.put("data", data)
     BindUtils.postGlobalCommand("showcasesimplepagingqueue", EventQueues.DESKTOP, "refreshShowcase", args);

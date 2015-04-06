@@ -21,7 +21,7 @@ import org.zkoss.zul.ListModelList
 import ru.spb.soisbelle.ImageStorageService
 import ru.spb.soisbelle.ManufacturerEntity
 import ru.spb.soisbelle.ProductEntity
-import ru.spb.soisbelle.wrappers.ProductWrapper
+import ru.spb.soisbelle.wrappers.ProductImageryWrapper
 
 /**
  * Created with IntelliJ IDEA.
@@ -39,7 +39,7 @@ class SearchResultViewModel implements GrailsApplicationAware {
   AImage cells
 
   List<ProductEntity> matchedProduct = new ArrayList<ProductEntity>()
-  ListModelList<ProductWrapper> model
+  ListModelList<ProductImageryWrapper> model
   ListModelList<String> countPageItemModel
 
   @Init
@@ -72,7 +72,7 @@ class SearchResultViewModel implements GrailsApplicationAware {
       }
     }
     matchedProduct.addAll(list)
-    model = new ListModelList<ProductWrapper>();
+    model = new ListModelList<ProductImageryWrapper>();
     Sessions.getCurrent().removeAttribute("keyword")
 
     List<String> model = new ArrayList<String>();
@@ -90,7 +90,7 @@ class SearchResultViewModel implements GrailsApplicationAware {
   }
 
   @Command
-  public void redirectToProductItem(@BindingParam("product") ProductWrapper product){
+  public void redirectToProductItem(@BindingParam("product") ProductImageryWrapper product){
     Executions.sendRedirect("/shop/product?product=${product.id}")
   }
 

@@ -15,7 +15,7 @@
       <template name="children">
         <h:li>
           <div if="${each.menuImage != null}" width="150px;">
-              <a href="/shop/catalog/?category=${each.id}" label="${each.upperName}"/>
+              <a href="/shop/catalog?category=${each.id}" label="${each.upperName}"/>
           </div>
         </h:li>
         <h:li class="helper" if="${forEachStatus.index == vm.menuItems.size()}"/>

@@ -266,6 +266,11 @@ span.form-label-header {
   font-family: Century Gothic,serif;
 }
 
+span.link-label {
+  font-size: 12pt;
+  font-family: Century Gothic,serif;
+}
+
 div.big-label-header {
   opacity: 0.7;
   background: #F8BD9F;

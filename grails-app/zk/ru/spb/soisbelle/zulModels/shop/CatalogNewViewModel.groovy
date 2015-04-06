@@ -24,6 +24,7 @@ import org.zkoss.zul.Div
 import org.zkoss.zul.Include
 import org.zkoss.zul.ListModelList
 import org.zkoss.zul.Textbox
+import org.zkoss.zul.Vbox
 import ru.spb.soisbelle.CategoryEntity
 import org.zkoss.zk.ui.event.*
 import ru.spb.soisbelle.FilterEntity
@@ -91,7 +92,7 @@ class CatalogNewViewModel implements GrailsApplicationAware {
     countPageItemModel = new ListModelList<String>(model)
     countPageItemModel.addToSelection(model.get(0));
 
-    pageIsLoad = true
+
 
   }
 
@@ -301,27 +302,35 @@ class CatalogNewViewModel implements GrailsApplicationAware {
     List<CategoryEntity> categories = CategoryPathHandler.getCategoryPath(CategoryEntity.get(categoryID))
     links.clear()
     categories.each { it ->
-      links.add(new HrefWrapper(it.name, "/shop/catalog/category?category=${it.id}"))
+      links.add(new HrefWrapper(it.name, "/shop/catalog?category=${it.id}"))
     }
   }
 
   public void buildProductNavPath(Long productID) {
     ProductEntity product = ProductEntity.get(productID)
     rebuildCategoryNavPath(product.getEndCategory().id)
-    links.add(new HrefWrapper(product.name, "/shop/catalog?product=${product.id}"))
+    links.add(new HrefWrapper(product.name, "/shop/product?product=${product.id}"))
   }
 
   @Command
   public void refreshWhenBackToCatalog(@BindingParam("div") Div self){
     if (pageIsLoad) {
-      self.invalidate()
+
+      if (showCatalog){
+        Component showcase = self.getFellow("showcase")
+        showcase.removeChild(showcase.getFellow("showcase-div"))
+        self.invalidate()
+      }
+
+      if (!showCatalog) {
+        Component recommended = self.getFellow("recommended")
+        recommended.removeChild(recommended.getFellow("showcase-div"))
+        self.invalidate()
+      }
+
     }
+    pageIsLoad = true
 
-  }
-
-  @Command
-  public void changeBookmark(){
-    Executions.getCurrent().getDesktop().setBookmark("${categoryID}")
   }
 
   @Command

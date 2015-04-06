@@ -1,7 +1,7 @@
 package ru.spb.soisbelle
 
 import org.zkoss.zk.ui.util.Clients
-import ru.spb.soisbelle.wrappers.ProductWrapper
+import ru.spb.soisbelle.wrappers.ProductImageryWrapper
 
 /**
  * Сервис для работы с корзиной покупателя.
@@ -122,7 +122,7 @@ class CartService implements Serializable {
   /**
    * Инициализация полей обертки товара, если товар есть в корзине.
    */
-  public initAsCartItem(ProductWrapper wrapper){
+  public initAsCartItem(ProductImageryWrapper wrapper){
     wrapper.count = getProductCount(wrapper.id)
     if (wrapper.count > 0){
       wrapper.inCart = true

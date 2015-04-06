@@ -18,17 +18,12 @@ import org.zkoss.zhtml.Ul
 import org.zkoss.zk.ui.event.Event
 import org.zkoss.zul.Div
 import org.zkoss.zul.Include
-import org.zkoss.zul.ListModelList
 import ru.spb.soisbelle.CartService
-import ru.spb.soisbelle.FilterEntity
 import ru.spb.soisbelle.ImageService
 import ru.spb.soisbelle.InitService
-import ru.spb.soisbelle.ManufacturerEntity
 import ru.spb.soisbelle.ProductEntity
 import ru.spb.soisbelle.ServerFoldersService
-import ru.spb.soisbelle.wrappers.CategoryWrapper
-import ru.spb.soisbelle.wrappers.HrefWrapper
-import ru.spb.soisbelle.wrappers.ProductWrapper
+import ru.spb.soisbelle.wrappers.ProductImageryWrapper
 
 /**
  * Модель компонента витрины.
@@ -40,7 +35,7 @@ class ShowcaseViewModel {
   //Все товары
   List<ProductEntity> allProducts = new ArrayList<ProductEntity>()
   //Показываемые пользователю товары
-  List<ProductWrapper> products = new ArrayList<ProductWrapper>()
+  List<ProductImageryWrapper> products = new ArrayList<ProductImageryWrapper>()
 
   long showToPage = 9
 
@@ -91,7 +86,7 @@ class ShowcaseViewModel {
    */
   @GlobalCommand
   @NotifyChange(["products", "isBusy", "showAppendBtn"])
-  public void refreshShowcase(@BindingParam("data") List<ProductWrapper> data){
+  public void refreshShowcase(@BindingParam("data") List<ProductImageryWrapper> data){
     currentIndex = 0;
     products.clear()
     int dateSize = data.size()
@@ -102,15 +97,15 @@ class ShowcaseViewModel {
     this.isBusy = false
   }
 
-  List<ProductWrapper> transform(List<ProductEntity> target) {
-    return Collections2.transform(target, new Function<ProductEntity, ProductWrapper>() {
+  List<ProductImageryWrapper> transform(List<ProductEntity> target) {
+    return Collections2.transform(target, new Function<ProductEntity, ProductImageryWrapper>() {
       @Override
-      ProductWrapper apply(ProductEntity f) {
-        ProductWrapper wrapper = new ProductWrapper(f)
+      ProductImageryWrapper apply(ProductEntity f) {
+        ProductImageryWrapper wrapper = new ProductImageryWrapper(f)
         cartService.initAsCartItem(wrapper)
         return wrapper;
       }
-    }) as List<ProductWrapper>
+    }) as List<ProductImageryWrapper>
   }
 
   @Command
@@ -142,7 +137,7 @@ class ShowcaseViewModel {
   public void addRows(Ul parent) {
     int nextIndex = currentIndex + showToPage
     int allProductsSize = allProducts.size()
-    List<ProductWrapper> subList = new ArrayList<ProductWrapper>()
+    List<ProductImageryWrapper> subList = new ArrayList<ProductImageryWrapper>()
     if (nextIndex < allProductsSize) {
       subList = transform(allProducts.subList(currentIndex, nextIndex))
       currentIndex = currentIndex + showToPage

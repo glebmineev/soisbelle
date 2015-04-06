@@ -8,6 +8,7 @@ import org.zkoss.zk.ui.Component
 import org.zkoss.zk.ui.Desktop
 import org.zkoss.zk.ui.Executions
 import org.zkoss.zk.ui.event.EventQueues
+import ru.spb.soisbelle.wrappers.ProductImageryWrapper
 import ru.spb.soisbelle.wrappers.ProductWrapper
 import ru.spb.soisbelle.zulModels.admin.ProductsViewModel
 
@@ -40,7 +41,7 @@ class ProductGridBindComposer extends GrailsBindComposer implements IShowcaseCom
   }
 
   @Override
-  void complete(List<ProductWrapper> data) {
+  void complete(List<ProductImageryWrapper> data) {
     Map<String, Object> args = new HashMap<String, Object>()
     args.put("data", data)
     BindUtils.postGlobalCommand("productgridbindqueue", EventQueues.DESKTOP, "refreshGrid", args);
