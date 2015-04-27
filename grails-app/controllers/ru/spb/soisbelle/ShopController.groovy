@@ -9,11 +9,17 @@ class ShopController {
   }
 
   def catalog() {
+    Long categoryId = params.get("category") as Long
+    CategoryEntity entity = CategoryEntity.get(categoryId)
     loginService.setParams(params)
+    return [title: entity.getName()]
   }
 
   def product() {
+    Long productId = params.get("product") as Long
+    ProductEntity entity = ProductEntity.get(productId)
     loginService.setParams(params)
+    return [title: entity.getName()]
   }
 
   def checkout() {

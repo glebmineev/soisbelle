@@ -1,6 +1,10 @@
 <g:applyLayout name="main">
   <tpl:useTemplate template="/template">
 
+    <tpl:block name="head">
+      <title>${title}</title>
+    </tpl:block>
+
     <tpl:block name="header">
       <g:include view="common/header.gsp"/>
     </tpl:block>

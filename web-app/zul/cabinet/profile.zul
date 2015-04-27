@@ -76,9 +76,13 @@
                    value="@load(vmsgs['address'])"/>
           </h:td>
         </h:tr>
-
+        <h:tr>
+          <h:td colspan="3" width="100%" align="center">
+            <button sclass="soisbelle-square-button" label="Сохранить" onClick="@command('save')"/>
+          </h:td>
+        </h:tr>
       </h:table>
-      <button sclass="soisbelle-square-button" label="Сохранить" onClick="@command('save')"/>
+
     </div>
 
   </div>

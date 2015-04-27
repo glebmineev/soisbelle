@@ -316,7 +316,7 @@ class EditorViewModel {
     params.put("category", categoryID)
     if (product != null)
       params.put("product", product.id)
-    Executions.createComponents("/zul/admin/windows/productItemWnd.zul", panel, params)
+    Executions.createComponents("/zul/admin/windows/productEditWnd.zul", panel, params)
     wnd.doModal()
     wnd.setVisible(true)
   }
