@@ -19,7 +19,7 @@ class ShopController {
     Long productId = params.get("product") as Long
     ProductEntity entity = ProductEntity.get(productId)
     loginService.setParams(params)
-    return [title: entity.getName()]
+    return [title: entity.getName(), description: entity.description, keywords : "косметика.краски"]
   }
 
   def checkout() {

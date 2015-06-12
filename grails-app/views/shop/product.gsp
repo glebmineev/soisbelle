@@ -3,6 +3,9 @@
 
     <tpl:block name="head">
       <title>${title}</title>
+      <meta name="Description" content="${description}">
+      <meta name="Keywords" content="${keywords}">
+      <meta content="index,follow" name="robots">
     </tpl:block>
 
     <tpl:block name="header">

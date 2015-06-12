@@ -301,6 +301,7 @@ class CatalogNewViewModel implements GrailsApplicationAware {
   void rebuildCategoryNavPath(Long categoryID) {
     List<CategoryEntity> categories = CategoryPathHandler.getCategoryPath(CategoryEntity.get(categoryID))
     links.clear()
+    links.add(new HrefWrapper("Главная", "/shop"))
     categories.each { it ->
       links.add(new HrefWrapper(it.name, "/shop/catalog?category=${it.id}"))
     }

@@ -34,7 +34,7 @@ class PromoSliderViewModel implements GrailsApplicationAware {
     ArrayList<PromoWrapper> promos = initService.promos
     if (promos.size() != 0) {
       currentPromo = initService.promos.get(0)
-      images.addAll(initService.promos.subList(1, initService.promos.size()))
+      images.addAll(initService.promos.subList(0, initService.promos.size()))
 
       pageWrappers = new BulletWrapper[initService.promos.size()]
 
